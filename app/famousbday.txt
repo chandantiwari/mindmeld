@@ -4676,7 +4676,6 @@ Sheryl Crow:American musician:11/2/1962
 Eric Vanderaerden:Belgian cyclist:11/2/1962
 Mary Docter:American speed skater:11/2/1961
 Carey Lowell:American actress:11/2/1961
-Nick Currie:Musician (AKA: Momus):11/2/1960
 Roberto Moreno:Brazilian racing driver:11/2/1959
 Catherine Hickland:American actress:11/2/1956
 Didier Lockwood:French violinist:11/2/1956
@@ -16770,7 +16769,6 @@ Julie Peasgood:British actress:28/5/1956
 Jerry Douglas (musician):American dobro player:28/5/1956
 John McGeoch:Scottish musician (Siouxsie and the Banshees):28/5/1955
 Mark Howe:Professional ice hockey player:28/5/1955
-John Tory:Leader: Progressive Conservative Party of Ontario:28/5/1954
 Russell J. Wintner:American Hollywood executive:28/5/1952
 Ian Bradley:British writer, academic and theologian:28/5/1950
 Jim Harris:American professional wrestler:28/5/1950
@@ -28506,7 +28504,6 @@ Bob Papenbrook:American voice actor:18/9/1955
 Murtaza Bhutto:Pakistani politician:18/9/1954
 Takao Doi:Japanese astronaut:18/9/1954
 Dennis Johnson:American basketball player:18/9/1954
-Betsy Boze nee: Vogel:American Academic:18/9/1953
 Rick Pitino:American basketball coach:18/9/1952
 Dee Dee Ramone:American bassist (The Ramones):18/9/1952
 Benjamin Carson:American neurosurgeon:18/9/1951
@@ -35682,7 +35679,7 @@ Mark Lanegan:member of Screaming Trees:25/11/1964
 Bernie Kosar:American football player:25/11/1963
 Gilbert Delorme:Canadian ice hockey player:25/11/1962
 Amy Grant:American singer:25/11/1960
-John F Kennedy, Jr:American publisher:(d. 1999):25/11/1960
+John F Kennedy, Jr:American publisher:25/11/1960
 John F Kennedy:American President:29/5/1917
 Charles Kennedy:British politician:25/11/1959
 Steve Rothery:British guitarist (Marillion):25/11/1959
@@ -35862,7 +35859,6 @@ Hilary Hahn:American violinist:27/11/1979
 Ricky Carmichael:American motocross racer:27/11/1979
 Jimmy Rollins:American baseball player:27/11/1978
 The Streets:British rapper:27/11/1978
-Radek Štepánek:Czech Republic tennis player:27/11/1978
 Shy Love:adult film actress:27/11/1978
 Tim Yeung:American drummer (Vital Remains):27/11/1978
 Jaleel White:American actor:27/11/1976
