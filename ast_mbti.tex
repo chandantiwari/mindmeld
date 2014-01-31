@@ -3,21 +3,60 @@
 
 \begin{minted}[fontsize=\footnotesize]{python}
 import pandas as pd
-celebs = pd.read_csv("./app/famousbday.txt",sep=':',header=None)
-print len(celebs)
-print celebs.ix[0]
-celeb_mbti = pd.read_csv("./app/myer-briggs.txt",comment='#',sep=':')
-print len(celeb_mbti)
+celebs = pd.read_csv("./app/famousbday.txt",sep=':',header=None, 
+names=['name','occup','bday'])
+celeb_mbti = pd.read_csv("./app/myer-briggs.txt",header=None,sep=':',\
+names=['mbti','name'])
+df = pd.merge(celeb_mbti,celebs)
+print df[:4]
 \end{minted}
 
 \begin{verbatim}
-39498
-0          Mary Gibbs
-1    American actress
-2            1/1/1996
-Name: 0, dtype: object
-715
+   mbti            name                  occup        bday
+0  ENFJ  Abraham Maslow  American psychologist    1/4/1908
+1  ENFJ     Ben Stiller         American actor  30/11/1965
+2  ENFJ       Bob Saget         American actor   17/5/1956
+3  ENFJ  Brenda Vaccaro       American actress  18/11/1939
 \end{verbatim}
+
+\begin{minted}[fontsize=\footnotesize]{python}
+from datetime import datetime
+def f(s):
+   try:
+      return datetime.strptime(s, '%d/%m/%Y').date().strftime('%Y%m%d')
+   except: 
+      return None
+print f('18/11/1939')
+print f('18/11/1839')
+df['bday'] = df['bday'].apply(f)
+print df[:4]
+\end{minted}
+
+\begin{verbatim}
+19391118
+None
+   mbti            name                  occup      bday
+0  ENFJ  Abraham Maslow  American psychologist  19080401
+1  ENFJ     Ben Stiller         American actor  19651130
+2  ENFJ       Bob Saget         American actor  19560517
+3  ENFJ  Brenda Vaccaro       American actress  19391118
+\end{verbatim}
+
+\begin{minted}[fontsize=\footnotesize]{python}
+import mindmeld; reload(mindmeld)
+print mindmeld.calculate_millman('19080401')
+print mindmeld.calculate_lewi('19080401')
+\end{minted}
+
+\begin{verbatim}
+['235', 2, 3, 5]
+['1', '149', '155', '181', '182', '193', '194', '200', '230', '244', '']
+\end{verbatim}
+
+\begin{minted}[fontsize=\footnotesize]{python}
+\end{minted}
+
+
 
 
 
