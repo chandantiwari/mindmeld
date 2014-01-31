@@ -28,7 +28,7 @@ def sign(data, param): # works both for spiller and chinese
 spiller_list, chinese_list = init_spiller_chinese()
 
 infile = open("lewi.dat")
-outfile = open ("pocketbudda.dat", "w")
+outfile = open ("pb.dat", "w")
 
 for line in infile.readlines():
   tokens = line.replace("\n","").split(" ")

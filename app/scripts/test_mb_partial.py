@@ -10,7 +10,7 @@ import sys
 sys.path.append('..')
 import calculate
 
-# Note: also you need to symlink pocketbudda.dat into
+# Note: also you need to symlink pb.dat into
 # the current directory here
 
 spiller = ['Aquarius','Aries','Cancer','Capricorn','Gemini','Leo','Libra','Pisces','Sagittarius','Scorpio','Taurus','Virgo']
