@@ -28,7 +28,6 @@ def calculate_millman(date):
 
 def calculate_spiller(date):
    res = spiller.apply(lambda x: int(date) >=int(x['from']) and int(date) < int(x['to']),axis=1)
-   print res
    return np.array(spiller[res])[0][2]
    
 def calculate_chinese(date):
