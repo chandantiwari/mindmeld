@@ -6,37 +6,12 @@ each birtdate.
 
 lewi.dat file is generated using jlewi project on github.
 
-Android project is just a WebView wrapper for the Pocketbudda Appspot URL.
-
 The Python appspot files are under the app folder. In order to run the
 site, you start dev server using this folder. localhost:8080 will
 connect to the main site, localhost:8080/mobile will connect to the
 mobile site. Android code directly connects to this site.
 
-Dev needs a astro symlink to mweb directory. 
-
-In order to test the "friends" section, Facebook Connect functionality
-is needed. The Pocketbudda App on Facebook expects a certain URL,
-therefore the Javascript connector code on our side needs to think it
-is working with the real site. But this can easily faked by placing
-"127.0.0.1 pocketbudda.appspot.com" in the local /etc/hosts file. Then
-we visit the site URL which will direct us to out local server. One
-more caveat: You need to run your server on port 80 (since we are the
-*real" site now) which means using --port=80, on Linux, and for that,
-you will have to start the server with "sudo" otherwise Linux wont let
-access to that port. This is not a big deal tho.
-
 The mobile site is on:
-
-http://pocketbudda.appspot.com
-
-A Django based site for larger screens
-
-http://pocketbudda.appspot.com/ext
-
-Some good references on MBTI are:
-
-http://www.purdue.edu/usp/pdfs/mbtiresources/XXXX.pdf
  
 SCRIPTS
 --------------------
@@ -49,11 +24,6 @@ Training MB Statistical Method
   train_mb_celeb.py. 
   
   Or just look at / run mbti.sh
-
-  Good aliases
-  
-  alias pocdev="cd $HOME/Downloads/google_appengine; python dev_appserver.py ~/kod/pocketbudda/app --debug"
-  alias pocdep="cd $HOME/Downloads/google_appengine; python appcfg.py update ~/kod/pocketbudda/app"
   
   
 TODO
