@@ -116,6 +116,7 @@ import mindmeld
 #res =  mindmeld.calculate('19780317') # yogur
 #res =  mindmeld.calculate('19460810') # olaciner
 #res =  mindmeld.calculate('18470211') # edison
-res =  mindmeld.calculate('19761011') # sal khan
+#res =  mindmeld.calculate('19761011') # sal khan
+res =  mindmeld.calculate('19020608') # grant lewi
 
 print res
