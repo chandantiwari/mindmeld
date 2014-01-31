@@ -1,8 +1,12 @@
-This software package is built on the SwissEph package. It strives to provide a
-cleaner interface for decan calculation to SwissEph, without having to learn its
-details.
+=======================================================
+Calculation of Grant Lewi numbers using decans
+===================================================
 
-Among the things improved here are;
+This software package is built on the SwissEph package. It strives to
+provide a cleaner interface for decan calculation to SwissEph, without
+having to learn its details.
+
+Among the things we improved;
 
 o We provide a *precompiled* source base for SwissEph. The package, as
 it is found on the Web, makes it necessary to pass through a
