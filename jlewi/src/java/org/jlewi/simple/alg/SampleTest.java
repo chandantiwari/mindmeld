@@ -18,23 +18,13 @@ import java.util.Date;
 
 public class SampleTest   {
 
-    
   @Test
-  public void testXy() throws Exception{
-    SwissEph e = new SwissEph();
-  }
-
-  @Test
-  public void testXX() {
-    Zodiac l = new Zodiac();
-    assert 1 == l.decanWithinSign(0, "24.04.1973");
-  }
-
-  @Test
-  public void testPlanets() {
-    Zodiac l = new Zodiac();
-    int i[] = l.decans("24.04.1973");
-    assert i[1] == 29;
+  public void testDecan() throws Exception{
+      Zodiac l = new Zodiac();
+      int i[] = l.decans("10.9.1930");
+      for (Object ii:i) {
+	  System.out.println("ii=" + ii);
+      }
   }
 
   @Test

@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 import org.apache.commons.lang.time.FastDateFormat;
-
+import org.jlewi.simple.alg.Zodiac;
 
 public class GenerateLewi 
 {
@@ -59,6 +59,9 @@ public class GenerateLewi
 	Date end = stringToDateddMM("01/01/2021");
 
 	BufferedWriter wr = new BufferedWriter(new FileWriter("/tmp/lewi.dat"));
+	BufferedWriter wd = new BufferedWriter(new FileWriter("/tmp/decans.dat"));
+
+	Zodiac zodiac = new Zodiac();
     
 	while (!date.after(end)) {
 	    try {
@@ -69,6 +72,7 @@ public class GenerateLewi
 		int year = date.getYear()+1900;
 		int day = date.getDate();                
 		wr.write("" + year + twoDigitize(month+1) + twoDigitize(day) + " ");  
+		wd.write("" + year + twoDigitize(month+1) + twoDigitize(day) + " ");  
 		Lewi l = new Lewi();
 		String sDate = twoDigitize(day)+"."+twoDigitize(month+1)+"."+year;
 		ArrayList lewis = l.calc(sDate); 
@@ -78,6 +82,14 @@ public class GenerateLewi
 		}
 		wr.write("\n");        
 		wr.flush();
+		
+		int ds[] = zodiac.decans(sDate);
+		for (int j = 0; j < 10; j++) {
+		    wd.write(""+ds[j]);
+		    wd.write(":");
+		}
+		wd.write("\n");        
+		wd.flush();		
         
 		date = GenerateLewi.nextDay(date);
         
