@@ -34,5 +34,3 @@ def calculate_chinese(date):
    res = chinese.apply(lambda x: int(date) >=int(x['from']) and int(date) < int(x['to']),axis=1)
    return np.array(chinese[res])[0][2]
    
-print calculate_spiller(19151001)
-print calculate_chinese(19151001)
