@@ -28,6 +28,7 @@ def calculate_millman(date):
 
 def calculate_spiller(date):
    res = spiller.apply(lambda x: int(date) >=int(x['from']) and int(date) < int(x['to']),axis=1)
+   print res
    return np.array(spiller[res])[0][2]
    
 def calculate_chinese(date):
@@ -50,5 +51,8 @@ def calculate_cycle(d):
         total = int(res[0]) + int(res[1])
     return total
 
-print calculate_cycle('19730424')
+def calculate(date):
+   return [calculate_chinese(date), calculate_spiller(date), calculate_millman(date), 
+           calculate_lewi(date), calculate_cycle(date)]
+
 

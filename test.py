@@ -2,7 +2,7 @@ import mindmeld
 
 #res =  mindmeld.calculate('19451005')    
 #res =  mindmeld.calculate('19490222')
-res =  mindmeld.calculate('19820108')
+#res =  mindmeld.calculate('19820108')
 
 #res =  mindmeld.calculate('19610804') # barack obama
 #res =  mindmeld.calculate('19730326') # larry page
@@ -116,6 +116,6 @@ res =  mindmeld.calculate('19820108')
 #res =  mindmeld.calculate('19780317') # yogur
 #res =  mindmeld.calculate('19460810') # olaciner
 #res =  mindmeld.calculate('18470211') # edison
-#res =  mindmeld.calculate('19761011') # sal khan
+res =  mindmeld.calculate('19761011') # sal khan
 
 print res
