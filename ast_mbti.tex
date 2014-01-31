@@ -1,0 +1,24 @@
+\documentclass[12pt,fleqn]{article}\usepackage{common}
+\begin{document}
+
+\begin{minted}[fontsize=\footnotesize]{python}
+import pandas as pd
+celebs = pd.read_csv("./app/famousbday.txt",sep=':',header=None)
+print len(celebs)
+print celebs.ix[0]
+celeb_mbti = pd.read_csv("./app/myer-briggs.txt",comment='#',sep=':')
+print len(celeb_mbti)
+\end{minted}
+
+\begin{verbatim}
+39498
+0          Mary Gibbs
+1    American actress
+2            1/1/1996
+Name: 0, dtype: object
+715
+\end{verbatim}
+
+
+
+\end{document}
