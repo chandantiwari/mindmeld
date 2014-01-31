@@ -3,6 +3,9 @@ import pandas as pd
 import numpy as np
 
 lewi = pd.read_csv('./app/lewi.dat',names=['date','lewis'],sep=' ')
+spiller = pd.read_csv("./app/spiller",names=['from','to','sign'])
+chinese = pd.read_csv("./app/chinese",names=['from','to','sign'])
+print spiller[:3]
 
 def calculate_lewi(date):
    tmp=np.array(lewi[lewi['date']==int(date)]['lewis'])
@@ -23,7 +26,13 @@ def calculate_millman(date):
         res.append(x)
     return res
 
-spiller = pd.read_csv("./app/spiller",names=['from','to','sign'])
-print spiller[:3]
-
-
+def calculate_spiller(date):
+   res = spiller.apply(lambda x: int(date) >=int(x['from']) and int(date) < int(x['to']),axis=1)
+   return np.array(spiller[res])[0][2]
+   
+def calculate_chinese(date):
+   res = chinese.apply(lambda x: int(date) >=int(x['from']) and int(date) < int(x['to']),axis=1)
+   return np.array(chinese[res])[0][2]
+   
+print calculate_spiller(19151001)
+print calculate_chinese(19151001)
