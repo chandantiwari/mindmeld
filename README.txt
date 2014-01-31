@@ -10,8 +10,6 @@ The Python appspot files are under the app folder. In order to run the
 site, you start dev server using this folder. localhost:8080 will
 connect to the main site, localhost:8080/mobile will connect to the
 mobile site. Android code directly connects to this site.
-
-The mobile site is on:
  
 SCRIPTS
 --------------------
