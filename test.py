@@ -1,5 +1,6 @@
 import mindmeld
 import unittest
+import mapping
 
 class TestAll(unittest.TestCase):
     
@@ -8,6 +9,12 @@ class TestAll(unittest.TestCase):
         self.assertTrue('22' in res['lewi'])
         res = mindmeld.get_lewi('19730424')
         self.assertTrue('22' in res)
+
+    def testmap(self):
+        m = mapping.init()
+        self.assertEquals(m.ix['mo','tick']['ven'],146)
+        self.assertEquals(m.ix['sun','*']['ur'],176)
+        
         
 if __name__ == "__main__":
     suite = unittest.TestLoader().loadTestsFromTestCase(TestAll)
