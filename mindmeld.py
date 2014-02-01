@@ -3,12 +3,32 @@ import pandas as pd
 import numpy as np
 
 lewi = pd.read_csv('./app/lewi.dat',names=['date','lewis'],sep=' ')
+decans = pd.read_csv('./app/decans.dat',names=['date','decans'],sep=' ')
 spiller = pd.read_csv("./app/spiller",names=['from','to','sign'])
 chinese = pd.read_csv("./app/chinese",names=['from','to','sign'])
 
-def calculate_lewi(date):
+sun_moon_table = np.array(range(144)).reshape((12,12)) + 1
+planets = ['sun','mo','mer','ven','mar','ju','sat','ur','nep','pl']
+mapping = pd.DataFrame(index=planets,columns=['tick','*','sq','tri','opp'])
+
+mapping.ix['mo','tick'] = {'sun':245,'mer':145,'ven':146,'mar':147,'ju':148,'sa':149,'ur':150,'ne':151,'pl':254}
+mapping.ix['mo','tri'] = {'sun':246,'mer':152,'ven':153,'mar':154,'ju':155,'sa':156,'ur':157,'ne':158,'pl':255}
+mapping.ix['mo','*'] = {'sun':246,'mer':152,'ven':153,'mar':154,'ju':155,'sa':156,'ur':157,'ne':158,'pl':255}
+mapping.ix['mo','sq'] = {'sun':247,'mer':159,'ven':160,'mar':161,'ju':162,'sa':163,'ur':164,'ne':165,'pl':256}
+mapping.ix['mo','opp'] = {'sun':247,'mer':159,'ven':160,'mar':161,'ju':162,'sa':163,'ur':164,'ne':165,'pl':256}
+mapping.ix['ur','tick'] = {'ne':242,'pl':272}
+mapping.ix['ur','tri'] = {'ne':243,'pl':273}
+
+
+def get_lewi(date):
    tmp=np.array(lewi[lewi['date']==int(date)]['lewis'])
-   return tmp[0].split(':')
+   res = tmp[0].split(':')
+   return res[:-1]
+
+def get_decans(date):
+   tmp=np.array(decans[decans['date']==int(date)]['decans'])
+   res = tmp[0].split(':')
+   return res[:-1]
 
 def calculate_millman(date):
     millman = []
@@ -51,14 +71,9 @@ def calculate_cycle(d):
 
 def calculate(date):
    return [calculate_chinese(date), calculate_spiller(date),calculate_millman(date),
-           calculate_lewi(date),calculate_cycle(date)]
+           get_lewi(date),calculate_cycle(date)]
 
-sun_moon_table = np.array(range(144)).reshape((12,12)) + 1
-planets = ['sun','mo','mer','ven','mar','ju','sat','ur','nep','pl']
-mapping = pd.DataFrame(index=planets,columns=['tick','star','square','triangle','helix'])
-mapping.ix['mo','tick'] = [('sun',245),('mer',145),('ven',146),('mar',147),('ju',148),('sa',149),('ur',150),('ne',151),('pl',254)]
-
-def calculate_lewi_decan(decans):
+def calculate_lewi(decans):
    res = []
    res.append(sun_moon_table[int(float(decans[0])/3),int(float(decans[1])/3)])
    
@@ -75,12 +90,13 @@ def calculate_lewi_decan(decans):
    return res
 
 
-
-# grant lewi decans 8:11:10:4:7:32:30:26:10:8:
+# grant lewi
 # 28,154,163,174,181,188,189,209,220,231
-print calculate_lewi_decan([8,11,10,4,7,32,30,26,10,8])
-# 61
+print calculate_lewi([8,11,10,4,7,32,30,26,10,8])
+# book sample 61
 #print calculate_lewi_decan([17,1,19,22,10,11,28,2,16,12])
 
 #res =  mindmeld.calculate('19020608') 
 
+#print get_lewi('19730424') 
+#print get_decans('19020608') 
