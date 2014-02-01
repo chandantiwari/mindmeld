@@ -59,4 +59,25 @@ sun_moon_table = np.array(range(144)).reshape((12,12)) + 1
 def calculate_lewi_decan(decans):
    res = []
    res.append(sun_moon_table[int(float(decans[0])/3),int(float(decans[1])/3)])
+   
+   angle_locs = [6,9,12,18,24,27,30]
+   decans = np.array(decans)
+   for decan in decans:
+      print 'decan', decan
+      shifted = decans + decan
+      shifted = map(lambda x: x % 36,shifted)
+      print 'shifted',shifted
+      break
+      
    return res
+
+
+
+# grant lewi decans 8:11:10:4:7:32:30:26:10:8:
+# 28,154,163,174,181,188,189,209,220,231
+print calculate_lewi_decan([8,11,10,4,7,32,30,26,10,8])
+# 61
+#print calculate_lewi_decan([17,1,19,22,10,11,28,2,16,12])
+
+#res =  mindmeld.calculate('19020608') 
+
