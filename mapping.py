@@ -27,4 +27,27 @@ def init():
     mapping.ix['mer','tick'] = {'ven':183,'mar':184,'ju':185,'sa':186,'ur':187,'ne':188,'pl':257}
     mapping.ix['mer','tri'] = {'ven':189,'mar':190,'ju':191,'sa':192,'ur':193,'ne':194,'pl':258}
     mapping.ix['mer','*'] = {'ven':189,'mar':190,'ju':191,'sa':192,'ur':193,'ne':194,'pl':258}
+    mapping.ix['mer','sq'] = {'mar':195,'ju':196,'sa':197,'ur':198,'ne':199,'pl':259}
+    mapping.ix['mer','opp'] = {'mar':195,'ju':196,'sa':197,'ur':198,'ne':199,'pl':259}
+    mapping.ix['ju','tick'] = {'sa':227,'ur':228,'ne':229,'pl':266}
+    mapping.ix['ju','tri'] = {'sa':230,'ur':231,'ne':232,'pl':267}
+    mapping.ix['ju','*'] = {'sa':230,'ur':231,'ne':232,'pl':267}
+    mapping.ix['ju','sq'] = {'sa':233,'ur':234,'ne':235,'pl':268}
+    mapping.ix['ju','opp'] = {'sa':233,'ur':234,'ne':235,'pl':268}
+    mapping.ix['ven','tick'] = {'mar':200,'ju':201,'sa':202,'ur':203,'ne':204,'pl':260}
+    mapping.ix['ven','tri'] = {'mar':205,'ju':206,'sa':207,'ur',208,'ne':209,'pl':261}
+    mapping.ix['ven','*'] = {'mar':205,'ju':206,'sa':207,'ur',208,'ne':209,'pl':261}
+    mapping.ix['ven','sq'] = {'mar':210,'ju':211,'sa':212,'ur':213,'ne':214,'pl':262}
+    mapping.ix['ven','opp'] = {'mar':210,'ju':211,'sa':212,'ur':213,'ne':214,'pl':262}
+    mapping.ix['mar','tick'] = {'ju':215,'sa':216,'ur':217,'ne':218,'pl':263}
+    mapping.ix['mar','tri'] = {'ju':219,'sa':220,'ur':221,'ne':222,'pl':264}
+    mapping.ix['mar','*'] = {'ju':219,'sa':220,'ur':221,'ne':222,'pl':264}
+    mapping.ix['mar','sq'] = {'ju':223,'sa':224,'ur':225,'ne':226,'pl':265}
+    mapping.ix['mar','opp'] = {'ju':223,'sa':224,'ur':225,'ne':226,'pl':265}
+    mapping.ix['ne','tick'] = {'pl':275}
+    mapping.ix['ne','tri'] = {'pl':276}
+    mapping.ix['ne','*'] = {'pl':276}
+    mapping.ix['ne','sq'] = {'pl':277}
+    mapping.ix['ne','opp'] = {'pl':277}
+    
     return mapping
