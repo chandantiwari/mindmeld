@@ -18,7 +18,10 @@ mapping.ix['mo','sq'] = {'sun':247,'mer':159,'ven':160,'mar':161,'ju':162,'sa':1
 mapping.ix['mo','opp'] = {'sun':247,'mer':159,'ven':160,'mar':161,'ju':162,'sa':163,'ur':164,'ne':165,'pl':256}
 mapping.ix['ur','tick'] = {'ne':242,'pl':272}
 mapping.ix['ur','tri'] = {'ne':243,'pl':273}
-
+mapping.ix['ur','*'] = {'ne':243,'pl':273}
+mapping.ix['ur','sq'] = {'ne':244,'pl':274}
+mapping.ix['ur','opp'] = {'ne':244,'pl':274}
+mapping.ix['ur','tick'] = {'mer':166,'ven':167,'mar':168,'ju':169,'sa':170,'ur':171,'ne':172,'pl':251}
 
 def get_lewi(date):
    tmp=np.array(lewi[lewi['date']==int(date)]['lewis'])
@@ -45,11 +48,11 @@ def calculate_millman(date):
         res.append(x)
     return res
 
-def calculate_spiller(date):
+def get_spiller(date):
    res = spiller.apply(lambda x: int(date) >=int(x['from']) and int(date) < int(x['to']),axis=1)
    return np.array(spiller[res])[0][2]
    
-def calculate_chinese(date):
+def get_chinese(date):
    res = chinese.apply(lambda x: int(date) >=int(x['from']) and int(date) < int(x['to']),axis=1)
    return np.array(chinese[res])[0][2]
    
@@ -70,8 +73,7 @@ def calculate_cycle(d):
     return total
 
 def calculate(date):
-   return [calculate_chinese(date), calculate_spiller(date),calculate_millman(date),
-           get_lewi(date),calculate_cycle(date)]
+   return {'chinese':get_chinese(date), 'spiller':get_spiller(date),'millman':calculate_millman(date),'lewi':get_lewi(date)}
 
 def calculate_lewi(decans):
    res = []
@@ -99,4 +101,5 @@ print calculate_lewi([8,11,10,4,7,32,30,26,10,8])
 #res =  mindmeld.calculate('19020608') 
 
 #print get_lewi('19730424') 
+print calculate('19730424') 
 #print get_decans('19020608') 
