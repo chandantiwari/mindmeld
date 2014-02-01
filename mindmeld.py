@@ -67,26 +67,25 @@ def calculate(date):
 def calculate_lewi(decans):
    res = []
    res.append(sun_moon_table[int(float(decans[0])/3),int(float(decans[1])/3)])
-   
-   angle_locs = [6,9,12,18,24,27,30]
+
+   # *, sq, tri, opp, tri, sq, *
+   steps = np.array([6,9,12,18,24,27,30])
    decans = np.array(decans)
+   print 'decans',decans
    for planet in planets:
       decan = decans[planets.index(planet)]
       print 'planet',planet,'decan', decan
-      shifted = decans + decan
+      shifted = steps + decan
       shifted = map(lambda x: x % 36,shifted)
       print 'shifted',shifted
-      break
       
    return res
 
 
 # grant lewi
 # 28,154,163,174,181,188,189,209,220,231
-#print calculate_lewi([8,11,10,4,7,32,30,26,10,8])
+print calculate_lewi([8,11,10,4,7,32,30,26,10,8])
+
 # book sample 61
 #print calculate_lewi_decan([17,1,19,22,10,11,28,2,16,12])
 
-#res =  mindmeld.calculate('19020608') 
-
-#print get_decans('19020608') 
