@@ -100,5 +100,4 @@ def calculate_lewi(decans):
 
 #res =  mindmeld.calculate('19020608') 
 
-#print 
 #print get_decans('19020608') 
