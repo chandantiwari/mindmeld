@@ -58,5 +58,5 @@ sun_moon_table = np.array(range(144)).reshape((12,12)) + 1
 
 def calculate_lewi_decan(decans):
    res = []
-   print decans
+   res.append(sun_moon_table[int(float(decans[0])/3),int(float(decans[1])/3)])
    return res
