@@ -50,16 +50,13 @@ def calculate_cycle(d):
     return total
 
 def calculate(date):
-   return [calculate_chinese(date), calculate_spiller(date), calculate_millman(date), 
-           calculate_lewi(date), calculate_cycle(date)]
-
+   return [calculate_chinese(date), calculate_spiller(date),calculate_millman(date),
+           calculate_lewi(date),calculate_cycle(date)]
 
 sun_moon_table = np.array(range(144)).reshape((12,12)) + 1
 planets = ['sun','mo','mer','ven','mar','ju','sat','ur','nep','pl']
 mapping = pd.DataFrame(index=planets,columns=['tick','star','square','triangle','helix'])
 mapping.ix['mo','tick'] = [('sun',245),('mer',145),('ven',146),('mar',147),('ju',148),('sa',149),('ur',150),('ne',151),('pl',254)]
-
-print mapping
 
 def calculate_lewi_decan(decans):
    res = []
