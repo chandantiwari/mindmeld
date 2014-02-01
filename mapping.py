@@ -1,6 +1,6 @@
 import pandas as pd
 
-planets = ['sun','mo','mer','ven','mar','ju','sa','ur','nep','pl']
+planets = ['sun','mo','mer','ven','mar','ju','sa','ur','ne','pl']
 
 def init():
     mapping = pd.DataFrame(index=planets,columns=['tick','*','sq','tri','opp'])
@@ -35,8 +35,8 @@ def init():
     mapping.ix['ju','sq'] = {'sa':233,'ur':234,'ne':235,'pl':268}
     mapping.ix['ju','opp'] = {'sa':233,'ur':234,'ne':235,'pl':268}
     mapping.ix['ven','tick'] = {'mar':200,'ju':201,'sa':202,'ur':203,'ne':204,'pl':260}
-    mapping.ix['ven','tri'] = {'mar':205,'ju':206,'sa':207,'ur',208,'ne':209,'pl':261}
-    mapping.ix['ven','*'] = {'mar':205,'ju':206,'sa':207,'ur',208,'ne':209,'pl':261}
+    mapping.ix['ven','tri'] = {'mar':205,'ju':206,'sa':207,'ur':208,'ne':209,'pl':261}
+    mapping.ix['ven','*'] = {'mar':205,'ju':206,'sa':207,'ur':208,'ne':209,'pl':261}
     mapping.ix['ven','sq'] = {'mar':210,'ju':211,'sa':212,'ur':213,'ne':214,'pl':262}
     mapping.ix['ven','opp'] = {'mar':210,'ju':211,'sa':212,'ur':213,'ne':214,'pl':262}
     mapping.ix['mar','tick'] = {'ju':215,'sa':216,'ur':217,'ne':218,'pl':263}

@@ -14,6 +14,7 @@ class TestAll(unittest.TestCase):
         m = mapping.init()
         self.assertEquals(m.ix['mo','tick']['ven'],146)
         self.assertEquals(m.ix['sun','*']['ur'],176)
+        self.assertEquals(m.ix['mar','sq']['ur'],225)
         
         
 if __name__ == "__main__":
