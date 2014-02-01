@@ -1,4 +1,5 @@
 *.aux
+*.pyc
 *.log
 *.out
 */build*
