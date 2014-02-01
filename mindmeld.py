@@ -5,10 +5,6 @@ import numpy as np
 lewi = pd.read_csv('./app/lewi.dat',names=['date','lewis'],sep=' ')
 spiller = pd.read_csv("./app/spiller",names=['from','to','sign'])
 chinese = pd.read_csv("./app/chinese",names=['from','to','sign'])
-print spiller[:3]
-
-def calculate_lewi_decan(decans):
-   print decans
 
 def calculate_lewi(date):
    tmp=np.array(lewi[lewi['date']==int(date)]['lewis'])
@@ -58,5 +54,9 @@ def calculate(date):
            calculate_lewi(date), calculate_cycle(date)]
 
 
-print calculate_lewi_decan([8,11,10,4,7,32,30,26,10,8])
+sun_moon_table = np.array(range(144)).reshape((12,12)) + 1
 
+def calculate_lewi_decan(decans):
+   res = []
+   print decans
+   return res
