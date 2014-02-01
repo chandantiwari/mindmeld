@@ -7,6 +7,9 @@ spiller = pd.read_csv("./app/spiller",names=['from','to','sign'])
 chinese = pd.read_csv("./app/chinese",names=['from','to','sign'])
 print spiller[:3]
 
+def calculate_lewi_decan(decans):
+   print decans
+
 def calculate_lewi(date):
    tmp=np.array(lewi[lewi['date']==int(date)]['lewis'])
    return tmp[0].split(':')
@@ -54,4 +57,6 @@ def calculate(date):
    return [calculate_chinese(date), calculate_spiller(date), calculate_millman(date), 
            calculate_lewi(date), calculate_cycle(date)]
 
+
+print calculate_lewi_decan([8,11,10,4,7,32,30,26,10,8])
 
