@@ -74,18 +74,18 @@ def calculate_lewi(decans):
    print 'decans',decans,'\n'
    for planet in planets:
       decan = decans[planets.index(planet)]
-      print 'planet',planet,'at decan', decan
+      #print 'planet',planet,'at decan', decan
       relpos = steps + decan; relpos = map(lambda x: x % 36,relpos)
-      print 'relpos',relpos
+      #print 'relpos',relpos
       for pos,step_sign in itertools.izip(relpos,step_signs):
          matches = np.array(range(10))[decans == pos]
          pls = np.array(planets)[decans == pos]
          if len(matches)>0:
             #print matches,pls,step_sign
             for match,p in itertools.izip(matches,pls):
-               print 'from',planet,'to',p,step_sign,match
+               #print 'from',planet,'to',p,step_sign,match
                if not pd.isnull(smap.ix[planet,step_sign]) and (p in smap.ix[planet,step_sign]):
-                  print smap.ix[planet,step_sign][p]
+                  #print smap.ix[planet,step_sign][p]
                   res.append(smap.ix[planet,step_sign][p])
 
 
