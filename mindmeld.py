@@ -110,14 +110,9 @@ def calculate_lewi(decans):
 #print get_lewi('19020608')
 #print 'from book 28,154,163,174,181,188,189,209,220,231'
 
-print calculate_lewi(get_decans('19730424'))
-print get_lewi('19730424')
+#print calculate_lewi(get_decans('19730424'))
+#print get_lewi('19730424')
 
 # book sample 61
 #print calculate_lewi([17,1,19,22,10,11,28,2,16,12])
-
-d = '19880103'
-print get_decans(d)
-print calculate_lewi(get_decans(d))
-print get_lewi(d)
 
