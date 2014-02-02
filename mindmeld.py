@@ -71,7 +71,7 @@ def calculate_lewi(decans):
    step_signs = ['*', 'sq', 'tri', 'opp', 'tri', 'sq', '*']
    steps = np.array([6,9,12,18,24,27,30])
    decans = np.array(decans)
-   print 'decans',decans,'\n'
+   #print 'decans',decans,'\n'
    for planet in planets:
       decan = decans[planets.index(planet)]
       #print 'planet',planet,'at decan', decan
@@ -95,7 +95,7 @@ def calculate_lewi(decans):
          #print 'matches',matches
          for x in matches:
             if i<x:
-               print planets[i],'matches',planets[x]
+               #print planets[i],'matches',planets[x]
                if not pd.isnull(smap.ix[planets[i],'tick']) and (planets[x] in smap.ix[planets[i],'tick']):
                   res.append(smap.ix[planets[i],'tick'][planets[x]])
             
@@ -104,9 +104,9 @@ def calculate_lewi(decans):
 
 
 # grant lewi
-print calculate_lewi([8,11,10,4,7,32,30,26,10,8])
-print get_lewi('19020608')
-print 'from book 28,154,163,174,181,188,189,209,220,231'
+#print calculate_lewi([8,11,10,4,7,32,30,26,10,8])
+#print get_lewi('19020608')
+#print 'from book 28,154,163,174,181,188,189,209,220,231'
 
 #print calculate_lewi(get_decans('19730424'))
 #print get_lewi('19730424')
