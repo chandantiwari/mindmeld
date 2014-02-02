@@ -3,10 +3,10 @@ import pandas as pd
 import numpy as np
 import mapping, itertools
 
-lewi = pd.read_csv('./app/lewi.dat',names=['date','lewis'],sep=' ')
-decans = pd.read_csv('./app/decans.dat',names=['date','decans'],sep=' ')
-spiller = pd.read_csv("./app/spiller",names=['from','to','sign'])
-chinese = pd.read_csv("./app/chinese",names=['from','to','sign'])
+lewi = pd.read_csv('./data/lewi.dat',names=['date','lewis'],sep=' ')
+decans = pd.read_csv('./data/decans.dat',names=['date','decans'],sep=' ')
+spiller = pd.read_csv("./data/spiller",names=['from','to','sign'])
+chinese = pd.read_csv("./data/chinese",names=['from','to','sign'])
 planets = ['sun','mo','mer','ven','mar','ju','sa','ur','ne','pl']
 smap = mapping.init()
 
@@ -62,7 +62,8 @@ def calculate_cycle(d):
     return total
 
 def calculate(date):
-   return {'chinese':get_chinese(date), 'spiller':get_spiller(date),'millman':calculate_millman(date),'lewi':get_lewi(date)}
+   return {'chinese':get_chinese(date), 'spiller':get_spiller(date),
+           'millman':calculate_millman(date),'lewi':calculate_lewi(date)}
 
 def calculate_lewi_decans(decans):
    res = []
