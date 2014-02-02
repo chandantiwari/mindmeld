@@ -81,15 +81,11 @@
   </target>  
   
   <target name="run" depends="compile">
-    <java fork="yes" classname="org.jlewi.simple.GenerateLewi"
+    <java fork="yes" classname="org.jlewi.simple.GenerateDecans"
           failonerror="true">
       <classpath refid="compile.classpath"/>
     </java>
   </target>
-
-  <target name="zip">
-    <zip excludes="build/**, jlewi.jar" destfile="/home/burak/Dropbox/jlewi.zip" basedir="./"/>
-  </target>        
   
    <!-- Build project and create distribution-->
   <target name="all" depends="project"/>

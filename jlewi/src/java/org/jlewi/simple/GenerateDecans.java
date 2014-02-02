@@ -18,7 +18,7 @@ import java.util.Locale;
 import org.apache.commons.lang.time.FastDateFormat;
 import org.jlewi.simple.alg.Zodiac;
 
-public class GenerateLewi 
+public class GenerateDecans
 {
     public static long addDays(long time, int amount) {
 	Calendar calendar = Calendar.getInstance();
@@ -58,7 +58,6 @@ public class GenerateLewi
 	Date date = stringToDateddMM("01/01/1800");
 	Date end = stringToDateddMM("01/01/2021");
 
-	BufferedWriter wr = new BufferedWriter(new FileWriter("/tmp/lewi.dat"));
 	BufferedWriter wd = new BufferedWriter(new FileWriter("/tmp/decans.dat"));
 
 	Zodiac zodiac = new Zodiac();
@@ -71,18 +70,8 @@ public class GenerateLewi
 		int month = date.getMonth() ;
 		int year = date.getYear()+1900;
 		int day = date.getDate();                
-		wr.write("" + year + twoDigitize(month+1) + twoDigitize(day) + " ");  
 		wd.write("" + year + twoDigitize(month+1) + twoDigitize(day) + " ");  
-		Lewi l = new Lewi();
-		String sDate = twoDigitize(day)+"."+twoDigitize(month+1)+"."+year;
-		ArrayList lewis = l.calc(sDate); 
-		for (int j = 0; j < lewis.size(); j++) {
-		    wr.write(""+lewis.get(j));
-		    wr.write(":");
-		}
-		wr.write("\n");        
-		wr.flush();
-		
+		String sDate = twoDigitize(day)+"."+twoDigitize(month+1)+"."+year;		
 		int ds[] = zodiac.decans(sDate);
 		for (int j = 0; j < 10; j++) {
 		    wd.write(""+ds[j]);
@@ -91,7 +80,7 @@ public class GenerateLewi
 		wd.write("\n");        
 		wd.flush();		
         
-		date = GenerateLewi.nextDay(date);
+		date = GenerateDecans.nextDay(date);
         
 		
 	    } catch (Exception e) {
