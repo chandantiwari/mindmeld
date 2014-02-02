@@ -19,8 +19,6 @@ chinese = pd.read_csv("./data/chinese",names=['from','to','sign'])
 planets = ['sun','mo','mer','ven','mar','ju','sa','ur','ne','pl']
 smap = mapping.init()
 
-        
-
 sun_moon_table = np.array(range(144)).reshape((12,12)) + 1
 
 def get_lewi(date):
