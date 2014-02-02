@@ -11,6 +11,7 @@ planets = ['sun','mo','mer','ven','mar','ju','sa','ur','ne','pl']
 smap = mapping.init()
 
 sun_moon_table = np.array(range(144)).reshape((12,12)) + 1
+print sun_moon_table
 
 def get_lewi(date):
    tmp=np.array(lewi[lewi['date']==int(date)]['lewis'])
@@ -66,12 +67,13 @@ def calculate(date):
 
 def calculate_lewi(decans):
    res = []
-   res.append(sun_moon_table[int(float(decans[0])/3),int(float(decans[1])/3)])
+   sun = np.ceil(float(decans[0])/3)-1
+   moon = np.ceil(float(decans[1])/3)-1
+   res.append(sun_moon_table[sun,moon])
 
    step_signs = ['*', 'sq', 'tri', 'opp', 'tri', 'sq', '*']
    steps = np.array([6,9,12,18,24,27,30])
    decans = np.array(decans)
-   #print 'decans',decans,'\n'
    for planet in planets:
       decan = decans[planets.index(planet)]
       #print 'planet',planet,'at decan', decan
@@ -108,9 +110,14 @@ def calculate_lewi(decans):
 #print get_lewi('19020608')
 #print 'from book 28,154,163,174,181,188,189,209,220,231'
 
-#print calculate_lewi(get_decans('19730424'))
-#print get_lewi('19730424')
+print calculate_lewi(get_decans('19730424'))
+print get_lewi('19730424')
 
 # book sample 61
 #print calculate_lewi([17,1,19,22,10,11,28,2,16,12])
+
+d = '19880103'
+print get_decans(d)
+print calculate_lewi(get_decans(d))
+print get_lewi(d)
 
