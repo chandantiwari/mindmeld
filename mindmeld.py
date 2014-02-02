@@ -7,7 +7,7 @@ lewi = pd.read_csv('./app/lewi.dat',names=['date','lewis'],sep=' ')
 decans = pd.read_csv('./app/decans.dat',names=['date','decans'],sep=' ')
 spiller = pd.read_csv("./app/spiller",names=['from','to','sign'])
 chinese = pd.read_csv("./app/chinese",names=['from','to','sign'])
-planets = ['sun','mo','mer','ven','mar','ju','sat','ur','ne','pl']
+planets = ['sun','mo','mer','ven','mar','ju','sa','ur','ne','pl']
 smap = mapping.init()
 
 sun_moon_table = np.array(range(144)).reshape((12,12)) + 1
@@ -19,8 +19,10 @@ def get_lewi(date):
 
 def get_decans(date):
    tmp=np.array(decans[decans['date']==int(date)]['decans'])
-   res = tmp[0].split(':')
-   return res[:-1]
+   res = tmp[0].split(':')   
+   res = res[:-1]
+   res = map(int, res)
+   return res
 
 def calculate_millman(date):
     millman = []
@@ -103,9 +105,12 @@ def calculate_lewi(decans):
 
 
 # grant lewi
-print calculate_lewi([8,11,10,4,7,32,30,26,10,8])
-print get_lewi('19020608')
-print 'from book 28,154,163,174,181,188,189,209,220,231'
+#print calculate_lewi([8,11,10,4,7,32,30,26,10,8])
+#print get_lewi('19020608')
+#print 'from book 28,154,163,174,181,188,189,209,220,231'
+
+print calculate_lewi(get_decans('19730424'))
+print get_lewi('19730424')
 
 # book sample 61
 #print calculate_lewi([17,1,19,22,10,11,28,2,16,12])
