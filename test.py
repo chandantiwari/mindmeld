@@ -13,7 +13,7 @@ class TestAll(unittest.TestCase):
         res = mindmeld.get_lewi('19730424')
         self.assertTrue('22' in res)
         self.assertTrue('167' in res)
-
+        
     def testmap(self):
         m = mapping.init()
         self.assertEquals(m.ix['mo','tick']['ven'],146)
