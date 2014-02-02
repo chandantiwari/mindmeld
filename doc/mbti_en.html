@@ -2,9 +2,30 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script src="jquery.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" charset="utf-8">      
+    <script type="text/javascript" charset="utf-8">
+    function test_settings() {
+        // check arbitrary radio buttons automatically for testing
+        input = [1, -1, -1, 1, 0, 0, 0, 1, 0, -1, 
+                 0, 0, -1, -1, 1, -1, 0, 0, 1, 1, 
+                 -1, 1, 1, 1, 0, 0, 0, -1, 1, 0, 
+                 1, 1, 0, 0, 0, 0, 0, 1, -1, -1, 
+                 1, 1, 1, 1, 1, 1, -1, 1, 1, 1, 
+                 0, -1, -1, -1, -1, 1, 0, 0, 0, 0, 
+                 -1, 0, 0, -1, 0, -1, -1, -1, 0, 0];
+
+        for (var i=0;i<70;i++){
+          var j = i+1;
+          if (input[i] == -1)
+            $('input[name=group'+j+']:eq(0)').attr('checked', 'checked');    
+          if (input[i] == 0)
+            $('input[name=group'+j+']:eq(1)').attr('checked', 'checked');    
+          if (input[i] == 1)
+            $('input[name=group'+j+']:eq(2)').attr('checked', 'checked');    
+        }
+     }
+    
      function evaluate_mbti() {     
-       //test_settings();
+       test_settings();    
        for (var i=0;i<70;i++){
          var j = i+1;
          res = $("input[name='group"+j+"']:checked").val();
@@ -19,22 +40,7 @@
          res = $("input[name=group"+j+"]:checked").val();
          list += ":" + res;
        }  
-       HACK="#spiller";    
-       $.getJSON('/evaluate_mbti', { 'answers': list},
-          function(response){
-            $('#mbtierror').html("");
-            $('#mbtiresult').attr('href', '/mweb/mbti/' + response.toLowerCase() + ".html" + HACK);
-            $('#mbtiresult a').attr("target", "_new");
-            $('#mbtiresult a').text(response); 
-            $("#mbtiresult").show()       
-          }
-       );
-     }       
-     
-     function jump() {
-       HACK = "#spiller";
-       url = "/mweb/mbti/" + $('#quickmbti :selected').text() + "_tr.html"+HACK;
-       window.open(url);
+       alert(list);
      }
     </script>        
   </head>
