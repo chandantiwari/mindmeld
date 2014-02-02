@@ -88,12 +88,11 @@ def calculate_lewi(decans):
                   #print smap.ix[planet,step_sign][p]
                   res.append(smap.ix[planet,step_sign][p])
 
-
-   print 'self matches---'
+   #print 'self matches---'
    for i,dec in enumerate(decans):
       matches = np.array(range(10))[decans==dec]
       if len(matches) > 1:
-         print 'matches',matches
+         #print 'matches',matches
          for x in matches:
             if i<x:
                print planets[i],'matches',planets[x]
