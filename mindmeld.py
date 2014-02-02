@@ -7,8 +7,8 @@ lewi = pd.read_csv('./app/lewi.dat',names=['date','lewis'],sep=' ')
 decans = pd.read_csv('./app/decans.dat',names=['date','decans'],sep=' ')
 spiller = pd.read_csv("./app/spiller",names=['from','to','sign'])
 chinese = pd.read_csv("./app/chinese",names=['from','to','sign'])
-planets = ['sun','mo','mer','ven','mar','ju','sat','ur','nep','pl']
-mapping.init()
+planets = ['sun','mo','mer','ven','mar','ju','sat','ur','ne','pl']
+smap = mapping.init()
 
 sun_moon_table = np.array(range(144)).reshape((12,12)) + 1
 
@@ -79,15 +79,20 @@ def calculate_lewi(decans):
          matches = np.array(range(10))[decans == pos]
          pls = np.array(planets)[decans == pos]
          if len(matches)>0:
-            print matches,pls,step_sign
-         
+            #print matches,pls,step_sign
+            for match,p in itertools.izip(matches,pls):
+               print 'from',planet,'to',p,step_sign,match
+               if not pd.isnull(smap.ix[planet,step_sign]) and (p in smap.ix[planet,step_sign]):
+                  print smap.ix[planet,step_sign][p]
+                  res.append(smap.ix[planet,step_sign][p])
       
-   return res
+   return sorted(res)
 
 
 # grant lewi
-# 28,154,163,174,181,188,189,209,220,231
 print calculate_lewi([8,11,10,4,7,32,30,26,10,8])
+print get_lewi('19020608')
+print 'from book 28,154,163,174,181,188,189,209,220,231'
 
 # book sample 61
 #print calculate_lewi([17,1,19,22,10,11,28,2,16,12])

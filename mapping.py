@@ -48,6 +48,5 @@ def init():
     mapping.ix['ne','tri'] = {'pl':276}
     mapping.ix['ne','*'] = {'pl':276}
     mapping.ix['ne','sq'] = {'pl':277}
-    mapping.ix['ne','opp'] = {'pl':277}
-    
+    mapping.ix['ne','opp'] = {'pl':277}    
     return mapping
