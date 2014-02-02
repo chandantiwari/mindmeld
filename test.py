@@ -32,8 +32,10 @@ class TestAll(unittest.TestCase):
                  -1,-1,-1,1,-1,-1,0,
                  -1,-1,-1,1,1,1,-1]
 
-        self.assertEquals('INTP',calculate_mb(input))
+        self.assertEquals('INTP',mindmeld.calculate_mb(input))
         
+    def testmbtiaccess(self):
+        self.assertEquals(mindmeld.mbti['infp'][3],'te')
         
 if __name__ == "__main__":
     suite = unittest.TestLoader().loadTestsFromTestCase(TestAll)
