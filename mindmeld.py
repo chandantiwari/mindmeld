@@ -85,7 +85,20 @@ def calculate_lewi(decans):
                if not pd.isnull(smap.ix[planet,step_sign]) and (p in smap.ix[planet,step_sign]):
                   print smap.ix[planet,step_sign][p]
                   res.append(smap.ix[planet,step_sign][p])
-      
+
+
+   print 'self matches---'
+   for i,dec in enumerate(decans):
+      matches = np.array(range(10))[decans==dec]
+      if len(matches) > 1:
+         print matches
+         for x in matches:
+            if i<x:
+               print planets[i],'matches',planets[x]
+               if not pd.isnull(smap.ix[planets[i],'tick']) and (planets[x] in smap.ix[planets[i],'tick']):
+                  res.append(smap.ix[planets[i],'tick'][planets[x]])
+            
+                  
    return sorted(res)
 
 
