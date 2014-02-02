@@ -509,7 +509,6 @@ INTP:Douglas Hofstadter
 INTP:Gerald Ford
 INTP:Ludwig Boltzmann
 INTP:Raymond M. Smullyan
-INTP:Richard Dawkins
 INTP:Rick Moranis
 INTP:Robert Anson Heinlein
 INTP:William Harvey
@@ -539,7 +538,6 @@ INTP:David Cronenberg
 INTP:Jesse Eisenberg
 INTP:Charlotte Gainsbourg
 INTP:Sigourney Weaver
-INTP:Tina Fey
 INTP:Ben Stein
 INTP:Andreas Scholl
 INTP:Randall Munroe

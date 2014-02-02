@@ -9,6 +9,7 @@ celeb_mbti = pd.read_csv("./data/myer-briggs.txt",header=None,sep=':',\
 names=['mbti','name'])
 df = pd.merge(celeb_mbti,celebs)
 print df[:4]
+print df.shape
 \end{minted}
 
 \begin{verbatim}
@@ -17,6 +18,7 @@ print df[:4]
 1  ENFJ     Ben Stiller         American actor  30/11/1965
 2  ENFJ       Bob Saget         American actor   17/5/1956
 3  ENFJ  Brenda Vaccaro       American actress  18/11/1939
+(539, 4)
 \end{verbatim}
 
 \begin{minted}[fontsize=\footnotesize]{python}
@@ -148,5 +150,25 @@ Leo            NaN
 Capricorn      NaN
 Name: 0, Length: 353, dtype: object
 \end{verbatim}
+
+\begin{minted}[fontsize=\footnotesize]{python}
+df = df[pd.isnull(df['bday']) == False]
+def enrich(x):
+   res = mindmeld.calculate(x['bday'])
+   for lew in res['lewi']: x[lew] = 1
+
+print df.shape
+df2 = df[:4].apply(enrich, axis=1)
+df.to_csv('/tmp/out.csv',sep=';')
+df2.to_csv('/tmp/out2.csv',sep=';')
+\end{minted}
+
+\begin{verbatim}
+(461, 353)
+\end{verbatim}
+
+
+
+
 
 \end{document}
