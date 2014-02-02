@@ -1,4 +1,4 @@
-package org.jlewi.simple;
+package org.jlewi;
 
 import java.util.ArrayList;
 import java.io.Serializable;
@@ -16,7 +16,6 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 import org.apache.commons.lang.time.FastDateFormat;
-import org.jlewi.simple.alg.Zodiac;
 
 public class GenerateDecans
 {

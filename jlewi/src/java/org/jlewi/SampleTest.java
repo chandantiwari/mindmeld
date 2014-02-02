@@ -1,4 +1,4 @@
-package org.jlewi.simple.alg;
+package org.jlewi;
 
 import org.testng.annotations.*;
 

@@ -18,8 +18,7 @@ class TestAll(unittest.TestCase):
         self.assertEquals(m.ix['mo','tick']['ven'],146)
         self.assertEquals(m.ix['sun','*']['ur'],176)
         self.assertEquals(m.ix['mar','sq']['ur'],225)
-        
-        
+                
 if __name__ == "__main__":
     suite = unittest.TestLoader().loadTestsFromTestCase(TestAll)
     unittest.TextTestRunner(verbosity=2).run(suite)

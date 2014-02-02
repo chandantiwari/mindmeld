@@ -81,7 +81,7 @@
   </target>  
   
   <target name="run" depends="compile">
-    <java fork="yes" classname="org.jlewi.simple.GenerateDecans"
+    <java fork="yes" classname="org.jlewi.GenerateDecans"
           failonerror="true">
       <classpath refid="compile.classpath"/>
     </java>

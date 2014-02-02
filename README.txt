@@ -14,4 +14,3 @@ Example:
 
 import mindmeld
 print mindmeld.calculate('19401010')
-
