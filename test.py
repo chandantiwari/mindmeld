@@ -6,7 +6,9 @@ class TestAll(unittest.TestCase):
     
     def testlewi(self):
         res = mindmeld.calculate('19730424')
+        print res
         self.assertTrue('22' in res['lewi'])
+        self.assertTrue('303' in res['millman'])
         res = mindmeld.get_lewi('19730424')
         self.assertTrue('22' in res)
 

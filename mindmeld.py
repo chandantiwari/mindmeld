@@ -29,12 +29,10 @@ def calculate_millman(date):
     for s in str(sum1): sum2+=int(s)
     millman.append(sum1)
     millman.append(sum2)
-    for s in str(sum1)+str(sum2): millman.append(int(s))      
+    for s in str(sum1)+str(sum2): millman.append(int(s))
     res = []
+    res = [x for x in millman[2:] if x not in res]
     res.append(str(millman[0])+str(millman[1]))
-    for x in millman[2:]:
-      if x not in res:
-        res.append(x)
     return res
 
 def get_spiller(date):
@@ -68,7 +66,7 @@ def calculate_lewi(decans):
    res = []
    res.append(sun_moon_table[int(float(decans[0])/3),int(float(decans[1])/3)])
 
-   # *, sq, tri, opp, tri, sq, *
+   step_signs = ['*', 'sq', 'tri', 'opp', 'tri', 'sq', '*']
    steps = np.array([6,9,12,18,24,27,30])
    decans = np.array(decans)
    print 'decans',decans
@@ -84,7 +82,7 @@ def calculate_lewi(decans):
 
 # grant lewi
 # 28,154,163,174,181,188,189,209,220,231
-print calculate_lewi([8,11,10,4,7,32,30,26,10,8])
+#print calculate_lewi([8,11,10,4,7,32,30,26,10,8])
 
 # book sample 61
 #print calculate_lewi_decan([17,1,19,22,10,11,28,2,16,12])
