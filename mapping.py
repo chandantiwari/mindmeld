@@ -14,7 +14,7 @@ def init():
     mapping.ix['ur','*'] = {'ne':243,'pl':273}
     mapping.ix['ur','sq'] = {'ne':244,'pl':274}
     mapping.ix['ur','opp'] = {'ne':244,'pl':274}
-    mapping.ix['ur','tick'] = {'mer':166,'ven':167,'mar':168,'ju':169,'sa':170,'ur':171,'ne':172,'pl':251}
+    mapping.ix['sun','tick'] = {'mer':166,'ven':167,'mar':168,'ju':169,'sa':170,'ur':171,'ne':172,'pl':251}
     mapping.ix['sun','tri'] = {'ven':248,'mar':173,'ju':174,'sa':175,'ur':176,'ne':177,'pl':252}
     mapping.ix['sun','*'] = {'ven':248,'mar':173,'ju':174,'sa':175,'ur':176,'ne':177,'pl':252}
     mapping.ix['sun','sq'] = {'mar':178,'ju':179,'sa':180,'ur':181,'ne':182,'pl':253}

@@ -93,7 +93,7 @@ def calculate_lewi(decans):
    for i,dec in enumerate(decans):
       matches = np.array(range(10))[decans==dec]
       if len(matches) > 1:
-         print matches
+         print 'matches',matches
          for x in matches:
             if i<x:
                print planets[i],'matches',planets[x]
