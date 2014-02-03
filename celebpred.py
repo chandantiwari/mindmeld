@@ -2,11 +2,11 @@ import pandas as pd
 import sklearn as sk
 import numpy as np
 import pandas as pd
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import linear_model
 from sklearn import naive_bayes 
 from sklearn import svm
-from sklearn.neighbors import KNeighborsClassifier
 import random
 from sklearn.lda import LDA
 from sklearn.qda import QDA
@@ -17,12 +17,13 @@ import numpy.linalg as lin
 # dimensionality of the data is high. feel free to scrape
 # celebritytypes.com
 
-#clf = KNeighborsClassifier(n_neighbors=5)
-clf = linear_model.LogisticRegression() 
+#clf = KNeighborsClassifier(n_neighbors=29)
+#clf = linear_model.LogisticRegression(penalty='l2',tol=0.1,class_weight='auto')
 #clf = naive_bayes.BernoulliNB() 
-#clf = RandomForestClassifier()
-#clf = LDA(n_components=4) 
-#clf = svm.SVC(gamma=2, C=1.0)
+#clf = svm.SVC(kernel='rbf',gamma=0.2,tol=0.3); # 53 naive 51
+#clf = svm.SVC(kernel='rbf',gamma=0.5,tol=0.35); 
+clf = RandomForestClassifier()
+#clf = LDA(n_components=2) 
 print clf
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
@@ -41,8 +42,9 @@ for idx in df.index:
        y = y.drop(idx)
        cols = ['I','N','T','P','mbti','name','occup','bday','bday2']
        X = X.drop(cols,axis=1)
-       X=X.fillna(0)
-       #X = X.apply(lambda x: x / np.sqrt(np.sum(np.square(x))+1e-16), axis=1)
+       #X=X.fillna(0)
+       X.div(X.sum(axis=1), axis=1)
+       
        clf.fit(X,y)   
 
        testrow=testrow.drop(cols)
