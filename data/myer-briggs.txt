@@ -43,7 +43,6 @@ ENFP:I. King Jordan
 ENFP:Alicia Silverstone
 ENFP:Will Smith
 ENFP:James Woods
-ENFP:Heather Locklear
 ENFP:Gregg Henry
 ENFP:Jason Statham
 ENFP:Tim Burton
@@ -76,11 +75,9 @@ ENFP:Orson Welles
 ENFP:Gwen Stefani
 ENFP:Jerry Seinfeld
 ENFP:Sandra Bullock
-ENTJ:Al Gore
 ENTJ:Benny Goodman
 ENTJ:Candace Bergen
 ENTJ:Dave Letterman
-ENTJ:Newt Gingrich
 ENTJ:Patrick Stewart
 ENTJ:Richard Nixon
 ENTJ:Steve Martin
@@ -88,7 +85,6 @@ ENTJ:Dwayne Douglas Johnson
 ENTJ:John Lennon
 ENTJ:William H. Macy
 ENTJ:Norman Schwarzkopf
-ENTJ:Penn Jillette
 ENTJ:Robert James Waller
 ENTJ:Margaret Thatcher
 ENTJ:Aung San Suu Kyi
@@ -111,7 +107,6 @@ ENTJ:Charlize Theron
 ENTJ:Cobie Smulders
 ENTJ:Adele
 ENTJ:Téa Leoni
-ENTJ:Penn Jillette
 ENTJ:Katharine Hepburn
 ENTJ:H.J. Eysenck
 ENTJ:Theodore Millon
@@ -121,7 +116,6 @@ ENTJ:Elizabeth Anscombe
 ENTJ:Benazir Bhutto
 ENTJ:Robert Parker
 ENTJ:Gretchen Rubin
-ENTP:Niall Ferguson
 ENTP:Jonathan Israel
 ENTP:David Deutsch
 ENTP:David D. Friedman
@@ -214,19 +208,14 @@ ESFP:Peter Kay
 ESFP:Saint Mark
 ESFP:Willard Scott
 ESFP:Saint Mark
-ESFP:Willard Scott
-ESFP:Mikhail Gorbachev
 ESFP:Gracie Allen
 ESFP:Goldie Hawn
-ESFP:Willard Scott
 ESFP:Suzanne Somers
 ESFP:Red Skelton
-ESFP:Woody Harrelson
 ESFP:Bob Hope
 ESFP:Marilyn Monroe
 ESFP:Dale Evans
 ESFP:Tim Burton
-ESFP:Heather Locklear
 ESFP:John F Kennedy
 ESFP:Larry Ellison
 ESFP:Hugh Hefner
@@ -290,14 +279,12 @@ ESTJ:Michele Bachmann
 ESTJ:Dennis Genpo Merzel
 ESTJ:Diane Hamilton
 ESTP:Ann Jillian
-ESTP:Bruce Willis
 ESTP:Cybil Shepherd
 ESTP:Donald Trump
 ESTP:Eddie Murphy
 ESTP:Ernest Hemingway
 ESTP:Eva Peron
 ESTP:George W. Bush
-ESTP:Jack Nicholson
 ESTP:Jacob (Israel)
 ESTP:Roy Rogers
 ESTP:George Patton IV
@@ -332,6 +319,7 @@ ESTP:John Grisham
 ESTP:Danielle Steel
 ESTP:Anton Szandor LaVey
 ESTP:Rhonda Byrne
+ESTP:Julia Roberts
 INFJ:Carl Jung
 INFJ:Adam Sandler
 INFJ:Anthony Kiedis
@@ -348,8 +336,6 @@ INFJ:Sidney Poitier
 INFJ:Sudi-Kate
 INFJ:Tom Selleck
 INFJ:Mel Gibson
-INFJ:Nicole Kidman
-INFJ:Jerry Seinfeld
 INFJ:Mark Harmon
 INFJ:Nelson Mandela
 INFJ:Osama bin Laden
@@ -410,7 +396,6 @@ INFP:Luke
 INFP:Mia Farrow
 INFP:Tom Brokaw
 INFP:James Taylor
-INFP:Julia Roberts
 INFP:Scott Bakula
 INFP:Albert Camus
 INFP:George Orwell
@@ -429,7 +414,6 @@ INFP:Nicolas Cage
 INFP:Heath Ledger
 INFP:Tim Burton
 INFP:Johnny Depp
-INFP:Heath Ledger
 INFP:Florence Welch
 INFP:Björk
 INFP:Tori Amos
@@ -548,7 +532,6 @@ ISFJ:George Marshall
 ISFJ:Mitt Romney
 ISFJ:George H.W. Bush
 ISFJ:Jimmy Carter
-ISFJ:Mother Teresa
 ISFJ:Bruce Willis
 ISFJ:Lance Reddick
 ISFJ:Naomi Watts
@@ -563,7 +546,6 @@ ISFP:Alan Ayckbourn
 ISFP:Auguste Rodin
 ISFP:Kevin Costner
 ISFP:Paul Gauguin
-ISFP:Steven Spielberg
 ISFP:Ulysses S. Grant
 ISFP:Wolfgang Amadeus Mozart
 ISFP:Donald Sutherland
@@ -572,7 +554,6 @@ ISFP:Magic Johnson
 ISFP:Dan Quayle
 ISFP:Doc Severinson
 ISFP:Fred Astaire
-ISFP:Jessica Biel
 ISFP:Christopher Reeve
 ISFP:John Travolta
 ISFP:Pierce Brosnan
@@ -621,7 +602,6 @@ ISTJ:Kirk Douglas
 ISTJ:Kris Kristofferson
 ISTJ:Peter Snow
 ISTJ:Terence Stamp
-ISTJ:Julia Roberts
 ISTJ:Jack Webb
 ISTJ:Jackie Joyner-Kersee
 ISTJ:Malcolm McDowell
@@ -672,7 +652,6 @@ ISTP:Hans-Ulrich Rudel
 ISTP:Richard Stallman
 ISTP:Chesley Sullenberger
 ISTP:Sally Ride
-ISTP:James Murdoch
 ISTP:Kyudo Nakagawa
 ISTP:Snoop Dogg
 ISTP:Phil Ivey
