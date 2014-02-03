@@ -43,7 +43,8 @@ def calculate_millman(date):
     for s in str(sum1)+str(sum2): millman.append(int(s))
     res = []
     res = [x for x in millman[2:] if x not in res]
-    res.append(str(millman[0])+str(millman[1]))
+    res.insert(0,millman[0])
+    res.insert(1,millman[1])    
     return res
 
 def get_spiller(date):
@@ -53,7 +54,6 @@ def get_spiller(date):
    
 def get_chinese(date):
    res = chinese.apply(lambda x: int(date) >=int(x['from']) and int(date) < int(x['to']),axis=1)
-   print res
    if not np.any(res): return None
    return np.array(chinese[res])[0][2]
    
@@ -156,3 +156,6 @@ def calculate_mb(choices):
 
 def calculate_lewi(date):
    return calculate_lewi_decans(get_decans(date))
+
+res = calculate('19310302')
+print res 
