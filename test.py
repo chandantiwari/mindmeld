@@ -9,7 +9,9 @@ class TestAll(unittest.TestCase):
         print res
         self.assertTrue(22 in res['lewi'])
         self.assertTrue(167 in res['lewi'])
-        self.assertTrue('303' in res['millman'])
+        self.assertEquals(30,res['millman'][0])
+        self.assertTrue('Ox' in res['chinese'])
+        self.assertTrue('Capricorn' in res['spiller'])
         res = mindmeld.get_lewi('19730424')
         self.assertTrue('22' in res)
         self.assertTrue('167' in res)
@@ -36,6 +38,11 @@ class TestAll(unittest.TestCase):
         
     def testmbtiaccess(self):
         self.assertEquals(mindmeld.mbti['infp'][3],'te')
+
+
+    def testbad(self):
+        res = mindmeld.calculate('19290925')
+        print res['spiller']
         
 if __name__ == "__main__":
     suite = unittest.TestLoader().loadTestsFromTestCase(TestAll)

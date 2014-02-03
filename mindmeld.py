@@ -48,12 +48,12 @@ def calculate_millman(date):
     return res
 
 def get_spiller(date):
-   res = spiller.apply(lambda x: int(date) >=int(x['from']) and int(date) < int(x['to']),axis=1)
+   res = spiller.apply(lambda x: int(date) >=int(x['from']) and int(date) <= int(x['to']),axis=1)
    if not np.any(res): return None
    return np.array(spiller[res])[0][2]
    
 def get_chinese(date):
-   res = chinese.apply(lambda x: int(date) >=int(x['from']) and int(date) < int(x['to']),axis=1)
+   res = chinese.apply(lambda x: int(date) >=int(x['from']) and int(date) <= int(x['to']),axis=1)
    if not np.any(res): return None
    return np.array(chinese[res])[0][2]
    
@@ -157,5 +157,3 @@ def calculate_mb(choices):
 def calculate_lewi(date):
    return calculate_lewi_decans(get_decans(date))
 
-res = calculate('19310302')
-print res 

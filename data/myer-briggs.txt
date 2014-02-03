@@ -16,7 +16,6 @@ ENFJ:Nick Nolte
 ENFJ:Patrick Swayze
 ENFJ:Charlton Heston
 ENFJ:Ronald Reagan
-ENFJ:Nelson Mandela
 ENFJ:Mikhail Gorbachev
 ENFJ:Stephen Jay Gould
 ENFJ:Neil deGrasse Tyson
@@ -84,13 +83,11 @@ ENTJ:Dave Letterman
 ENTJ:Newt Gingrich
 ENTJ:Patrick Stewart
 ENTJ:Richard Nixon
-ENTJ:Sigourney Weaver
 ENTJ:Steve Martin
 ENTJ:Dwayne Douglas Johnson
 ENTJ:John Lennon
 ENTJ:William H. Macy
 ENTJ:Norman Schwarzkopf
-ENTJ:Quentin Tarantino
 ENTJ:Penn Jillette
 ENTJ:Robert James Waller
 ENTJ:Margaret Thatcher
@@ -100,7 +97,6 @@ ENTJ:Dick Cheney
 ENTJ:Karl Rove
 ENTJ:Rahm Emanuel
 ENTJ:Al Gore
-ENTJ:Rush Limbaugh
 ENTJ:Peter Thiel
 ENTJ:Madeleine Albright
 ENTJ:Nancy Pelosi
@@ -154,7 +150,6 @@ ENTP:Robert Downey Jr.
 ENTP:Rowan Atkinson
 ENTP:Federico Fellini
 ENTP:Stephen Fry
-ENTP:Billy Crystal
 ENTP:Tom Hanks
 ENTP:Neil Patrick Harris
 ENTP:Hugh Grant
@@ -191,7 +186,6 @@ ESFJ:William McKinley
 ESFJ:Desmond Tutu
 ESFJ:Daniel Goleman
 ESFJ:Gerald Ford
-ESFJ:Sam Walton
 ESFJ:Andrew Carnegie
 ESFJ:Sarah Palin
 ESFJ:Rick Santorum
@@ -261,7 +255,6 @@ ESFP:Dan Brown
 ESTJ:Andrew Jackson
 ESTJ:Bette Davis
 ESTJ:Carrie Nation
-ESTJ:Condoleezza Rice
 ESTJ:Curly Martin
 ESTJ:Dan Rather
 ESTJ:Elliot Ness
@@ -293,7 +286,6 @@ ESTJ:Judy Sheindlin
 ESTJ:Baba
 ESTJ:Nancy Grace
 ESTJ:Laura Schlessinger
-ESTJ:Ivanka Trump
 ESTJ:Michele Bachmann
 ESTJ:Dennis Genpo Merzel
 ESTJ:Diane Hamilton
@@ -314,7 +306,6 @@ ESTP:George S. Patton
 ESTP:Theodore Roosevelt
 ESTP:Malcolm X
 ESTP:Douglas MacArthur
-ESTP:Donald Trump
 ESTP:Peter Schiff
 ESTP:Ernest Hemingway
 ESTP:Stephen R. Covey
@@ -341,12 +332,10 @@ ESTP:John Grisham
 ESTP:Danielle Steel
 ESTP:Anton Szandor LaVey
 ESTP:Rhonda Byrne
-ESTP:Cem Yilmaz
 INFJ:Carl Jung
 INFJ:Adam Sandler
 INFJ:Anthony Kiedis
 INFJ:Aristophanes
-INFJ:Billy Crystal
 INFJ:Carrie Fisher
 INFJ:Chaucer
 INFJ:Fanny Crosby
@@ -483,7 +472,6 @@ INTJ:Russell Crowe
 INTJ:John Maynard Keynes
 INTJ:Jean-Paul Sartre
 INTJ:Julia Stiles
-INTJ:Roger Waters
 INTJ:Joseph Stiglitz
 INTJ:Paul Krugman
 INTJ:Elon Musk
@@ -514,7 +502,6 @@ INTP:Robert Anson Heinlein
 INTP:William Harvey
 INTP:William James
 INTP:Albert Einstein
-INTP:Tiger Woods
 INTP:Henri Mancini
 INTP:Charles Darwin
 INTP:Richard Dawkins
@@ -527,7 +514,6 @@ INTP:Milton Friedman
 INTP:Paul Allen
 INTP:Larry Page
 INTP:Sergey Brin
-INTP:Alan Greenspan
 INTP:Sigourney Weaver
 INTP:Tina Fey
 INTP:Jesse Eisenberg
@@ -537,7 +523,6 @@ INTP:Albert Speer
 INTP:David Cronenberg
 INTP:Jesse Eisenberg
 INTP:Charlotte Gainsbourg
-INTP:Sigourney Weaver
 INTP:Ben Stein
 INTP:Andreas Scholl
 INTP:Randall Munroe
@@ -551,7 +536,6 @@ ISFJ:Louisa May Alcott
 ISFJ:Michael Caine
 ISFJ:Mother Theresa
 ISFJ:Queen Mary I
-ISFJ:Robert E. Lee
 ISFJ:David Copperfield
 ISFJ:O.J. Simpson
 ISFJ:William Shatner
@@ -575,7 +559,6 @@ ISFJ:Kirsten Dunst
 ISFJ:Prince Charles
 ISFJ:Kate Middleton
 ISFJ:Anne
-ISFJ:Bruce Willis
 ISFP:Alan Ayckbourn
 ISFP:Auguste Rodin
 ISFP:Kevin Costner
@@ -657,7 +640,6 @@ ISTJ:Sean Connery
 ISTJ:Natalie Portman
 ISTJ:Danica McKellar
 ISTJ:Queen Elizabeth II of the United Kingdom
-ISTP:Bruce Lee
 ISTP:Charles Bronson
 ISTP:Chuck Yeager
 ISTP:Clint Eastwood
