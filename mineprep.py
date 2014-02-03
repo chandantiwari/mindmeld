@@ -22,6 +22,7 @@ lewi = os.listdir('./doc/details/lewi')
 lewi = map(lambda x: 'lewi'+x.replace('.html',''),lewi)
 cols += lewi
 for x in cols: df[x] = np.nan
+for i in range(10): df['mills'+str(i)] = np.nan
 
 import mindmeld;reload(mindmeld)
 df2 = df[pd.isnull(df['bday2']) == False]
@@ -32,6 +33,9 @@ def enrich(x):
    if res['spiller']: x['spiller'] = res['spiller']
    x['milla'] = str(res['millman'][0])
    x['millb'] = str(res['millman'][1])
+   x['mills'+str(res['millman'][2])] = 1
+   x['mills'+str(res['millman'][3])] = 1
+   x['mills'+str(res['millman'][4])] = 1
    return x
 df3 = df2.apply(enrich, axis=1)
 df3.to_csv('/tmp/out3.csv',sep=';')
