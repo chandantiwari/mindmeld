@@ -18,13 +18,10 @@ import numpy.linalg as lin
 # celebritytypes.com
 
 #clf = KNeighborsClassifier(n_neighbors=5)
-#clf = linear_model.LogisticRegression(penalty='l2',class_weight='auto',tol=0.2) 
+clf = linear_model.LogisticRegression() 
 #clf = naive_bayes.BernoulliNB() 
-#clf = svm.SVC(kernel='rbf',gamma=0.2,tol=0.3); #55
-clf = svm.SVC(kernel='rbf',gamma=0.5,tol=0.35); #55
 #clf = RandomForestClassifier()
-#clf = LDA(n_components=4) # 55
-#clf = LDA(n_components=4) # 
+#clf = LDA(n_components=4) 
 #clf = svm.SVC(gamma=2, C=1.0)
 print clf
 
@@ -45,7 +42,7 @@ for idx in df.index:
        cols = ['I','N','T','P','mbti','name','occup','bday','bday2']
        X = X.drop(cols,axis=1)
        X=X.fillna(0)
-       X = X.apply(lambda x: x / np.sqrt(np.sum(np.square(x))+1e-16), axis=1)
+       #X = X.apply(lambda x: x / np.sqrt(np.sum(np.square(x))+1e-16), axis=1)
        clf.fit(X,y)   
 
        testrow=testrow.drop(cols)
