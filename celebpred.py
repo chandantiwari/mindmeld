@@ -12,7 +12,15 @@ from sklearn.lda import LDA
 from sklearn.qda import QDA
 import numpy.linalg as lin
 
+#clf = KNeighborsClassifier(n_neighbors=5)
+#clf = linear_model.LogisticRegression(penalty='l2',class_weight='auto',tol=0.2) 
+#clf = naive_bayes.BernoulliNB() 
+#clf = svm.SVC(kernel='rbf',gamma=0.2,tol=0.3); #55
 clf = svm.SVC(kernel='rbf',gamma=0.5,tol=0.35); #55
+#clf = RandomForestClassifier()
+#clf = LDA(n_components=4) # 55
+#clf = LDA(n_components=4) # 
+#clf = svm.SVC(gamma=2, C=1.0)
 print clf
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
@@ -34,6 +42,7 @@ for idx in df.index:
        X=X.fillna(0)
        X = X.apply(lambda x: x / np.sqrt(np.sum(np.square(x))+1e-16), axis=1)
        clf.fit(X,y)   
+
        testrow=testrow.drop(cols)
        total += 1
        naive = random.choice([0,1])
