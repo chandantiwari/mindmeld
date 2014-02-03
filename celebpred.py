@@ -12,6 +12,11 @@ from sklearn.lda import LDA
 from sklearn.qda import QDA
 import numpy.linalg as lin
 
+# classifier that tries to predict MBTI from astrological parameters
+# this classifier would benefit greatly from more data, because the
+# dimensionality of the data is high. feel free to scrape
+# celebritytypes.com
+
 #clf = KNeighborsClassifier(n_neighbors=5)
 #clf = linear_model.LogisticRegression(penalty='l2',class_weight='auto',tol=0.2) 
 #clf = naive_bayes.BernoulliNB() 
