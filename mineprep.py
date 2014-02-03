@@ -52,4 +52,10 @@ def one_hot_dataframe(data, cols, replace=False):
 df4, _, _ = one_hot_dataframe(df3,['spiller','chinese','milla','millb'], \
                               replace=True)
 df4 = df4.replace(0.0,np.nan)
+
+df4['I'] = df4.apply(lambda x: 1 if x['mbti'][0] == 'I' else 0, axis=1)
+df4['N'] = df4.apply(lambda x: 1 if x['mbti'][1] == 'N' else 0, axis=1)
+df4['T'] = df4.apply(lambda x: 1 if x['mbti'][2] == 'T' else 0, axis=1)
+df4['P'] = df4.apply(lambda x: 1 if x['mbti'][3] == 'P' else 0, axis=1)
+
 df4.to_csv('./data/celeb_astro_mbti.csv',sep=';',index=None)
