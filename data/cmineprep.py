@@ -1,8 +1,8 @@
 import pandas as pd
 import mindmeld
-celebs = pd.read_csv("./data/famousbday.txt",sep=':',header=None, 
+celebs = pd.read_csv("famousbday.txt",sep=':',header=None, 
 names=['name','occup','bday','spiller','chinese','milla','millb'])
-celeb_mbti = pd.read_csv("./data/myer-briggs.txt",header=None,sep=':',\
+celeb_mbti = pd.read_csv("myer-briggs.txt",header=None,sep=':',\
 names=['mbti','name'])
 df = pd.merge(celeb_mbti,celebs)
 print df[:4]
@@ -22,7 +22,7 @@ df.to_csv('/tmp/out.csv',sep=';')
 
 import os
 cols = []
-lewi = os.listdir('./doc/details/lewi')
+lewi = os.listdir('../doc/details/lewi')
 lewi = map(lambda x: 'lewi'+x.replace('.html',''),lewi)
 cols += lewi
 for x in cols: df[x] = np.nan
@@ -57,4 +57,4 @@ def one_hot_dataframe(data, cols, replace=False):
 df4, _, _ = one_hot_dataframe(df3,['spiller','chinese','milla','millb'], \
                               replace=True)
 df4 = df4.replace(0.0,np.nan)
-df4.to_csv('./data/celeb_astro_mbti.csv',sep=';')
+df4.to_csv('celeb_astro_mbti.csv',sep=';')
