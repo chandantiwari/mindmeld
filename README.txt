@@ -10,7 +10,7 @@ Chinese Astrology
 
 Myers-Briggs Test
 
-using Python
+using Python code
 
 Example:
 
