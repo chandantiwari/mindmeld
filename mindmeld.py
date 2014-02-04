@@ -67,7 +67,10 @@ def calculate_cycle(d):
     millman = calculate_millman(str_cycle_date)
     res = str(millman[0])
     res = res[0:2]
-    total = int(res[0]) + int(res[1])
+    if len (res) > 1:
+       total = int(res[0]) + int(res[1])
+    else:
+       total = int(res[0])
     if total > 9: 
         res = str(total)
         total = int(res[0]) + int(res[1])
@@ -75,7 +78,8 @@ def calculate_cycle(d):
 
 def calculate(date):
    return {'chinese':get_chinese(date), 'spiller':get_spiller(date),
-           'millman':calculate_millman(date),'lewi':calculate_lewi(date)}
+           'millman':calculate_millman(date),'cycle': calculate_cycle(date),
+           'lewi':calculate_lewi(date)}
 
 def calculate_lewi_decans(decans):
    res = []
