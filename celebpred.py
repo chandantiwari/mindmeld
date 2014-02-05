@@ -12,15 +12,17 @@ from sklearn.lda import LDA
 from sklearn.qda import QDA
 import numpy.linalg as lin
 
-# classifier that tries to predict MBTI from astrological parameters
+# classifier that tries to predict celebrity MBTI from astrological parameters
+# we used celebrities because both their MBTI type and bday is known 
 # this classifier would benefit greatly from more data, because the
 # dimensionality of the data is high. feel free to scrape
 # celebritytypes.com
 
+# tried bunch of different classifiers, highest pred rate is 53.
 #clf = KNeighborsClassifier(n_neighbors=29)
 #clf = linear_model.LogisticRegression(penalty='l2',tol=0.1,class_weight='auto')
 #clf = naive_bayes.BernoulliNB() 
-#clf = svm.SVC(kernel='rbf',gamma=0.2,tol=0.3); # 53 naive 51
+#clf = svm.SVC(kernel='rbf',gamma=0.2,tol=0.3);
 #clf = svm.SVC(kernel='rbf',gamma=0.5,tol=0.35); 
 clf = RandomForestClassifier()
 #clf = LDA(n_components=2) 
