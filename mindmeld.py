@@ -58,24 +58,26 @@ def get_chinese(date):
    return np.array(chinese[res])[0][2]
    
 def calculate_cycle(d):
-    birth_date = datetime.strptime(d, '%Y%m%d').date()
-    str_d = birth_date.strftime('%d %B %Y')
-    now_year = datetime.now().year      
-    cs = str(birth_date.day)+"/"+str(birth_date.month)+"/"+str(now_year)
-    cycle_date = datetime.strptime(cs, '%d/%m/%Y').date()  
-    str_cycle_date = cycle_date.strftime('%Y%m%d')
-    millman = calculate_millman(str_cycle_date)
-    res = str(millman[0])
-    res = res[0:2]
-    if len (res) > 1:
-       total = int(res[0]) + int(res[1])
-    else:
-       total = int(res[0])
-    if total > 9: 
-        res = str(total)
-        total = int(res[0]) + int(res[1])
-    return total
-
+   try: 
+       birth_date = datetime.strptime(d, '%Y%m%d').date()
+       str_d = birth_date.strftime('%d %B %Y')
+       now_year = datetime.now().year      
+       cs = str(birth_date.day)+"/"+str(birth_date.month)+"/"+str(now_year)
+       cycle_date = datetime.strptime(cs, '%d/%m/%Y').date()  
+       str_cycle_date = cycle_date.strftime('%Y%m%d')
+       millman = calculate_millman(str_cycle_date)
+       res = str(millman[0])
+       res = res[0:2]
+       if len (res) > 1:
+          total = int(res[0]) + int(res[1])
+       else:
+          total = int(res[0])
+       if total > 9: 
+           res = str(total)
+           total = int(res[0]) + int(res[1])
+       return total
+   except: return None
+   
 def calculate(date):
    return {'chinese':get_chinese(date), 'spiller':get_spiller(date),
            'millman':calculate_millman(date),'cycle': calculate_cycle(date),
