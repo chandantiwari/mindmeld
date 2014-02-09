@@ -1,3 +1,7 @@
+'''
+Classifier that tries to predict celebrity MBTI letter from
+astrological parameters.
+'''
 import scipy.sparse as sp
 import scipy.linalg as lin
 import pandas as pd
@@ -9,16 +13,8 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn import svm
 import random
 
-# Classifier that tries to predict celebrity MBTI letter from
-# astrological parameters. We used celebrity data because usually both
-# their MBTI type and bday is known. This classifier would benefit
-# greatly from more data. The prediction success is already at %57
-# which indicates a connection between science (psychology,
-# Myers-Briggs) and astrology / numerology.
 
-#clf = DecisionTreeClassifier(max_depth=7) # 
 clf = GradientBoostingClassifier(n_estimators=4) # 55
-#clf = svm.SVC(kernel='rbf',gamma=0.5,tol=0.35); #gamma=0.5,tol=0.35,54
 print clf
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
@@ -39,7 +35,6 @@ for idx in df.index:
       y = y.drop(idx)
       cols = ['I','N','T','P','mbti','name','occup','bday','bday2']
       X = X.drop(cols,axis=1)
-      #X=X.apply(lambda x: x / np.sqrt(np.sum(np.square(x))+1e-16), axis=1)
       res=clf.fit(X,y)
       print clf.score(X,y) 
 
