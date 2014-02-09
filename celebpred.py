@@ -27,9 +27,9 @@ total = 0
 predsum = 0
 for idx in df.index:
    print df.ix[idx]['name']
-   letter = random.choice(['I','N','T','P'])
-   for i in ['x']:
-   #for letter in ['I','N','T','P']:
+   #letter = random.choice(['I','N','T','P'])
+   #for i in ['x']:
+   for letter in ['I','N','T','P']:
       X = df.copy()
       X = X.fillna(0)
       y = df[letter]*1
