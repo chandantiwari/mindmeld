@@ -18290,7 +18290,7 @@ Anne Frank:German-born Dutch Jewish diarist and Holocaust victim:12/6/1929
 Vic Damone:American singer:12/6/1928
 Richard M. Sherman:American songwriter:12/6/1928
 Jackie Pallo:English professional wrestler:12/6/1926
-George H. W. Bush:41st President of the United States:12/6/1924
+George H.W. Bush:41st President of the United States:12/6/1924
 James Houston:Canadian artist:12/6/1921
 Dave Berg:American cartoonist:12/6/1920
 Jim Siedow:American actor:12/6/1920
@@ -18921,7 +18921,7 @@ Bruiser Brody:professional wrestler:18/6/1946
 Sandy Posey:American singer:18/6/1944
 Raffaella Carrà:Italian singer:18/6/1943
 Roger Ebert:American film reviewer:18/6/1942
-Sir Paul McCartney:English singer and songwriter (The Beatles):18/6/1942
+Paul McCartney:English singer and songwriter (The Beatles):18/6/1942
 Hans Vonk:Dutch conductor:18/6/1942
 Thabo Mbeki:President of South Africa:18/6/1942
 Carl Radle:American bass guitarist:18/6/1942
@@ -20731,7 +20731,7 @@ Vladimir Ashkenazy:Russian-born pianist and conductor:6/7/1937
 Ned Beatty:American actor:6/7/1937
 Gene Chandler:American singer:6/7/1937
 Dave Allen:Irish comedian:6/7/1936
-Tenzin Gyatso:14th Dalai Lama:6/7/1935
+Dalai Lama XIV:Dalai Lama:6/7/1935
 Frank Austin:English footballer:6/7/1933
 Della Reese:American singer:6/7/1931
 Jean Campeau:French Canadian businessman and politician:6/7/1931
@@ -21971,7 +21971,7 @@ Razor Shines:Major and Minor league baseball player, manager and coach:18/7/1956
 Bernd Fasching:Austrian painter and sculptor:18/7/1955
 Ricky Skaggs:American country/bluegrass musician:18/7/1954
 Elio Di Rupo:Belgian politician:18/7/1951
-Sir Richard Branson:British entrepreneur:18/7/1950
+Richard Branson:British entrepreneur:18/7/1950
 Jack Layton:Canadian politician:18/7/1950
 Kostas Eleftherakis:Greek footballer:18/7/1950
 Hartmut Michel:German chemist, Nobel Prize laureate:18/7/1948
@@ -22242,7 +22242,7 @@ Stanislaw Albinowski:Polish economist and journalist:20/7/1923
 Alan Stephenson Boyd:American politician:20/7/1922
 Dick Lucas:American animator:20/7/1920
 Elliot Richardson:American politician:20/7/1920
-Sir Edmund Hillary:New Zealand mountain climber:20/7/1919
+Edmund Hillary:New Zealand mountain climber:20/7/1919
 Cindy Walker:American singer:20/7/1918
 Tom McDermott:American actor:20/7/1912
 Vilém Tauský:Czech conductor and composer:20/7/1910
@@ -22265,7 +22265,7 @@ Max Liebermann:German artist:20/7/1847
 Augustin Daly:American playwright:20/7/1838
 George Otto Trevelyan:British statesman and biographer:20/7/1838
 Gregor Mendel:father of modern genetics:20/7/1822
-Sir Pawel Edmund Strzelecki:Polish explorer and geologist:20/7/1797
+Pawel Edmund Strzelecki:Polish explorer and geologist:20/7/1797
 Auguste Marmont:French marshal:20/7/1774
 Garsevan Chavchavadze:Georgian diplomat and politician:20/7/1757
 Destutt de Tracy:French philosopher:20/7/1754
@@ -23191,7 +23191,7 @@ J. R. D. Tata:Indian industrialist:29/7/1904
 Eyvind Johnson:Swedish writer, Nobel Prize Laureate:29/7/1900
 Don Redman:American musician:29/7/1900
 Isidor Isaac Rabi:American physicist, Nobel Prize Laureate:29/7/1898
-Sir Neil Ritchie:British general:29/7/1897
+Neil Ritchie:British general:29/7/1897
 William Powell:American actor:29/7/1892
 Sigmund Romberg:Hungarian-born composer:29/7/1887
 Theda Bara:American film actress:29/7/1885
@@ -23382,7 +23382,7 @@ Sab Shimono:Japanese American actor:31/7/1943
 Amarsinh Chaudhary:Indian politician:31/7/1941
 France Nuyen:French actress:31/7/1939
 Vic Davalillo:baseball player:31/7/1936
-Sir Richard Greenbury:British retailing giant:31/7/1936
+Richard Greenbury:British retailing giant:31/7/1936
 Yvon Deschamps:French Canadian author, comedian and humorist:31/7/1935
 Geoffrey Lewis:American actor:31/7/1935
 Cees Nooteboom:Dutch writer:31/7/1933
@@ -23818,7 +23818,7 @@ Ezra Taft Benson:13th president of The Church of Jesus Christ of Latter-day Sain
 Dolf Luque:baseball player:4/8/1890
 Syedna Taher Saifuddin:Bohra Spiritual Leader:4/8/1888
 Henri Cornet:French cyclist:4/8/1884
-Sir Harry Lauder:Scottish entertainer:4/8/1870
+Harry Lauder:Scottish entertainer:4/8/1870
 Jake Beckley:baseball player:4/8/1867
 Knut Hamsun:Norwegian writer, Nobel Prize Laureate:4/8/1859
 Vladimir Sukhomlinov:Russian general:4/8/1848
@@ -23999,7 +23999,7 @@ Norman Wexler:American screenwriter:6/8/1926
 Frank Finlay:British actor:6/8/1926
 Barbara Bates:American actress:6/8/1925
 Jess Collins:American artist:6/8/1923
-Sir Freddie Laker:English entrepreneur:6/8/1922
+Freddie Laker:English entrepreneur:6/8/1922
 Ella Raines:American actress:6/8/1920
 Norman Granz:American record producer:6/8/1918
 Robert Mitchum:American actor:6/8/1917
@@ -24216,7 +24216,7 @@ John Laws:Australia radio personality:8/8/1935
 Joe Tex:American singer:8/8/1933
 Mel Tillis:American singer:8/8/1932
 Luis García Meza Tejada:Bolivian dictator:8/8/1932
-Sir Roger Penrose:British physicist:8/8/1931
+Roger Penrose:British physicist:8/8/1931
 Larisa Bogoraz:Soviet dissident:8/8/1929
 Ronald Biggs:British criminal:8/8/1929
 Don Burrows:Australian musician:8/8/1928
@@ -24582,7 +24582,7 @@ Kido Takayoshi:Japanese politician:11/8/1833
 David Rice Atchison:American politician:11/8/1807
 James Barton Longacre:American engraver:11/8/1794
 Richard Brocklesby:English physician:11/8/1722
-Sir Frederick Haldimand:Swiss-born British colonial governor:11/8/1718
+Frederick Haldimand:Swiss-born British colonial governor:11/8/1718
 Richard Mead:English physician:11/8/1673
 Anna Maria Luisa de' Medici:last of the Medicis:11/8/1667
 Alexis Mary Ialungo:American iMovie Star:12/8/1993
@@ -24680,7 +24680,7 @@ Mohammad Hatta:Vice President of Indonesia 1945-1956:12/8/1902
 Alfred Lunt:American actor:12/8/1892
 Zerna Sharp:American writer and educator (Dick and Jane):12/8/1889
 Erwin Schrödinger:Austrian physicist, Nobel Prize Laureate:12/8/1887
-Sir Keith Murdoch:Australian journalist and newspaper owner:12/8/1886
+Keith Murdoch:Australian journalist and newspaper owner:12/8/1886
 Jean Cabannes:French physicist:12/8/1885
 Marion Lorne:American actress:12/8/1885
 Pauline Frederick:American actress:12/8/1883
@@ -24768,7 +24768,7 @@ Ben Hogan:American golfer:13/8/1912
 Salvador Luria:Italian-born biologist, Nobel Prize Laureate:13/8/1912
 William Bernbach:Famous Advertiser:13/8/1911
 Gene Raymond:American actor:13/8/1908
-Sir Basil Spence:Scottish architect:13/8/1907
+Basil Spence:Scottish architect:13/8/1907
 Charles 'Buddy' Rogers:American actor:13/8/1904
 Felix Wankel:German engineer and inventor:13/8/1902
 Alfred Hitchcock:English film director:13/8/1899
@@ -24784,7 +24784,7 @@ Giovanni Agnelli:Italian industrialist:13/8/1866
 Annie Oakley:American sharpshooter:13/8/1860
 Felix Adler:German-born educator:13/8/1851
 Goldwin Smith:English-born historian and journalist:13/8/1823
-Sir George Grove:English music historian:13/8/1820
+George Grove:English music historian:13/8/1820
 George Gabriel Stokes:French physicist:13/8/1819
 Lucy Stone:American suffragette:13/8/1818
 Anders Jonas Ångström:Swedish physicist:13/8/1814
@@ -24999,7 +24999,7 @@ Ivan Franko:Ukrainian writer:15/8/1856
 Thomas-Alfred Bernier:Canadian journalist and politician:15/8/1844
 Jules Grévy:2nd President of the French Third Republic:15/8/1813
 Thomas De Quincey:English author:15/8/1785
-Sir Walter Scott:Scottish novelist and poet:15/8/1771
+Walter Scott:Scottish novelist and poet:15/8/1771
 Napoleon Bonaparte:Emperor of the French:15/8/1769
 Matthias Claudius:German poet:15/8/1740
 Blind Jack:English roadbuilder:15/8/1717
@@ -25065,7 +25065,7 @@ Dick Murdoch:American professional wrestler:16/8/1946
 Suzanne Farrell:ballet dancer:16/8/1945
 Barbara George:American singer and songwriter:16/8/1942
 Bruce Beresford:Australian film director:16/8/1940
-Sir Trevor Mcdonald:Trinidadian-born British television newsreader:16/8/1939
+Trevor Mcdonald:Trinidadian-born British television newsreader:16/8/1939
 David Anderson:Canadian politician:16/8/1937
 Andreas Stamatiadis:Greek footballer and coach:16/8/1935
 Cliff Fletcher:Canadian National Hockey League executive:16/8/1935
@@ -26627,7 +26627,7 @@ Amrita Preetam:Indian poetess and author:31/8/1919
 Alan Jay Lerner:American lyricist:31/8/1918
 Daniel Schorr:American journalist:31/8/1916
 Richard Basehart:American actor:31/8/1914
-Sir Bernard Lovell:British radio astronomer:31/8/1913
+Bernard Lovell:British radio astronomer:31/8/1913
 William Saroyan:American novelist:31/8/1908
 Ramon Magsaysay:Philipino politician:31/8/1907
 William Shawn:American editor:31/8/1907
@@ -27208,7 +27208,7 @@ W.A.C. Bennett:Canadian politician:6/9/1900
 Julien Green:French-born American novelist:6/9/1900
 Billy Rose:American composer:6/9/1899
 Claire Chennault:American pilot:6/9/1893
-Sir Edward Appleton:English physicist, Nobel Prize laureate:6/9/1892
+Edward Appleton:English physicist, Nobel Prize laureate:6/9/1892
 Clara Kimball Young:American actress:6/9/1890
 Joseph P. Kennedy, Sr., American banker and diplomat:(d. 1969):6/9/1888
 Joseph Wirth:Chancellor of Germany:6/9/1879
@@ -27310,7 +27310,7 @@ Al Caiola:American guitarist:7/9/1920
 John Cornforth:Australian chemist, Nobel Prize laureate:7/9/1917
 Jacob Lawrence:American painter:7/9/1917
 James Van Allen:American physicist:7/9/1914
-Sir Anthony Quayle:English actor:7/9/1913
+Anthony Quayle:English actor:7/9/1913
 Miguel Rolando Covian:Brazilian physiologist:7/9/1913
 David Packard:American electrical engineer and businessman:7/9/1912
 Todor Zhivkov:Bulgarian Communist dictator from 1956 to 1989:7/9/1911
@@ -27426,7 +27426,7 @@ Harry Secombe:Welsh entertainer:8/9/1921
 Gianni Brera:(Giovanni Luigi Brera), Italian journalist and writer:8/9/1919
 Derek Harold Richard Barton:British chemist, Nobel Prize laureate:8/9/1918
 Frank Cady:American actor:8/9/1915
-Sir Denys Lasdun:English architect:8/9/1914
+Denys Lasdun:English architect:8/9/1914
 Jean-Louis Barrault:French actor and director:8/9/1910
 Hendrik Frensch Verwoerd:Prime Minister of South Africa:8/9/1901
 Jimmie Rodgers:American singer and composer:8/9/1899
@@ -27882,7 +27882,7 @@ Linda Gray:American actress:12/9/1940
 George Chuvalo:Canadian boxer:12/9/1937
 Glenn Davis:American athlete:12/9/1934
 Tatiana Doronina:Russian actress:12/9/1933
-Sir Ian Holm:English actor:12/9/1931
+Ian Holm:English actor:12/9/1931
 George Jones:American singer:12/9/1931
 Stan Lopata:American baseball player:12/9/1925
 Ellen Demming:American actress:12/9/1922
@@ -28005,7 +28005,7 @@ J.B. Priestley:English playwright and novelist:13/9/1894
 Julian Tuwim:Polish poet:13/9/1894
 Larry Shields:American musician:13/9/1893
 Lavoslav Ruzicka:Croatian chemist, Nobel laureate:13/9/1887
-Sir Robert Robinson:British chemist, Nobel laureate:13/9/1886
+Robert Robinson:British chemist, Nobel laureate:13/9/1886
 Amelie Beese:German aviator and sculptor.:13/9/1886
 Wilhelm Blaschke:Austrian geometer:13/9/1885
 Ramón Grau:Cuban president:13/9/1882
@@ -28212,7 +28212,7 @@ Fay Wray:Canadian-born American actress:15/9/1907
 Jacques Becker:French screenwriter and director:15/9/1906
 King Umberto II of Italy:(d. 1983):15/9/1904
 Roy Acuff:American musician:15/9/1903
-Sir Donald Bailey:British engineer:15/9/1901
+Donald Bailey:British engineer:15/9/1901
 J. Slauerhoff:Dutch poet and novelist:15/9/1898
 Magda Lupescu:consort of King Carol II of Romania:15/9/1895
 Jean Renoir:French film director:15/9/1894
@@ -28231,7 +28231,7 @@ Bruno Walter:German conductor:15/9/1876
 Sharat Chandra Chattopadhyay:Indian novelist:15/9/1876
 Vladimir May-Mayevsky:Russian counter-revolutionary:15/9/1867
 Horatio Parker:American composer:15/9/1863
-Sir Mokshagundam Visvesvarayya:Indian engineer:15/9/1860
+Mokshagundam Visvesvarayya:Indian engineer:15/9/1860
 Jeno Hubay:Hungarian violinist:15/9/1858
 William Howard Taft:27th President of the United States:15/9/1857
 Edward Bouchet:American physicist:15/9/1852
@@ -28422,7 +28422,7 @@ Anne Bancroft:American actress:17/9/1931
 Edgar Mitchell:American astronaut:17/9/1930
 Thomas Stafford:American astronaut:17/9/1930
 Lalgudi Jayaraman:Indian violinist:17/9/1930
-Sir Stirling Moss:English race car driver:17/9/1929
+Stirling Moss:English race car driver:17/9/1929
 Pat Crowley:American actress:17/9/1929
 Roddy McDowall:English actor:17/9/1928
 George Blanda:American football player:17/9/1927
@@ -28676,7 +28676,7 @@ Alberic Schotte:Belgian cyclist:19/9/1919
 Germán Valdés:Mexican actor, singer and comedian:19/9/1915
 Frances Farmer:American actress:19/9/1913
 Kurt Sanderling:German conductor:19/9/1912
-Sir William Golding:English writer, Nobel Prize laureate:19/9/1911
+William Golding:English writer, Nobel Prize laureate:19/9/1911
 Margaret Lindsay:American actress:19/9/1910
 Ferry Porsche:Austrian automobile pioneer:19/9/1909
 Mika Waltari:Finnish novelist:19/9/1908
@@ -28777,7 +28777,7 @@ Maurice Gamelin:French army general:20/9/1872
 Herbert Putnam:Librarian of Congress:20/9/1861
 Rama V:King of Thailand:20/9/1853
 William H. Illingworth:American photographer:20/9/1844
-Sir James Dewar:Scottish chemist:20/9/1842
+James Dewar:Scottish chemist:20/9/1842
 Ernesto Teodoro Moneta:Italian pacifist, recipient of the Nobel Peace Prize:20/9/1833
 Fabian Gottlieb von Bellingshausen:Russian naval officer and explorer:20/9/1778
 Thomas Grosvenor:Revolutionary War hero:20/9/1744
@@ -28881,7 +28881,7 @@ Chuck Jones:American animator:21/9/1912
 György Sándor:Hungarian pianist:21/9/1912
 Henry Beachell:American plant breeder:21/9/1906
 Luis Cernuda:Spanish poet:21/9/1902
-Sir Allen Lane:British founder of Penguin Books:21/9/1902
+Allen Lane:British founder of Penguin Books:21/9/1902
 Frederick Coutts:the 8th General of The Salvation Army:21/9/1899
 Sergei Yesenin:Russian poet:21/9/1895
 Gustav Holst:English composer:21/9/1874
@@ -29188,13 +29188,13 @@ Theresa Merritt:American actress:24/9/1922
 Jim McKay:American sports commentator:24/9/1921
 Dayton Allen:American actor and comedian:24/9/1919
 Audra Lindley:American actress:24/9/1918
-Sir John Kerr:18th Governor-General of Australia:24/9/1914
+John Kerr:18th Governor-General of Australia:24/9/1914
 Don Porter:American actor:24/9/1912
 Konstantin Chernenko:Soviet premier:24/9/1911
 Gerard Ciolek:Polish architect:24/9/1909
 Severo Ochoa:Nobel Laureate:24/9/1905
 Ham Fisher:American cartoonist:24/9/1900
-Sir William Dobell:Australian portrait artist:24/9/1899
+William Dobell:Australian portrait artist:24/9/1899
 Howard Walter Florey:Nobel Laureate:24/9/1898
 F. Scott Fitzgerald:American novelist:24/9/1896
 André Frédéric Cournand:French Nobel Laureate:24/9/1895
@@ -29214,7 +29214,7 @@ Adolphe d'Archaic:French paleontologist and geologist:24/9/1802
 Mikhail Vasilievich Ostrogradsky:Ukrainian scientist:24/9/1801
 John Marshall:4th Chief Justice of the United States:24/9/1755
 Grigori Alexandrovich Potemkin:Russian statesman:24/9/1739
-Sir Arthur Guinness:Irish brewer:24/9/1724
+Arthur Guinness:Irish brewer:24/9/1724
 Horace Walpole:British novelist and politician:24/9/1717
 Leopold Josef Graf Daun:Austrian field marshal:24/9/1705
 Johan de Witt:Dutch politician:24/9/1625
@@ -29287,10 +29287,10 @@ Adolfo Suárez:Prime Minister of Spain:25/9/1932
 Shel Silverstein:American humorist and author:25/9/1930
 Ronnie Barker:British comedian and actor:25/9/1929
 Barbara Walters:American broadcaster:25/9/1929
-Sir Colin Davis:English conductor:25/9/1927
+Colin Davis:English conductor:25/9/1927
 Aldo Ray:American actor:25/9/1926
 Hammer DeRoburt:first President of Nauru:25/9/1922
-Sir Robert Muldoon:Prime Minister of New Zealand:25/9/1921
+Robert Muldoon:Prime Minister of New Zealand:25/9/1921
 Sergei Bondarchuk:Ukrainian-born actor:25/9/1920
 Johnny Sain:American baseball player:25/9/1917
 Phil Rizzuto:American baseball player and announcer:25/9/1916
@@ -29418,7 +29418,7 @@ J. Frank Dobie:American folklorist and newspaper columnist:26/9/1888
 T. S. Eliot:American-born writer and editor, Nobel Prize laureate:26/9/1888
 Edwin Keppel Bennett:British writer:26/9/1887
 Antonio Moreno:Spanish-born actor:26/9/1887
-Sir Barnes Neville Wallis:British scientist, engineer and inventor:26/9/1887
+Barnes Neville Wallis:British scientist, engineer and inventor:26/9/1887
 Archibald Vivian Hill:English physiologist, Nobel Prize laureate:26/9/1886
 Ugo Cerletti:Italian neurologist:26/9/1877
 Alfred Cortot:Swiss pianist:26/9/1877
@@ -29668,7 +29668,7 @@ Francis Turner Palgrave:British critic and poet:28/9/1824
 Alexandre Cabanel:French painter:28/9/1823
 Jonathan Clarkson Gibbs:American politician:28/9/1821
 Prosper Mérimée:French author:28/9/1803
-Sir William Jones:English philologist:28/9/1746
+William Jones:English philologist:28/9/1746
 Henry Fox, 1st Baron Holland, English statesman:(d. 1774):28/9/1705
 Johann Mattheson:German composer:28/9/1681
 Asano Naganori:Japanese warlord:28/9/1667
@@ -29972,7 +29972,7 @@ Julie Andrews:British actress and singer:1/10/1935
 Albert Collins:American guitarist:1/10/1932
 Sylvano Bussotti:Italian composer:1/10/1931
 Naimatullah Khan:Pakistani politician:1/10/1930
-Sir Richard Harris:Irish actor:1/10/1930
+Richard Harris:Irish actor:1/10/1930
 Philippe Noiret:French actor:1/10/1930
 Frank Gardner:Australian racing driver:1/10/1930
 Laurence Harvey:Lithuanian-born actor:1/10/1928
@@ -30536,7 +30536,7 @@ Jenny Lind:Swedish soprano:6/10/1820
 Heinrich Wilhelm Dove:German physicist:6/10/1803
 Hippolyte Carnot:French statesman:6/10/1801
 King Louis-Philippe of France:(d. 1850):6/10/1773
-Sir Isaac Brock:British commander:6/10/1769
+Isaac Brock:British commander:6/10/1769
 James McGill:Scottish-Canadian businessman and philanthropist:6/10/1744
 George Montague-Dunk, 2nd Earl of Halifax, English statesman:(d. 1771):6/10/1716
 Charles de Sainte-Maure, duc de Montausier, French soldier:(d. 1690):6/10/1610
@@ -30621,7 +30621,7 @@ Jean-Paul Riopelle:Québécois member of Les Automatistes:7/10/1923
 Irma Grese:Supervisor at Nazi concentration camps:7/10/1923
 Grady Hatton:American baseball player:7/10/1922
 Raymond Goethals:Belgian football coach:7/10/1921
-Sir Zelman Cowen:Australian politician:7/10/1919
+Zelman Cowen:Australian politician:7/10/1919
 June Allyson:American actress:7/10/1917
 Alfred Drake:American actor:7/10/1914
 Sarah Churchill:British actress:7/10/1914
@@ -30889,7 +30889,7 @@ Evgeny Kissin:Russian pianist:10/10/1971
 Dean Kiely:Irish footballer:10/10/1970
 Bai Ling:Chinese American actress:10/10/1970
 Corinna May:German singer:10/10/1970
-Sir Matthew Pinsent:English rower:10/10/1970
+Matthew Pinsent:English rower:10/10/1970
 Brett Favre:American football player:10/10/1969
 Wendi McLendon-Covey:American actress:10/10/1969
 Bart Brentjens:Dutch mountain biker:10/10/1968
@@ -31038,7 +31038,7 @@ Amitabh Bachchan:Indian actor:11/10/1942
 Lester Bowie:American jazz trumpet player:11/10/1941
 Maria Bueno:Brazilian tennis player:11/10/1939
 Austin Currie:Northern Irish politician:11/10/1939
-Sir Bobby Charlton:English footballer:11/10/1937
+Bobby Charlton:English footballer:11/10/1937
 R. H. W. Dillard:American poet:11/10/1937
 Billy Higgins:American jazz drummer:11/10/1936
 Dottie West:American singer:11/10/1932
@@ -31659,7 +31659,7 @@ George Wendt:American actor:17/10/1948
 Robert Jordan:American novelist:17/10/1948
 Gene Green:American politician:17/10/1947
 Michael McKean:American actor:17/10/1947
-Sir Cameron Mackintosh:British stage producer:17/10/1946
+Cameron Mackintosh:British stage producer:17/10/1946
 Adam Michnik:Polish activist:17/10/1946
 Bob Seagren:American athlete:17/10/1946
 Michael Hossack:American musician (The Doobie Brothers):17/10/1946
@@ -31701,7 +31701,7 @@ Roy Kilner:English cricketer:17/10/1890
 Spring Byington:American actress:17/10/1886
 James Rudolph Garfield:American politician:17/10/1865
 Elinor Glyn:British writer:17/10/1864
-Sir Syed Ahmad Khan:Indian Muslim intellectual:17/10/1817
+Syed Ahmad Khan:Indian Muslim intellectual:17/10/1817
 Georg Büchner:German playwright:17/10/1813
 Albertus van Raalte:Dutch/American religious leader:17/10/1811
 Jacques Cazotte:French writer:17/10/1719
@@ -32031,7 +32031,7 @@ Timothy Ruggles:American-born Tory politician:20/10/1711
 Stanislaus I Leszczynski, King of Poland:(d. 1766):20/10/1677
 Robert Bertie, 1st Duke of Ancaster and Kesteven, English statesman:(d. 1723):20/10/1660
 Nicolas de Largillière:French painter:20/10/1656
-Sir Christopher Wren:English architect:20/10/1632
+Christopher Wren:English architect:20/10/1632
 Aelbert Cuyp:Dutch painter:20/10/1620
 Thomas Bartholin:Danish physician, mathematician, and theologian:20/10/1616
 Claude, Duke of Guise, French soldier:(d. 1550):20/10/1496
@@ -32095,10 +32095,10 @@ Whitey Ford:American baseball player:21/10/1928
 Louis Robichaud:Canadian premier of New Brunswick:21/10/1925
 Celia Cruz:Cuban singer:21/10/1924
 Liliane de Bettencourt:heir to LOreal:21/10/1922
-Sir Malcolm Arnold:British composer:21/10/1921
+Malcolm Arnold:British composer:21/10/1921
 Dizzy Gillespie:American musician:21/10/1917
 Martin Gardner:American mathematician and writer:21/10/1914
-Sir Georg Solti:Hungarian conductor:21/10/1912
+Georg Solti:Hungarian conductor:21/10/1912
 Alfredo Pián:Argentine racing driver:21/10/1912
 Nikos Engonopoulos:Greek painter and poet:21/10/1907
 Jules Chevalier:French priest (b. 1824):21/10/1907
@@ -32115,7 +32115,7 @@ Samuel Taylor Coleridge:British poet:21/10/1772
 Herman Willem Daendels:Dutch statesman:21/10/1762
 Pierre Augereau:Marshal of France and duc de Castiglione:21/10/1757
 Franz Moritz Graf von Lacy:Austrian field marshal:21/10/1725
-Sir James Steuart, British economist:(d. 1780):21/10/1712
+James Steuart:British economist:21/10/1712
 Nicolaus I Bernoulli:Swiss mathematician:21/10/1687
 Emperor Higashiyama of Japan:(d. 1710):21/10/1675
 Georg Ernst Stahl:German scientist:21/10/1660
@@ -32489,7 +32489,7 @@ Helen Reddy:Australian singer:25/10/1941
 Anne Tyler:American novelist:25/10/1941
 Bobby Knight:American basketball coach:25/10/1940
 Robin Spry:Canadian filmmaker and producer:25/10/1939
-Sir Martin Gilbert:British historian:25/10/1936
+Martin Gilbert:British historian:25/10/1936
 Russell Schweickart:astronaut:25/10/1935
 Harry Gregg:Irish footballer and football manager:25/10/1932
 Jimmy McIlroy:Irish footballer and football manager:25/10/1931
@@ -32709,7 +32709,7 @@ George Thompson:English cricketer:27/10/1877
 Emily Post:American etiquette author:27/10/1873
 Charles Spencelayh:English painter:27/10/1865
 Theodore Roosevelt:26th President of the United States, recipient of the Nobel Peace Prize:27/10/1858
-Sir William Smith:Scottish founder of the Boys Brigade:27/10/1854
+William Smith:Scottish founder of the Boys Brigade:27/10/1854
 Klas Pontus Arnoldson:Swedish writer and pacifist, recipient of the Nobel Peace Prize:27/10/1844
 Giovanni Giolitti:Italian statesman:27/10/1842
 Isaac Singer:American inventor:27/10/1811
@@ -33365,7 +33365,7 @@ Aga Khan III:Shia Imam:2/11/1877
 Warren G. Harding:29th President of the United States:2/11/1865
 Mehmed V:Ottoman Sultan:2/11/1844
 Émile Bayard:French artist, illustrator:2/11/1837
-Sir George Bowen:British provincial governor:2/11/1821
+George Bowen:British provincial governor:2/11/1821
 George Boole:English mathematician and philosopher:2/11/1815
 Jules Barbey d'Aurevilly:French writer:2/11/1808
 James Knox Polk:11th President of the United States:2/11/1795
@@ -33848,7 +33848,7 @@ Norah McGuinness:Northern Irish painter and illustrator:7/11/1901
 Raphaël Salem:Greek mathematician:7/11/1898
 Herman J. Mankiewicz:American writer, director, and producer:7/11/1897
 Leatrice Joy:American actress:7/11/1893
-Sir C. V. Raman:Indian physicist, Nobel Prize laureate:7/11/1888
+C. V. Raman:Indian physicist, Nobel Prize laureate:7/11/1888
 Aron Nimzowitsch:Latvian-born chess player:7/11/1886
 King Baggot:American actor:7/11/1879
 Leon Trotsky:Russian revolutionary:7/11/1879
@@ -34032,7 +34032,7 @@ Whitey Herzog:American baseball player:9/11/1931
 Imre Kertész:Hungarian writer, Nobel laureate:9/11/1929
 Marc Favreau:Quebec humorist:9/11/1929
 Anne Sexton:American poet:9/11/1928
-Sir Alistair Horne:British historian:9/11/1925
+Alistair Horne:British historian:9/11/1925
 Alice Coachman:American athlete:9/11/1923
 Dorothy Dandridge:American actress:9/11/1923
 Raymond Devos:French humorist:9/11/1922
@@ -34057,7 +34057,7 @@ Ed Wynn:American actor:9/11/1886
 Hermann Weyl:German mathematician:9/11/1885
 Theodor Kaluza:German scientist:9/11/1885
 Edna May Oliver:American actress:9/11/1883
-Sir Giles Gilbert Scott:English architect:9/11/1880
+Giles Gilbert Scott:English architect:9/11/1880
 Milan Šufflay:Croatian politician:9/11/1879
 Enrico De Nicola:Italian politician:9/11/1877
 Allama Iqbal:Indian National poet of Pakistan:9/11/1877
@@ -34136,7 +34136,7 @@ Glen Buxton:American musician (Alice Cooper):10/11/1947
 Dave Loggins:American songwriter and singer:10/11/1947
 Donna Fargo:American singer:10/11/1945
 Silvestre Reyes:American politician:10/11/1944
-Sir Tim Rice:English lyricist:10/11/1944
+Tim Rice:English lyricist:10/11/1944
 Saxby Chambliss:American politician:10/11/1943
 Robert F. Engle:American economist, Nobel laureate:10/11/1942
 Hans-Rudolf Merz:Swiss Federal Councilor:10/11/1942
@@ -34174,7 +34174,7 @@ Cy Morgan:American baseball player:10/11/1878
 Winston Churchill:American novelist:10/11/1871
 Gichin Funakoshi:father of Japanese Shotokan Karatedo:10/11/1868
 Arthur Goring Thomas:English composer:10/11/1850
-Sir John Sparrow David Thompson:fourth Prime Minister of Canada:10/11/1845
+John Sparrow David Thompson:fourth Prime Minister of Canada:10/11/1845
 Henry Eyster Jacobs:American Lutheran theologian:10/11/1844
 Samuel Gridley Howe:American social reformer:10/11/1801
 Vladimir Dal:Russian lexicographer:10/11/1801
@@ -34994,7 +34994,7 @@ Clarence Day:American author:18/11/1874
 Dorothy Dix:pseudonym of US journalist Elizabeth Meriwether Gilmer:18/11/1870
 Nikolai Nikolaevich Romanov:Grand Duke of Russia:18/11/1856
 August Kundt:German physicist:18/11/1839
-Sir William S. Gilbert:British dramatist:18/11/1836
+William S. Gilbert:British dramatist:18/11/1836
 Cesare Lombroso:Italian psychiatrist and founder of criminology:18/11/1836
 Adolf Erik Nordenskiöld:Swedish explorer:18/11/1832
 Alfonso Ferrero la Marmora:Italian general and statesman:18/11/1804
@@ -35224,7 +35224,7 @@ Victor D'Hondt:Belgian mathematician:20/11/1841
 Wilfrid Laurier:seventh Prime Minister of Canada:20/11/1841
 Christian Wilberg:German painter:20/11/1839
 Karl Friedrich Eichhorn:German jurist:20/11/1781
-Sir Thomas Fremantle:British naval captain:20/11/1765
+Thomas Fremantle:British naval captain:20/11/1765
 Pierre André Latreille:French entomologist:20/11/1762
 Pope Pius VIII:(d. 1830):20/11/1761
 Tipu Sultan:Indian ruler:20/11/1750
@@ -35396,7 +35396,7 @@ Peter Townsend:British Equerry and air pilot:22/11/1914
 Benjamin Britten:British composer:22/11/1913
 Louis Eugène Félix Néel:French physicist, Nobel laureate:22/11/1904
 Philippe Leclerc de Hauteclocque:French general:22/11/1902
-Sir Humphrey Gibbs:Rhodesian politician:22/11/1902
+Humphrey Gibbs:Rhodesian politician:22/11/1902
 Albert Leduc:Canadian ice hockey player:22/11/1902
 Joaquin Rodrigo:Spanish composer:22/11/1901
 Hoagy Carmichael:American composer:22/11/1899
@@ -35679,7 +35679,7 @@ Bernie Kosar:American football player:25/11/1963
 Gilbert Delorme:Canadian ice hockey player:25/11/1962
 Amy Grant:American singer:25/11/1960
 John F Kennedy, Jr:American publisher:25/11/1960
-John F Kennedy:American President:29/5/1917
+John F. Kennedy:American President:29/5/1917
 Charles Kennedy:British politician:25/11/1959
 Steve Rothery:British guitarist (Marillion):25/11/1959
 Bob Ehrlich:Jr., former Maryland governor:25/11/1957
@@ -36168,7 +36168,7 @@ Francis Dodd:British artist:29/11/1874
 Egas Moniz:Portuguese physician, neurologist and Nobel laureate:29/11/1874
 Theodor Escherich:German pediatrician:29/11/1857
 Theobald von Bethmann Hollweg:5th Chancellor of the German Empire:29/11/1856
-Sir John Ambrose Fleming:British physicist:29/11/1849
+John Ambrose Fleming:British physicist:29/11/1849
 Empress Dowager Cixi:de facto Chinese ruler (1868-1908; d. 1908):29/11/1835
 Louisa May Alcott:American novelist:29/11/1831
 Jean-Martin Charcot:French neurologist:29/11/1825
@@ -36277,7 +36277,7 @@ Jacques Barzun:French-born historian and author:30/11/1907
 Clyfford Still:American painter:30/11/1904
 Firpo Marberry:American baseball player:30/11/1898
 Edgar Douglas Adrian:British physiologist, Nobel laureate:30/11/1889
-Sir Winston Churchill:Prime Minister of the United Kingdom, Nobel laureate:30/11/1874
+Winston Churchill:Prime Minister of the United Kingdom, Nobel laureate:30/11/1874
 Lucy Maud Montgomery:Canadian author:30/11/1874
 Dr. John McCrae:Canadian physician, soldier, poet. Author of "In Flanders Fields":30/11/1872
 Gustaf Dalén:Swedish physicist, Nobel laureate:30/11/1869
@@ -36780,7 +36780,7 @@ Fritz Lang:Austrian-born film director:5/12/1890
 Rose Wilder Lane:American writer and reporter, daughter of Little House books writer Laura Ingalls Wilder:5/12/1886
 Clyde Cessna:American airplane manufacturer:5/12/1879
 Nunnally Johnson:American screenwriter and producer:5/12/1879
-Sir Arthur Currie:Canadian soldier:5/12/1875
+Arthur Currie:Canadian soldier:5/12/1875
 Harry Nelson Pillsbury:American chess player:5/12/1872
 Bill Pickett:American rodeo performer:5/12/1871
 Vítezslav Novák:Czech composer:5/12/1870
@@ -36887,7 +36887,7 @@ Agnes Moorehead:American actress:6/12/1900
 Alfred Eisenstaedt:German-born photojournalist:6/12/1898
 Gunnar Myrdal:Swedish economist, recipient of the Nobel Prize in Economics:6/12/1898
 Ira Gershwin:American lyricist:6/12/1896
-Sir Osbert Sitwell:British author:6/12/1892
+Osbert Sitwell:British author:6/12/1892
 Rudolf Schlichter:German artist and writer:6/12/1890
 Yoshio Nishina:Japanese physicist:6/12/1890
 Dion Fortune:British occultist:6/12/1890
@@ -36910,7 +36910,7 @@ Guillaume-Chrétien de Lamoignon de Malesherbes:French statesman:6/12/1721
 Marie-Adélaïde of Savoy:mother of Louis XV of France d. 1712:6/12/1685
 Johann Christoph Bach:German composer:6/12/1642
 Claude Fleury:French historian:6/12/1640
-Sir Edmund Andros:English governor in North America:6/12/1637
+Edmund Andros:English governor in North America:6/12/1637
 George Monck, 1st Duke of Albemarle, English soldier:(d. 1670):6/12/1608
 Niccolo Zucchi:Italian astronomer:6/12/1586
 Orazio Vecchi:Italian composer (baptism):6/12/1550
@@ -37067,11 +37067,11 @@ Jim Morrison:American singer (The Doors):8/12/1943
 Mary Woronov:American actress:8/12/1943
 Ed Brinkman:baseball player:8/12/1941
 Bob Brown:American football player:8/12/1941
-Sir Geoff Hurst:ex-English footballer:8/12/1941
+Geoff Hurst:ex-English footballer:8/12/1941
 Brant Alyea:baseball player:8/12/1940
 Red Berenson:National Hockey League player:8/12/1939
 Jerry Butler:American soul singer:8/12/1939
-Sir James Galway:Northern Irish flute player:8/12/1939
+James Galway:Northern Irish flute player:8/12/1939
 Soko Richardson:American rhythm and blues drummer.:8/12/1939
 James MacArthur:American actor:8/12/1937
 Arne Næss Jr.:Norwegian mountain climber and businessman:8/12/1937
@@ -37236,7 +37236,7 @@ John Milton:English poet:9/12/1608
 Gustavus Adolphus of Sweden:(d. 1632):9/12/1594
 Martin de Porres:Peruvian saint:9/12/1579
 Metius (Adriaan Adriaanszoon):Dutch mathematician and astronomer:9/12/1571
-Sir Edwin Sandys:British-born Virginian colonist:9/12/1561
+Edwin Sandys:British-born Virginian colonist:9/12/1561
 Gemma Frisius:Dutch mathematician and cartographer:9/12/1508
 Chenghua:Emperor of China:9/12/1447
 Giulia Boverio:Italian actress:10/12/1990
@@ -37309,7 +37309,7 @@ Olivier Messiaen:French composer and ornithologist:10/12/1908
 Rumer Godden (Margaret Rumer Godden):British writer:10/12/1907
 Lucien Laurent:French footballer:10/12/1907
 Una Merkel:American actress:10/12/1903
-Sir Harold Alexander:British Army Field Marshal, first Earl of Tunis.:10/12/1891
+Harold Alexander:British Army Field Marshal, first Earl of Tunis.:10/12/1891
 Nelly Sachs:German-born writer and Nobel Prize laureate:10/12/1891
 Marco Minghetti:Italian statesman (b. 1813):10/12/1886
 Zinaida Serebriakova:Russian-born painter:10/12/1884
@@ -37430,7 +37430,7 @@ John Labatt:Irish-Canadian brewer:11/12/1838
 Alfred de Musset:French poet:11/12/1810
 Hector Berlioz:French composer:11/12/1803
 Christian Dietrich Grabbe:German writer:11/12/1801
-Sir David Brewster:British physicist:11/12/1781
+David Brewster:British physicist:11/12/1781
 Gian Domenico Romagnosi:Italian physicist:11/12/1761
 George Mason:American statesman:11/12/1725
 Francesco Algarotti. Italian philosopher:(d. 1764):11/12/1712
@@ -37645,7 +37645,7 @@ Trygve Haavelmo:Norwegian economist and Bank of Sweden Prize winner:13/12/1911
 Kenneth Patchen:American poet and painter:13/12/1911
 Van Heflin:American actor:13/12/1910
 Princess Marina:Duchess of Kent:13/12/1906
-Sir Laurens van der Post:South African author:13/12/1906
+Laurens van der Post:South African author:13/12/1906
 Carlos Montoya:Spanish guitarist:13/12/1903
 Drew Pearson:American journalist:13/12/1897
 George Polya:Hungarian-born mathematician:13/12/1887
@@ -37921,17 +37921,17 @@ Nicholas Courtney:British actor:16/12/1929
 Philip K. Dick:American writer:16/12/1928
 Randall Garrett:American writer:16/12/1927
 James McCracken:American tenor:16/12/1926
-Sir Arthur C. Clarke:British writer:16/12/1917
+Arthur C. Clarke:British writer:16/12/1917
 Barbara Kent:Canadian actress:16/12/1906
 Piet Hein:Danish mathematician and inventor:16/12/1905
 Rafael Alberti:Spanish poet:16/12/1902
 Margaret Mead:American anthropologist:16/12/1901
 V. S. Pritchett:British author and critic:16/12/1900
-Sir Noel Coward:British playwright, actor and composer:16/12/1899
+Noel Coward:British playwright, actor and composer:16/12/1899
 King Alexander I of Yugoslavia:(d. 1934):16/12/1888
 Alphonse Juin:marshall of France:16/12/1888
 Max Linder:French pioneer of silent film:16/12/1883
-Sir Jack Hobbs:English test cricketer:16/12/1882
+Jack Hobbs:English test cricketer:16/12/1882
 Zoltán Kodály:Hungarian composer:16/12/1882
 Walther Meissner:German physicist:16/12/1882
 Anton Ivanovich Denikin:Russian general:16/12/1872
@@ -38058,7 +38058,7 @@ Jules de Goncourt:French publisher:17/12/1830
 John Greenleaf Whittier:American poet and abolitionist:17/12/1807
 Titian Peale:American artist:17/12/1799
 Thomas Chandler Haliburton:Canadian novelist:17/12/1796
-Sir Humphry Davy:British chemist and physicist:17/12/1778
+Humphry Davy:British chemist and physicist:17/12/1778
 (Baptism) - Ludwig van Beethoven:German composer:17/12/1770
 Domenico Cimarosa:Italian composer:17/12/1749
 Maria I of Portugal:Portuguese queen:17/12/1734
@@ -38165,7 +38165,7 @@ Francis Burton Harrison:American political figure:18/12/1873
 Saki:British writer:18/12/1870
 Franz Ferdinand, Archduke of Austria:(d. 1914):18/12/1863
 Edward MacDowell:American composer and pianist:18/12/1860
-Sir J.J. Thomson:British physicist and Nobel Prize laureate:18/12/1856
+J.J. Thomson:British physicist and Nobel Prize laureate:18/12/1856
 Augusta Holmès:French composer:18/12/1847
 Lyman Abbott:American author:18/12/1835
 Charles Griffin (general):American general:18/12/1825
@@ -38262,7 +38262,7 @@ W.A. Criswell:American (Baptist) preacher:19/12/1909
 Jimmy McLarnin:former Welterweight Champion:19/12/1907
 Leonid Brezhnev:leader of the Soviet Union:19/12/1906
 George Davis Snell:Nobel Prize laureate:19/12/1903
-Sir Ralph Richardson:British actor:19/12/1902
+Ralph Richardson:British actor:19/12/1902
 Rudolf Hell:German inventor:19/12/1901
 Ford Frick:American baseball commissioner:19/12/1894
 Fritz Reiner:Austro-Hungarian-born American conductor:19/12/1888
@@ -38331,7 +38331,7 @@ Jean Carnahan:U.S. Senator:20/12/1933
 Rik Van Looy:Belgian cyclist:20/12/1933
 Mala Powers:American film actress:20/12/1931
 Kim Young-sam:President of South Korea:20/12/1927
-Sir Geoffrey Howe:British politician:20/12/1926
+Geoffrey Howe:British politician:20/12/1926
 Otto Graf Lambsdorff:German politician:20/12/1926
 Benito Lorenzi:Italian footballer:20/12/1925
 Judy LaMarsh:Canadian politician and broadcaster:20/12/1924
@@ -38349,7 +38349,7 @@ Sidney Hook:American philosopher:20/12/1902
 George Edward Alexander Windsor:Duke of Kent:20/12/1902
 Robert Van de Graaff:American physicist and inventor:20/12/1901
 Irene Dunne:American actress:20/12/1898
-Sir Robert Menzies:twelfth Prime Minister of Australia:20/12/1894
+Robert Menzies:twelfth Prime Minister of Australia:20/12/1894
 Yvonne Arnaud:French-born actress:20/12/1890
 Jaroslav Heyrovský:Czech chemist, Nobel Prize laureate:20/12/1890
 Fred Merkle:American baseball figure:20/12/1888
@@ -39086,7 +39086,7 @@ Cyrus S. Eaton:Canadian-American financier, industrialist and philanthropist:27/
 Sydney Greenstreet:English actor:27/12/1879
 René Georges Hermann-Paul:French artist:27/12/1864
 Pavel Tretyakov:Russian businessman and patron of art:27/12/1832
-Sir Mackenzie Bowell:fifth Prime Minister of Canada:27/12/1823
+Mackenzie Bowell:fifth Prime Minister of Canada:27/12/1823
 Louis Pasteur:French scientist:27/12/1822
 François-Marie-Thomas Chevalier de Lorimier:French Canadian Patriote:27/12/1803
 Mirza Ghalib:Indian poet:27/12/1796
@@ -39448,7 +39448,7 @@ John Denver:American singer and songwriter:31/12/1943
 Ben Kingsley:English actor:31/12/1943
 Pete Quaife:English bassist (The Kinks):31/12/1943
 Andy Summers:British guitarist (The Police):31/12/1942
-Sir Alex Ferguson:Scottish football manager:31/12/1941
+Alex Ferguson:Scottish football manager:31/12/1941
 Sarah Miles:English actress:31/12/1941
 Rosalind Cash:American actress:31/12/1938
 Avram Hershko:Israeli biologist, Nobel laureate:31/12/1937
@@ -39494,3 +39494,5 @@ Anders Breivik:Murderer:13/2/1979
 Julian Assange:Journalist:3/7/1971
 Jonathan Ive:Designer:27/2/1967
 Beyonce:Singer:4/9/1981
+Pricess Diana:Royal:1/7/1961
+Thich Nhat Hanh:Monk:11/10/1926
