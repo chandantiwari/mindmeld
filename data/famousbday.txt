@@ -12819,7 +12819,7 @@ Thomas Kean:former Governor of New Jersey and 9/11 Commission Chairman:21/4/1935
 Elaine May:American comedian:21/4/1932
 Silvana Mangano:Italian actress:21/4/1930
 Gerald Flood:British actor:21/4/1927
-Queen Elizabeth II of the United Kingdom::21/4/1926
+Elizabeth II::21/4/1926
 John Mortimer:English barrister and writer:21/4/1923
 Alistair MacLean:Scottish author:21/4/1922
 Edmund Adamkiewicz:German footballer:21/4/1920
@@ -15732,7 +15732,7 @@ Jean-Louis Roux:French Canadian actor and artistic director:18/5/1923
 Gerda Boyesen:Norwegian-born body psychotherapist:18/5/1922
 Bill Macy:American actor:18/5/1922
 Kai Winding:Danish-born musician:18/5/1922
-Pope John Paul II:(d. 2005):18/5/1920
+John Paul II:Pope:18/5/1920
 Lucia Mannucci:Italian singer (Quartetto Cetra):18/5/1920
 Dame Margot Fonteyn:English ballet dancer:18/5/1919
 George Welch:American pilot and war hero:18/5/1918
@@ -17158,7 +17158,7 @@ Michel Plasse:French Canadian ice hockey player:1/6/1948
 Jonathan Pryce:British actor:1/6/1947
 Ron Wood:English guitarist:1/6/1947
 Ron Dennis:Formula One team principal:1/6/1947
-Brian Cox:Scottish actor:1/6/1946
+Brian Cox:Scientist:3/3/1968
 Frederica von Stade:American mezzo-soprano:1/6/1945
 Linda Scott:American singer:1/6/1945
 Robert Powell:English actor:1/6/1944
@@ -39491,6 +39491,6 @@ Pope Callixtus III:(d. 1458):31/12/1378
 James Murdoch:Son of Rupert Murdoch:13/12/1972
 John Stewart:Comedian:28/11/1962
 Anders Breivik:Murderer:13/2/1979
-Baba:Baba:5/10/1945
-Anne:Anne:22/2/1948
-Cem Yilmaz:Comedian:23/4/1973
+Julian Assange:Journalist:3/7/1971
+Jonathan Ive:Designer:27/2/1967
+Beyonce:Singer:4/9/1981

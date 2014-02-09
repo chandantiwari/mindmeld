@@ -3,7 +3,7 @@ import mindmeld, numpy as np
 
 celebs = pd.read_csv("./data/famousbday.txt",sep=':',header=None, 
 names=['name','occup','bday','spiller','chinese','milla','millb'])
-celeb_mbti = pd.read_csv("./data/myer-briggs2.txt",header=None,sep=':',\
+celeb_mbti = pd.read_csv("./data/myer-briggs.txt",header=None,sep=':',\
 names=['mbti','name'])
 df = pd.merge(celeb_mbti,celebs)
 
