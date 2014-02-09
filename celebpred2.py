@@ -12,7 +12,7 @@ import random
 def __fact_factor(X):
     return X.todense() if sp.isspmatrix(X) else X
 
-clf = DecisionTreeClassifier(max_depth=8) 
+clf = DecisionTreeClassifier(max_depth=8)
 print clf
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
@@ -32,13 +32,9 @@ for idx in df.index:
    cols = ['I','N','T','P','mbti','name','occup','bday','bday2']
    X = X.drop(cols,axis=1)
    
-   #X=X.fillna(0)
-   #X=X.div(X.sum(axis=0), axis=1)
-   #X=X.apply(lambda x: x / np.sqrt(np.sum(np.square(x))+1e-16), axis=1)
-
    fctr = nimfa.mf(np.array(X),
                    seed = "nndsvd", 
-                   rank = 15, 
+                   rank = 30, 
                    method = "bmf", 
                    max_iter = 40, 
                    initialize_only = True,
@@ -46,12 +42,11 @@ for idx in df.index:
                    lambda_h = 1.1)
 
    res = nimfa.mf_run(fctr)
-   thres = 0.2
+   thres = 0.3
    X = __fact_factor(res.basis())       
    X = np.abs(np.round(X - 0.5 + thres))
    XB = __fact_factor(res.coef())
    XB = np.abs(np.round(XB - 0.5 + thres))
-   XB = XB.astype(bool)
    
    res=clf.fit(X,y)
    print clf.score(X,y) 
@@ -60,11 +55,12 @@ for idx in df.index:
    total += 1
    naive = random.choice([0,1])
 
+   XB = XB.astype(bool)
    testrow = testrow.reshape((len(testrow),1)).astype(bool)
-   #testrow2 = np.dot(lin.pinv(XB.T),testrow)
-   testrow2,x,x,x = lin.lstsq(XB.T,testrow)
-          
-   pred = clf.predict(testrow2.T[0]*1)
+   testrow2 = np.dot(lin.pinv(XB.T),testrow)
+
+   print testrow2.T[0]
+   pred = clf.predict(testrow2.T[0])
    if pred == testres: predsum += 1
    if naive == testres: naivesum += 1
    print 'pred',predsum, 'naive', naivesum, 'total', total, naivesum/float(total)*100, predsum/float(total)*100
