@@ -16530,7 +16530,7 @@ Patsy Palmer:British actress:26/5/1972
 Ivan O. Godfroid:Belgian writer:26/5/1971
 Matt Stone:American television producer:26/5/1971
 Nobuhiro Watsuki:Japanese cartoonist:26/5/1970
-Crown Prince Frederik of Denmark::26/5/1968
+Prince Frederik::26/5/1968
 Pat Kenney:American wrestler:26/5/1968
 Phil Doyle:Australian writer:26/5/1967
 Helena Bonham Carter:English actress:26/5/1966
@@ -26704,7 +26704,7 @@ Dave Lumley:Canadian professional ice hockey player:1/9/1954
 Phil Hendrie:American radio personality:1/9/1952
 Nicu Ceausescu:Romanian politician:1/9/1951
 Phillip Fulmer:American football coach:1/9/1950
-Dr. Phil McGraw:American talk show host:1/9/1950
+Dr. Phil:American talk show host:1/9/1950
 P.A. Sangma:Indian politician:1/9/1949
 Józef Zycinski:Polish archbishop and philosopher:1/9/1948
 Al Green:American politician:1/9/1947

@@ -51,7 +51,7 @@ classifier using the rest, and testing the success on the held-out
 record. The aim was trying to predict letters of MBTI type, I or E, N
 or S, etc.
 
-The result I obtained was %57 which indicates the presence of a
+The result I obtained was %56 which indicates the presence of a
 pattern. Since the dimensionality of this data is high, the classifier
 would benefit greatly from presence of more data.
 

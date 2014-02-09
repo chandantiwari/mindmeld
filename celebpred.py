@@ -5,6 +5,7 @@ import sklearn as sk
 import numpy as np
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import GradientBoostingClassifier
 from sklearn import svm
 import random
 
@@ -15,7 +16,9 @@ import random
 # which indicates a connection between science (psychology,
 # Myers-Briggs) and astrology / numerology.
 
-clf = DecisionTreeClassifier(max_depth=8) # %57.1
+#clf = DecisionTreeClassifier(max_depth=7) # 
+clf = GradientBoostingClassifier(n_estimators=4) # 55
+#clf = svm.SVC(kernel='rbf',gamma=0.5,tol=0.35); #gamma=0.5,tol=0.35,54
 print clf
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
@@ -24,8 +27,9 @@ total = 0
 predsum = 0
 for idx in df.index:
    print df.ix[idx]['name']
-   #letter = random.choice(['I','N','T','P'])
-   for letter in ['I','N','T','P']:
+   letter = random.choice(['I','N','T','P'])
+   for i in ['x']:
+   #for letter in ['I','N','T','P']:
       X = df.copy()
       X = X.fillna(0)
       y = df[letter]*1
@@ -35,7 +39,7 @@ for idx in df.index:
       y = y.drop(idx)
       cols = ['I','N','T','P','mbti','name','occup','bday','bday2']
       X = X.drop(cols,axis=1)
-
+      #X=X.apply(lambda x: x / np.sqrt(np.sum(np.square(x))+1e-16), axis=1)
       res=clf.fit(X,y)
       print clf.score(X,y) 
 
