@@ -272,7 +272,6 @@ ESTJ:Emma Watson
 ESTJ:Kelsey Grammer
 ESTJ:Alec Baldwin
 ESTJ:Judy Sheindlin
-ESTJ:Baba
 ESTJ:Nancy Grace
 ESTJ:Laura Schlessinger
 ESTJ:Michele Bachmann
