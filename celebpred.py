@@ -8,13 +8,10 @@ import pandas as pd
 import sklearn as sk
 import numpy as np
 import pandas as pd
-from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import GradientBoostingClassifier
-from sklearn import svm
 import random
 
-
-clf = GradientBoostingClassifier(n_estimators=4) # 55
+clf = GradientBoostingClassifier(n_estimators=4) # 58.1
 print clf
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
