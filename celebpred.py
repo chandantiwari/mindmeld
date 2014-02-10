@@ -8,10 +8,11 @@ import pandas as pd
 import sklearn as sk
 import numpy as np
 import pandas as pd
+from sklearn import svm
 from sklearn.ensemble import GradientBoostingClassifier
 import random
 
-clf = GradientBoostingClassifier(n_estimators=4) # 58.1
+clf = GradientBoostingClassifier(n_estimators=4) 
 print clf
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
