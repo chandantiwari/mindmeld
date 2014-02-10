@@ -13390,7 +13390,7 @@ Eugène Delacroix:French painter:26/4/1798
 Ludwig Uhland:German poet:26/4/1787
 John James Audubon:French-American naturalist and illustrator:26/4/1785
 Christian Leopold von Buch:German geologist:26/4/1774
-Emma, Lady Hamilton, English mistress of Horatio Nelson:(d. 1815):26/4/1765
+Emma, Lady Hamilton:English mistress of Horatio Nelson:26/4/1765
 Esek Hopkins:American Revolutionary War admiral:26/4/1718
 David Hume:Scottish philosopher and historian:26/4/1711
 Thomas Reid:Scottish philosopher:26/4/1710
@@ -29787,7 +29787,7 @@ Henry Bennett:American politician:29/9/1808
 Jacques Charles François Sturm:French mathematician:29/9/1803
 Mercator Cooper:American sea captain:29/9/1803
 Guadalupe Victoria:1st President of Mexico:29/9/1786
-Horatio Nelson, British admiral:(d. 1805):29/9/1758
+Horatio Nelson:British admiral:29/9/1758
 Robert Clive, 1st Baron Clive, British general and statesman:(d. 1774):29/9/1725
 François Boucher:French painter:29/9/1703
 Richard Challoner:English Catholic prelate:29/9/1691
@@ -32083,7 +32083,7 @@ Shaye Cohen:Historian and Professor at Harvard University:21/10/1948
 Jim Hill:American sportscaster:21/10/1946
 Brian Piccolo:American football player:21/10/1943
 Elvin Bishop:American musician:21/10/1942
-Judy Sheindlin:American judge ("Judge Judy"):21/10/1942
+Judge Judy:American judge:21/10/1942
 Allan Grice:Australian racing driver:21/10/1942
 Steve Cropper:American musician:21/10/1941
 Geoff Boycott:English cricketer:21/10/1940
@@ -37177,7 +37177,7 @@ Dan Hicks:American musician:9/12/1941
 Deacon Jones:American football player:9/12/1938
 David Houston:American country music singer:9/12/1938
 Darwin Joston:American actor:9/12/1937
-Dame Judi Dench:British actress:9/12/1934
+Judi Dench:British actress:9/12/1934
 Junior Wells:American harmonica player:9/12/1934
 Morton Downey Jr.:American talk show host:9/12/1933
 Ladislav Smoljak:Czech actor:9/12/1931
@@ -39505,3 +39505,11 @@ Tea Leoni:25/2/1966
 Asia Carrera:Actress:6/8/1973
 Richard Ayoade:Actor:12/6/1977
 Randall Munroe:17/10/1984
+Stephen R. Covey:Writer:24/10/1932
+Camilla Parker Bowles:Duches:17/7/1947
+Sasha Grey:Actress:14/3/1988
+Howard Schultz:CEO:19/7/1953
+Wayne Dyer:Author:10/5/1940
+Dana White:Businessman:28/7/1969
+Harry Styles:Singer:1/2/1994
+Sonia Sotomayor:Judge:25/6/1954
