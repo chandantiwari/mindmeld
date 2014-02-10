@@ -5672,7 +5672,7 @@ Ray Winstone:British actor:19/2/1957
 Kathleen Beller:American actress:19/2/1956
 Roderick MacKinnon:American biologist, Nobel laureate:19/2/1956
 Jeff Daniels:American actor:19/2/1955
-Socrates:Brazilian footballer:19/2/1954
+Socrates (Brazilian):Brazilian footballer:19/2/1954
 Massimo Troisi:Italian actor:19/2/1953
 Amy Tan:American novelist:19/2/1952
 Rodolfo Neri Vela:Mexican astronaut:19/2/1952
@@ -27520,7 +27520,6 @@ Joe Theismann:American football player and commentator:9/9/1949
 Bruce Palmer:Canadian musician (Buffalo Springfield):9/9/1946
 Dee Dee Sharp:American R&amp;B singer:9/9/1945
 Art LaFleur:American actor:9/9/1943
-Roger Waters:British musician:9/9/1943
 Inez Foxx:American R&amp;B singer:9/9/1942
 Peter Bonetti:English footballer:9/9/1941
 Otis Redding:American singer and songwriter:9/9/1941
