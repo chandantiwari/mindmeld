@@ -21722,7 +21722,7 @@ Carlos Humberto Paredes:Paraguyan footballer:16/7/1976
 Anna Smashnova:Israeli tennis player:16/7/1976
 Bas Leinders:Belgian racing car driver:16/7/1975
 Ana Paula Arósio:Brazilian actress:16/7/1975
-Jamie Oliver:Welsh keyboardist:16/7/1975
+Jamie Oliver (keyboardist):Welsh keyboardist:16/7/1975
 Chris Pontius:American actor and Jackass cast member:16/7/1974
 Stefano Garzelli:Italian cyclist:16/7/1973
 Shaun Pollock:South African cricketer:16/7/1973
