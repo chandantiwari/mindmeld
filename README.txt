@@ -38,22 +38,24 @@ only simple Javascript checks performed on the input.
 
 Myers-Briggs and Astrology Connection
 
-I was curious about how _scientific_ astrology really was; so I
-performed a test using machine learning. I scraped celebrity data from
-celebritytypes.com site for their MBTI types, seperately I downloaded
-celebrity birthdays from another site, generated their Lewi, Millman,
-Chinese, Spiller signs then I connected the two. So the dataset (of
-around 300 points) had both scientific and astrologic in the same
-record. For each data point, in a loop, it was made held-out test data
-and a classifier was trained using the rest, then, the success on the
-held-out record was tested. The aim was trying to predict individual
-letters of MBTI type on by one, such as I or E, N or S, meaning each
+I was curious about how _scientific_ astrology and numerology was; so
+I performed a test using machine learning. I scraped celebrity data
+from celebritytypes.com site for their MBTI types, seperately I
+downloaded celebrity birthdays from another site, generated their
+Lewi, Millman, Chinese, Spiller signs then I connected the two. So the
+dataset (of around 300 points) had both scientific and astrologic data
+in the same record. Then, for each data point, in a loop, I made it
+held-out test data, trained a classifier on the rest, then tested the
+result on the held-out record.
+
+The classification aim was trying to predict individual letters of
+MBTI type, seperately on each, such as I or E, N or S. So each
 classifier was a two-label classifier. For each test we would only try
 to predict one letter at a time.
 
-The average success rate I obtained using this method was %58.2 which
-I believe indicates the presence of a pattern. The naive classifier
-(random choice between two classes) predictably succeeded at only
-%50. Since the dimensionality of this data is high, the classifier
-could benefit from more data, if there is something to this.
+The average success rate I obtained using this method was %57, this
+indicates the presence of a pattern. The naive classifier (random
+choice between two classes) predictably succeeded at only %50. The
+dimensionality of this data is high, so IMO the classifier could
+benefit from more data.
 
