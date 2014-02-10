@@ -9,10 +9,12 @@ import sklearn as sk
 import numpy as np
 import pandas as pd
 from sklearn import svm
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 import random
 
-clf = GradientBoostingClassifier(n_estimators=4) 
+clf = DecisionTreeClassifier(max_depth=8) #
+#clf = GradientBoostingClassifier(n_estimators=6) 
 print clf
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')

@@ -22872,7 +22872,7 @@ Sam Jones:American baseball player:26/7/1892
 Lars Hanson:Swedish actor:26/7/1886
 André Maurois:French author:26/7/1885
 Volodymyr Vynnychenko:Ukrainian statesman:26/7/1880
-Carl Jung:Swiss psychiatrist:26/7/1875
+Carl Gustav Jung:Swiss psychiatrist:26/7/1875
 Antonio Machado:Spanish poet:26/7/1875
 Serge Koussevitsky:Russian conductor:26/7/1874
 Philipp Scheidemann:1st Chancellors of the Weimar Republic:26/7/1865
@@ -39495,3 +39495,13 @@ Jonathan Ive:Designer:27/2/1967
 Beyonce:Singer:4/9/1981
 Pricess Diana:Royal:1/7/1961
 Thich Nhat Hanh:Monk:11/10/1926
+Deepak Chopra:Doctor:22/10/1946
+Neil deGrasse Tyson:Scientist:5/10/1958
+Vaclav Havel:President:5/10/1936
+Michelle Obama:First Lady:17/1/1964
+Penelope Cruz:Actress:27/4/1974
+Osho:11/12/1931
+Tea Leoni:25/2/1966
+Asia Carrera:Actress:6/8/1973
+Richard Ayoade:Actor:12/6/1977
+Randall Munroe:17/10/1984
