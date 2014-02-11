@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import mindmeld, numpy as np
 
@@ -14,18 +15,17 @@ def f(s):
    except: 
       return None
 df['bday2'] = df['bday'].apply(f)
-df.to_csv('/tmp/out.csv',sep=';')
 
-import os
 cols = []
-lewi = os.listdir('./doc/details/lewi')
-lewi = map(lambda x: 'lewi'+x.replace('.html',''),lewi)
+lewi = range(278)
+lewi = map(lambda x: 'lewi'+str(x),lewi)
 cols += lewi
 for x in cols: df[x] = np.nan
+
 for i in range(10): df['mills'+str(i)] = np.nan
 
-import mindmeld;reload(mindmeld)
 df2 = df[pd.isnull(df['bday2']) == False]
+
 def enrich(x):
    res = mindmeld.calculate(x['bday2'])
    for lew in res['lewi']: x['lewi'+str(lew)] = 1
@@ -40,7 +40,6 @@ def enrich(x):
    x['mills'+str(res['millman'][4])] = 1
    return x
 df3 = df2.apply(enrich, axis=1)
-df3.to_csv('/tmp/out3.csv',sep=';')
 
 from sklearn.feature_extraction import DictVectorizer
 def one_hot_dataframe(data, cols, replace=False):
