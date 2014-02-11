@@ -31,7 +31,7 @@ for idx in df.index:
       y = y.drop(idx)
       cols = ['I','N','T','P','mbti','name','occup','bday','bday2']
       X = X.drop(cols,axis=1)
-      k = 3
+      k = 2
       try:
          Xs = sps.coo_matrix(X)
          U,Sigma,V=slin.svds(Xs,k=k)
