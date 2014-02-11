@@ -53,8 +53,7 @@ MBTI type, seperately on each, such as I or E, N or S. So each
 classifier was a two-label classifier. For each test we would only try
 to predict one letter at a time.
 
-The average success rate I obtained using this method was %58.3 which
+The average success rate I obtained using this method was %58 which
 might indicate the presence of a pattern. The naive classifier (random
-choice between two classes) succeeded only %48.68. The dimensionality
-of this data is high, so IMO the classifier could benefit from more
-data.
+choice between two classes) would be arounf 50%. The dimensionality of
+this data is high, so this problem can benefit from more data.

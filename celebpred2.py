@@ -38,7 +38,7 @@ for idx in df.index:
    for i in ['x']:
    #for letter in ['I','N','T','P']:
       X = df.copy()
-      #X = X.fillna(0)
+      X = X.fillna(0)
       y = df[letter]*1
       testrow = X.ix[idx]
       testres = X.ix[idx][letter]
