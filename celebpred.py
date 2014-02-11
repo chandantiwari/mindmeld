@@ -2,8 +2,9 @@
 Classifier that tries to predict celebrity MBTI letter from
 astrological parameters.
 '''
-import scipy.sparse as sp
-import scipy.linalg as lin
+import scipy.sparse.linalg as slin
+import scipy.sparse as sps
+import numpy.linalg as lin
 import pandas as pd
 import sklearn as sk
 import numpy as np
@@ -17,24 +18,22 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.lda import LDA
 import random
-import rbm
 
-clf = DecisionTreeClassifier(max_depth=9) #
-#clf2 = naive_bayes.BernoulliNB() 
-clf2 = GradientBoostingClassifier(n_estimators=2)
-clf3 = RandomForestClassifier(n_estimators=4)
-#clf3 = KNeighborsClassifier(n_neighbors=2)
-#clf3 = svm.SVC(kernel='sigmoid'); 
-#clf2 = LDA(n_components=6)
+#clf = DecisionTreeClassifier(max_depth=5) 
+#clf = naive_bayes.BernoulliNB() 
+#clf = GradientBoostingClassifier(n_estimators=8)
+#clf = RandomForestClassifier(n_estimators=4)
+#clf = KNeighborsClassifier(n_neighbors=1,metric=euclidian)
+clf = svm.SVC(kernel='rbf'); 
+#clf = LDA(n_components=6)
+#clf = linear_model.LogisticRegression(class_weight='auto')
 print clf
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
-df = df.reindex(np.random.permutation(df.index))
-naivesum = 0
+#df = df.reindex(np.random.permutation(df.index))
 total = 0
 predsum = 0
 for idx in df.index:
-   print df.ix[idx]['name']
    letter = random.choice(['I','N','T','P'])
    for i in ['x']:
    #for letter in ['I','N','T','P']:
@@ -47,19 +46,22 @@ for idx in df.index:
       y = y.drop(idx)
       cols = ['I','N','T','P','mbti','name','occup','bday','bday2']
       X = X.drop(cols,axis=1)
-      res=clf.fit(X,y)
-      res2=clf2.fit(X,y)
-      res3=clf3.fit(X,y)
-
-      testrow2=testrow.drop(cols)
-      total += 1
-      naive = random.choice([0,1])
-
-      pred = clf.predict(testrow2)
-      pred2 = clf2.predict(testrow2)
-      pred3 = clf3.predict(testrow2)
-      pred = (pred and pred2) or (pred2 and pred3) or (pred and pred3)
-      if pred == testres: predsum += 1
-      if naive == testres: naivesum += 1
-      print 'pred',predsum, 'naive', naivesum, 'total', total, naivesum/float(total)*100, predsum/float(total)*100
-
+      k = 3
+      try:
+         Xs = sps.coo_matrix(X)
+         U,Sigma,V=slin.svds(Xs,k=k)
+         Sigma = np.diag(Sigma)
+         res=clf.fit(U,y)
+         testrow2=testrow.drop(cols)
+         testrow2=np.dot(np.dot(lin.inv(Sigma),V),testrow2)
+         pred = clf.predict(testrow2)
+         total += 1
+         if pred == testres: predsum += 1
+         if total % 5 == 0:
+            print df.ix[idx]['name']
+            print 'pred',predsum, 'total', total, predsum/float(total)*100
+      except Exception, e:
+         print e
+         pass
+      
+print 'pred',predsum, 'total', total, predsum/float(total)*100

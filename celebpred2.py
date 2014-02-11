@@ -46,25 +46,22 @@ for idx in df.index:
       y = y.drop(idx)
       cols = ['I','N','T','P','mbti','name','occup','bday','bday2']
       X = X.drop(cols,axis=1)
-
+      k = 3
       try:
-         U,Sigma,V=lin.svd(X)
+         Xs = sps.coo_matrix(X)
+         U,Sigma,V=slin.svds(Xs,k=k)
          Sigma = np.diag(Sigma)
-         k = 3
-         Sigma = Sigma[:k,:k]
-         U = U[:,:k]
-         V = V[:,:k]
          res=clf.fit(U,y)
-
          testrow2=testrow.drop(cols)
-         testrow2=np.dot(np.dot(lin.inv(Sigma),V.T),testrow2)
+         testrow2=np.dot(np.dot(lin.inv(Sigma),V),testrow2)
          pred = clf.predict(testrow2)
-
          total += 1
          if pred == testres: predsum += 1
          if total % 5 == 0:
             print df.ix[idx]['name']
             print 'pred',predsum, 'total', total, predsum/float(total)*100
-      except: pass
+      except Exception, e:
+         print e
+         pass
       
 print 'pred',predsum, 'total', total, predsum/float(total)*100
