@@ -10,27 +10,12 @@ import sklearn as sk
 import numpy as np
 import pandas as pd
 from sklearn import svm
-from sklearn import naive_bayes 
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn import linear_model
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.lda import LDA
 import random
 
-#clf = DecisionTreeClassifier(max_depth=5) 
-#clf = naive_bayes.BernoulliNB() 
-#clf = GradientBoostingClassifier(n_estimators=8)
-#clf = RandomForestClassifier(n_estimators=4)
-#clf = KNeighborsClassifier(n_neighbors=1,metric=euclidian)
 clf = svm.SVC(kernel='rbf'); 
-#clf = LDA(n_components=6)
-#clf = linear_model.LogisticRegression(class_weight='auto')
 print clf
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
-#df = df.reindex(np.random.permutation(df.index))
 total = 0
 predsum = 0
 for idx in df.index:
