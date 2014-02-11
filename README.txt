@@ -15,12 +15,13 @@ using open source Python code
 Example:
 
 import mindmeld
-print mindmeld.calculate('19401010')
+print mindmeld.calculate('19410326')
 
 The result will look like:
 
-{'lewi': [83, 154, 159, 189, 227, 243, 256, 259, 264], 'spiller':
-'Libra', 'millman': [16, 7, 1, 6, 7], 'chinese': 'Dragon', 'cycle': 9}
+{'millman': [26, 8, 2, 6, 8], 'chinese': 'Snake', 'sun': 0.0, 'moon':
+11.0, 'lewi': [12, 155, 156, 205, 208, 214, 221, 222, 227, 243, 252],
+'spiller': 'Libra', 'cycle': 9}
 
 The calculation of Lewi numbers is the most beneficial part of this
 package, doing the same calculation by hand was very time
