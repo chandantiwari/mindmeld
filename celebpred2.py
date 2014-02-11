@@ -7,16 +7,16 @@ import sklearn as sk
 import numpy as np
 import pandas as pd
 import rbm
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn import svm
 import random
 
 # success 54.7
     
-clf = svm.SVC(kernel='rbf',gamma=0.1) 
-
-print clf
+#clf = svm.SVC(kernel='rbf',gamma=0.1) 
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
+df = df.reindex(np.random.permutation(df.index))
 total = 0
 predsum = 0
 for idx in df.index:
@@ -32,10 +32,12 @@ for idx in df.index:
       y = y.drop(idx)
       cols = ['I','N','T','P','mbti','name','occup','bday','bday2']
       X = X.drop(cols,axis=1)
-      r = rbm.RBM(num_visible = X.shape[1], num_hidden = 10)
+      hidden = 20
+      r = rbm.RBM(num_visible = X.shape[1], num_hidden = hidden)
       X = X.applymap(lambda x: int(x))
-      r.train(np.array(X), max_epochs = 40)
+      r.train(np.array(X), max_epochs = 30)
       X = r.run_visible(np.array(X))
+      clf = KNeighborsClassifier(n_neighbors=3)
       res=clf.fit(X,y)
       testrow2=testrow.drop(cols)
       testrow2 = testrow2.map(lambda x: int(x))
