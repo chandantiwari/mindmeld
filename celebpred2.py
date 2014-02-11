@@ -10,10 +10,9 @@ import rbm
 from sklearn import svm
 import random
 
-# svm.SVC(kernel='rbf',degree=4,gamma=0.2) # 56.8
-# svm.SVC(kernel='rbf') # 57.1
-clf = svm.SVC(kernel='rbf',gamma=0.1) # 58.3
-# DecisionTreeClassifier(max_depth=7) #57.7
+# success 54.7
+    
+clf = svm.SVC(kernel='rbf',gamma=0.1) 
 
 print clf
 
