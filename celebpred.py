@@ -12,7 +12,10 @@ import pandas as pd
 from sklearn import svm
 import random
 
-clf = svm.SVC(kernel='rbf');
+# kernel='rbf',degree=4,gamma=0.2) 58.1
+# kernel='rbf',gamma=0.1) 58.6
+# kernel='sigmoid',gamma=0.1) 59.7
+clf = svm.SVC(kernel='sigmoid',gamma=0.1)
 print clf
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
