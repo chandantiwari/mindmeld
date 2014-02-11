@@ -50,3 +50,12 @@ def init():
     mapping.ix['ne','sq'] = {'pl':277}
     mapping.ix['ne','opp'] = {'pl':277}    
     return mapping
+
+mbti = {'estp':['se','ti','fe','ni'],'esfp':['se','fi','te','ni'],
+        'istj': ['si','te','fi','ne'],'isfj':['si','fe','ti','ne'],
+        'entp': ['ne','ti','fe','si'], 'enfp': ['ne','fi','te','si'],
+        'intj': ['ni','te','fi','se'], 'infj': ['ni','fe','ti','se'],
+        'estj': ['te','si','ne','fi'], 'entj': ['te','ni','se','fi'],
+        'istp': ['ti','se','ni','fe'], 'intp': ['ti','ne','si','fe'],
+        'esfj': ['fe','si','ne','ti'], 'enfj': ['fe','ni','se','ti'],
+        'isfp': ['fi','se','ni','te'], 'infp': ['fi','ne','si','te']}
