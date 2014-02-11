@@ -9973,7 +9973,7 @@ John E. Sulston:British chemist, recipient of the Nobel Prize in Physiology or M
 Michael York:English actor:27/3/1942
 Ivan Gašparovic:President of Slovakia:27/3/1941
 Cale Yarborough:American race car driver:27/3/1939
-Thomas Aquinas Daly:American painter:27/3/1937
+Thomas Aquinas:American painter:27/3/1937
 Abelardo Castillo:Argentine writer:27/3/1935
 Julian Glover:British actor:27/3/1935
 David Janssen:American actor:27/3/1931
@@ -13077,7 +13077,7 @@ Vilna Gaon:Lithuanian rabbi:23/4/1720
 King Frederick I of Sweden:(d. 1751):23/4/1676
 Johann van Waveren Hudde:Dutch mathematician:23/4/1628
 Maarten Tromp:Dutch admiral:23/4/1598
-William Shakespeare:English poet and playwright [uncertain]:23/4/1564
+William Shakespeare [uncertain]:English poet and playwright :23/4/1564
 Georg Fabricius:German poet, historian, and archaeologist:23/4/1516
 Alexander Ales:Scottish theologian:23/4/1500
 Julius Caesar Scaliger:Italian philosopher:23/4/1484
@@ -23256,7 +23256,7 @@ Frank Stallone:American singer and actor:30/7/1950
 Jean Reno:Moroccan-born French actor:30/7/1948
 William Atherton:American actor:30/7/1947
 Jonathan Mann:AIDS activist:30/7/1947
-Arnold Schwarzenegger:Austrian-born American actor, bodybuilder, and Governor of California:30/7/1947
+Arnold Schwarzenegger:Actor:30/7/1947
 Neil Bonnett:American race car driver:30/7/1946
 David Sanborn:American saxophonist:30/7/1945
 Henri-François Gautrin:Quebec politician:30/7/1943
@@ -23343,7 +23343,7 @@ Julian Richards:Welsh film director:31/7/1968
 Minako Honda:Japanese singer and musical actress:31/7/1967
 Dean Cain:American actor:31/7/1966
 John Laurinaitis:American professional wrestler:31/7/1965
-J. K. Rowling:British writer:31/7/1965
+J.K. Rowling:British writer:31/7/1965
 Scott Brooks:American basketball player:31/7/1965
 Jim Corr:Irish singer and musician (The Corrs):31/7/1964
 Brian Skrudland:Canadian ice hockey player:31/7/1963
@@ -26552,7 +26552,7 @@ Jacobus Henricus van 't Hoff:Nobel Prize laureate:30/8/1852
 Andrew Onderdonk:Canadian railway contractor:30/8/1848
 Gulstan Ropert:French Catholic prelate:30/8/1839
 Anita Garibaldi:Brazilian warrior; Garibaldis wife (War of Tatters):30/8/1821
-Mary Wollstonecraft Shelley:English writer:30/8/1797
+Mary Wollstonecraft:English writer:30/8/1797
 Jacques-Louis David:French painter:30/8/1748
 Samuel Whitbread:English brewer:30/8/1720
 David Hartley:English philosopher:30/8/1705
@@ -36613,7 +36613,7 @@ Nikki Tyler:American actress:4/12/1972
 Sylvester Terkay:American professional wrestler:4/12/1970
 Kevin Sussman:American actor:4/12/1970
 Lucas Radebe:South-African footballer:4/12/1969
-Jay-Z (Shawn Carter):American rapper:4/12/1969
+Jay-Z:American rapper:4/12/1969
 Margaret Cho:American comedian, actor:4/12/1968
 Fred Armisen:American actor and musician:4/12/1966
 Chris Shepherd:British film director:4/12/1966
@@ -39532,3 +39532,9 @@ Amy Chua:Writer:26/10/1962
 Gerald Ford:President:14/7/1913
 Jason Segel:Actor:18/1/1980
 Sheryl Sandberg:Businesswoman:28/8/1969
+Alexander Solzhenitsyn:Historian:11/12/1918
+Daniel Day-Lewis:Actor:29/4/1957
+Rooney Mara:Actress:17/4/1985
+Soeren Kierkegaard:Philosopher:5/5/1813
+C.S. Lewis:Academic:29/11/1898
+Antoine de Saint-Exupery:29/6/1900

@@ -9,13 +9,15 @@ import pandas as pd
 import sklearn as sk
 import numpy as np
 import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
 from sklearn import svm
 import random
 
-# kernel='rbf',degree=4,gamma=0.2) 58.1
-# kernel='rbf',gamma=0.1) 58.6
-# kernel='sigmoid',gamma=0.1) 59.7
-clf = svm.SVC(kernel='sigmoid',gamma=0.1)
+# svm.SVC(kernel='rbf',degree=4,gamma=0.2) # 56.8
+# svm.SVC(kernel='rbf') # 57.1
+clf = svm.SVC(kernel='rbf',gamma=0.1) 58.3
+# DecisionTreeClassifier(max_depth=7) #57.7
+
 print clf
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
