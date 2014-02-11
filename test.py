@@ -14,7 +14,7 @@ class TestAll(unittest.TestCase):
         self.assertTrue('Capricorn' in res['spiller'])
         res = mindmeld.get_lewi('19730424')
         self.assertTrue('22' in res)
-        self.assertTrue('167' in res)
+        self.assertTrue('167' in res)        
         
     def testmap(self):
         m = mapping.init()

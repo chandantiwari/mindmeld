@@ -78,11 +78,6 @@ def calculate_cycle(d):
        return total
    except: return None
    
-def calculate(date):
-   return {'chinese':get_chinese(date), 'spiller':get_spiller(date),
-           'millman':calculate_millman(date),'cycle': calculate_cycle(date),
-           'lewi':calculate_lewi(date)}
-
 def calculate_lewi_decans(decans):
    res = []
    sun = np.ceil(float(decans[0])/3)-1
@@ -163,3 +158,10 @@ def calculate_mb(choices):
 def calculate_lewi(date):
    return calculate_lewi_decans(get_decans(date))
 
+def calculate(date):
+   decans = get_decans(date)
+   sun = np.ceil(float(decans[0])/3)-1
+   moon = np.ceil(float(decans[1])/3)-1
+   return {'sun': sun, 'moon': moon, 'chinese':get_chinese(date),
+           'spiller':get_spiller(date), 'millman':calculate_millman(date),
+           'cycle': calculate_cycle(date), 'lewi':calculate_lewi(date)}

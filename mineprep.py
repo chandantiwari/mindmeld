@@ -2,7 +2,7 @@ import pandas as pd
 import mindmeld, numpy as np
 
 celebs = pd.read_csv("./data/famousbday.txt",sep=':',header=None, 
-names=['name','occup','bday','spiller','chinese','milla','millb'])
+names=['name','occup','bday','spiller','chinese','milla','millb','sun','moon'])
 celeb_mbti = pd.read_csv("./data/myer-briggs.txt",header=None,sep=':',\
 names=['mbti','name'])
 df = pd.merge(celeb_mbti,celebs)
@@ -31,6 +31,8 @@ def enrich(x):
    for lew in res['lewi']: x['lewi'+str(lew)] = 1
    if res['chinese']: x['chinese'] = res['chinese']
    if res['spiller']: x['spiller'] = res['spiller']
+   x['sun'] = str(res['sun'])
+   x['moon'] = str(res['moon'])
    x['milla'] = str(res['millman'][0])
    x['millb'] = str(res['millman'][1])
    x['mills'+str(res['millman'][2])] = 1
@@ -53,7 +55,7 @@ def one_hot_dataframe(data, cols, replace=False):
         data = data.join(vecData)
     return (data, vecData, vec)
 
-df4, _, _ = one_hot_dataframe(df3,['spiller','chinese','milla','millb'], \
+df4, _, _ = one_hot_dataframe(df3,['spiller','chinese','milla','millb','sun'], \
                               replace=True)
 df4 = df4.replace(0.0,np.nan)
 
