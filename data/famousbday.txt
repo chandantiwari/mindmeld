@@ -4745,7 +4745,7 @@ Hans Bronsart von Schellendorff:Prussian musician:11/2/1830
 Auguste-Édouard Mariette:French Egyptologist:11/2/1821
 Samuel Parkman Tuckerman:American composer:11/2/1819
 Otto Ludwig:German writer and critic:11/2/1813
-Alexander Hamilton Stephens:American politician:11/2/1812
+Alexander Hamilton:American politician:11/2/1812
 Lydia Child:American abolitionist:11/2/1802
 William Henry Fox Talbot:English photographer:11/2/1800
 Basil Moreau:French Founder priest:11/2/1799
@@ -19189,7 +19189,7 @@ Anthony Morelli:American football player:21/6/1985
 Alicia Alighatti:American pornographic actress:21/6/1984
 Franck Perera:French racing driver:21/6/1984
 Jovan Kenneth Johnson:American:21/6/1983
-Prince William of Wales:British prince:21/6/1982
+Prince William:British prince:21/6/1982
 Brandon Flowers:American singer and keyboardist (The Killers):21/6/1981
 Yann Danis:French Canadian ice hockey player:21/6/1981
 Sendy Rleal:Dominican baseball player:21/6/1980
@@ -33511,7 +33511,7 @@ Bruno Junqueira:Brazilian racing driver:4/11/1976
 Eric Fichaud:Canadian ice hockey player:4/11/1975
 Eduard Kokcharov:Russian handball player:4/11/1975
 Curtis Stone:Australian chef and television personality:4/11/1975
-Cedric Bixler-Zavala:American musician (At the Drive-In, The Mars Volta):4/11/1974
+Cedric Bixler-Zavala:American musician:4/11/1974
 Luís Figo:Portuguese footballer:4/11/1972
 Tabassum Hashmi:Indian actress:4/11/1972
 Matthew McConaughey:American actor:4/11/1969
@@ -39513,3 +39513,16 @@ Wayne Dyer:Author:10/5/1940
 Dana White:Businessman:28/7/1969
 Harry Styles:Singer:1/2/1994
 Sonia Sotomayor:Judge:25/6/1954
+Peter Schiff:Strategist:23/3/1963
+Marina Diamandis:Singer:10/10/1985
+Chloe Grace Moretz:Actress:10/2/1997
+Danielle de Niese:Singer:11/4/1979
+Alan Dershowitz:Journalist:1/9/1938
+Sarah Palin:Politician:11/2/1964
+John Boehner:Politician:17/11/1949
+Selena Gomez:Actress:22/7/1992
+Vanessa Hudgens:Singer:14/12/1988
+Peter Thiel:Venture Capitalist:11/10/1967
+Diablo Cody:Director:14/6/1978
+Kevin Barnes:Singer:30/5/1974
+Maddox:Blogger:16/1/1978

@@ -12,7 +12,7 @@ import pandas as pd
 from sklearn import svm
 import random
 
-clf = svm.SVC(kernel='rbf'); 
+clf = svm.SVC(kernel='rbf');
 print clf
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
