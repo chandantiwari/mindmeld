@@ -18,7 +18,6 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.lda import LDA
 import random
-import rbm
 
 #clf = DecisionTreeClassifier(max_depth=5) 
 #clf = naive_bayes.BernoulliNB() 
@@ -39,7 +38,7 @@ for idx in df.index:
    for i in ['x']:
    #for letter in ['I','N','T','P']:
       X = df.copy()
-      X = X.fillna(0)
+      #X = X.fillna(0)
       y = df[letter]*1
       testrow = X.ix[idx]
       testres = X.ix[idx][letter]
@@ -51,7 +50,7 @@ for idx in df.index:
       try:
          U,Sigma,V=lin.svd(X)
          Sigma = np.diag(Sigma)
-         k = 5
+         k = 3
          Sigma = Sigma[:k,:k]
          U = U[:,:k]
          V = V[:,:k]
