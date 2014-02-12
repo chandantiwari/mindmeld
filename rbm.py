@@ -1,3 +1,4 @@
+# from http://github.com/echen/restricted-boltzmann-machines.git
 import numpy as np
 
 class RBM:
