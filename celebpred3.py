@@ -17,13 +17,13 @@ import numpy.linalg as lin
 from sklearn import svm
 import random
 
-# ep 50, hidden 8, k 2 success %59.54 
+# ep 60, hidden 8, k 4 success %61
 
-clf = svm.SVC(kernel='rbf',gamma=0.1) 
+clf = svm.SVC(kernel='rbf') 
 
-epochs = 50
-hidden = 12
-k = 3
+epochs = 60
+hidden = 8
+k = 4
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 df = df.reindex(np.random.permutation(df.index))
@@ -31,28 +31,27 @@ total = 0
 predsum = 0
 for idx in df.index:
    letter = random.choice(['N','T','P'])
-   for i in ['x']:
-   #for letter in ['I','N','T','P']:
-      X = df.copy()
-      X = X.fillna(0)
-      y = df[letter]*1
-      testrow = X.ix[idx]
-      testres = X.ix[idx][letter]
-      X = X.drop(idx)
-      y = y.drop(idx)
-      cols = ['I','N','T','P','mbti','name','occup','bday','bday2']
-      X = X.drop(cols,axis=1)
+   X = df.copy()
+   X = X.fillna(0)
+   y = df[letter]*1
+   testrow = X.ix[idx]
+   testres = X.ix[idx][letter]
+   X = X.drop(idx)
+   y = y.drop(idx)
+   cols = ['I','N','T','P','mbti','name','occup','bday','bday2']
+   X = X.drop(cols,axis=1)
 
-      # reduce dims using RBM 
-      r = rbm.RBM(num_visible = X.shape[1], num_hidden = hidden)
-      X = X.applymap(lambda x: int(x))
-      r.train(np.array(X), max_epochs = epochs)
-      X = r.run_visible(np.array(X))
-      testrow2=testrow.drop(cols)
-      testrow2 = testrow2.map(lambda x: int(x))
-      testrow2 = np.array([testrow2])
-      testrow2 = r.run_visible(testrow2)
+   # reduce dims using RBM 
+   r = rbm.RBM(num_visible = X.shape[1], num_hidden = hidden)
+   X = X.applymap(lambda x: int(x))
+   r.train(np.array(X), max_epochs = epochs)
+   X = r.run_visible(np.array(X))
+   testrow2=testrow.drop(cols)
+   testrow2 = testrow2.map(lambda x: int(x))
+   testrow2 = np.array([testrow2])
+   testrow2 = r.run_visible(testrow2)
 
+   try:
       # reduce dims further using SVD
       Xs = sps.coo_matrix(X)
       U,Sigma,V=slin.svds(Xs,k=k)
@@ -67,5 +66,8 @@ for idx in df.index:
       if total % 5 == 0:
          print df.ix[idx]['name']
          print 'pred',predsum, 'total', total, predsum/float(total)*100
+   except Exception, e:
+      print e
+      pass
                
 print 'pred',predsum, 'total', total, predsum/float(total)*100
