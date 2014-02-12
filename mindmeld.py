@@ -18,6 +18,11 @@ def get_lewi(date):
    return res[:-1]
 
 def get_decans(date):
+   # Decans values are between 1 and 24, there are 10 of them in an
+   # array per birthday. This data comes from SwissEph. Array cells
+   # represent sun, moon, mercury, etc.  First one is sun, second is
+   # the moon, the order is the same as the array shown in
+   # mapping.planets. 
    tmp=np.array(decans[decans['date']==int(date)]['decans'])
    res = tmp[0].split(':')   
    res = res[:-1]
@@ -71,10 +76,14 @@ def calculate_cycle(d):
    
 def calculate_lewi_decans(decans):
    res = []
+   # In order to map the 1-24 decan value to a sign, a little division
+   # magic is used. Each sign has 3 decan values, 1-3 is Aries, 4-6 is
+   # Taurus, etc. Below this mapping is done for sun and moon only.
    sun = np.ceil(float(decans[0])/3)-1
    moon = np.ceil(float(decans[1])/3)-1
    res.append(sun_moon_table[sun,moon])
 
+   # now calculate all the angles
    step_signs = ['*', 'sq', 'tri', 'opp', 'tri', 'sq', '*']
    steps = np.array([6,9,12,18,24,27,30])
    decans = np.array(decans)
@@ -89,6 +98,8 @@ def calculate_lewi_decans(decans):
                if not pd.isnull(smap.ix[planet,step_sign]) and (p in smap.ix[planet,step_sign]):
                   res.append(smap.ix[planet,step_sign][p])
 
+   # this part is for planet alignments, i.e. detecting same decans
+   # that are for multiple planets.
    for i,dec in enumerate(decans):
       matches = np.array(range(10))[decans==dec]
       if len(matches) > 1:
