@@ -19,7 +19,7 @@ import random
 
 # svm.SVC(kernel='rbf',degree=4,gamma=0.2) 
 # svm.SVC(kernel='rbf') 
-clf = svm.SVC(kernel='rbf',gamma=0.1) 
+clf = svm.SVC(kernel='rbf',gamma=0.1) # 59.1 
 # DecisionTreeClassifier(max_depth=7)
 
 print clf
@@ -28,7 +28,7 @@ df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 total = 0
 predsum = 0
 for idx in df.index:
-   letter = random.choice(['I','N','T','P'])
+   letter = random.choice(['N','T','P'])
    for i in ['x']:
    #for letter in ['I','N','T','P']:
       X = df.copy()
@@ -40,7 +40,7 @@ for idx in df.index:
       y = y.drop(idx)
       cols = ['I','N','T','P','mbti','name','occup','bday','bday2']
       X = X.drop(cols,axis=1)
-      k = 2
+      k = 4
       try:
          Xs = sps.coo_matrix(X)
          U,Sigma,V=slin.svds(Xs,k=k)

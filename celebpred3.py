@@ -22,15 +22,15 @@ import random
 clf = svm.SVC(kernel='rbf',gamma=0.1) 
 
 epochs = 50
-hidden = 8
-k = 2
+hidden = 12
+k = 3
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 df = df.reindex(np.random.permutation(df.index))
 total = 0
 predsum = 0
 for idx in df.index:
-   letter = random.choice(['I','N','T','P'])
+   letter = random.choice(['N','T','P'])
    for i in ['x']:
    #for letter in ['I','N','T','P']:
       X = df.copy()
