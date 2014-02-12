@@ -1,6 +1,10 @@
 '''
 Classifier that tries to predict celebrity MBTI letter from
-astrological parameters.
+astrological parameters. Utilizes leave-one-out approach to test
+results. One celebrity is left-out of training whose data is used for
+preduction, whose results are checked against the known MBTI letter. 
+
+This one uses RBM->SVD->SVM to make its predictions. Best one so far.
 '''
 import pandas as pd
 import sklearn as sk
@@ -13,7 +17,7 @@ import numpy.linalg as lin
 from sklearn import svm
 import random
 
-# ep 50, hidden 8, k 2 = 59.54 
+# ep 50, hidden 8, k 2 success %59.54 
 
 clf = svm.SVC(kernel='rbf',gamma=0.1) 
 
@@ -38,6 +42,8 @@ for idx in df.index:
       y = y.drop(idx)
       cols = ['I','N','T','P','mbti','name','occup','bday','bday2']
       X = X.drop(cols,axis=1)
+
+      # reduce dims using RBM 
       r = rbm.RBM(num_visible = X.shape[1], num_hidden = hidden)
       X = X.applymap(lambda x: int(x))
       r.train(np.array(X), max_epochs = epochs)
@@ -47,20 +53,19 @@ for idx in df.index:
       testrow2 = np.array([testrow2])
       testrow2 = r.run_visible(testrow2)
 
-      try:
-         Xs = sps.coo_matrix(X)
-         U,Sigma,V=slin.svds(Xs,k=k)
-         Sigma = np.diag(Sigma)
-         res=clf.fit(U,y)         
-         testrow2=np.dot(np.dot(lin.inv(Sigma),V),testrow2.T)
-         pred = clf.predict(testrow2.T)
-         total += 1
-         if pred == testres: predsum += 1
-         if total % 5 == 0:
-            print df.ix[idx]['name']
-            print 'pred',predsum, 'total', total, predsum/float(total)*100
-      except Exception, e:
-         print e
-         pass
+      # reduce dims further using SVD
+      Xs = sps.coo_matrix(X)
+      U,Sigma,V=slin.svds(Xs,k=k)
+      Sigma = np.diag(Sigma)
+      res=clf.fit(U,y)
+
+      # project new data point
+      testrow2=np.dot(np.dot(lin.inv(Sigma),V),testrow2.T)
+      pred = clf.predict(testrow2.T)
+      total += 1
+      if pred == testres: predsum += 1
+      if total % 5 == 0:
+         print df.ix[idx]['name']
+         print 'pred',predsum, 'total', total, predsum/float(total)*100
                
 print 'pred',predsum, 'total', total, predsum/float(total)*100

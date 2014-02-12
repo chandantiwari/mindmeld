@@ -1,6 +1,10 @@
 '''
 Classifier that tries to predict celebrity MBTI letter from
-astrological parameters.
+astrological parameters. Utilizes leave-one-out approach to test
+results. One celebrity is left-out of training whose data is used for
+preduction, whose results are checked against the known MBTI letter. 
+
+SVD->SVM approach is used to predict.
 '''
 import scipy.sparse.linalg as slin
 import scipy.sparse as sps
@@ -13,10 +17,10 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn import svm
 import random
 
-# svm.SVC(kernel='rbf',degree=4,gamma=0.2) # 56.8
-# svm.SVC(kernel='rbf') # 57.1
-clf = svm.SVC(kernel='rbf',gamma=0.1) 58.3
-# DecisionTreeClassifier(max_depth=7) #57.7
+# svm.SVC(kernel='rbf',degree=4,gamma=0.2) 
+# svm.SVC(kernel='rbf') 
+clf = svm.SVC(kernel='rbf',gamma=0.1) 
+# DecisionTreeClassifier(max_depth=7)
 
 print clf
 

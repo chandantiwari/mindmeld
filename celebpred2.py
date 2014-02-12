@@ -1,6 +1,10 @@
 '''
 Classifier that tries to predict celebrity MBTI letter from
-astrological parameters.
+astrological parameters. Utilizes leave-one-out approach to test
+results. One celebrity is left-out of training whose data is used for
+preduction, whose results are checked against the known MBTI letter. 
+
+Pure RBM is used to predict celebrity MBTI letters. 
 '''
 import pandas as pd
 import sklearn as sk
@@ -10,10 +14,8 @@ import rbm
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import svm
 import random
-
-# success 54.7
     
-#clf = svm.SVC(kernel='rbf',gamma=0.1) 
+clf = svm.SVC(kernel='rbf',gamma=0.1) 
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 df = df.reindex(np.random.permutation(df.index))
@@ -37,7 +39,6 @@ for idx in df.index:
       X = X.applymap(lambda x: int(x))
       r.train(np.array(X), max_epochs = 30)
       X = r.run_visible(np.array(X))
-      clf = KNeighborsClassifier(n_neighbors=3)
       res=clf.fit(X,y)
       testrow2=testrow.drop(cols)
       testrow2 = testrow2.map(lambda x: int(x))
