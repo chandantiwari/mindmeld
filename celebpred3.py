@@ -1,10 +1,10 @@
 '''
 Classifier that tries to predict celebrity MBTI letter from
 astrological parameters. Utilizes leave-one-out approach to test
-results. One celebrity is left-out of training whose data is used for
-preduction, whose results are checked against the known MBTI letter. 
+results. One data point is left out of training whose data is used for
+prediction, and verification.
 
-This one uses RBM->SVD->SVM to make its predictions. Best one so far.
+This one uses RBM->SVD->SVM for predictions. Best one so far.
 '''
 import pandas as pd
 import sklearn as sk
