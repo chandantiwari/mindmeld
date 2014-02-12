@@ -37,7 +37,7 @@ class TestAll(unittest.TestCase):
         self.assertEquals('INTP',mindmeld.calculate_mb(input))
         
     def testmbtiaccess(self):
-        self.assertEquals(mindmeld.mbti['infp'][3],'te')
+        self.assertEquals(mapping.mbti['infp'][3],'te')
 
 
     def testbad(self):
