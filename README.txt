@@ -56,5 +56,6 @@ to predict one letter at a time.
 
 The average success rate I obtained using this method was %60 which
 might indicate the presence of a pattern. The naive classifier (random
-choice between two classes) would be arounf 50%. The dimensionality of
-this data is high, so this problem can benefit from more data.
+choice between two labels) would give, unsurprisingly, around 50%. The
+dimensionality of this data is high, so this problem can benefit from
+more data.
