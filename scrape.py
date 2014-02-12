@@ -1,3 +1,7 @@
+'''
+Get celebrities and their MBTI data from celebritytypes.com which
+seems to be most trustworthy site on "famous people MBTI" on the net.
+'''
 import re, urllib, urllib2
 import logging
 from datetime import datetime
