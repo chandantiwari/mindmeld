@@ -13,6 +13,7 @@ import pandas as pd
 import sklearn as sk
 import numpy as np
 import pandas as pd
+from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn import svm
 import random
@@ -26,7 +27,8 @@ df = df.reindex(np.random.permutation(df.index))
 total = 0
 predsum = 0
 for idx in df.index:
-   clf = svm.SVC(kernel='rbf') 
+   #clf = svm.SVC(kernel='rbf')
+   clf = GradientBoostingClassifier(n_estimators=10)
    letter = random.choice(['I','N','T','P'])
    X = df.copy()
    X = X.fillna(0)

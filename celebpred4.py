@@ -6,6 +6,7 @@ prediction, and verification.
 
 SVD->SVM approach is used to predict.
 '''
+from sklearn.ensemble import GradientBoostingClassifier
 import scipy.sparse.linalg as slin
 import scipy.sparse as sps
 import numpy.linalg as lin
@@ -16,14 +17,11 @@ import pandas as pd
 from sklearn import svm
 import random
 
-# sigmoid k==1, 56
-# sigmoid k==10, 60,55
-# rbf k==10, 59,54
-# kernel='poly',degree=4, k=2, 58,56
-# kernel='poly',degree=3, k=3, 60,59
-
+# normed,kernel='poly',degree=3,k=3, 60.2,58
+# normed,kernel='poly',degree=3,gamma=0.1, 62.7
 def train(df_arg,letter,leave_out=None):
-   clf = svm.SVC(kernel='poly',degree=3)
+   clf = svm.SVC(kernel='poly',degree=3,gamma=0.1)
+   #clf = GradientBoostingClassifier(n_estimators=2)
    k = 3
    X = df_arg.copy()
    X = X.fillna(0)
@@ -36,6 +34,7 @@ def train(df_arg,letter,leave_out=None):
       y = y.drop(leave_out)
    X = X.drop(cols,axis=1)
    try:
+      X = X.apply(lambda x: x / np.sqrt(np.sum(np.square(x))+1e-16), axis=1)
       Xs = sps.coo_matrix(X)
       U,Sigma,V=slin.svds(Xs,k=k)
       Sigma = np.diag(Sigma)
