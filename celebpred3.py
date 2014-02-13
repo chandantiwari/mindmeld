@@ -17,13 +17,11 @@ import numpy.linalg as lin
 from sklearn import svm
 import random
 
-# ep 60, hidden 8, k 4 success %61
-
 clf = svm.SVC(kernel='rbf') 
 
-epochs = 60
-hidden = 8
-k = 4
+epochs = 30
+hidden = 4
+k = 3
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 df = df.reindex(np.random.permutation(df.index))

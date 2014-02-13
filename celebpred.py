@@ -17,18 +17,20 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn import svm
 import random
 
-# svm.SVC(kernel='rbf',degree=4,gamma=0.2) 
-clf = svm.SVC(kernel='rbf') # 59.9
-#clf = svm.SVC(kernel='rbf',gamma=0.1) # 59.1 
-# DecisionTreeClassifier(max_depth=7)
+# rbf, k=5, 60,54
+# rbf, k=1, 59,60
+
+clf = svm.SVC(kernel='rbf') 
 
 print clf
+k = 1
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
+df = df.reindex(np.random.permutation(df.index))
 total = 0
 predsum = 0
 for idx in df.index:
-   letter = random.choice(['N','T','P'])
+   letter = random.choice(['I','N','T','P'])
    X = df.copy()
    X = X.fillna(0)
    y = df[letter]*1
@@ -38,7 +40,6 @@ for idx in df.index:
    y = y.drop(idx)
    cols = ['I','N','T','P','mbti','name','occup','bday','bday2']
    X = X.drop(cols,axis=1)
-   k = 4
    try:
       Xs = sps.coo_matrix(X)
       U,Sigma,V=slin.svds(Xs,k=k)
