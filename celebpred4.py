@@ -6,7 +6,6 @@ prediction, and verification.
 
 SVD->SVM approach is used to predict.
 '''
-from sklearn.ensemble import GradientBoostingClassifier
 import scipy.sparse.linalg as slin
 import scipy.sparse as sps
 import numpy.linalg as lin
@@ -18,10 +17,9 @@ from sklearn import svm
 import random
 
 # normed,kernel='poly',degree=3,k=3, 60.2,58
-# normed,kernel='poly',degree=3,gamma=0.1, 62.7
+# normed,kernel='poly',degree=3,gamma=0.1, 62.7,56
 def train(df_arg,letter,leave_out=None):
-   clf = svm.SVC(kernel='poly',degree=3,gamma=0.1)
-   #clf = GradientBoostingClassifier(n_estimators=2)
+   clf = svm.SVC(kernel='poly',degree=3,gamma=0.01)
    k = 3
    X = df_arg.copy()
    X = X.fillna(0)
@@ -59,7 +57,7 @@ for idx in df.index:
    pred = clf.predict(testrow2)
    total += 1
    if pred == testres: predsum += 1
-   if total % 5 == 0:
+   if total % 10 == 0:
       print df.ix[idx]['name']
       print 'pred',predsum, 'total', total, predsum/float(total)*100
       
