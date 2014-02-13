@@ -14,6 +14,7 @@ import sklearn as sk
 import numpy as np
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn import svm
 import random
 
@@ -23,9 +24,10 @@ import random
 # sigmoid k==10, 60,55
 # rbf k==10, 59,54
 
-def train(clf, df_arg,letter,leave_out=None):
-   clf = svm.SVC(kernel='rbf') 
-   k = 10
+def train(df_arg,letter,leave_out=None):
+   #clf = svm.SVC(kernel='sigmoid')
+   clf = RandomForestClassifier()
+   k = 1
    X = df_arg.copy()
    X = X.fillna(0)
    y = df_arg[letter]*1
@@ -49,14 +51,12 @@ def train(clf, df_arg,letter,leave_out=None):
 cols = ['I','N','T','P','mbti','name','occup','bday','bday2']
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 df = df.reindex(np.random.permutation(df.index))
-clf = svm.SVC(kernel='rbf') 
-print clf
    
 total = 0
 predsum = 0
 for idx in df.index:
    letter = random.choice(['I','N','T','P'])
-   clf, testrow, testres,U,Sigma,V = train(clf, df, letter, idx)
+   clf, testrow, testres,U,Sigma,V = train(df, letter, idx)
    if testres == None: continue
    testrow2=testrow.drop(cols)
    testrow2=np.dot(np.dot(lin.inv(Sigma),V),testrow2)
