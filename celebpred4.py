@@ -13,8 +13,6 @@ import pandas as pd
 import sklearn as sk
 import numpy as np
 import pandas as pd
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
 from sklearn import svm
 import random
 
@@ -23,11 +21,11 @@ import random
 # sigmoid k==1, 56
 # sigmoid k==10, 60,55
 # rbf k==10, 59,54
+# kernel='poly',degree=4, k=2, 58,56
 
 def train(df_arg,letter,leave_out=None):
-   #clf = svm.SVC(kernel='sigmoid')
-   clf = RandomForestClassifier()
-   k = 1
+   clf = svm.SVC(kernel='poly',degree=3)
+   k = 3
    X = df_arg.copy()
    X = X.fillna(0)
    y = df_arg[letter]*1
