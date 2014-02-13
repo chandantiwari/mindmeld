@@ -18,10 +18,6 @@ from sklearn import svm
 import random
 
 # rbf, k=1, 59,60
-
-clf = svm.SVC(kernel='rbf') 
-
-print clf
 k = 1
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
@@ -30,6 +26,7 @@ df = df.reindex(np.random.permutation(df.index))
 total = 0
 predsum = 0
 for idx in df.index:
+   clf = svm.SVC(kernel='rbf') 
    letter = random.choice(['I','N','T','P'])
    X = df.copy()
    X = X.fillna(0)
