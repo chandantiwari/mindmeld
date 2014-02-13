@@ -16,12 +16,11 @@ import pandas as pd
 from sklearn import svm
 import random
 
-# rbf, k=1, 59,60
-
 # sigmoid k==1, 56
 # sigmoid k==10, 60,55
 # rbf k==10, 59,54
 # kernel='poly',degree=4, k=2, 58,56
+# kernel='poly',degree=3, k=3, 60,59
 
 def train(df_arg,letter,leave_out=None):
    clf = svm.SVC(kernel='poly',degree=3)
