@@ -13,13 +13,13 @@ import pandas as pd
 import sklearn as sk
 import numpy as np
 import pandas as pd
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.tree import DecisionTreeClassifier
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 from sklearn import svm
 import random
 
 # rbf, k=1, 59,60
-k = 1
+k = 3
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 df = df.reindex(np.random.permutation(df.index))
@@ -27,8 +27,7 @@ df = df.reindex(np.random.permutation(df.index))
 total = 0
 predsum = 0
 for idx in df.index:
-   #clf = svm.SVC(kernel='rbf')
-   clf = GradientBoostingClassifier(n_estimators=10)
+   clf = svm.SVC(kernel='rbf')
    letter = random.choice(['I','N','T','P'])
    X = df.copy()
    X = X.fillna(0)
@@ -42,6 +41,18 @@ for idx in df.index:
    try:
       Xs = sps.coo_matrix(X)
       U,Sigma,V=slin.svds(Xs,k=k)
+
+      # disable this if you want
+      U1 = U[y==1]
+      U0 = U[y==0]
+      fig = plt.figure()
+      ax = Axes3D(fig)
+      ax.view_init(elev=10., azim=20)
+      ax.plot(U1[:,0],U1[:,1],U1[:,2],'b.')
+      plt.hold(True)
+      ax.plot(U0[:,0],U0[:,1],U0[:,2],'r.')
+      plt.show()
+      
       Sigma = np.diag(Sigma)
       res=clf.fit(U,y)
       testrow2=testrow.drop(cols)
