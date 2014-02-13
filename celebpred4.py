@@ -16,8 +16,8 @@ import pandas as pd
 from sklearn import svm
 import random
 
-# normed,kernel='poly',degree=3,k=3, 60.2,58
-# normed,kernel='poly',degree=3,gamma=0.1, 62.7,56
+# normed,kernel='poly',degree=3,gamma=0.01,k=3,60.2 
+
 def train(df_arg,letter,leave_out=None):
    clf = svm.SVC(kernel='poly',degree=3,gamma=0.01)
    k = 3
