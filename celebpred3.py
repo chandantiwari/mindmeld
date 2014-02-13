@@ -20,8 +20,8 @@ import random
 clf = svm.SVC(kernel='rbf') 
 
 epochs = 30
-hidden = 4
-k = 3
+hidden = 5
+k = 1
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 df = df.reindex(np.random.permutation(df.index))

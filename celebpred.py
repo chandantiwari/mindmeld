@@ -17,7 +17,6 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn import svm
 import random
 
-# rbf, k=5, 60,54
 # rbf, k=1, 59,60
 
 clf = svm.SVC(kernel='rbf') 
@@ -27,6 +26,7 @@ k = 1
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 df = df.reindex(np.random.permutation(df.index))
+
 total = 0
 predsum = 0
 for idx in df.index:
