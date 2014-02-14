@@ -18,8 +18,7 @@ from mpl_toolkits.mplot3d import Axes3D
 from sklearn import svm
 import random
 
-# rbf, k=1, 59,60
-k = 3
+k = 10
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 df = df.reindex(np.random.permutation(df.index))
@@ -38,7 +37,7 @@ for idx in df.index:
    y = y.drop(idx)
    cols = ['I','N','T','P','mbti','name','occup','bday','bday2']
    X = X.drop(cols,axis=1)
-   try:
+   try:      
       Xs = sps.coo_matrix(X)
       U,Sigma,V=slin.svds(Xs,k=k)
 
@@ -48,11 +47,13 @@ for idx in df.index:
       fig = plt.figure()
       ax = Axes3D(fig)
       ax.view_init(elev=10., azim=20)
-      ax.plot(U1[:,0],U1[:,1],U1[:,2],'b.')
+      ax.plot(U1[:,k-1],U1[:,k-2],U1[:,k-3],'b.')
       plt.hold(True)
-      ax.plot(U0[:,0],U0[:,1],U0[:,2],'r.')
+      ax.plot(U0[:,k-1],U0[:,k-2],U0[:,k-3],'r.')
+      print Sigma
+      print letter
       plt.show()
-      
+
       Sigma = np.diag(Sigma)
       res=clf.fit(U,y)
       testrow2=testrow.drop(cols)

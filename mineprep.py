@@ -47,23 +47,18 @@ def astro_enrich(df_arg):
       for lew in res['lewi']: x['lewi'+str(lew)] = 1
       if res['chinese']: x['chinese'] = res['chinese']
       if res['spiller']: x['spiller'] = res['spiller']
-      x['sun'] = str(res['sun'])
-      x['moon'] = str(res['moon'])
-      x['milla'] = str(res['millman'][0])
-      x['millb'] = str(res['millman'][1])
       x['mills'+str(res['millman'][2])] = 1
       x['mills'+str(res['millman'][3])] = 1
       x['mills'+str(res['millman'][4])] = 1
       return x
    df3 = df2.apply(f, axis=1)
 
-   df4, _, _ = one_hot_dataframe(df3,['spiller','chinese','milla','millb','sun'], \
-                                 replace=True)
+   df4, _, _ = one_hot_dataframe(df3,['spiller','chinese'], replace=True)
    df4 = df4.replace(0.0,np.nan)
    return df4
 
 celebs = pd.read_csv("./data/famousbday.txt",sep=':',header=None, 
-names=['name','occup','bday','spiller','chinese','milla','millb','sun','moon'])
+names=['name','occup','bday','spiller','chinese'])
 celeb_mbti = pd.read_csv("./data/myer-briggs.txt",header=None,sep=':',\
 names=['mbti','name'])
 
