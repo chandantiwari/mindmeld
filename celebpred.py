@@ -26,7 +26,7 @@ df = df.reindex(np.random.permutation(df.index))
 total = 0
 predsum = 0
 for idx in df.index:
-   clf = svm.SVC(kernel='rbf')
+   clf = svm.SVC(kernel='poly',degree=3)
    letter = random.choice(['I','N','T','P'])
    X = df.copy()
    X = X.fillna(0)
@@ -37,27 +37,34 @@ for idx in df.index:
    y = y.drop(idx)
    cols = ['I','N','T','P','mbti','name','occup','bday','bday2']
    X = X.drop(cols,axis=1)
-   try:      
-      Xs = sps.coo_matrix(X)
-      U,Sigma,V=slin.svds(Xs,k=k)
+   try:
+      
+      #Xs = sps.coo_matrix(X)
+      #U,Sigma,V=slin.svds(Xs,k=k)
+      freq = X.astype(bool).sum(axis=0)
+      freq = freq.replace(0,1)
+      w = np.log(float(X.shape[0])/freq)
+      X = X.apply(lambda x: x*w,axis=1)
+      X = X.apply(lambda x: x / np.sqrt(np.sum(np.square(x))+1e-16), axis=1)
+      
+      X = X - X.mean(0)
+      U,Sigma,V=lin.svd(X.T, full_matrices=False)
+      proj = np.dot(X, U[:,:2])
 
       # disable this if you want
-      U1 = U[y==1]
-      U0 = U[y==0]
-      fig = plt.figure()
-      ax = Axes3D(fig)
-      ax.view_init(elev=10., azim=20)
-      ax.plot(U1[:,k-1],U1[:,k-2],U1[:,k-3],'b.')
-      plt.hold(True)
-      ax.plot(U0[:,k-1],U0[:,k-2],U0[:,k-3],'r.')
-      print Sigma
-      print letter
-      plt.show()
+      U1 = proj[y==1]
+      U0 = proj[y==0]
+      #plt.plot(U1[:,0],U1[:,1],'b.')
+      #plt.hold(True)
+      #plt.plot(U0[:,0],U0[:,1],'r.')
+      #print letter
+      #plt.show()
 
       Sigma = np.diag(Sigma)
-      res=clf.fit(U,y)
+      res=clf.fit(proj,y)
       testrow2=testrow.drop(cols)
-      testrow2=np.dot(np.dot(lin.inv(Sigma),V),testrow2)
+      #testrow2=np.dot(np.dot(lin.inv(Sigma),V),testrow2)
+      testrow2 = np.dot(testrow2, U[:,:2])
       pred = clf.predict(testrow2)
       total += 1
       if pred == testres: predsum += 1
