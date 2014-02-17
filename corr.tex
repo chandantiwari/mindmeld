@@ -1,0 +1,53 @@
+\documentclass[12pt,fleqn]{article}\usepackage{../common}
+\begin{document}
+\begin{minted}[fontsize=\footnotesize]{python}
+import numpy as np
+import pandas as pd
+
+df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
+df = df.fillna(0)
+cols = ['mbti','name','occup','bday','bday2','I','N','T','P']
+df2 = df.drop(cols,axis=1)
+c = pd.DataFrame(np.dot(df2,df2.T),index=df['name'],columns=df['name'])
+\end{minted}
+
+
+\begin{minted}[fontsize=\footnotesize]{python}
+def most_sim(who):
+  print df[df['name'] == who]['mbti']
+  c.ix[who,who] = 0
+  res = c[who].index[np.array(c[who]).argmax()]
+  print res
+  print df[df['name'] == str(res)]['mbti']
+  cc = c.copy()
+  cc.ix[res,who] = 0
+  res = cc[who].index[np.array(cc[who]).argmax()]
+  print res
+  print df[df['name'] == str(res)]['mbti']
+
+most_sim('Arnold Schwarzenegger')
+print '---'
+most_sim('Donald Trump')
+\end{minted}
+
+\begin{verbatim}
+332    INTJ
+Name: mbti, dtype: object
+Paulo Coelho
+39    ESFP
+Name: mbti, dtype: object
+Andrew Garfield
+398    INFP
+Name: mbti, dtype: object
+---
+1    ESTP
+Name: mbti, dtype: object
+George W. Bush
+6    ESTP
+Name: mbti, dtype: object
+Newt Gingrich
+144    ENTP
+Name: mbti, dtype: object
+\end{verbatim}
+
+\end{document}
