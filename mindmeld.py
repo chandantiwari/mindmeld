@@ -167,3 +167,11 @@ def calculate(date):
    return {'sun': sun, 'moon': moon, 'chinese':get_chinese(date),
            'spiller':get_spiller(date), 'millman':calculate_millman(date),
            'cycle': calculate_cycle(date), 'lewi':calculate_lewi(date)}
+
+def describe(res):
+   print res
+   base = 'http://www.github.com/skorsky12/mindmeld/doc/details'
+   print base + '/millman/' + str(res['millman'][0]) + str(res['millman'][1]) + '.html'
+   for lewi in res['lewi']: print base + '/lewi/' + str(lewi) + '.html'
+   print base + '/chinese/' + str(res['chinese']) + '.html'
+   print base + '/spiller/' + str(res['spiller']) + '.html'
