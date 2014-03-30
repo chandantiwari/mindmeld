@@ -25,6 +25,8 @@ df2 = df.apply(f, axis=1)
 df2 = df2.drop('rest',axis=1)
 df2['S'] = df2['S'].map(lambda x: sha(x).hexdigest())
 df2['C'] = df2['C'].map(lambda x: sha(x).hexdigest())
+df2['M0'] = df2['M0'].map(lambda x: str(x))
+df2['M1'] = df2['M1'].map(lambda x: str(x))
 
 def one_hot_dataframe(data, cols, replace=False):
     vec = DictVectorizer()
@@ -38,6 +40,7 @@ def one_hot_dataframe(data, cols, replace=False):
         data = data.join(vecData)
     return (data, vecData, vec)
 
-df3, _, _ = one_hot_dataframe(df2,['S','C'],True)
+
+df3, _, _ = one_hot_dataframe(df2,['S','C','M0','M1'],True)
 
 df3.to_csv("/tmp/out.csv",sep=';',index=None)
