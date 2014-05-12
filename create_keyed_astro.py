@@ -55,6 +55,6 @@ def one_hot_dataframe(data, cols, replace=False):
         data = data.join(vecData)
     return (data, vecData, vec)
 
-df3, _, _ = one_hot_dataframe(df2,['S','C','M0','M1'],True)
+df3, _, _ = one_hot_dataframe(df2,['S','C','M0','M1','M2','M3'],True)
 
 df3.to_csv("/tmp/out.csv",sep=';',index=None)
