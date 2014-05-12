@@ -2,8 +2,8 @@ import os
 from datetime import datetime
 import pandas as pd
 import mindmeld, numpy as np
-
 from sklearn.feature_extraction import DictVectorizer
+
 def one_hot_dataframe(data, cols, replace=False):
     vec = DictVectorizer()
     mkdict = lambda row: dict((col, row[col]) for col in cols)
