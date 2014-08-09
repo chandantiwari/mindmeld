@@ -24,6 +24,8 @@ d_t = xgb.DMatrix( XXs )
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 
+aucs = []
+
 #for letter in ['I','N','T','P']:
 for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
    X = df.copy()
@@ -56,9 +58,12 @@ for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
    fpr, tpr, thresholds = roc_curve(y_test, preds)
    roc_auc = auc(fpr, tpr)
    print("%s AUC : %f" % (letter,roc_auc))
+   aucs.append(roc_auc)
 
    preds = bst.predict( d_t )[0] * roc_auc
    res_t.append([preds,letter])
+
+print '\nAverage AUC', np.array(aucs).mean()
 
 for x in res_t: print x
 

@@ -82,9 +82,10 @@ def astro_enrich(df_arg):
    lewi = map(lambda x: 'lewi'+str(x),lewi)
    cols += lewi
    for x in cols: df[x] = np.nan
-
+      
    # millman fields
    for i in range(10): df['mills'+str(i)] = np.nan
+   df['M1'] = np.nan; df['M2'] = np.nan
 
    # filter out null birthdays
    df2 = df[pd.isnull(df['bday2']) == False]
@@ -95,13 +96,15 @@ def astro_enrich(df_arg):
       for lew in res['lewi']: x['lewi'+str(lew)] = 1
       if res['chinese']: x['chinese'] = res['chinese']
       if res['spiller']: x['spiller'] = res['spiller']
+      x['M1'] = str(res['millman'][0])
+      x['M2'] = str(res['millman'][1])
       x['mills'+str(res['millman'][2])] = 1
       x['mills'+str(res['millman'][3])] = 1
       x['mills'+str(res['millman'][4])] = 1
       return x
    df3 = df2.apply(f, axis=1)
 
-   df4, _, _ = one_hot_dataframe(df3,['spiller','chinese'], replace=True)
+   df4, _, _ = one_hot_dataframe(df3,['spiller','chinese','M1','M2'], replace=True)
    df4 = df4.replace(0.0,np.nan)
 
    df4['Si'] = np.nan;df4['Ti'] = np.nan;df4['Ne'] = np.nan;df4['Fe'] = np.nan
