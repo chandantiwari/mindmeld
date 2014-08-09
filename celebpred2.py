@@ -1,5 +1,5 @@
 import scipy.sparse as sps
-import pandas as pd
+import pandas as pd, os
 import numpy as np
 import pandas as pd, sys
 from sklearn.metrics import roc_curve, auc
@@ -7,7 +7,7 @@ from sklearn.metrics import roc_auc_score
 from sklearn.cross_validation import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import LinearSVC
-sys.path.append('/home/burak/Downloads/xgboost/python')
+sys.path.append('%s/Downloads/xgboost/python' % os.environ['HOME'])
 from scipy.io import mmread
 import xgboost as xgb
 
