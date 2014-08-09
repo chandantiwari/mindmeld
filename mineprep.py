@@ -7,8 +7,7 @@ from sklearn.feature_extraction import DictVectorizer
 def one_hot_dataframe(data, cols, replace=False):
     vec = DictVectorizer()
     mkdict = lambda row: dict((col, row[col]) for col in cols)
-    tmp = data[cols].apply(mkdict, axis=1)
-    vecData = pd.DataFrame(vec.fit_transform(tmp).toarray())
+    vecData = pd.DataFrame(vec.fit_transform(data[cols].to_dict(outtype='records')).toarray())
     vecData.columns = vec.get_feature_names()
     vecData.index = data.index
     if replace is True:
@@ -70,5 +69,67 @@ df4['I'] = df4.apply(lambda x: 1 if x['mbti'][0] == 'I' else 0, axis=1)
 df4['N'] = df4.apply(lambda x: 1 if x['mbti'][1] == 'N' else 0, axis=1)
 df4['T'] = df4.apply(lambda x: 1 if x['mbti'][2] == 'T' else 0, axis=1)
 df4['P'] = df4.apply(lambda x: 1 if x['mbti'][3] == 'P' else 0, axis=1)
+
+
+df4['Si'] = np.nan;df4['Ti'] = np.nan;df4['Ne'] = np.nan;df4['Fe'] = np.nan
+df4['Te'] = np.nan;df4['Ni'] = np.nan;df4['Se'] = np.nan;df4['Fi'] = np.nan
+
+def Si(x):
+   if 'ISTJ' in x['mbti']: return 1
+   if 'ISFJ' in x['mbti']: return 1
+   if 'ESTJ' in x['mbti']: return 1
+   if 'ESFJ' in x['mbti']: return 1
+
+def Ti(x):
+   if 'ESTP' in x['mbti']: return 1
+   if 'ENTP' in x['mbti']: return 1
+   if 'ISTP' in x['mbti']: return 1
+   if 'INTP' in x['mbti']: return 1
+
+def Ne(x):
+   if 'ENTP' in x['mbti']: return 1
+   if 'ENFP' in x['mbti']: return 1
+   if 'INTP' in x['mbti']: return 1
+   if 'INFP' in x['mbti']: return 1
+   
+def Fe(x):
+   if 'ISFJ' in x['mbti']: return 1
+   if 'INFJ' in x['mbti']: return 1
+   if 'ESFJ' in x['mbti']: return 1
+   if 'ENFJ' in x['mbti']: return 1
+
+def Te(x):
+   if 'ISTJ' in x['mbti']: return 1
+   if 'INTJ' in x['mbti']: return 1
+   if 'ESTJ' in x['mbti']: return 1
+   if 'ENTJ' in x['mbti']: return 1
+
+def Ni(x):
+   if 'INTJ' in x['mbti']: return 1
+   if 'INFJ' in x['mbti']: return 1
+   if 'ENTJ' in x['mbti']: return 1
+   if 'ENFJ' in x['mbti']: return 1
+
+def Se(x):
+   if 'ESTP' in x['mbti']: return 1
+   if 'ESFP' in x['mbti']: return 1
+   if 'ISTP' in x['mbti']: return 1
+   if 'ISFP' in x['mbti']: return 1
+
+def Fi(x):
+   if 'ESFP' in x['mbti']: return 1
+   if 'ENFP' in x['mbti']: return 1
+   if 'ISFP' in x['mbti']: return 1
+   if 'INFP' in x['mbti']: return 1
+   
+df4['Si'] = df4.apply(Si, axis=1)
+df4['Ti'] = df4.apply(Ti, axis=1)
+df4['Ne'] = df4.apply(Ne, axis=1)
+df4['Fe'] = df4.apply(Fe, axis=1)
+df4['Te'] = df4.apply(Te, axis=1)
+df4['Ni'] = df4.apply(Ni, axis=1)
+df4['Se'] = df4.apply(Se, axis=1)
+df4['Fi'] = df4.apply(Fi, axis=1)
+
 
 df4.to_csv('./data/celeb_astro_mbti.csv',sep=';',index=None)
