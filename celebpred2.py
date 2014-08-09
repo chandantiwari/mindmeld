@@ -12,7 +12,7 @@ from scipy.io import mmread
 import xgboost as xgb
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
-
+base_dir = '/tmp'
 cols = ['I','N','T','P','mbti','name','occup','bday','bday2','Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
 #for letter in ['I','N','T','P']:
 for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
@@ -31,10 +31,10 @@ for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
 
    if letter=='Si' or letter=='Se':
       num_round = 4
-      param = {'bst:max_depth':3,  'silent':1, 'objective':'binary:logitraw'}       
+      param = {'bst:max_depth':3,  'silent':1, 'objective':'binary:logitraw'} 
    elif letter=='Ne':
       num_round = 2
-      param = {'bst:max_depth':3,  'silent':1, 'objective':'binary:logitraw'}       
+      param = {'bst:max_depth':3,  'silent':1, 'objective':'binary:logitraw'} 
    else:
       num_round = 300
       param = {'bst:max_depth':3,  'silent':1, 'objective':'binary:logitraw'} 
@@ -46,3 +46,4 @@ for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
    fpr, tpr, thresholds = roc_curve(y_test, preds)
    roc_auc = auc(fpr, tpr)
    print("%s AUC : %f" % (letter,roc_auc))
+   
