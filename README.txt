@@ -49,3 +49,16 @@ import mindmeld
 res = mindmeld.calculate('19410326')
 print mindmeld.describe(res)
 ```
+
+##
+
+Machine Learning
+
+Scripts names celebpred*.py demonstrate some machine learning
+techniques on the data. It would be very interesting being able to
+predict a person's MBTI type given their base astrological data.
+
+One example uses Gradient Boosted Reg Trees, for this dload Github
+project xgboost. 
+
+
