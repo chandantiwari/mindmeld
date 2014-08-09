@@ -15,65 +15,6 @@ def one_hot_dataframe(data, cols, replace=False):
         data = data.join(vecData)
     return (data, vecData, vec)
 
-'''
-Processes birthday field on each row of the dataframe, adding 
-astrological parameters, returns the result
-'''
-def astro_enrich(df_arg):
-   df = df_arg.copy()
-   # change format of the date
-   def f(s):
-      try: return datetime.strptime(s, '%d/%m/%Y').date().strftime('%Y%m%d')
-      except: return None
-   df['bday2'] = df['bday'].apply(f)
-
-   # create (empty) grant lewi fields
-   cols = []
-   lewi = range(278)
-   lewi = map(lambda x: 'lewi'+str(x),lewi)
-   cols += lewi
-   for x in cols: df[x] = np.nan
-
-   # millman fields
-   for i in range(10): df['mills'+str(i)] = np.nan
-
-   # filter out null birthdays
-   df2 = df[pd.isnull(df['bday2']) == False]
-
-   # now populate all astrological values using results from mindmeld.calculate
-   def f(x):
-      res = mindmeld.calculate(x['bday2'])
-      for lew in res['lewi']: x['lewi'+str(lew)] = 1
-      if res['chinese']: x['chinese'] = res['chinese']
-      if res['spiller']: x['spiller'] = res['spiller']
-      x['mills'+str(res['millman'][2])] = 1
-      x['mills'+str(res['millman'][3])] = 1
-      x['mills'+str(res['millman'][4])] = 1
-      return x
-   df3 = df2.apply(f, axis=1)
-
-   df4, _, _ = one_hot_dataframe(df3,['spiller','chinese'], replace=True)
-   df4 = df4.replace(0.0,np.nan)
-   return df4
-
-celebs = pd.read_csv("./data/famousbday.txt",sep=':',header=None, 
-names=['name','occup','bday','spiller','chinese'])
-celeb_mbti = pd.read_csv("./data/myer-briggs.txt",header=None,sep=':',\
-names=['mbti','name'])
-
-df = pd.merge(celeb_mbti,celebs)
-
-df4 = astro_enrich(df)
-
-df4['I'] = df4.apply(lambda x: 1 if x['mbti'][0] == 'I' else 0, axis=1)
-df4['N'] = df4.apply(lambda x: 1 if x['mbti'][1] == 'N' else 0, axis=1)
-df4['T'] = df4.apply(lambda x: 1 if x['mbti'][2] == 'T' else 0, axis=1)
-df4['P'] = df4.apply(lambda x: 1 if x['mbti'][3] == 'P' else 0, axis=1)
-
-
-df4['Si'] = np.nan;df4['Ti'] = np.nan;df4['Ne'] = np.nan;df4['Fe'] = np.nan
-df4['Te'] = np.nan;df4['Ni'] = np.nan;df4['Se'] = np.nan;df4['Fi'] = np.nan
-
 def Si(x):
    if 'ISTJ' in x['mbti']: return 1
    if 'ISFJ' in x['mbti']: return 1
@@ -121,15 +62,74 @@ def Fi(x):
    if 'ENFP' in x['mbti']: return 1
    if 'ISFP' in x['mbti']: return 1
    if 'INFP' in x['mbti']: return 1
-   
-df4['Si'] = df4.apply(Si, axis=1)
-df4['Ti'] = df4.apply(Ti, axis=1)
-df4['Ne'] = df4.apply(Ne, axis=1)
-df4['Fe'] = df4.apply(Fe, axis=1)
-df4['Te'] = df4.apply(Te, axis=1)
-df4['Ni'] = df4.apply(Ni, axis=1)
-df4['Se'] = df4.apply(Se, axis=1)
-df4['Fi'] = df4.apply(Fi, axis=1)
 
+
+'''
+Processes birthday field on each row of the dataframe, adding 
+astrological parameters, returns the result
+'''
+def astro_enrich(df_arg):
+   df = df_arg.copy()
+   # change format of the date
+   def f(s):
+      try: return datetime.strptime(s, '%d/%m/%Y').date().strftime('%Y%m%d')
+      except: return None
+   df['bday2'] = df['bday'].apply(f)
+
+   # create (empty) grant lewi fields
+   cols = []
+   lewi = range(278)
+   lewi = map(lambda x: 'lewi'+str(x),lewi)
+   cols += lewi
+   for x in cols: df[x] = np.nan
+
+   # millman fields
+   for i in range(10): df['mills'+str(i)] = np.nan
+
+   # filter out null birthdays
+   df2 = df[pd.isnull(df['bday2']) == False]
+
+   # now populate all astrological values using results from mindmeld.calculate
+   def f(x):
+      res = mindmeld.calculate(x['bday2'])
+      for lew in res['lewi']: x['lewi'+str(lew)] = 1
+      if res['chinese']: x['chinese'] = res['chinese']
+      if res['spiller']: x['spiller'] = res['spiller']
+      x['mills'+str(res['millman'][2])] = 1
+      x['mills'+str(res['millman'][3])] = 1
+      x['mills'+str(res['millman'][4])] = 1
+      return x
+   df3 = df2.apply(f, axis=1)
+
+   df4, _, _ = one_hot_dataframe(df3,['spiller','chinese'], replace=True)
+   df4 = df4.replace(0.0,np.nan)
+
+   df4['Si'] = np.nan;df4['Ti'] = np.nan;df4['Ne'] = np.nan;df4['Fe'] = np.nan
+   df4['Te'] = np.nan;df4['Ni'] = np.nan;df4['Se'] = np.nan;df4['Fi'] = np.nan
+   
+   df4['I'] = df4.apply(lambda x: 1 if x['mbti'][0] == 'I' else 0, axis=1)
+   df4['N'] = df4.apply(lambda x: 1 if x['mbti'][1] == 'N' else 0, axis=1)
+   df4['T'] = df4.apply(lambda x: 1 if x['mbti'][2] == 'T' else 0, axis=1)
+   df4['P'] = df4.apply(lambda x: 1 if x['mbti'][3] == 'P' else 0, axis=1)
+
+   df4['Si'] = df4.apply(Si, axis=1)
+   df4['Ti'] = df4.apply(Ti, axis=1)
+   df4['Ne'] = df4.apply(Ne, axis=1)
+   df4['Fe'] = df4.apply(Fe, axis=1)
+   df4['Te'] = df4.apply(Te, axis=1)
+   df4['Ni'] = df4.apply(Ni, axis=1)
+   df4['Se'] = df4.apply(Se, axis=1)
+   df4['Fi'] = df4.apply(Fi, axis=1)
+
+   return df4
+
+celebs = pd.read_csv("./data/famousbday.txt",sep=':',header=None, 
+names=['name','occup','bday','spiller','chinese'])
+celeb_mbti = pd.read_csv("./data/myer-briggs.txt",header=None,sep=':',\
+names=['mbti','name'])
+
+df = pd.merge(celeb_mbti,celebs)
+
+df4 = astro_enrich(df)
 
 df4.to_csv('./data/celeb_astro_mbti.csv',sep=';',index=None)
