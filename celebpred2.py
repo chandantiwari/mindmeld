@@ -1,6 +1,6 @@
 import scipy.sparse as sps
 import pandas as pd, os
-import numpy as np
+import numpy as np, mineprep
 import pandas as pd, sys
 from sklearn.metrics import roc_curve, auc
 from sklearn.metrics import roc_auc_score
@@ -11,9 +11,19 @@ sys.path.append('%s/Downloads/xgboost/python' % os.environ['HOME'])
 from scipy.io import mmread
 import xgboost as xgb
 
-df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
-base_dir = '/tmp'
 cols = ['I','N','T','P','mbti','name','occup','bday','bday2','Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
+
+res_t = []
+df_t = pd.DataFrame([['ESTJ','xx','doctor','24/04/1973']], columns=['mbti','name','occup','bday'])
+df_t = mineprep.astro_enrich(df_t)
+XX = df_t.copy()
+XX = XX.fillna(0)
+XX = XX.drop(cols,axis=1)
+XXs = sps.csr_matrix(XX)
+d_t = xgb.DMatrix( XXs )
+
+df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
+
 #for letter in ['I','N','T','P']:
 for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
    X = df.copy()
@@ -46,4 +56,9 @@ for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
    fpr, tpr, thresholds = roc_curve(y_test, preds)
    roc_auc = auc(fpr, tpr)
    print("%s AUC : %f" % (letter,roc_auc))
-   
+
+   preds = bst.predict( d_t )[0] * roc_auc
+   res_t.append([preds,letter])
+
+for x in res_t: print x
+
