@@ -81,7 +81,7 @@ def calculate_lewi_decans(decans):
    # Taurus, etc. Below this mapping is done for sun and moon only.
    sun = np.ceil(float(decans[0])/3)-1
    moon = np.ceil(float(decans[1])/3)-1
-   res.append(sun_moon_table[sun,moon])
+   res.append(sun_moon_table[int(sun),int(moon)])
 
    # now calculate all the angles
    step_signs = ['*', 'sq', 'tri', 'opp', 'tri', 'sq', '*']
