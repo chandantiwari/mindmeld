@@ -50,9 +50,12 @@ res = mindmeld.calculate('19410326')
 print mindmeld.describe(res)
 ```
 
-##
+## Lewi Files
 
-Machine Learning
+All code pertaining to Lewi number generation are under jlewi
+subfolder. This is a Java project, see its README for further info. 
+
+## Machine Learning
 
 Scripts names celebpred*.py demonstrate some machine learning
 techniques on the data. It would be very interesting being able to
