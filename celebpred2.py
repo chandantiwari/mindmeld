@@ -17,7 +17,8 @@ np.random.seed(42)
 cols = ['mbti','name','occup','bday','bday2','Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
 
 res_t = []
-df_t = pd.DataFrame([['xx','xx','xx','23/04/1974']], columns=['mbti','name','occup','bday'])
+
+df_t = pd.DataFrame([['xx','xx','xx','24/04/1973']], columns=['mbti','name','occup','bday'])
 df_t = mineprep.astro_enrich(df_t)
 XX = df_t.copy();XX = XX.fillna(0)
 XX = XX.drop(cols,axis=1);XXs = sps.csr_matrix(XX)
