@@ -14,7 +14,7 @@ import xgboost as xgb
 cols = ['I','N','T','P','mbti','name','occup','bday','bday2','Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
 
 res_t = []
-df_t = pd.DataFrame([['ESTJ','xx','doctor','24/04/1973']], columns=['mbti','name','occup','bday'])
+df_t = pd.DataFrame([['INTP','xx','doctor','23/04/1974']], columns=['mbti','name','occup','bday'])
 df_t = mineprep.astro_enrich(df_t)
 XX = df_t.copy()
 XX = XX.fillna(0)
@@ -43,13 +43,13 @@ for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
 
    if letter=='Si' or letter=='Se':
       num_round = 4
-      param = {'bst:max_depth':3,  'silent':1, 'objective':'binary:logitraw'} 
+      param = {'bst:max_depth':5,  'silent':1, 'objective':'binary:logitraw'} 
    elif letter=='Ne':
       num_round = 2
-      param = {'bst:max_depth':3,  'silent':1, 'objective':'binary:logitraw'} 
+      param = {'bst:max_depth':5,  'silent':1, 'objective':'binary:logitraw'} 
    else:
       num_round = 300
-      param = {'bst:max_depth':3,  'silent':1, 'objective':'binary:logitraw'} 
+      param = {'bst:max_depth':5,  'silent':1, 'objective':'binary:logitraw'} 
    
    bst = xgb.train( param, dtrain, num_round, evallist )
    preds = bst.predict( dtest )
