@@ -9,17 +9,18 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.svm import LinearSVC
 sys.path.append('%s/Downloads/xgboost/python' % os.environ['HOME'])
 from scipy.io import mmread
-import xgboost as xgb
+import xgboost as xgb, random
+
+random.seed(42)
+np.random.seed(42)
 
 cols = ['mbti','name','occup','bday','bday2','Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
 
 res_t = []
-df_t = pd.DataFrame([['INTP','xx','doctor','23/04/1974']], columns=['mbti','name','occup','bday'])
+df_t = pd.DataFrame([['xx','xx','xx','23/04/1974']], columns=['mbti','name','occup','bday'])
 df_t = mineprep.astro_enrich(df_t)
-XX = df_t.copy()
-XX = XX.fillna(0)
-XX = XX.drop(cols,axis=1)
-XXs = sps.csr_matrix(XX)
+XX = df_t.copy();XX = XX.fillna(0)
+XX = XX.drop(cols,axis=1);XXs = sps.csr_matrix(XX)
 d_t = xgb.DMatrix( XXs )
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
@@ -57,7 +58,7 @@ for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
       num_round = 2
    if letter == 'Fi':
       depth = 4
-      num_round = 65
+      num_round = 38
    if letter == 'Ne':
       num_round = 15
    if letter == 'Si':
