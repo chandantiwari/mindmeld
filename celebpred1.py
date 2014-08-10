@@ -15,24 +15,28 @@ from sklearn.metrics import roc_auc_score
 from sklearn.cross_validation import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import LinearSVC
+from sklearn.neural_network import BernoulliRBM
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 
-cols = ['mbti','name','occup','bday','bday2','Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
+cols = ['mbti','name','occup','bday','bday2','Si','Ti','Ne','Fe','Te','Ni','Se','Fi','I']
 
-for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
+for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi','I']:
    clf = LogisticRegression(penalty='l2')
    #clf = LinearSVC()
+   #clf = BernoulliRBM(n_components=15,n_iter=8)
    X = df.copy()
    X = X.fillna(0)
    y = X[letter]
    X = X.drop(cols,axis=1)
-   Xs = sps.csr_matrix(X)
-   a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.40,random_state=42)
+   #Xs = sps.csr_matrix(X)
+   Xs = X
+   a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.04,random_state=42)
    clf.fit(a_train, y_train)
    y_pred = clf.predict_proba(a_test)[:,1]
    #y_pred = clf.predict(a_test)   
+   #y_pred = clf.score_samples(a_test)
    fpr, tpr, thresholds = roc_curve(y_test, y_pred)
    roc_auc = auc(fpr, tpr)
-   print("AUC : %f" % roc_auc)
+   print("%s AUC : %f" % (letter, roc_auc))
    
