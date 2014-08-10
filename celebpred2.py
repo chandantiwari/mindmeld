@@ -86,3 +86,25 @@ df = pd.DataFrame(res_t, columns=['score','function'])
 df.sort_index(by='score',ascending=False,inplace=True)
 print df
 
+dict = {('Se','Ti'): 'ESTP',
+        ('Se','Fi'): 'ESFP',
+        ('Si','Te'): 'ISTJ',
+        ('Si','Fe'): 'ISFJ',
+        ('Ne','Ti'): 'ENTP',
+        ('Ne','Fi'): 'ENFP',
+        ('Ni','Te'): 'INTJ',
+        ('Ni','Fe'): 'INFJ',
+        ('Te','Si'): 'ESTJ',
+        ('Te','Ni'): 'ENTJ',
+        ('Ti','Se'): 'ISTP',
+        ('Ti','Ne'): 'INTP',
+        ('Fe','Si'): 'ESFJ',
+        ('Fe','Ni'): 'ENFJ',
+        ('Fi','Se'): 'ISFP',
+        ('Fi','Ne'): 'INFP'
+        }
+
+df.to_csv('/tmp/out.csv',index=None)
+
+k = (np.array(df)[0,1], np.array(df)[1,1])
+if k in dict: print dict[k]
