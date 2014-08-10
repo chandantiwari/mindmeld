@@ -11,7 +11,7 @@ sys.path.append('%s/Downloads/xgboost/python' % os.environ['HOME'])
 from scipy.io import mmread
 import xgboost as xgb
 
-cols = ['mbti','name','occup','bday','bday2','Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
+cols = ['mbti','name','occup','bday','bday2','Si','Ti','Ne','Fe','Te','Ni','Se','Fi','I']
 
 res_t = []
 df_t = pd.DataFrame([['INTP','xx','doctor','23/04/1974']], columns=['mbti','name','occup','bday'])
@@ -26,7 +26,7 @@ df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 
 aucs = []
 
-for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
+for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi','I']:
    X = df.copy()
    X = X.fillna(0)
    y = X[letter]
@@ -45,7 +45,7 @@ for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
    dtest.set_label(y_test)
 
    evallist  = [(dtest,'eval'), (dtrain,'train')]
-
+   
    depth = 7
    num_round = 20
    param = {'bst:max_depth':depth,  'silent':1, 'objective':'binary:logitraw'}
@@ -61,6 +61,9 @@ for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
       num_round = 13
    if letter == 'Si':
       num_round = 13
+   if letter == 'I':
+      num_round = 4
+
    
    bst = xgb.train( param, dtrain, num_round, evallist )
    preds = bst.predict( dtest )

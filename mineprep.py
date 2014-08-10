@@ -63,6 +63,9 @@ def Fi(x):
    if 'ISFP' in x['mbti']: return 1
    if 'INFP' in x['mbti']: return 1
 
+def I(x):
+   if x['mbti'][0] == 'I': return 1
+   
 
 '''
 Processes birthday field on each row of the dataframe, adding 
@@ -122,6 +125,7 @@ def astro_enrich(df_arg):
    df4['Ni'] = df4.apply(Ni, axis=1)
    df4['Se'] = df4.apply(Se, axis=1)
    df4['Fi'] = df4.apply(Fi, axis=1)
+   df4['I'] = df4.apply(I, axis=1)
 
    return df4
 
