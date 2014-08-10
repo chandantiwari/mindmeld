@@ -20,9 +20,9 @@ from sklearn.neural_network import BernoulliRBM
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 
-cols = ['mbti','name','occup','bday','bday2','Si','Ti','Ne','Fe','Te','Ni','Se','Fi','I']
+cols = ['mbti','name','occup','bday','bday2','Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
 
-for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi','I']:
+for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
    #clf = LogisticRegression(penalty='l2')
    #clf = LinearSVC()
    clf = BernoulliRBM(n_components=4)
