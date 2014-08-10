@@ -52,13 +52,14 @@ for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
    if letter == 'Ni':
       num_round = 2
    if letter == 'Te':
-      num_round = 14
+      num_round = 7
    if letter == 'Ti':
       num_round = 2
    if letter == 'Fi':
-      num_round = 1
+      depth = 4
+      num_round = 65
    if letter == 'Ne':
-      num_round = 13
+      num_round = 15
    if letter == 'Si':
       num_round = 13
 
