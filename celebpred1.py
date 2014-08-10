@@ -25,7 +25,7 @@ cols = ['mbti','name','occup','bday','bday2','Si','Ti','Ne','Fe','Te','Ni','Se',
 for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
    #clf = LogisticRegression(penalty='l2')
    #clf = LinearSVC()
-   clf = BernoulliRBM(n_components=4)
+   clf = BernoulliRBM(n_components=2)
             
    X = df.copy()
    X = X.fillna(0)
