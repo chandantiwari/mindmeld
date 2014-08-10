@@ -18,8 +18,8 @@ from sklearn.svm import LinearSVC
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 
-cols = ['I','N','T','P','mbti','name','occup','bday','bday2','Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
-#for letter in ['I','N','T','P']:
+cols = ['mbti','name','occup','bday','bday2','Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
+
 for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
    clf = LogisticRegression(penalty='l2')
    #clf = LinearSVC()

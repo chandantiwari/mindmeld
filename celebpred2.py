@@ -11,7 +11,7 @@ sys.path.append('%s/Downloads/xgboost/python' % os.environ['HOME'])
 from scipy.io import mmread
 import xgboost as xgb
 
-cols = ['I','N','T','P','mbti','name','occup','bday','bday2','Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
+cols = ['mbti','name','occup','bday','bday2','Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
 
 res_t = []
 df_t = pd.DataFrame([['INTP','xx','doctor','23/04/1974']], columns=['mbti','name','occup','bday'])
@@ -26,7 +26,6 @@ df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 
 aucs = []
 
-#for letter in ['I','N','T','P']:
 for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
    X = df.copy()
    X = X.fillna(0)

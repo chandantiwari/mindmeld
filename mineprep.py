@@ -107,14 +107,13 @@ def astro_enrich(df_arg):
    df4, _, _ = one_hot_dataframe(df3,['spiller','chinese','M1','M2'], replace=True)
    df4 = df4.replace(0.0,np.nan)
 
+   # the mapping below assigns a 'function' such as Ne, Ti a 1 value
+   # if it is at the top two level of a person's MBTI make-up. So an
+   # ISTJ would have Te and Si set to 1. We aimed simplifying and
+   # training and prediction; because if you can guess top two
+   # functions of a person, you can determine their MBTI type.
    df4['Si'] = np.nan;df4['Ti'] = np.nan;df4['Ne'] = np.nan;df4['Fe'] = np.nan
-   df4['Te'] = np.nan;df4['Ni'] = np.nan;df4['Se'] = np.nan;df4['Fi'] = np.nan
-   
-   df4['I'] = df4.apply(lambda x: 1 if x['mbti'][0] == 'I' else 0, axis=1)
-   df4['N'] = df4.apply(lambda x: 1 if x['mbti'][1] == 'N' else 0, axis=1)
-   df4['T'] = df4.apply(lambda x: 1 if x['mbti'][2] == 'T' else 0, axis=1)
-   df4['P'] = df4.apply(lambda x: 1 if x['mbti'][3] == 'P' else 0, axis=1)
-
+   df4['Te'] = np.nan;df4['Ni'] = np.nan;df4['Se'] = np.nan;df4['Fi'] = np.nan   
    df4['Si'] = df4.apply(Si, axis=1)
    df4['Ti'] = df4.apply(Ti, axis=1)
    df4['Ne'] = df4.apply(Ne, axis=1)
