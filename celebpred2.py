@@ -27,7 +27,7 @@ df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 
 aucs = []
 
-for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
+for letter in ['Fi','Si','Ti','Ne','Fe','Te','Ni','Se']:
    X = df.copy()
    X = X.fillna(0)
    y = X[letter]
@@ -52,16 +52,16 @@ for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
    param = {'bst:max_depth':depth,  'silent':1, 'objective':'binary:logitraw'}
    if letter == 'Ni':
       num_round = 2
-   if letter == 'Te':
+   elif letter == 'Te':
       num_round = 7
-   if letter == 'Ti':
+   elif letter == 'Ti':
       num_round = 2
-   if letter == 'Fi':
-      depth = 4
-      num_round = 38
-   if letter == 'Ne':
+   elif letter == 'Fi':
+      depth = 3
+      num_round = 60
+   elif letter == 'Ne':
       num_round = 15
-   if letter == 'Si':
+   elif letter == 'Si':
       num_round = 13
 
    
