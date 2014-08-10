@@ -39533,7 +39533,6 @@ Gerald Ford:President:14/7/1913
 Jason Segel:Actor:18/1/1980
 Sheryl Sandberg:Businesswoman:28/8/1969
 Alexander Solzhenitsyn:Historian:11/12/1918
-Daniel Day-Lewis:Actor:29/4/1957
 Rooney Mara:Actress:17/4/1985
 Soeren Kierkegaard:Philosopher:5/5/1813
 C.S. Lewis:Academic:29/11/1898
