@@ -31,6 +31,12 @@ for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
    X = X.fillna(0)
    y = X[letter]
    X = X.drop(cols,axis=1)
+
+   fout = open("./data/celeb_feats.txt", "w")
+   for i,col in enumerate(X.columns):
+      fout.write("%d\t%s\ti\n" % (i,col))
+   fout.close()
+   
    Xs = sps.csr_matrix(X)
    a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.10,random_state=42)
    dtrain = xgb.DMatrix( a_train )
@@ -40,7 +46,10 @@ for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
 
    evallist  = [(dtest,'eval'), (dtrain,'train')]
 
-   if letter=='Si' or letter=='Se':
+   if letter=='Si':
+      num_round = 3
+      param = {'bst:max_depth':5,  'silent':1, 'objective':'binary:logitraw'} 
+   elif letter=='Se':
       num_round = 4
       param = {'bst:max_depth':5,  'silent':1, 'objective':'binary:logitraw'} 
    elif letter=='Ne':
@@ -61,6 +70,9 @@ for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
 
    preds = bst.predict( d_t )[0] * roc_auc
    res_t.append([preds,letter])
+
+   bst.dump_model('./data/dump_%s.raw.txt' % letter, './data/celeb_feats.txt')
+
 
 print '\nAverage AUC', np.array(aucs).mean()
 

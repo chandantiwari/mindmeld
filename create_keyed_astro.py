@@ -8,17 +8,6 @@ from datetime import datetime
 import pandas as pd, os
 import mindmeld, numpy as np
 
-def one_hot_dataframe(data, cols, replace=False):
-    vec = DictVectorizer()
-    mkdict = lambda row: dict((col, row[col]) for col in cols)
-    vecData = pd.DataFrame(vec.fit_transform(data[cols].to_dict(outtype='records')).toarray())
-    vecData.columns = vec.get_feature_names()
-    vecData.index = data.index
-    if replace is True:
-        data = data.drop(cols, axis=1)
-        data = data.join(vecData)
-    return (data, vecData, vec)
-
 def f(x):
     res = mindmeld.calculate(str(int(x['bday'])))
     for lew in res['lewi']: x['L'+str(lew)] = 1
@@ -59,6 +48,4 @@ df2['M1'] = df2['M1'].map(lambda x: str(x))
 df2['M2'] = df2['M2'].map(lambda x: str(x))
 df2['M3'] = df2['M3'].map(lambda x: str(x))
     
-df3, _, _ = one_hot_dataframe(df2,['S','C','M0','M1','M2','M3'], True)
-
-df3.to_csv("/tmp/out.csv",sep=';',index=None)
+df2.to_csv("/tmp/out.csv",sep=';',index=None)
