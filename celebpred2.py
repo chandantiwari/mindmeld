@@ -82,5 +82,7 @@ for letter in ['Fi','Si','Ti','Ne','Fe','Te','Ni','Se']:
 
 print '\nAverage AUC', np.array(aucs).mean()
 
-for x in res_t: print x
+df = pd.DataFrame(res_t, columns=['score','function'])
+df.sort_index(by='score',ascending=False,inplace=True)
+print df
 
