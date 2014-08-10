@@ -66,8 +66,9 @@ predicting top two MBTI functions (Ne,Ti,etc) for a person. These
 results are promising. More data would definitely make a positive
 difference.
 
-One example uses Gradient Boosted Reg Trees, for this dload Github
-project xgboost.
+One example uses Gradient Boosted Reg Trees, for this download the
+Github project xgboost. Code will be assumed to reside under
+$HOME/Downloads.
 
 All data files required for ML are under 'data' folder. If you want to
 recreate the main file, simply rerun mineprep.py.
