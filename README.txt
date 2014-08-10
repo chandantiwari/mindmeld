@@ -50,16 +50,20 @@ res = mindmeld.calculate('19410326')
 print mindmeld.describe(res)
 ```
 
-## Lewi Files
+##Lewi Files
 
 All code pertaining to Lewi number generation are under jlewi
 subfolder. This is a Java project, see its README for further info. 
 
-## Machine Learning
+##Machine Learning
 
 Scripts names celebpred*.py demonstrate some machine learning
-techniques on the data. It would be very interesting being able to
-predict a person's MBTI type given their base astrological data.
+techniques on the data. ML code attempts to predict a person's MBTI
+type given their base astrological data which would prove
+pseudoscience - science connection. on ~400 records with 4% random
+test split we are able to get 60% AUC, for predicting top two MBTI
+function for a person. This results are promising. More data would
+definitely make a positive difference. 
 
 One example uses Gradient Boosted Reg Trees, for this dload Github
 project xgboost.
