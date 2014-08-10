@@ -18,7 +18,7 @@ for mbti in ['estp','esfp','estj','esfj','entj','entp','enfj','enfp',
     url = "http://www.celebritytypes.com/%s.php" % mbti 
     h = opener.open(url)
     content = h.read()
-    tmp = re.findall("<p class=\"name\">(.*?)</p>", content)
+    tmp = re.findall("<p class=\".*name\">(.*?)</p>", content)
     for g in tmp:
         fout.write(mbti.upper() + ":" + g + "\n")
         fout.flush()

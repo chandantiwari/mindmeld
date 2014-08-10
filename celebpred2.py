@@ -38,7 +38,7 @@ for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
    fout.close()
    
    Xs = sps.csr_matrix(X)
-   a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.10,random_state=42)
+   a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.04,random_state=42)
    dtrain = xgb.DMatrix( a_train )
    dtrain.set_label(y_train)
    dtest = xgb.DMatrix( a_test )
@@ -46,18 +46,21 @@ for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
 
    evallist  = [(dtest,'eval'), (dtrain,'train')]
 
-   if letter=='Si':
-      num_round = 3
-      param = {'bst:max_depth':5,  'silent':1, 'objective':'binary:logitraw'} 
-   elif letter=='Se':
-      num_round = 4
-      param = {'bst:max_depth':5,  'silent':1, 'objective':'binary:logitraw'} 
-   elif letter=='Ne':
+   depth = 7
+   num_round = 20
+   param = {'bst:max_depth':depth,  'silent':1, 'objective':'binary:logitraw'}
+   if letter == 'Ni':
       num_round = 2
-      param = {'bst:max_depth':5,  'silent':1, 'objective':'binary:logitraw'} 
-   else:
-      num_round = 300
-      param = {'bst:max_depth':5,  'silent':1, 'objective':'binary:logitraw'} 
+   if letter == 'Te':
+      num_round = 14
+   if letter == 'Ti':
+      num_round = 2
+   if letter == 'Fi':
+      num_round = 1
+   if letter == 'Ne':
+      num_round = 13
+   if letter == 'Si':
+      num_round = 13
    
    bst = xgb.train( param, dtrain, num_round, evallist )
    preds = bst.predict( dtest )
