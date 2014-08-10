@@ -61,10 +61,11 @@ predict a person's MBTI type given their base astrological data.
 One example uses Gradient Boosted Reg Trees, for this dload Github
 project xgboost.
 
-All data files required for ML are under ``data``. If you want to recreate
-the main file, simply rerun mineprep.py. Script scrape.py will get
-celebrity mbti types from a known Web site, and write its output under
-/tmp. This output file needs to be copied manually under data. Then
-mineprep.py is ran. 
+All data files required for ML are under 'data' folder. If you want to
+recreate the main file, simply rerun mineprep.py.
+
+Script scrape.py will get celebrity mbti types from a known Web site,
+and write its output under /tmp. This output file needs to be copied
+manually under data, then mineprep.py would have to be reran. 
 
 
