@@ -19,6 +19,7 @@ cols = ['mbti','name','occup','bday','bday2','Si','Ti','Ne','Fe','Te','Ni','Se',
 res_t = []
 
 df_t = pd.DataFrame([['xx','xx','xx','24/04/1973']], columns=['mbti','name','occup','bday'])
+#df_t = pd.DataFrame([['xx','xx','xx','10/05/1945']], columns=['mbti','name','occup','bday'])
 df_t = mineprep.astro_enrich(df_t)
 XX = df_t.copy();XX = XX.fillna(0)
 XX = XX.drop(cols,axis=1);XXs = sps.csr_matrix(XX)
@@ -59,11 +60,11 @@ for letter in ['Fi','Si','Ti','Ne','Fe','Te','Ni','Se']:
       num_round = 2
    elif letter == 'Fi':
       depth = 3
-      num_round = 60
+      num_round = 58
    elif letter == 'Ne':
       num_round = 15
    elif letter == 'Si':
-      num_round = 13
+      num_round = 9
 
    
    bst = xgb.train( param, dtrain, num_round, evallist )
@@ -79,7 +80,6 @@ for letter in ['Fi','Si','Ti','Ne','Fe','Te','Ni','Se']:
    res_t.append([preds,letter])
 
    bst.dump_model('./data/dump_%s.raw.txt' % letter, './data/celeb_feats.txt')
-
 
 print '\nAverage AUC', np.array(aucs).mean()
 
@@ -104,8 +104,6 @@ dict = {('Se','Ti'): 'ESTP',
         ('Fi','Se'): 'ISFP',
         ('Fi','Ne'): 'INFP'
         }
-
-df.to_csv('/tmp/out.csv',index=None)
 
 k = (np.array(df)[0,1], np.array(df)[1,1])
 if k in dict: print dict[k]
