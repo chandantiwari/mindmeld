@@ -22,6 +22,7 @@ cols = ['mbti','name','occup','bday','bday2','Si','Ti','Ne','Fe','Te','Ni','Se',
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 
+res = []
 for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
    clf = LogisticRegression(penalty='l2')
    #clf = LinearSVC()
@@ -41,5 +42,7 @@ for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
    fpr, tpr, thresholds = roc_curve(y_test, y_pred)
    roc_auc = auc(fpr, tpr)
    print("%s AUC : %f" % (letter, roc_auc))
+   res.append(roc_auc)
 
+print 'Avg AUC', np.array(res).mean()
    
