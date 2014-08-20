@@ -36,7 +36,7 @@ def test():
       X = X.drop(cols,axis=1)
       Xs = sps.csr_matrix(X)
       Xs = X
-      a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.02,random_state=42)
+      a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.02,random_state=42)      
       clf.fit(a_train, y_train)
       y_pred = clf.predict_proba(a_test)[:,1]
       #y_pred = clf.predict(a_test)   
@@ -45,8 +45,9 @@ def test():
       roc_auc = auc(fpr, tpr)
       print("%s AUC : %f" % (letter, roc_auc))
       res.append(roc_auc)
-
+      
    print 'Avg AUC', np.array(res).mean()
+   
    return clf
 
 if __name__ == "__main__": 
