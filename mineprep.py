@@ -4,16 +4,15 @@ import pandas as pd
 import mindmeld, numpy as np
 from sklearn.feature_extraction import DictVectorizer
 
-def one_hot_dataframe(data, cols, replace=False):
+def one_hot_dataframe(data, cols):
     vec = DictVectorizer()
     mkdict = lambda row: dict((col, row[col]) for col in cols)
     vecData = pd.DataFrame(vec.fit_transform(data[cols].to_dict(outtype='records')).toarray())
     vecData.columns = vec.get_feature_names()
     vecData.index = data.index
-    if replace is True:
-        data = data.drop(cols, axis=1)
-        data = data.join(vecData)
-    return (data, vecData, vec)
+    data = data.drop(cols, axis=1)
+    data = data.join(vecData)
+    return data
 
 def Si(x):
    if 'ISTJ' in x['mbti']: return 1
@@ -105,7 +104,7 @@ def astro_enrich(df_arg):
       return x
    df3 = df2.apply(f, axis=1)
 
-   df4, _, _ = one_hot_dataframe(df3,['spiller','chinese','M1','M2'], replace=True)
+   df4 = one_hot_dataframe(df3,['spiller','chinese','M1','M2'])
    df4 = df4.replace(0.0,np.nan)
 
    # the mapping below assigns a 'function' such as Ne, Ti a 1 value
