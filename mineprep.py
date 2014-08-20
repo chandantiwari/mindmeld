@@ -125,14 +125,14 @@ def astro_enrich(df_arg):
 
    return df4
 
-celebs = pd.read_csv("./data/famousbday.txt", sep=':', header=None, 
-                     names=['name','occup','bday','spiller','chinese'])
+if __name__ == "__main__": 
+ 
+    celebs = pd.read_csv("./data/famousbday.txt", sep=':', header=None, 
+                         names=['name','occup','bday','spiller','chinese'])
 
-celeb_mbti = pd.read_csv("./data/myer-briggs.txt",header=None,sep=':',
-                         names=['mbti','name'])
+    celeb_mbti = pd.read_csv("./data/myer-briggs.txt",header=None,sep=':',
+                             names=['mbti','name'])
 
-df = pd.merge(celeb_mbti,celebs)
-
-df4 = astro_enrich(df)
-
-df4.to_csv('./data/celeb_astro_mbti.csv',sep=';',index=None)
+    df = pd.merge(celeb_mbti,celebs)
+    df4 = astro_enrich(df)
+    df4.to_csv('./data/celeb_astro_mbti.csv',sep=';',index=None)
