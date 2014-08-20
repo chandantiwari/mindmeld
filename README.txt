@@ -62,13 +62,10 @@ techniques on the data. ML code attempts to predict a person's MBTI
 type given their base astrological data. This, if can be done, would
 prove a pseudoscience - science connection. On ~400 records with 4%
 random test split we are able to get 60% AUC on the test set, for
-predicting top two MBTI functions (Ne,Ti,etc) for a person. These
-results are promising. More data would definitely make a positive
-difference.
-
-One example uses Gradient Boosted Reg Trees, for this download the
-Github project xgboost. Code will be assumed to reside under
-$HOME/Downloads.
+predicting top two MBTI functions (Ne,Ti,etc) for a person (the top
+two functions of a person is 1-hot encoded in the data file, INTP for
+example has both Ti and Ne as 1). These results are promising. More
+data would definitely make a positive difference.
 
 All data files required for ML are under 'data' folder. If you want to
 recreate the main file, simply rerun mineprep.py.
