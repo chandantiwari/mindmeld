@@ -6,22 +6,23 @@
 %load_ext autoreload
 %autoreload 2
 import pandas as pd, celebpred
-clfs, ocols = celebpred.test()
+clfs, ocols, conf = celebpred.test()
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
+print 'Avg AUC', np.array(list(conf.values())).mean()
 \end{minted}
 
 \begin{verbatim}
 The autoreload extension is already loaded. To reload it, use:
   %reload_ext autoreload
-Si AUC : 0.500000
-Ti AUC : 0.611111
-Ne AUC : 0.550000
-Fe AUC : 0.250000
-Te AUC : 0.388889
-Ni AUC : 0.214286
-Se AUC : 1.000000
-Fi AUC : 0.571429
-Avg AUC 0.510714285714
+Si AUC : 0.571429
+Ti AUC : 0.555556
+Ne AUC : 0.600000
+Fe AUC : 0.625000
+Te AUC : 0.500000
+Ni AUC : 0.285714
+Se AUC : 0.875000
+Fi AUC : 0.785714
+Avg AUC 0.599801587302
 \end{verbatim}
 
 
@@ -29,7 +30,9 @@ Avg AUC 0.510714285714
 import pandas as pd, mineprep
 df_t = pd.DataFrame(index=[0], columns=['mbti', 'name', 'occup', 'bday'])
 df_t.loc[0,'mbti'] = 'xxx'
-df_t.loc[0,'bday'] = '24/04/1973'
+#df_t.loc[0,'bday'] = '24/04/1973'
+df_t.loc[0,'bday'] = '5/10/1945'
+#df_t.loc[0,'bday'] = '24/04/1973'
 
 df2_t = mineprep.astro_enrich(df_t)
 
@@ -44,19 +47,18 @@ XX = df2_t.fillna(0)
 
 for clf in clfs: 
     res = clfs[clf].predict_proba(XX)[0]
-    #res = clfs[clf].predict(XX)
-    print clf, res
+    print clf, res*conf[clf]
 \end{minted}
 
 \begin{verbatim}
-Ni [ 0.61553335  0.38446665]
-Ne [ 0.95228454  0.04771546]
-Si [ 0.92013087  0.07986913]
-Fe [ 0.68337896  0.31662104]
-Ti [ 0.89697112  0.10302888]
-Fi [ 0.57598652  0.42401348]
-Te [ 0.77421626  0.22578374]
-Se [ 0.55197173  0.44802827]
+Ni [ 0.11646854  0.16924574]
+Ne [ 0.58456923  0.01543077]
+Si [ 0.41284791  0.15858066]
+Fe [ 0.28586079  0.33913921]
+Ti [ 0.54384725  0.01170831]
+Fi [ 0.56530519  0.2204091 ]
+Te [ 0.26607004  0.23392996]
+Se [ 0.76352517  0.11147483]
 \end{verbatim}
 
 
