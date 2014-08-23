@@ -5,8 +5,8 @@
 \begin{minted}[fontsize=\footnotesize]{python}
 %load_ext autoreload
 %autoreload 2
-import celebpred1
-clf = celebpred1.test()
+import pandas as pd, celebpred1
+clfs = celebpred1.test()
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 \end{minted}
 
@@ -24,42 +24,35 @@ Fi AUC : 0.785714
 Avg AUC 0.599801587302
 \end{verbatim}
 
-\begin{minted}[fontsize=\footnotesize]{python}
-print clf
-\end{minted}
-
-\begin{verbatim}
-LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
-          intercept_scaling=1, penalty=l2, random_state=None, tol=0.0001)
-\end{verbatim}
 
 \begin{minted}[fontsize=\footnotesize]{python}
 import pandas as pd, mineprep
-df_t = pd.DataFrame(index=[0], columns=df.columns)
-df_t = df_t.drop('bday2',axis=1)
-df_t.loc[0,'mbti'] = 'INTP'
-df_t.loc[0,'bday'] = '24/04/1973'
-print df_t
+df_t = pd.DataFrame(index=[0], columns=['mbti', 'name', 'occup', 'bday'])
+df_t.loc[0,'mbti'] = 'xxx'
+#df_t.loc[0,'bday'] = '24/04/1973'
+df_t.loc[0,'bday'] = '22/02/1949'
+df2_t = mineprep.astro_enrich(df_t)
+for col in df.columns: 
+   if col not in df2_t.columns: df2_t[col] = np.nan
+df2_t = df2_t.drop(celebpred1.cols,axis=1)
+XX = df2_t.fillna(0)
 
-#df2_t = mineprep.astro_enrich(df_t)
-#print df2_t.to_string()
-#XX = df2_t.fillna(0)
-#print XX.to_string()
+for clf in clfs: 
+    res = clfs[clf].predict_proba(XX)[0]
+    #res = clfs[clf].predict(XX)
+    print clf, res
 \end{minted}
 
 \begin{verbatim}
-   mbti name occup        bday lewi0 lewi1 lewi2 lewi3 lewi4 lewi5  ...   \
-0  INTP  NaN   NaN  24/04/1973   NaN   NaN   NaN   NaN   NaN   NaN  ...    
-
-  spiller=Taurus spiller=Virgo   Si   Ti   Ne   Fe   Te   Ni   Se   Fi  
-0            NaN           NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  NaN  
-
-[1 rows x 363 columns]
+Ni [ 0.75581429  0.24418571]
+Ne [ 0.92766518  0.07233482]
+Si [ 0.8973319  0.1026681]
+Fe [ 0.8427678  0.1572322]
+Ti [ 0.74015873  0.25984127]
+Fi [ 0.81601658  0.18398342]
+Te [ 0.80774148  0.19225852]
+Se [ 0.56258159  0.43741841]
 \end{verbatim}
-
-\begin{minted}[fontsize=\footnotesize]{python}
-clf.predict(XX)
-\end{minted}
 
 
 \end{document}
