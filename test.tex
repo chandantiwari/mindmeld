@@ -5,23 +5,23 @@
 \begin{minted}[fontsize=\footnotesize]{python}
 %load_ext autoreload
 %autoreload 2
-import pandas as pd, celebpred1
-clfs = celebpred1.test()
+import pandas as pd, celebpred
+clfs, ocols = celebpred.test()
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 \end{minted}
 
 \begin{verbatim}
 The autoreload extension is already loaded. To reload it, use:
   %reload_ext autoreload
-Si AUC : 0.571429
-Ti AUC : 0.555556
-Ne AUC : 0.600000
-Fe AUC : 0.625000
-Te AUC : 0.500000
-Ni AUC : 0.285714
-Se AUC : 0.875000
-Fi AUC : 0.785714
-Avg AUC 0.599801587302
+Si AUC : 0.500000
+Ti AUC : 0.611111
+Ne AUC : 0.550000
+Fe AUC : 0.250000
+Te AUC : 0.388889
+Ni AUC : 0.214286
+Se AUC : 1.000000
+Fi AUC : 0.571429
+Avg AUC 0.510714285714
 \end{verbatim}
 
 
@@ -29,12 +29,17 @@ Avg AUC 0.599801587302
 import pandas as pd, mineprep
 df_t = pd.DataFrame(index=[0], columns=['mbti', 'name', 'occup', 'bday'])
 df_t.loc[0,'mbti'] = 'xxx'
-#df_t.loc[0,'bday'] = '24/04/1973'
-df_t.loc[0,'bday'] = '22/02/1949'
+df_t.loc[0,'bday'] = '24/04/1973'
+
 df2_t = mineprep.astro_enrich(df_t)
+
 for col in df.columns: 
    if col not in df2_t.columns: df2_t[col] = np.nan
-df2_t = df2_t.drop(celebpred1.cols,axis=1)
+df2_t = df2_t.drop(celebpred.cols,axis=1)
+# the order of columns must be exactly the same as 
+# the order in the training set
+df2_t = df2_t[ocols] 
+
 XX = df2_t.fillna(0)
 
 for clf in clfs: 
@@ -44,14 +49,14 @@ for clf in clfs:
 \end{minted}
 
 \begin{verbatim}
-Ni [ 0.75581429  0.24418571]
-Ne [ 0.92766518  0.07233482]
-Si [ 0.8973319  0.1026681]
-Fe [ 0.8427678  0.1572322]
-Ti [ 0.74015873  0.25984127]
-Fi [ 0.81601658  0.18398342]
-Te [ 0.80774148  0.19225852]
-Se [ 0.56258159  0.43741841]
+Ni [ 0.61553335  0.38446665]
+Ne [ 0.95228454  0.04771546]
+Si [ 0.92013087  0.07986913]
+Fe [ 0.68337896  0.31662104]
+Ti [ 0.89697112  0.10302888]
+Fi [ 0.57598652  0.42401348]
+Te [ 0.77421626  0.22578374]
+Se [ 0.55197173  0.44802827]
 \end{verbatim}
 
 
