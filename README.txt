@@ -2,6 +2,19 @@
 
 sudo pip install sklearn
 
+## MBTI Test
+
+You can take the MBTI test under doc/mbti_en.html and once answering
+all questions, hit Evaluate and the -1,0,+1 results will be
+displayed. These results can be copied to clipboard, and from there 
+
+```ans = ":1:-1:-1:1:0:0:0:1:0:-1:0:0:-1:-1:1:-1:0:0:1:1:-1:1:1:1:0:0:0:-1:1:0:1:1:0:0:0:0:0:1:-1:-1:1:1:1:1:1:1:-1:1:1:1:0:-1:-1:-1:-1:1:0:0:0:0:-1:0:0:-1:0:-1:-1:-1:0:0"
+ans = ans.split(":")[1:]
+print mindmeld.calculate_mb(ans)
+```
+
+would give the answer of the questionaire. 
+
 ## Calculates
 
 Grant Lewi Numbers (based on decans)
