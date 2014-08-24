@@ -12,26 +12,15 @@ print 'Avg AUC', np.array(list(conf.values())).mean()
 \end{minted}
 
 \begin{verbatim}
-The autoreload extension is already loaded. To reload it, use:
-  %reload_ext autoreload
-Si AUC : 0.928571
-Ti AUC : 0.666667
-Ne AUC : 0.900000
-Fe AUC : 0.250000
-Te AUC : 0.555556
-Ni AUC : 0.500000
-Se AUC : 0.750000
-Fi AUC : 0.500000
-Avg AUC 0.631349206349
-\end{verbatim}
-
-\begin{minted}[fontsize=\footnotesize]{python}
-print clfs['Fi']
-\end{minted}
-
-\begin{verbatim}
-BernoulliRBM(batch_size=10, learning_rate=0.1, n_components=256, n_iter=10,
-       random_state=None, verbose=False)
+Si AUC : 0.571429
+Ti AUC : 0.555556
+Ne AUC : 0.600000
+Fe AUC : 0.625000
+Te AUC : 0.500000
+Ni AUC : 0.285714
+Se AUC : 0.875000
+Fi AUC : 0.785714
+Avg AUC 0.599801587302
 \end{verbatim}
 
 \begin{minted}[fontsize=\footnotesize]{python}
@@ -56,21 +45,21 @@ XX = np.array(df2_t.fillna(0))
 print XX.shape
 
 for clf in clfs: 
-    #res = clfs[clf].predict_proba(XX)[0] # for Logit
-    res = clfs[clf].score_samples(XX) # for RBM
+    res = clfs[clf].predict_proba(XX)[0] # for Logit
+    #res = clfs[clf].score_samples(XX) # for RBM
     print clf, res, res*conf[clf]
 \end{minted}
 
 \begin{verbatim}
 (1, 351)
-Ni -4.59937464349 -2.29968732175
-Ne -23.6420678802 -21.2778610922
-Si -24.2040280269 -22.4751688821
-Fe -5.08684908889 -1.27171227222
-Ti -37.0735879704 -24.7157253136
-Fi -1.28218896377 -0.641094481884
-Te -93.024602934 -51.6803349634
-Se -1.78112487567 -1.33584365675
+Ni [ 0.26809168  0.73190832] [ 0.07659762  0.20911666]
+Ne [ 0.96363817  0.03636183] [ 0.5781829  0.0218171]
+Si [ 0.95400098  0.04599902] [ 0.54514342  0.02628515]
+Fe [ 0.81568379  0.18431621] [ 0.50980237  0.11519763]
+Ti [ 0.97339832  0.02660168] [ 0.54077684  0.01477871]
+Fi [ 0.57440786  0.42559214] [ 0.45132046  0.33439383]
+Te [ 0.71575975  0.28424025] [ 0.35787987  0.14212013]
+Se [ 0.50425963  0.49574037] [ 0.44122718  0.43377282]
 \end{verbatim}
 
 

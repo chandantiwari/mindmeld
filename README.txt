@@ -1,4 +1,8 @@
-Calculation of
+## Installation
+
+sudo pip install sklearn
+
+## Calculates
 
 Grant Lewi Numbers (based on decans)
 
