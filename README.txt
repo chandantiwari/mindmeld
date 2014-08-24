@@ -62,21 +62,28 @@ the data. ML code attempts to predict a person's MBTI type given their
 base astrological information. This, if can be done, would prove a
 direct pseudoscience - science connection. On ~400 records with 4%
 random test split we are able to get a total of 60% AUC on the test
-set, for predicting top two MBTI functions (Ne,Ti,etc). These results are promising. More data would
-definitely make a positive difference.
+set, for predicting top two MBTI functions (Ne,Ti,etc). These results
+are promising. More data would definitely make a positive difference.
 
 In the input data, the top two functions of people are 1-hot encoded,
-INTP for example has both Ti and Ne as 1. Previously we were trying to
-predict each letter of the MBTI type, but with this new way we have 2
-prediction tasks instead of 4, so it is an easier task, and this style
-of prediction of much more in line with the logic of MBTI. Functions
-are at the core of the character make-up.
+INTP for example has both Ti and Ne as 1, and they become labels
+during training. We train a different classifier for each
+function.
+
+Previously we were trying to predict each letter of the MBTI type, but
+with this new way we have 2 prediction tasks instead of 4, so it is an
+easier task, and this style of prediction of much more in line with
+the logic of MBTI. Functions are at the core of the character
+make-up. Our experiments with logistic regression and bernoulli rbm
+have shown good results. A neural network with two outputs (so two
+labels) could give more accurate prediction.
 
 All data files required for ML are under 'data' folder. If you want to
 recreate the main file used for training, simply rerun
 mineprep.py. Script scrape.py will get celebrity mbti types from a
-known Web site, and write its output under /tmp. This output file
+known Web site, and write its output under /tmp. We already ran this
+once, it is the file we used to train the classifier. This output file
 needs to be copied manually under data, then mineprep.py would have to
-be executed again. 
+be executed again.
 
 
