@@ -5,4 +5,4 @@
 */build*
 *.jar
 run.py
-./data/*_raw*.txt
+./data/dump_*raw*.txt
