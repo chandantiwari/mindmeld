@@ -10,18 +10,19 @@ from sklearn.svm import LinearSVC
 sys.path.append('%s/Downloads/xgboost/python' % os.environ['HOME'])
 from scipy.io import mmread
 import xgboost as xgb
+import celebpred
 
-cols = ['mbti','name','occup','bday','bday2','Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
+num_round = 10
+param = {'bst:max_depth':2,  'silent':1, 'objective':'binary:logitraw'} 
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
-
 aucs = []
 
 for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
    X = df.copy()
    X = X.fillna(0)
    y = X[letter]
-   X = X.drop(cols,axis=1)
+   X = X.drop(celebpred.cols,axis=1)
 
    fout = open("./data/celeb_feats.txt", "w")
    for i,col in enumerate(X.columns):
@@ -34,10 +35,7 @@ for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
    dtrain.set_label(y_train)
    dtest = xgb.DMatrix( a_test )
    dtest.set_label(y_test)
-
    evallist  = [(dtest,'eval'), (dtrain,'train')]
-   num_round = 20
-   param = {'bst:max_depth':2,  'silent':1, 'objective':'binary:logitraw'} 
       
    bst = xgb.train( param, dtrain, num_round, evallist )
    preds = bst.predict( dtest )
