@@ -16,6 +16,7 @@ from sklearn.cross_validation import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import LinearSVC
 from sklearn.svm import SVC
+from sklearn import cross_validation
 from sklearn.neural_network import BernoulliRBM
 import collections
 
@@ -29,11 +30,12 @@ cols = cols + letter_cols
 def test():
 
    df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
+   print len(df.columns)
 
    clfs = collections.OrderedDict()
    conf = collections.OrderedDict()
    for letter in letter_cols:
-      clf = LogisticRegression(penalty='l1')
+      clf = LogisticRegression(penalty='l2')
       #clf = LinearSVC()
       #clf = BernoulliRBM()
       X = df.copy()
@@ -42,7 +44,7 @@ def test():
       X = X.drop(cols,axis=1)
       Xs = sps.csr_matrix(X)
       Xs = X
-      a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.07,random_state=42) 
+      a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.10) 
       clf.fit(a_train, y_train)
       y_pred = clf.predict_proba(a_test)[:,1]
       #y_pred = clf.score_samples(a_test)

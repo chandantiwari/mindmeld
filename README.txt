@@ -103,4 +103,8 @@ once, it is the file we used to train the classifier. This output file
 needs to be copied manually under data, then mineprep.py would have to
 be executed again.
 
+File celebpred_tree.py uses Gradient Boosted Regression Trees. We used
+xgboost package on Github. In order to use this package, download the
+code under your $HOME/Downloads/xgboost and compile it.
+
 
