@@ -12,43 +12,49 @@ from scipy.io import mmread
 import xgboost as xgb
 import celebpred
 
-num_round = 10
-param = {'bst:max_depth':2,  'silent':1, 'objective':'binary:logitraw'} 
+def train():
 
-df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
-aucs = []
+   num_round = 10
+   param = {'bst:max_depth':2,  'silent':1, 'objective':'binary:logitraw'} 
 
-for letter in celebpred.letter_cols:
-   X = df.copy()
-   X = X.fillna(0)
-   y = X[letter]
-   X = X.drop(celebpred.cols,axis=1)
+   df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
+   aucs = {}
 
-   fout = open("/tmp/celeb_feats.txt", "w")
-   for i,col in enumerate(X.columns):
-      fout.write("%d\t%s\ti\n" % (i,col))
-   fout.close()
-   
-   Xs = sps.csr_matrix(X)
-   a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.06,random_state=42)
-   dtrain = xgb.DMatrix( a_train )
-   dtrain.set_label(y_train)
-   dtest = xgb.DMatrix( a_test )
-   dtest.set_label(y_test)
-   evallist  = [(dtest,'eval'), (dtrain,'train')]
-      
-   bst = xgb.train( param, dtrain, num_round, evallist )
-   preds = bst.predict( dtest )
-   labels = dtest.get_label()
-   print ('error=%f' % (  sum(1 for i in range(len(preds)) if int(preds[i]>0.5)!=labels[i]) /float(len(preds))))
-   fpr, tpr, thresholds = roc_curve(y_test, preds)
-   roc_auc = auc(fpr, tpr)
-   print("%s AUC : %f" % (letter,roc_auc))
-   aucs.append(roc_auc)
+   for letter in celebpred.letter_cols:
+      X = df.copy()
+      X = X.fillna(0)
+      y = X[letter]
+      X = X.drop(celebpred.cols,axis=1)
 
-   bst.dump_model('/tmp/dump_%s.raw.txt' % letter, '/tmp/celeb_feats.txt')
-   bst.save_model('/tmp/tree_%s.model' % letter)
+      fout = open("/tmp/celeb_feats.txt", "w")
+      for i,col in enumerate(X.columns):
+         fout.write("%d\t%s\ti\n" % (i,col))
+      fout.close()
 
+      Xs = sps.csr_matrix(X)
+      a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.06,random_state=42)
+      dtrain = xgb.DMatrix( a_train )
+      dtrain.set_label(y_train)
+      dtest = xgb.DMatrix( a_test )
+      dtest.set_label(y_test)
+      evallist  = [(dtest,'eval'), (dtrain,'train')]
 
-print '\nAverage AUC', np.array(aucs).mean()
+      bst = xgb.train( param, dtrain, num_round, evallist )
+      preds = bst.predict( dtest )
+      labels = dtest.get_label()
+      print ('error=%f' % (  sum(1 for i in range(len(preds)) if int(preds[i]>0.5)!=labels[i]) /float(len(preds))))
+      fpr, tpr, thresholds = roc_curve(y_test, preds)
+      roc_auc = auc(fpr, tpr)
+      print("%s AUC : %f" % (letter,roc_auc))
+      aucs[letter] = roc_auc
+
+      bst.dump_model('/tmp/dump_%s.raw.txt' % letter, '/tmp/celeb_feats.txt')
+      bst.save_model('/tmp/tree_%s.model' % letter)
+
+   print '\nAverage AUC', np.array(aucs.values()).mean()
+   print '\n'
+   return aucs
+
+if __name__ == "__main__": 
+   train()   
 
