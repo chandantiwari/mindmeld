@@ -46,7 +46,7 @@ for letter in celebpred.letter_cols:
    print("%s AUC : %f" % (letter,roc_auc))
    aucs.append(roc_auc)
 
-   bst.dump_model('/tmp/dump_%s.raw.txt' % letter, './data/celeb_feats.txt')
+   bst.dump_model('/tmp/dump_%s.raw.txt' % letter, '/tmp/celeb_feats.txt')
 
 
 print '\nAverage AUC', np.array(aucs).mean()
