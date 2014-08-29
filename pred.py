@@ -2,6 +2,7 @@ import pandas as pd, celebpred
 import numpy as np
 
 clfs, ocols, conf = celebpred.test()
+print ocols
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 
 print 'Avg AUC', np.array(list(conf.values())).mean()
