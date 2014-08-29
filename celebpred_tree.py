@@ -24,7 +24,7 @@ for letter in celebpred.letter_cols:
    y = X[letter]
    X = X.drop(celebpred.cols,axis=1)
 
-   fout = open("./data/celeb_feats.txt", "w")
+   fout = open("/tmp/celeb_feats.txt", "w")
    for i,col in enumerate(X.columns):
       fout.write("%d\t%s\ti\n" % (i,col))
    fout.close()
