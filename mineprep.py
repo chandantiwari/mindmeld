@@ -123,6 +123,23 @@ def astro_enrich(df_arg):
    df4['Se'] = df4.apply(Se, axis=1)
    df4['Fi'] = df4.apply(Fi, axis=1)
 
+   df4['NeFi'] = np.nan
+   df4['NeFi'][(df4['Ne']==1)&(df4['Fi']==1)] = 1.0
+   df4['NeTi'] = np.nan
+   df4['NeTi'][(df4['Ne']==1)&(df4['Ti']==1)] = 1.0
+   df4['NiTe'] = np.nan
+   df4['NiTe'][(df4['Ni']==1)&(df4['Te']==1)] = 1.0
+   df4['NiFe'] = np.nan
+   df4['NiFe'][(df4['Ni']==1)&(df4['Fe']==1)] = 1.0
+   df4['SiTe'] = np.nan
+   df4['SiTe'][(df4['Si']==1)&(df4['Te']==1)] = 1.0
+   df4['SiFe'] = np.nan
+   df4['SiFe'][(df4['Si']==1)&(df4['Fe']==1)] = 1.0
+   df4['SeFi'] = np.nan
+   df4['SeFi'][(df4['Se']==1)&(df4['Fi']==1)] = 1.0
+   df4['SeTi'] = np.nan
+   df4['SeTi'][(df4['Se']==1)&(df4['Ti']==1)] = 1.0
+   
    return df4
 
 if __name__ == "__main__": 
