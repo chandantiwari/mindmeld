@@ -33,7 +33,7 @@ def test():
    clfs = collections.OrderedDict()
    conf = collections.OrderedDict()
    for letter in letter_cols:
-      clf = LogisticRegression(penalty='l2')
+      clf = LogisticRegression(penalty='l1')
       #clf = LinearSVC()
       #clf = BernoulliRBM()
       X = df.copy()

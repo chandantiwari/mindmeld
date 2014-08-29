@@ -18,7 +18,7 @@ param = {'bst:max_depth':2,  'silent':1, 'objective':'binary:logitraw'}
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 aucs = []
 
-for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
+for letter in celebpred.letter_cols:
    X = df.copy()
    X = X.fillna(0)
    y = X[letter]
@@ -30,7 +30,7 @@ for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
    fout.close()
    
    Xs = sps.csr_matrix(X)
-   a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.02,random_state=42)
+   a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.06,random_state=42)
    dtrain = xgb.DMatrix( a_train )
    dtrain.set_label(y_train)
    dtest = xgb.DMatrix( a_test )
@@ -46,7 +46,7 @@ for letter in ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']:
    print("%s AUC : %f" % (letter,roc_auc))
    aucs.append(roc_auc)
 
-   bst.dump_model('./data/dump_%s.raw.txt' % letter, './data/celeb_feats.txt')
+   bst.dump_model('/tmp/dump_%s.raw.txt' % letter, './data/celeb_feats.txt')
 
 
 print '\nAverage AUC', np.array(aucs).mean()
