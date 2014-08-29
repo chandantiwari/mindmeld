@@ -4,8 +4,6 @@ import numpy as np
 clfs, ocols, conf = celebpred.test()
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 
-print 'Avg AUC', np.array(list(conf.values())).mean()
-
 import scipy.sparse as sps
 import pandas as pd, mineprep
 df_t = pd.DataFrame(index=[0], columns=['mbti', 'name', 'occup', 'bday'])

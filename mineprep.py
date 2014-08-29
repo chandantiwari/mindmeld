@@ -62,6 +62,11 @@ def Fi(x):
    if 'ISFP' in x['mbti']: return 1
    if 'INFP' in x['mbti']: return 1
 
+def I(x):
+   if 'I' == x['mbti'][0]: return 1
+   
+def E(x):
+   if 'E' == x['mbti'][0]: return 1
    
 
 '''
@@ -97,6 +102,8 @@ def astro_enrich(df_arg):
       if res['chinese']: x['chinese'] = res['chinese']
       if res['spiller']: x['spiller'] = res['spiller']
       x['M1'] = str(res['millman'][0])
+      x['sun'] = str(res['sun'])
+      x['moon'] = str(res['moon'])
       x['M2'] = str(res['millman'][1])
       x['mills'+str(res['millman'][2])] = 1
       x['mills'+str(res['millman'][3])] = 1
@@ -122,6 +129,8 @@ def astro_enrich(df_arg):
    df4['Ni'] = df4.apply(Ni, axis=1)
    df4['Se'] = df4.apply(Se, axis=1)
    df4['Fi'] = df4.apply(Fi, axis=1)
+   df4['E'] = df4.apply(E, axis=1)
+   df4['I'] = df4.apply(I, axis=1)
 
    df4['NeFi'] = np.nan
    df4['NeFi'][(df4['Ne']==1)&(df4['Fi']==1)] = 1.0

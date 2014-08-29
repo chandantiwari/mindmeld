@@ -24,7 +24,9 @@ def f(x):
 df = pd.read_csv("./data/lewi.dat", sep=' ', names=['bday','rest','C','S','M0','M1','M2','M3'])
 df['bday'] = df['bday'].map(lambda x: int(x))
 df = df[df['bday'] > 19400101]
-#df = df[:1000]
+
+df = df[:100] ### FOR TESTING
+
 for x in map(lambda x: 'L'+str(x),range(278)): df[x] = np.nan
 df2 = df.apply(f, axis=1)
 df2 = df2.drop('rest',axis=1)
@@ -32,14 +34,8 @@ df2 = df2.drop('rest',axis=1)
 # now encode 
 ss = list(df2['S'].unique())
 cs = list(df2['C'].unique())
-print 'S'
-for i in df2.index:
-    print df2.ix[i]['bday']
-    df2.ix[i,'S'] = str(ss.index(df2.ix[i,'S']))
-print 'C'
-for i in df2.index:
-    print df2.ix[i]['bday']
-    df2.ix[i,'C'] = str(cs.index(df2.ix[i,'C']))
+for i in df2.index: df2.ix[i,'S'] = str(ss.index(df2.ix[i,'S']))
+for i in df2.index: df2.ix[i,'C'] = str(cs.index(df2.ix[i,'C']))
 
 df2['C'] = df2['C'].map(lambda x: str(x))
 df2['S'] = df2['S'].map(lambda x: str(x))

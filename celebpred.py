@@ -20,9 +20,9 @@ from sklearn import cross_validation
 from sklearn.neural_network import BernoulliRBM
 import collections
 
-cols = ['mbti','name','occup','bday','bday2',]
+cols = ['mbti','name','occup','bday','bday2','sun','moon']
 
-letter_cols = ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi',
+letter_cols = ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi','E','I',
                'NeFi','NeTi','NiTe','NiFe','SiTe','SiFe','SeFi','SeTi']
 
 cols = cols + letter_cols
@@ -35,7 +35,7 @@ def test():
    clfs = collections.OrderedDict()
    conf = collections.OrderedDict()
    for letter in letter_cols:
-      clf = LogisticRegression(penalty='l2')
+      clf = LogisticRegression(penalty='l1')
       #clf = LinearSVC()
       #clf = BernoulliRBM()
       X = df.copy()
@@ -44,7 +44,7 @@ def test():
       X = X.drop(cols,axis=1)
       Xs = sps.csr_matrix(X)
       Xs = X
-      a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.10) 
+      a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.05, random_state=42) 
       clf.fit(a_train, y_train)
       y_pred = clf.predict_proba(a_test)[:,1]
       #y_pred = clf.score_samples(a_test)
@@ -54,6 +54,7 @@ def test():
       conf[letter] = float(roc_auc)
       clfs[letter] = clf
          
+   print 'Avg AUC', np.array(list(conf.values())).mean()
    return clfs, X.columns, conf
 
 if __name__ == "__main__": 

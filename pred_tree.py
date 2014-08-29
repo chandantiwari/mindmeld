@@ -12,7 +12,9 @@ conf = celebpred_tree.train()
 
 df_t = pd.DataFrame(index=[0], columns=['mbti', 'name', 'occup', 'bday'])
 df_t.loc[0,'mbti'] = 'xxx'
-df_t.loc[0,'bday'] = '24/04/1973'
+#df_t.loc[0,'bday'] = '24/04/1973'
+#df_t.loc[0,'bday'] = '22/2/1949'
+df_t.loc[0,'bday'] = '5/10/1945'
 
 df2_t = mineprep.astro_enrich(df_t)
 
