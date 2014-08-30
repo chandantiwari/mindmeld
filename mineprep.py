@@ -102,8 +102,6 @@ def astro_enrich(df_arg):
       if res['chinese']: x['chinese'] = res['chinese']
       if res['spiller']: x['spiller'] = res['spiller']
       x['M1'] = str(res['millman'][0])
-      x['sun'] = str(res['sun'])
-      x['moon'] = str(res['moon'])
       x['M2'] = str(res['millman'][1])
       x['mills'+str(res['millman'][2])] = 1
       x['mills'+str(res['millman'][3])] = 1
