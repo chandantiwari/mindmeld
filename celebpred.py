@@ -36,7 +36,7 @@ def test():
    for letter in letter_cols:
       clf = LogisticRegression(penalty='l2')
       #clf = LinearSVC()
-      #clf = BernoulliRBM(n_components=40,random_state=42)
+      #clf = BernoulliRBM(n_components=5,random_state=42)
       X = df.copy()
       X = X.fillna(0)
       y = X[letter]
