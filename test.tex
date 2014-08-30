@@ -1,65 +1,8 @@
 \documentclass[12pt,fleqn]{article}\usepackage{../common}
 \begin{document}
 
-\begin{minted}[fontsize=\footnotesize]{python}
-%load_ext autoreload
-%autoreload 2
-import pandas as pd, celebpred
-clfs, ocols, conf = celebpred.test()
-df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
-print 'Avg AUC', np.array(list(conf.values())).mean()
-\end{minted}
 
-\begin{verbatim}
-Si AUC : 0.571429
-Ti AUC : 0.555556
-Ne AUC : 0.600000
-Fe AUC : 0.625000
-Te AUC : 0.500000
-Ni AUC : 0.285714
-Se AUC : 0.875000
-Fi AUC : 0.785714
-Avg AUC 0.599801587302
-\end{verbatim}
 
-\begin{minted}[fontsize=\footnotesize]{python}
-import scipy.sparse as sps
-import pandas as pd, mineprep
-df_t = pd.DataFrame(index=[0], columns=['mbti', 'name', 'occup', 'bday'])
-df_t.loc[0,'mbti'] = 'xxx'
-df_t.loc[0,'bday'] = '24/04/1973'
-#df_t.loc[0,'bday'] = '5/10/1945'
-#df_t.loc[0,'bday'] = '24/04/1973'
-
-df2_t = mineprep.astro_enrich(df_t)
-
-for col in df.columns: 
-   if col not in df2_t.columns: df2_t[col] = np.nan
-df2_t = df2_t.drop(celebpred.cols,axis=1)
-# the order of columns must be exactly the same as 
-# the order in the training set
-df2_t = df2_t[ocols] 
-
-XX = np.array(df2_t.fillna(0))
-print XX.shape
-
-for clf in clfs: 
-    res = clfs[clf].predict_proba(XX)[0] # for Logit
-    #res = clfs[clf].score_samples(XX) # for RBM
-    print clf, res, res*conf[clf]
-\end{minted}
-
-\begin{verbatim}
-(1, 351)
-Ni [ 0.26809168  0.73190832] [ 0.07659762  0.20911666]
-Ne [ 0.96363817  0.03636183] [ 0.5781829  0.0218171]
-Si [ 0.95400098  0.04599902] [ 0.54514342  0.02628515]
-Fe [ 0.81568379  0.18431621] [ 0.50980237  0.11519763]
-Ti [ 0.97339832  0.02660168] [ 0.54077684  0.01477871]
-Fi [ 0.57440786  0.42559214] [ 0.45132046  0.33439383]
-Te [ 0.71575975  0.28424025] [ 0.35787987  0.14212013]
-Se [ 0.50425963  0.49574037] [ 0.44122718  0.43377282]
-\end{verbatim}
 
 
 \end{document}
