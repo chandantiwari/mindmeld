@@ -91,17 +91,20 @@ Previously we were trying to predict each letter of the MBTI type, but
 with this new way we have 2 prediction tasks instead of 4, so it is an
 easier task, and this style of prediction of much more in line with
 the logic of MBTI. Functions are at the core of the character
-make-up. Our experiments with logistic regression and bernoulli rbm
-have shown good results. A neural network with two outputs (so two
-labels) could give more accurate prediction.
+make-up. Our experiments with logistic regression has shown good
+results. The latest addition here was predicting all combination of
+top two functions, which reduced the prediction task to 1. See code
+comments for more details. 
 
 All data files required for ML are under 'data' folder. If you want to
 recreate the main file used for training, simply rerun
 mineprep.py. Script scrape.py will get celebrity mbti types from a
 known Web site, and write its output under /tmp. We already ran this
 once, it is the file we used to train the classifier. This output file
-needs to be copied manually under data, then mineprep.py would have to
-be executed again.
+needs to be copied manually under data/myer-briggs.txt, then
+mineprep.py would have to be executed again. Your additions can go
+under data/myer-briggs-app.txt - everything in this file will be
+appended to the original file before training.
 
 File celebpred_tree.py uses Gradient Boosted Regression Trees. We used
 xgboost package on Github. In order to use this package, download the

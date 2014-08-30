@@ -39543,3 +39543,4 @@ Mia Wasikowska:Actress:14/10/1989
 Robert Pattinson:Actor:13/5/1986
 Andrew Garfield:Actor:20/8/1983
 Louis C.K.:Comedian:12/9/1967
+Orhan Pamuk:Author:7/6/1952

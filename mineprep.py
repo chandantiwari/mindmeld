@@ -154,7 +154,9 @@ if __name__ == "__main__":
     celebs = pd.read_csv("./data/famousbday.txt", sep=':', header=None, 
                          names=['name','occup','bday','spiller','chinese'])
 
-    celeb_mbti = pd.read_csv("./data/myer-briggs.txt",header=None,sep=':',
+    os.system('cat ./data/myer-briggs.txt ./data/myer-briggs-app.txt > /tmp/myer-briggs.txt')
+    
+    celeb_mbti = pd.read_csv("/tmp/myer-briggs.txt",header=None,sep=':',
                              names=['mbti','name'])
 
     df = pd.merge(celeb_mbti,celebs)
