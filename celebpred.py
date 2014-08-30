@@ -43,7 +43,7 @@ def test():
       X = X.drop(cols,axis=1)
       Xs = sps.csr_matrix(X)
       Xs = X
-      a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.05, random_state=30) 
+      a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.06, random_state=30) 
       clf.fit(a_train, y_train)
       y_pred = clf.predict_proba(a_test)[:,1]
       #y_pred = clf.score_samples(a_test)
