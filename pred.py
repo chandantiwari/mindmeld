@@ -65,8 +65,10 @@ opp = { 'NeFi': 'STJ',  'NeTi': 'SFJ',  'NiTe': 'SFP', 'NiFe': 'STP', 'SiTe': 'N
 map = {'NeFi': 'NFP', 'NeTi': 'NTP', 'NiTe': 'NTJ', 'NiFe': 'NFJ',  'SiTe': 'STJ', 'SiFe': 'SFJ', 'SeFi': 'SFP', 'SeTi': 'STP'}
 
 res = []
-for (mbti,neg,pos) in a: 
-   if len(mbti) == 4: res.append([map[mbti], opp[mbti], neg[1], pos[1]] )
+for (mbti,neg,pos) in a:
+   # only look at 4 letter MBTI labels skip others, i.e. Fi,Te,etc
+   if len(mbti) == 4:
+      res.append([map[mbti], opp[mbti], neg[1], pos[1]] )
 df = pd.DataFrame(res, columns=['mbti','opp','neg','pos'])
 
 print df.sort_index(by='pos',ascending=False).head(1)['mbti']
