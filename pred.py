@@ -48,7 +48,7 @@ for clf in clfs:
 # Perhaps the reason "opposite of negatives" work well is because for
 # training, we typically more negative samples than positives, so the
 # machinery is predicting what a person could _not_ be better than
-# what a person _could_ be. Since ekwe make MBTI prediction for a
+# what a person _could_ be. Since we make MBTI prediction for a
 # single day (which is a birthday), that's why it's important to list
 # options. Predicting one MBTI result for one day would not make
 # sense. Lots of babies are born each day, and on one single day, for
