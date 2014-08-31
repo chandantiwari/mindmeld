@@ -175,3 +175,8 @@ def describe(res):
    for lewi in res['lewi']: print base + '/lewi/' + str(lewi) + '.html'
    print base + '/chinese/' + str(res['chinese']) + '.html'
    print base + '/spiller/' + str(res['spiller']) + '.html'
+
+def conv(s):
+    return datetime.strptime(s, '%d/%m/%Y').date().strftime('%Y%m%d')
+
+   

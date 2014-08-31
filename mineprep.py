@@ -77,8 +77,10 @@ def astro_enrich(df_arg):
    df = df_arg.copy()
    # change format of the date
    def f(s):
-      try: return datetime.strptime(s, '%d/%m/%Y').date().strftime('%Y%m%d')
-      except: return None
+      try:
+          return mindmeld.conv(s)
+      except:
+          return None
    df['bday2'] = df['bday'].apply(f)
 
    # create (empty) grant lewi fields

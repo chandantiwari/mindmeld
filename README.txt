@@ -2,19 +2,6 @@
 
 sudo pip install sklearn
 
-## MBTI Test
-
-You can take the MBTI test under doc/mbti_en.html and once answering
-all questions, hit Evaluate and the -1,0,+1 results will be
-displayed. These results can be copied to clipboard, and from there 
-
-```ans = ":1:-1:-1:1:0:0:0:1:0:-1:0:0:-1:-1:1:-1:0:0:1:1:-1:1:1:1:0:0:0:-1:1:0:1:1:0:0:0:0:0:1:-1:-1:1:1:1:1:1:1:-1:1:1:1:0:-1:-1:-1:-1:1:0:0:0:0:-1:0:0:-1:0:-1:-1:-1:0:0"
-ans = ans.split(":")[1:]
-print mindmeld.calculate_mb(ans)
-```
-
-would give the answer of the questionaire. 
-
 ## Calculates
 
 Grant Lewi Numbers (based on decans)
@@ -33,15 +20,18 @@ Example:
 
 ```
 import mindmeld
-print mindmeld.calculate('19410326')
+
+res =  mindmeld.calculate(mindmeld.conv("10/3/1968"))
+print mindmeld.describe(res)
+
 ```
 
 The result will look like:
 
 ```
-{'millman': [26, 8, 2, 6, 8], 'chinese': 'Snake', 'sun': 0.0, 'moon':
-11.0, 'lewi': [12, 155, 156, 205, 208, 214, 221, 222, 227, 243, 252],
-'spiller': 'Libra', 'cycle': 9}
+{'millman': [28, 10, 2, 8, 1, 0], 'chinese': 'Monkey', 'sun':
+11.0, 'moon': 3.0, 'lewi': [136, 161, 163, 183, 196, 199, 211, 214,
+216, 235, 243, 246, 272, 276], 'spiller': 'Aries', 'cycle': 2}
 ```
 
 The calculation of Lewi numbers is the most beneficial part of this
@@ -63,7 +53,7 @@ generated, by using the describe function,
 
 ```
 import mindmeld
-res = mindmeld.calculate('19410326')
+res =  mindmeld.calculate(mindmeld.conv("10/3/1968"))
 print mindmeld.describe(res)
 ```
 
@@ -110,4 +100,15 @@ File celebpred_tree.py uses Gradient Boosted Regression Trees. We used
 xgboost package on Github. In order to use this package, download the
 code under your $HOME/Downloads/xgboost and compile it.
 
+## MBTI Test
 
+You can take the MBTI test under doc/mbti_en.html and once answering
+all questions, hit Evaluate and the -1,0,+1 results will be
+displayed. These results can be copied to clipboard, and from there 
+
+```ans = ":1:-1:-1:1:0:0:0:1:0:-1:0:0:-1:-1:1:-1:0:0:1:1:-1:1:1:1:0:0:0:-1:1:0:1:1:0:0:0:0:0:1:-1:-1:1:1:1:1:1:1:-1:1:1:1:0:-1:-1:-1:-1:1:0:0:0:0:-1:0:0:-1:0:-1:-1:-1:0:0"
+ans = ans.split(":")[1:]
+print mindmeld.calculate_mb(ans)
+```
+
+would give the answer of the questionaire. 

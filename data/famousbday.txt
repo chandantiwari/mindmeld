@@ -39345,6 +39345,8 @@ Fred Ward:American actor:30/12/1942
 Guy Edwards:British racing driver:30/12/1942
 Mel Renfro:American football player:30/12/1941
 James Burrows:American television director:30/12/1940
+Kurt Goedel:Mathematician:28/4/1906
+Seth Godin:Management Consultant:10/7/1960
 Gordon Banks:English footballer:30/12/1937
 John Hartford:American musician:30/12/1937
 Jim Marshall:American football player:30/12/1937
@@ -39383,6 +39385,7 @@ Al Smith:American politician:30/12/1873
 Stephen Butler Leacock:British-born, Canadian writer and economist:30/12/1869
 Rudyard Kipling:British writer, Nobel Prize laureate:30/12/1865
 André Messager:French composer:30/12/1853
+Eckhart Tolle:Author:16/2/1948
 Asa Griggs Candler:American businessman and politician:30/12/1851
 Émile Loubet:7th President of France:30/12/1838
 Theodor Fontane:German writer:30/12/1819
@@ -39414,6 +39417,7 @@ Esteban Loaiza:Mexican Major League Baseball player:31/12/1971
 Carlos Morales Quintana:husband of Princess Alexia of Greece and Denmark:31/12/1970
 Lisa Joyner:American entertainment reporter:31/12/1966
 Gong Li:Chinese actress:31/12/1965
+Fareed Zakaria:Journalist:20/1/1964
 Nicholas Sparks:American author:31/12/1965
 Allen D'Nulderf:American stuntman:31/12/1964
 Lowri Turner:British TV presenter:31/12/1964
@@ -39501,6 +39505,7 @@ Vaclav Havel:President:5/10/1936
 Michelle Obama:First Lady:17/1/1964
 Penelope Cruz:Actress:27/4/1974
 Osho:11/12/1931
+Gilbert Strang:Mathematician:27/10/1934
 Tea Leoni:25/2/1966
 Asia Carrera:Actress:6/8/1973
 Richard Ayoade:Actor:12/6/1977
@@ -39550,18 +39555,15 @@ Masaaki Hatsumi:Grandmaster of Bujinkan Taijitsu:2/12/1931
 Andrew Garfield:Actor:20/8/1983
 Louis C.K.:Comedian:12/9/1967
 Orhan Pamuk:Author:7/6/1952
-Tayyip Erdogan:President:26/2/1954
-Ahmet Davutoglu:Strategist:26/2/1959
 Abdullah Gul:President:29/10/1950
+Ahmet Davutoglu:Strategist:26/2/1959
+Tayyip Erdogan:President:26/2/1954
 Acun Ilicali:TV Personality:12/3/1969
 Cetin Altan:Journalist:22/6/1927
 Mumtazer Turkone:Journalist:1/1/1956
-Gilbert Strang:Mathematician:27/10/1934
 Oktay Sinanoglu:Scientist:2/8/1934
 Perihan Magden:Columnist:14/10/1960
 Serdar Turgut:Journalist:4/8/1955
-Fareed Zakaria:Journalist:20/1/1964
-Eckhart Tolle:Author:16/2/1948
 Turgut Ozal:President:13/10/1927
 Erdal Inonu:Scientist:6/6/1926
 Mehmet Altan:Journalist:11/1/1953
@@ -39572,8 +39574,6 @@ Engin Ardic:Journalist:28/6/1952
 Rasim Kutahyali:Journalist:30/4/1981
 Mehmet Simsek:Economist:1/1/1967
 Ali Babacan:Minister:4/4/1967
-Kurt Goedel:Mathematician:28/4/1906
-Seth Godin:Management Consultant:10/7/1960
 Cem Yilmaz:Comedian:23/4/1973
 Ertugrul Ozkok:Journalist:4/8/1947
 Devlet Bahceli:Nationalist Leader:1/1/1948
