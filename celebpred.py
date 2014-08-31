@@ -27,7 +27,7 @@ letter_cols = ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi','E','I',
 
 cols = cols + letter_cols
 
-def test():
+def train():
 
    df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
 
