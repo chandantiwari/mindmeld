@@ -14,8 +14,8 @@ import celebpred
 
 def train():
 
-   num_round = 40
-   param = {'bst:max_depth':4,  'silent':1, 'objective':'binary:logitraw'} 
+   num_round = 60
+   param = {'bst:max_depth':3,  'silent':1, 'objective':'binary:logitraw'} 
 
    df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
    aucs = {}
@@ -32,7 +32,7 @@ def train():
       fout.close()
 
       Xs = sps.csr_matrix(X)
-      a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.06,random_state=42)
+      a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.07,random_state=42)
       dtrain = xgb.DMatrix( a_train )
       dtrain.set_label(y_train)
       dtest = xgb.DMatrix( a_test )
