@@ -12,8 +12,8 @@ conf, ocols = celebpred_tree.train()
 
 df_t = pd.DataFrame(index=[0], columns=['mbti', 'name', 'occup', 'bday'])
 df_t.loc[0,'mbti'] = 'xxx'
-#df_t.loc[0,'bday'] = '24/04/1973'
-df_t.loc[0,'bday'] = '22/2/1949'
+df_t.loc[0,'bday'] = '24/04/1973'
+#df_t.loc[0,'bday'] = '22/2/1949'
 #df_t.loc[0,'bday'] = '5/10/1945'
 
 df2_t = mineprep.astro_enrich(df_t)
@@ -31,6 +31,8 @@ a = []
 for letter in celebpred.letter_cols:
    bst.load_model( '/tmp/tree_%s.model' % letter )
    res = bst.predict(data)
-   a.append([letter, [res[0], conf[letter]*res[0]], [res[0], conf[letter]*res[0]], ])
+   a.append([letter,
+             [-1*res[0], conf[letter]*-1*res[0]],
+             [res[0], conf[letter]*res[0]]  ])
 
-print pred.pred_mbti(a)
+pred.pred_mbti(a)

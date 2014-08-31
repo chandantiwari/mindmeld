@@ -57,8 +57,8 @@ if __name__ == "__main__":
    df_t = pd.DataFrame(index=[0], columns=['mbti', 'name', 'occup', 'bday'])
    df_t.loc[0,'mbti'] = 'xxx'
    #df_t.loc[0,'bday'] = '24/04/1973'
-   df_t.loc[0,'bday'] = '22/2/1949'
-   #df_t.loc[0,'bday'] = '5/10/1945'
+   #df_t.loc[0,'bday'] = '22/2/1949'
+   df_t.loc[0,'bday'] = '5/10/1945'
    #df_t.loc[0,'bday'] = '8/1/1982'
 
    df2_t = mineprep.astro_enrich(df_t)
@@ -78,6 +78,6 @@ if __name__ == "__main__":
        #res = clfs[clf].predict(XX)
        a.append( (clf, res, res*conf[clf]) ) # mult score with conf
 
-   print pred_mbti(a, df_t)
+   pred_mbti(a)
    print df_t.loc[0,'bday']   
 
