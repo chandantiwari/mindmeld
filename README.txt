@@ -66,12 +66,13 @@ subfolder. This is a Java project, see its README for further info.
 
 Script celebpred.py demonstrate some machine learning techniques on
 the data. ML code attempts to predict a person's MBTI type given their
-base astrological information. This, if can be done, would prove a
-direct pseudoscience - science connection. On ~400 records with 7%
-random test split we are able to get a total of 60% AUC on the test
-set (using regression trees), for predicting top two MBTI functions
-(Ne/Ti,Ni/Te, etc). These results are promising. More data would
-definitely make a positive difference.
+base astrological information. A good resuls would prove that a
+pseudoscience - science connection exists, and that, pseudoscience
+might not be so pseudo after all. On ~400 records with 7% random test
+split we are able to get a total of 62% AUC on the test set (for
+regression trees), for predicting top two MBTI functions (NeTi,NiTe,
+etc). These results are promising. More data would definitely make a
+positive difference.
 
 In the input data, the top two functions of people are 1-hot encoded,
 INTP for example has both Ti and Ne as 1, and they become labels
