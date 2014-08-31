@@ -48,15 +48,17 @@ for clf in clfs:
 # Perhaps the reason "opposite of negatives" work well is because for
 # training, we typically more negative samples than positives, so the
 # machinery is predicting what a person could _not_ be better than
-# what a person _could_ be. Since we make MBTI prediction for a
-# single day (which is a birthday), that's why it's important to list
-# options. Predicting one MBTI result for one day would not make
-# sense. Lots of babies are born each day, and on one single day, for
-# example, each baby born would be NTP?  It's more likely that babies
-# born in the same day would different MBTI types. There would be
-# patterns however, for example some days would favor STP more, others
-# STJs. On an STJ day, a baby who was nurtured that way could maybe
-# become an NTJ as well.
+# what a person _could_ be.
+
+# Also since we make MBTI prediction for a single day (which is a
+# birthday), that's why it's important to list options. Predicting one
+# MBTI result for one day would not make sense. Lots of babies are
+# born each day, and on one single day, for example, each baby born
+# would be NTP?  It's more likely that babies born in the same day
+# would have different MBTI types, but there would probably be a small
+# list of types a person could be that day. For example some days
+# could favor STP more, others STJs. On an STJ day, a baby nurtured
+# appropiately, could maybe later become an NTJ. 
     
 
 opp = { 'NeFi': 'STJ',  'NeTi': 'SFJ',  'NiTe': 'SFP', 'NiFe': 'STP', 'SiTe': 'NFP',  'SiFe': 'NTP',  'SeFi': 'NTJ',  'SeTi': 'NFJ'}
