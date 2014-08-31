@@ -80,14 +80,16 @@ columns become labels during training. We train a different classifier
 for each function.
 
 Previously we were trying to predict each letter of the MBTI type,
-such as I,N,T,P for INTP. Using the new way we have 2 prediction tasks
-instead of 4. In order to identify an MBTI type, top two functions are
-enough, for example NTP can be predicted if we know Ne and Ti are top
-two functions. The only remaining task is predicting introversion or
-extroversion which only _changes_ the order of the top two
-functions. For ENTP we have NeTi for INTP TiNe. We did not put much
-emphasis on predicting I or E, even though it is in the code, we dont
-use it for full blown MBTI determination.
+such as the four letters of I,N,T,P for INTP. Using the new way we
+have 2 prediction tasks instead of 4, we predict only the top two
+functions. A reason for that shortcut is that in order to identify an
+MBTI type, top two functions are sufficient, for example NTP can be
+predicted if we know Ne and Ti are top two functions. The only
+remaining task is predicting introversion or extroversion which only
+_changes_ the order of the top two functions -- ENTP has NeTi whereas
+INTP TiNe. We did not put much emphasis on predicting I or E, even
+though it is predicted in the code, we dont use it for full blown MBTI
+determination.
 
 This way prediction is easier task, and is much more in line with the
 logic of MBTI. Functions are at the core of the character make-up. Our
