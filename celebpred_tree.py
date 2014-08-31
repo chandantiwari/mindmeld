@@ -14,9 +14,18 @@ import celebpred
 
 def train():
 
-   num_round = 60
-   param = {'bst:max_depth':4,  'silent':1, 'objective':'binary:logitraw'} 
-
+   num_round = 65
+   param = {}
+   # use logistic regression loss, use raw prediction before logistic transformation
+   # since we only need the rank
+   param['objective'] = 'binary:logitraw'
+   # scale weight of positive examples
+   param['scale_pos_weight'] = 8.
+   param['bst:eta'] = 0.4
+   param['bst:max_depth'] = 4
+   param['eval_metric'] = 'auc'
+   param['silent'] = 1
+      
    df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
    aucs = {}
 

@@ -44,7 +44,7 @@ def pred_mbti(a):
          res.append([map[mbti], opp[mbti], neg[1], pos[1]] )
    df = pd.DataFrame(res, columns=['mbti','opp','neg','pos'])
 
-   print df.sort_index(by='pos',ascending=False).head(1)['mbti']
+   print df.sort_index(by='pos',ascending=False).head(3)['mbti']
    print df.sort_index(by='neg',ascending=True).head(3)['opp']
 
 if __name__ == "__main__": 
@@ -56,10 +56,10 @@ if __name__ == "__main__":
    import pandas as pd, mineprep
    df_t = pd.DataFrame(index=[0], columns=['mbti', 'name', 'occup', 'bday'])
    df_t.loc[0,'mbti'] = 'xxx'
-   #df_t.loc[0,'bday'] = '24/04/1973'
+   df_t.loc[0,'bday'] = '24/04/1973'
    #df_t.loc[0,'bday'] = '22/2/1949'
    #df_t.loc[0,'bday'] = '5/10/1945'
-   df_t.loc[0,'bday'] = '8/1/1982'
+   #df_t.loc[0,'bday'] = '8/1/1982'
    #df_t.loc[0,'bday'] = '31/5/1956'
 
    df2_t = mineprep.astro_enrich(df_t)
