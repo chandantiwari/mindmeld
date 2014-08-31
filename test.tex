@@ -1,7 +1,109 @@
 \documentclass[12pt,fleqn]{article}\usepackage{../common}
 \begin{document}
 
+\begin{minted}[fontsize=\footnotesize]{python}
+from scipy.io import mmread
+import pandas as pd, celebpred, sys, os
+sys.path.append('%s/Downloads/xgboost/python' % os.environ['HOME'])
+import xgboost as xgb
+import numpy as np, celebpred_tree
+import scipy.sparse as sps
+import pandas as pd, mineprep
 
+df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
+
+conf, ocols = celebpred_tree.train()
+
+df_t = pd.DataFrame(index=[0], columns=['mbti', 'name', 'occup', 'bday'])
+df_t.loc[0,'mbti'] = 'xxx'
+df_t.loc[0,'bday'] = '24/04/1973'
+#df_t.loc[0,'bday'] = '22/2/1949'
+#df_t.loc[0,'bday'] = '5/10/1945'
+
+df2_t = mineprep.astro_enrich(df_t)
+
+for col in df.columns: 
+   if col not in df2_t.columns: df2_t[col] = np.nan
+df2_t = df2_t.drop(celebpred.cols,axis=1)
+df2_t = df2_t[ocols] # order of cols must look same as during training
+
+XX = np.array(df2_t.fillna(0))
+data = xgb.DMatrix( XX )
+bst = xgb.Booster()
+\end{minted}
+
+\begin{verbatim}
+error=0.153846
+Si AUC : 0.500000
+error=0.269231
+Ti AUC : 0.379699
+error=0.307692
+Ne AUC : 0.475694
+error=0.153846
+Fe AUC : 0.460227
+error=0.230769
+Te AUC : 0.900000
+error=0.230769
+Ni AUC : 0.500000
+error=0.307692
+Se AUC : 0.517361
+error=0.346154
+Fi AUC : 0.457516
+error=0.576923
+E AUC : 0.437500
+error=0.384615
+I AUC : 0.437500
+error=0.115385
+NeFi AUC : 0.565217
+error=0.192308
+NeTi AUC : 0.414286
+error=0.115385
+NiTe AUC : 0.644928
+error=0.115385
+NiFe AUC : 0.514493
+error=0.115385
+SiTe AUC : 0.565217
+error=0.038462
+SiFe AUC : 0.740000
+error=0.230769
+SeFi AUC : 0.570833
+error=0.076923
+SeTi AUC : 0.864583
+
+Average AUC 0.552503103872
+
+
+\end{verbatim}
+
+
+\begin{minted}[fontsize=\footnotesize]{python}
+a = []
+for letter in celebpred.letter_cols:
+   bst.load_model( '/tmp/tree_%s.model' % letter )
+   res = bst.predict(data)
+   a.append([letter, [res[0], conf[letter]*res[0]], [res[0], conf[letter]*res[0]], ])
+
+import pred
+print pred.pred_mbti(a)
+\end{minted}
+
+\begin{verbatim}
+['NFP', 'STJ', -0.97766452250273328, -0.97766452250273328]
+['NTP', 'SFJ', -0.71241626739501962, -0.71241626739501962]
+['NTJ', 'SFP', -1.6683548913485762, -1.6683548913485762]
+['NFJ', 'STP', -1.176287329715231, -1.176287329715231]
+['STJ', 'NFP', -1.3520635832910952, -1.3520635832910952]
+['SFJ', 'NTP', -1.2264803314208985, -1.2264803314208985]
+['SFP', 'NTJ', -0.83798173119624453, -0.83798173119624453]
+['STP', 'NFJ', -1.1262693492074807, -1.1262693492074807]
+1    NTP
+Name: mbti, dtype: object
+2    SFP
+4    NFP
+5    NTP
+Name: opp, dtype: object
+8/1/1982
+\end{verbatim}
 
 
 \end{document}

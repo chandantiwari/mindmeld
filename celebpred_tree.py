@@ -53,7 +53,7 @@ def train():
 
    print '\nAverage AUC', np.array(aucs.values()).mean()
    print '\n'
-   return aucs
+   return aucs, X.columns
 
 if __name__ == "__main__": 
    train()   
