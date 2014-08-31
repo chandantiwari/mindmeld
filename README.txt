@@ -95,23 +95,28 @@ This way prediction is easier task, and is much more in line with the
 logic of MBTI. Functions are at the core of the character make-up, not
 the individual letters.
 
-One last addition was predicting all combination of top two functions,
-which reduced the prediction task to 1. See code comments for more
-details.
+Another recent addition has been predicting all combination of top two
+functions, which reduced the prediction task to 1. So we attempt to
+predict NeTi, SeFi, etc. See code comments for more details.
 
 All data files required for ML are under 'data' folder. If you want to
 recreate the main file used for training, simply rerun
-mineprep.py. Script scrape.py will get celebrity mbti types from a
-known Web site, and write its output under /tmp. We already ran this
-once, it is the file we used to train the classifier. This output file
-needs to be copied manually under data/myer-briggs.txt, then
-mineprep.py would have to be executed again. Your additions can go
-under data/myer-briggs-app.txt - everything in this file will be
-appended to the original file before training.
+mineprep.py.
+
+Script scrape.py will get celebrity mbti types from a known Web site,
+and write its output under /tmp. We already ran this once, copied its
+output under data so you dont have to run it. This is the main data we
+used to train the classifier. The file is data/myer-briggs.txt, when
+mineprep.py ran it creates the necessary file.
+
+Your manual additions to celebrity MBTIs can go under
+data/myer-briggs-app.txt - everything in this file will be appended to
+the original file before training file is created by mineprep.
 
 File celebpred_tree.py uses Gradient Boosted Regression Trees. We used
 xgboost package on Github. In order to use this package, download the
-code under your $HOME/Downloads/xgboost and compile it.
+code under your $HOME/Downloads/xgboost and compile it following the
+directions.
 
 ## MBTI Test
 
