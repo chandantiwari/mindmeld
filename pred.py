@@ -36,21 +36,21 @@ for clf in clfs:
 # method is as follows: there is a negative prediction and positive
 # prediction for each label, i.e. for NeFi, 0.117 for negative, 0.067
 # for positive. We create a dataframe out of these. We sort for least
-# negative letter, and also seperately, for the highest positive. Then
-# we pick two from lowest negative, and one from highest positive. By
-# picking lowest negative, we are looking at the opposite of the least
-# likely MBTI type. We found out using this opposite is helpful - if
-# NeFi negative is smallest, its opposite MBTI, STJ would be
-# likely. So we report two such predictions, then we do one highest
-# positive likely, i.e. SFP for NeFi if its positive is highest, for
-# example.
+# negative letter, and also seperately, for the highest
+# positive. After each of these sortings we pick two from lowest
+# negative, and one from highest positive. By picking lowest negative,
+# we are looking at the opposite of the least likely MBTI type. We
+# found out using this opposite is helpful - if NeFi negative is
+# smallest, its opposite MBTI, STJ would be likely. So we report two
+# such predictions, then we do one highest positive likely, i.e. SFP
+# for NeFi if its positive is highest, for example.
 
 # Perhaps the reason "opposite of negatives" work well is because for
 # training, we typically more negative samples than positives, so the
 # machinery is predicting what a person could _not_ be better than
 # what a person _could_ be.
 
-# Also since we make MBTI prediction for a single day (which is a
+# Also, because we make MBTI prediction for a single day (which is a
 # birthday), that's why it's important to list options. Predicting one
 # MBTI result for one day would not make sense. Lots of babies are
 # born each day, and on one single day, for example, each baby born
@@ -58,7 +58,7 @@ for clf in clfs:
 # would have different MBTI types, but there would probably be a small
 # list of types a person could be that day. For example some days
 # could favor STP more, others STJs. On an STJ day, a baby nurtured
-# appropiately, could maybe later become an NTJ. 
+# appropiately, could maybe later become an NTJ.
     
 
 opp = { 'NeFi': 'STJ',  'NeTi': 'SFJ',  'NiTe': 'SFP', 'NiFe': 'STP', 'SiTe': 'NFP',  'SiFe': 'NTP',  'SeFi': 'NTJ',  'SeTi': 'NFJ'}
