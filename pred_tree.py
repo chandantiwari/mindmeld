@@ -15,6 +15,7 @@ df_t.loc[0,'mbti'] = 'xxx'
 df_t.loc[0,'bday'] = '24/04/1973'
 #df_t.loc[0,'bday'] = '22/2/1949'
 #df_t.loc[0,'bday'] = '5/10/1945'
+#df_t.loc[0,'bday'] = '8/1/1982'
 
 df2_t = mineprep.astro_enrich(df_t)
 
@@ -31,8 +32,7 @@ a = []
 for letter in celebpred.letter_cols:
    bst.load_model( '/tmp/tree_%s.model' % letter )
    res = bst.predict(data)
-   a.append([letter,
-             [-1*res[0], conf[letter]*-1*res[0]],
-             [res[0], conf[letter]*res[0]]  ])
+   # negate for neg cols, because all we have is one output
+   a.append([letter,[-1*res[0], -1*conf[letter]*res[0]],[res[0], conf[letter]*res[0]]  ])
 
 pred.pred_mbti(a)
