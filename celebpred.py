@@ -58,4 +58,4 @@ def train():
    return clfs, X.columns, conf
 
 if __name__ == "__main__": 
-   test()
+   train()

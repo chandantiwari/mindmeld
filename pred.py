@@ -36,14 +36,23 @@ def pred_mbti(a):
    opp = { 'NeFi': 'STJ',  'NeTi': 'SFJ',  'NiTe': 'SFP', 'NiFe': 'STP', 'SiTe': 'NFP',  'SiFe': 'NTP',  'SeFi': 'NTJ',  'SeTi': 'NFJ'}
    map = {'NeFi': 'NFP', 'NeTi': 'NTP', 'NiTe': 'NTJ', 'NiFe': 'NFJ',  'SiTe': 'STJ', 'SiFe': 'SFJ', 'SeFi': 'SFP', 'SeTi': 'STP'}
 
+   opp1 = { 'Ne': 'Si',  'Si': 'Ne',  'Fe': 'Ti', 'Ti': 'Fe',
+            'Se': 'Ni', 'Ni': 'Se', 'Te': 'Fi', 'Fi': 'Te'}
+   
+   res1 = []
    res = []
    for (mbti,neg,pos) in a:
       # only look at 4 letter MBTI labels skip others, i.e. Fi,Te,etc
+      if len(mbti) == 2:
+         res1.append([mbti, opp1[mbti], neg[1], pos[1]] )
       if len(mbti) == 4:
-         print [map[mbti], opp[mbti], neg[1], pos[1]]
          res.append([map[mbti], opp[mbti], neg[1], pos[1]] )
+         
    df = pd.DataFrame(res, columns=['mbti','opp','neg','pos'])
+   print df.sort_index(by='pos',ascending=False).head(3)['mbti']
+   print df.sort_index(by='neg',ascending=True).head(3)['opp']
 
+   df = pd.DataFrame(res1, columns=['mbti','opp','neg','pos'])
    print df.sort_index(by='pos',ascending=False).head(3)['mbti']
    print df.sort_index(by='neg',ascending=True).head(3)['opp']
 
