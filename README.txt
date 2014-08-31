@@ -92,9 +92,8 @@ though it is predicted in the code, we dont use it for full blown MBTI
 determination.
 
 This way prediction is easier task, and is much more in line with the
-logic of MBTI. Functions are at the core of the character make-up. Our
-experiments with logistic regression and regression trees has shown
-good results.
+logic of MBTI. Functions are at the core of the character make-up, not
+the individual letters.
 
 One last addition was predicting all combination of top two functions,
 which reduced the prediction task to 1. See code comments for more
