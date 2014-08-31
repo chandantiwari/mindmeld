@@ -32576,7 +32576,7 @@ Andrew Motion:English poet and Poet Laureate:26/10/1952
 Bootsy Collins:American musician (P Funk):26/10/1951
 Steve Rogers:Major League Baseball pitcher:26/10/1949
 Toby Harrah:American Major League Baseball player:26/10/1948
-Hillary Rodham Clinton:First Lady of the United States and United States Senator:26/10/1947
+Hillary Clinton:First Lady of the United States and United States Senator:26/10/1947
 Holly Woodlawn:Puerto Rican actress:26/10/1947
 Ian Ashley:British racing driver:26/10/1947
 Pat Sajak:American game show host:26/10/1946
@@ -39544,3 +39544,21 @@ Robert Pattinson:Actor:13/5/1986
 Andrew Garfield:Actor:20/8/1983
 Louis C.K.:Comedian:12/9/1967
 Orhan Pamuk:Author:7/6/1952
+Tayyip Erdogan:President:26/2/1954
+Ahmet Davutoglu:Strategist:26/2/1959
+Abdullah Gul:President:29/10/1950
+Acun Ilicali:TV Personality:12/3/1969
+Cetin Altan:Journalist:22/6/1927
+Mumtazer Turkone:Journalist:1/1/1956
+Gilbert Strang:Mathematician:27/10/1934
+Oktay Sinanoglu:Scientist:2/8/1934
+Perihan Magden:Columnist:14/10/1960
+Serdar Turgut:Journalist:4/8/1955
+Fareed Zakaria:Journalist:20/1/1964
+Eckhart Tolle:Author:16/2/1948
+Turgut Ozal:President:13/10/1927
+Erdal Inonu:Scientist:6/6/1926
+Mehmet Altan:Journalist:11/1/1953
+Ahmet Altan:Journalist:2/5/1950
+
+

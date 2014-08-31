@@ -1,1 +1,2 @@
 INFP:Orhan Pamuk
+INFP:Linus Torvalds
