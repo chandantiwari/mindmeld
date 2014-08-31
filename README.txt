@@ -74,10 +74,10 @@ regression trees), for predicting top two MBTI functions (NeTi,NiTe,
 etc). These results are promising. More data would definitely make a
 positive difference.
 
-In the input data, the top two functions of people are 1-hot encoded,
-INTP for example has both Ti and Ne as 1, and they become labels
-during training. We train a different classifier for each
-function.
+In the input data for each person, the top two functions are 1-hot
+encoded, INTP for example has both Ti and Ne as 1. Each of these
+columns become labels during training. We train a different classifier
+for each function.
 
 Previously we were trying to predict each letter of the MBTI type,
 such as I,N,T,P for INTP. Using the new way we have 2 prediction tasks
