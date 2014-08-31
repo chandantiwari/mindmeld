@@ -14,7 +14,7 @@ import celebpred
 
 def train():
 
-   num_round = 30
+   num_round = 40
    param = {'bst:max_depth':4,  'silent':1, 'objective':'binary:logitraw'} 
 
    df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
