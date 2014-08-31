@@ -39517,6 +39517,8 @@ Peter Schiff:Strategist:23/3/1963
 Marina Diamandis:Singer:10/10/1985
 Chloe Grace Moretz:Actress:10/2/1997
 Danielle de Niese:Singer:11/4/1979
+Mantak Chia:Healer:4/4/1944
+Glenn Moris:Martial Artist:15/7/1944
 Alan Dershowitz:Journalist:1/9/1938
 Sarah Palin:Politician:11/2/1964
 John Boehner:Politician:17/11/1949
@@ -39527,6 +39529,8 @@ Diablo Cody:Director:14/6/1978
 Kevin Barnes:Singer:30/5/1974
 Maddox:Blogger:16/1/1978
 Larry Ellison:CEO:17/8/1944
+Grant Lewi:Astrologer:8/6/1902
+Salman Khan:Founder of Khanacademy:11/10/1976
 Nicki Minaj:Singer:8/12/1982
 Amy Chua:Writer:26/10/1962
 Gerald Ford:President:14/7/1913
@@ -39539,8 +39543,10 @@ C.S. Lewis:Academic:29/11/1898
 Antoine de Saint-Exupery:29/6/1900
 Mary-Kate Olsen:Twin Actresses:13/6/1986
 Chloe Sevigny:Model:18/11/1974
+Thomas Edison:Inventor:11/2/1847
 Mia Wasikowska:Actress:14/10/1989
 Robert Pattinson:Actor:13/5/1986
+Masaaki Hatsumi:Grandmaster of Bujinkan Taijitsu:2/12/1931
 Andrew Garfield:Actor:20/8/1983
 Louis C.K.:Comedian:12/9/1967
 Orhan Pamuk:Author:7/6/1952
@@ -39560,5 +39566,37 @@ Turgut Ozal:President:13/10/1927
 Erdal Inonu:Scientist:6/6/1926
 Mehmet Altan:Journalist:11/1/1953
 Ahmet Altan:Journalist:2/5/1950
+Markar Esayan:Journalist:11/2/1969
+Mustafa Akyol:Journalist:20/2/1972
+Engin Ardic:Journalist:28/6/1952
+Rasim Kutahyali:Journalist:30/4/1981
+Mehmet Simsek:Economist:1/1/1967
+Ali Babacan:Minister:4/4/1967
+Kurt Goedel:Mathematician:28/4/1906
+Seth Godin:Management Consultant:10/7/1960
+Cem Yilmaz:Comedian:23/4/1973
+Ertugrul Ozkok:Journalist:4/8/1947
+Devlet Bahceli:Nationalist Leader:1/1/1948
+Emre Akoz:Journalist:8/3/1959
+Taha Akyol:Journalist:1/8/1946
+Cengiz Candar:Journalist:21/9/1948
+Halil Berktay:Historian:27/8/1947
+Ilber Ortayli:Nationalist Historian:21/5/1947
+Murat Belge:Academic:16/3/19942
+Mehmet Barlas:Journalist:15/2/1942
+Etyen Mahcupyan:Journalist:30/12/1950
+Rahmi Koc:Businessman:20/7/1930
+Fetullah Gulen:Religious Figure:27/4/1941
+Bulent Arinc:Politician:25/5/1948
+Parag Khanna:Strategist:27/7/1977
+George Stephanapolous:Journalist:10/2/1961
+Sebastian Thrun:Researcher:14/5/1967
+Tansu Ciller:Prime Minister:24/5/1946
+Elif Safak:Author:25/10/1971
+Hincal Uluc:Columnist:1/10/1939
+Sevan Nisanyan:Journalist:21/12/1956
+Selahattin Demirtas:10/4/1973
+Hadi Uluengin:Journalist:20/6/1951
+Mete Tuncay:Academic:27/6/1936
 
 
