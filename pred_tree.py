@@ -34,7 +34,7 @@ for letter in celebpred.letter_cols:
    bst.load_model( '/tmp/tree_%s.model' % letter )
    res = bst.predict(data)
    # negate for neg cols, because all we have is one output
-   a.append([letter,[-1*res[0], -1*conf[letter]*res[0]],[res[0], conf[letter]*res[0]]  ])
+   a.append([letter,[res[0], conf[letter]*res[0]],[res[0], conf[letter]*res[0]]  ])
 
 pred.pred_mbti(a)
 print df_t.loc[0,'bday']
