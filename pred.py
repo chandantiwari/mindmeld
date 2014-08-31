@@ -32,25 +32,31 @@ for clf in clfs:
     print clf, res, res*conf[clf]
     a.append( (clf, res, res*conf[clf]) )
 
-# here we convert numeric predictions into mbti predictions.  the
-# method is as follows: there is a negative label prediction and
-# positive label prediction for each label, i.e. for NeFi 0.117 for
-# negative 0.067 for positive. We create a dataframe out of these, and
-# sort twice, once for least negative, once for highest positive. We
-# found out sometimes using the "opposite of the least negative
-# prediction" is helpful for example if NeFi negative is smallest, its
-# opposite MBTI, STJ is likely. We report two such predictions, and one
-# highest positive likely, i.e. NFP for NeFi if its positive is highest.
-# I guess the reason negatives work well is because for training we
-# typically have more negative samples than positives, so the machinery
-# is predicting what a person could _not_ be as well as what a person
-# could be.
+# Here we convert numeric predictions into mbti predictions.  the
+# method is as follows: there is a negative prediction and positive
+# prediction for each label, i.e. for NeFi, 0.117 for negative, 0.067
+# for positive. We create a dataframe out of these. We sort for least
+# negative letter, and also seperately, for the highest positive. Then
+# we pick two from lowest negative, and one from highest positive. By
+# picking lowest negative, we are looking at the opposite of the least
+# likely MBTI type. We found out using this opposite is helpful - if
+# NeFi negative is smallest, its opposite MBTI, STJ would be
+# likely. So we report two such predictions, then we do one highest
+# positive likely, i.e. SFP for NeFi if its positive is highest, for
+# example.
 
-# We predict MBTI options for one day, as we dont believe predicting
-# one MBTI result for one day makes sense. Lots of babies are born each
-# day, and on one day for example each baby born would be NTP? Not likely.
-# There are patterns however, for example J days, or P days. This is to
-# to be expected, as these are broad categorizations.
+# Perhaps the reason "opposite of negatives" work well is because for
+# training. we typically more negative samples than positives, so the
+# machinery is predicting what a person could _not_ be better than
+# what a person _could_ be. Since ekwe make MBTI prediction for a
+# single day (which is a birthday), that's why it's important to list
+# options. Predicting one MBTI result for one day would not make
+# sense. Lots of babies are born each day, and on one single day, for
+# example, each baby born would be NTP?  It's more likely that babies
+# born in the same day would different MBTI types. There would be
+# patterns however, for example some days would favor STP more, others
+# STJs. On an STJ day, a baby who was nurtured that way could maybe
+# become an NTJ as well.
     
 
 opp = { 'NeFi': 'STJ',  'NeTi': 'SFJ',  'NiTe': 'SFP', 'NiFe': 'STP', 'SiTe': 'NFP',  'SiFe': 'NTP',  'SeFi': 'NTJ',  'SeTi': 'NFJ'}
