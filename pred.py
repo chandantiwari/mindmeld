@@ -58,8 +58,9 @@ if __name__ == "__main__":
    df_t.loc[0,'mbti'] = 'xxx'
    #df_t.loc[0,'bday'] = '24/04/1973'
    #df_t.loc[0,'bday'] = '22/2/1949'
-   df_t.loc[0,'bday'] = '5/10/1945'
-   #df_t.loc[0,'bday'] = '8/1/1982'
+   #df_t.loc[0,'bday'] = '5/10/1945'
+   df_t.loc[0,'bday'] = '8/1/1982'
+   #df_t.loc[0,'bday'] = '31/5/1956'
 
    df2_t = mineprep.astro_enrich(df_t)
 
