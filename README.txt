@@ -67,24 +67,35 @@ subfolder. This is a Java project, see its README for further info.
 Script celebpred.py demonstrate some machine learning techniques on
 the data. ML code attempts to predict a person's MBTI type given their
 base astrological information. This, if can be done, would prove a
-direct pseudoscience - science connection. On ~400 records with 4%
+direct pseudoscience - science connection. On ~400 records with 7%
 random test split we are able to get a total of 60% AUC on the test
-set, for predicting top two MBTI functions (Ne,Ti,etc). These results
-are promising. More data would definitely make a positive difference.
+set (using regression trees), for predicting top two MBTI functions
+(Ne/Ti,Ni/Te, etc). These results are promising. More data would
+definitely make a positive difference.
 
 In the input data, the top two functions of people are 1-hot encoded,
 INTP for example has both Ti and Ne as 1, and they become labels
 during training. We train a different classifier for each
 function.
 
-Previously we were trying to predict each letter of the MBTI type, but
-with this new way we have 2 prediction tasks instead of 4, so it is an
-easier task, and this style of prediction of much more in line with
-the logic of MBTI. Functions are at the core of the character
-make-up. Our experiments with logistic regression has shown good
-results. The latest addition here was predicting all combination of
-top two functions, which reduced the prediction task to 1. See code
-comments for more details. 
+Previously we were trying to predict each letter of the MBTI type,
+such as I,N,T,P for INTP. Using the new way we have 2 prediction tasks
+instead of 4. In order to identify an MBTI type, top two functions are
+enough, for example NTP can be predicted if we know Ne and Ti are top
+two functions. The only remaining task is predicting introversion or
+extroversion which only _changes_ the order of the top two
+functions. For ENTP we have NeTi for INTP TiNe. We did not put much
+emphasis on predicting I or E, even though it is in the code, we dont
+use it for full blown MBTI determination.
+
+This way prediction is easier task, and is much more in line with the
+logic of MBTI. Functions are at the core of the character make-up. Our
+experiments with logistic regression and regression trees has shown
+good results.
+
+One last addition was predicting all combination of top two functions,
+which reduced the prediction task to 1. See code comments for more
+details.
 
 All data files required for ML are under 'data' folder. If you want to
 recreate the main file used for training, simply rerun
