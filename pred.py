@@ -50,11 +50,11 @@ def pred_mbti(a):
          
    df = pd.DataFrame(res, columns=['mbti','opp','neg','pos'])
    print df.sort_index(by='pos',ascending=False).head(3)['mbti']
-   print df.sort_index(by='neg',ascending=True).head(3)['opp']
+   #print df.sort_index(by='neg',ascending=True).head(3)['opp']
 
    df = pd.DataFrame(res1, columns=['mbti','opp','neg','pos'])
    print df.sort_index(by='pos',ascending=False).head(3)['mbti']
-   print df.sort_index(by='neg',ascending=True).head(3)['opp']
+   #print df.sort_index(by='neg',ascending=True).head(3)['opp']
 
 if __name__ == "__main__": 
  
