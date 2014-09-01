@@ -1719,7 +1719,7 @@ Chuni Goswami:Indian actor:15/1/1938
 Margaret O'Brien:American actress:15/1/1937
 Ernest J. Gaines:American author:15/1/1933
 Eddie Graham:American professional wrestler:15/1/1930
-Martin Luther King Jr:American civil rights leader, recipient of the Nobel Peace Prize:15/1/1929
+Martin Luther King, Jr.:American civil rights leader, recipient of the Nobel Peace Prize:15/1/1929
 Phyllis Coates:American actress:15/1/1927
 Maria Schell:Swiss actress:15/1/1926
 Florence Buchsbaum:theater director:15/1/1926
@@ -38159,7 +38159,7 @@ Robert Moses:American public works official:18/12/1888
 Dame Gladys Cooper:British actress:18/12/1888
 Ty Cobb:American baseball player:18/12/1886
 Paul Klee:Swiss-born painter:18/12/1879
-Josef Stalin:leader of the Soviet Union:18/12/1878
+Joseph Stalin:leader of the Soviet Union:18/12/1878
 Francis Burton Harrison:American political figure:18/12/1873
 Saki:British writer:18/12/1870
 Franz Ferdinand, Archduke of Austria:(d. 1914):18/12/1863
