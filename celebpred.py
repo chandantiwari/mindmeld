@@ -35,7 +35,7 @@ def train():
    clfs = collections.OrderedDict()
    conf = collections.OrderedDict()
    for letter in letter_cols:
-      clf = LogisticRegression(penalty='l2')
+      clf = LogisticRegression(penalty='l2',class_weight={1: 8})
       #clf = LinearSVC()
       #clf = BernoulliRBM(n_components=5,random_state=42)
       X = df.copy()
