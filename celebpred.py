@@ -55,7 +55,7 @@ def train():
       conf[letter] = float(roc_auc)
       clfs[letter] = clf
          
-   print 'Avg AUC', np.array(list(conf.values())).mean()
+   print '\nAverage AUC: %f \n' % np.array(list(conf.values())).mean()
    return clfs, X.columns, conf
 
 if __name__ == "__main__": 
