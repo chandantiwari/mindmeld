@@ -16,6 +16,7 @@ from sklearn.cross_validation import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import LinearSVC
 from sklearn.svm import SVC
+import statsmodels.api as sm
 from sklearn import cross_validation
 from sklearn.neural_network import BernoulliRBM
 import collections
@@ -43,7 +44,7 @@ def train():
       X = X.drop(cols,axis=1)
       Xs = sps.csr_matrix(X)
       Xs = X
-      a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.08, random_state=30) 
+      a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.07, random_state=42)
       clf.fit(a_train, y_train)
       y_pred = clf.predict_proba(a_test)[:,1]
       #y_pred = clf.score_samples(a_test)
