@@ -51,7 +51,6 @@ def train():
       bst = xgb.train( param, dtrain, num_round, evallist )
       preds = bst.predict( dtest )
       labels = dtest.get_label()
-      print ('error=%f' % (  sum(1 for i in range(len(preds)) if int(preds[i]>0.5)!=labels[i]) /float(len(preds))))
       fpr, tpr, thresholds = roc_curve(y_test, preds)
       roc_auc = auc(fpr, tpr)
       print("%s AUC : %f" % (letter,roc_auc))
@@ -60,8 +59,7 @@ def train():
       bst.dump_model('/tmp/dump_%s.raw.txt' % letter, '/tmp/celeb_feats.txt')
       bst.save_model('/tmp/tree_%s.model' % letter)
 
-   print '\nAverage AUC', np.array(aucs.values()).mean()
-   print '\n'
+   print '\nAverage AUC: %f \n' % np.array(aucs.values()).mean()
    return aucs, X.columns
 
 if __name__ == "__main__": 

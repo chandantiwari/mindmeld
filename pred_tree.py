@@ -17,6 +17,7 @@ df_t.loc[0,'bday'] = '24/04/1973'
 #df_t.loc[0,'bday'] = '5/10/1945'
 #df_t.loc[0,'bday'] = '8/1/1982'
 #df_t.loc[0,'bday'] = '31/5/1956'
+#df_t.loc[0,'bday'] = '19/1/1949'
 
 df2_t = mineprep.astro_enrich(df_t)
 
