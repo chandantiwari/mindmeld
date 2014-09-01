@@ -1,2 +1,5 @@
 INFP:Orhan Pamuk
 INFP:Linus Torvalds
+ENTJ:Patrick Stewart
+ENFP:Samuel Clemens (aka Mark Twain)
+ENFP:Robin Williams
