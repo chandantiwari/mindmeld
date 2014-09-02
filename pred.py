@@ -4,33 +4,30 @@ import numpy as np, pickle
 
 def pred_mbti(a):
    '''    
-   Here we convert numeric predictions into mbti predictions.  the
-   method is as follows: there is a negative prediction and positive
-   prediction for each label, i.e. for NeFi, 0.117 for negative, 0.067
-   for positive. We create a dataframe out of these. We sort for least
-   negative letter, and also seperately, for the highest
-   positive. After each of these sortings we pick two from lowest
-   negative, and one from highest positive. By picking lowest negative,
-   we are looking at the opposite of the least likely MBTI type. We
-   found out using this opposite is helpful - if NeFi negative is
-   smallest, its opposite MBTI, STJ would be likely. So we report two
-   such predictions, then we do one highest positive likely, i.e. SFP
-   for NeFi if its positive is highest, for example.
+   Here we convert numeric predictions into mbti predictions. We
+   predict the fact that a single functions is in top two or not, as
+   well as combination of functions in two, and if these are at top
+   two.
 
-   Perhaps the reason "opposite of negatives" work well is because for
-   training, we typically more negative samples than positives, so the
-   machinery is predicting what a person could _not_ be better than
-   what a person _could_ be.
-
-   Also, because we make MBTI prediction for a single day (which is a
-   birthday), that's why it's important to list options. Predicting one
-   MBTI result for one day would not make sense. Lots of babies are
-   born each day, and on one single day, for example, each baby born
-   would be NTP?  It's more likely that babies born in the same day
-   would have different MBTI types, but there would probably be a small
-   list of types a person could be that day. For example some days
-   could favor STP more, others STJs. On an STJ day, a baby nurtured
+   Since make MBTI prediction for a single day (which is a birthday),
+   it's important to list options. Predicting a single MBTI result for
+   one day would not make sense -- lots of babies are born each day,
+   and on one single day, for example, each baby born must be NTP?
+   It's more likely that babies born in the same day would have
+   different MBTI types, but also, it is likely there is a small list
+   of types a person could be that day. For example some days could
+   favor STP more, others STJs. On an STJ day, a baby nurtured
    appropiately, could maybe later become an NTJ.
+
+   We also take into account negatives: we make a negative prediction
+   and positive prediction for each label, for NeFi, 0.117 for
+   negative, 0.067 for positive for example. We create a dataframe out
+   of these. Then we sort for least negative letter, and also for the
+   highest positive. After each of these sortings we pick two from
+   lowest negative, and two from highest positive. By picking lowest
+   negative, we are looking at the _opposite of the least likely_ MBTI
+   type. If NeFi negative is smallest, its opposite MBTI, STJ would be
+   likely.
    '''    
    
    opp = { 'NeFi': 'STJ',  'NeTi': 'SFJ',  'NiTe': 'SFP', 'NiFe': 'STP', 'SiTe': 'NFP',  'SiFe': 'NTP',  'SeFi': 'NTJ',  'SeTi': 'NFJ'}
@@ -65,13 +62,13 @@ if __name__ == "__main__":
    import pandas as pd, mineprep
    df_t = pd.DataFrame(index=[0], columns=['mbti', 'name', 'occup', 'bday'])
    df_t.loc[0,'mbti'] = 'xxx'
-   #df_t.loc[0,'bday'] = '24/04/1973'
+   df_t.loc[0,'bday'] = '24/04/1973'
    #df_t.loc[0,'bday'] = '22/2/1949'
    #df_t.loc[0,'bday'] = '5/10/1945'
    #df_t.loc[0,'bday'] = '8/1/1982'
    #df_t.loc[0,'bday'] = '31/5/1956'
    #df_t.loc[0,'bday'] = '19/1/1949'
-   df_t.loc[0,'bday'] = '9/6/1954' # dk
+   #df_t.loc[0,'bday'] = '9/6/1954' # dk
 
    df2_t = mineprep.astro_enrich(df_t)
 
