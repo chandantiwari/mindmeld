@@ -19,15 +19,15 @@ def pred_mbti(a):
    favor STP more, others STJs. On an STJ day, a baby nurtured
    appropiately, could maybe later become an NTJ.
 
-   We also take into account negatives: we make a negative prediction
+   As an option we present negatives: we make a negative prediction
    and positive prediction for each label, for NeFi, 0.117 for
    negative, 0.067 for positive for example. We create a dataframe out
-   of these. Then we sort for least negative letter, and also for the
-   highest positive. After each of these sortings we pick two from
-   lowest negative, and two from highest positive. By picking lowest
-   negative, we are looking at the _opposite of the least likely_ MBTI
-   type. If NeFi negative is smallest, its opposite MBTI, STJ would be
-   likely.
+   of these as well. Then we sort for least negative letter, and also
+   for the highest positive. After each of these sortings we pick three
+   from lowest negative, and hree from highest positive. By picking
+   lowest negative, we are looking at the _opposite of the least
+   likely_ MBTI type. If NeFi negative is smallest, its opposite MBTI,
+   STJ would be likely.
    '''    
    
    opp = { 'NeFi': 'STJ',  'NeTi': 'SFJ',  'NiTe': 'SFP', 'NiFe': 'STP', 'SiTe': 'NFP',  'SiFe': 'NTP',  'SeFi': 'NTJ',  'SeTi': 'NFJ'}
@@ -39,9 +39,10 @@ def pred_mbti(a):
    res1 = []
    res = []
    for (mbti,neg,pos) in a:
-      # only look at 4 letter MBTI labels skip others, i.e. Fi,Te,etc
+      # only look at 2 letter MBTI labels skip others, i.e. Fi,Te,etc
       if len(mbti) == 2:
          res1.append([mbti, opp1[mbti], neg[1], pos[1]] )
+      # only look at 4 letter MBTI labels skip others, i.e. NeFi
       if len(mbti) == 4:
          res.append([map[mbti], opp[mbti], neg[1], pos[1]] )
          
@@ -51,7 +52,6 @@ def pred_mbti(a):
 
    df = pd.DataFrame(res1, columns=['mbti','opp','neg','pos'])
    print df.sort_index(by='pos',ascending=False).head(3)['mbti']
-   #print df.sort_index(by='neg',ascending=True).head(3)['opp']
 
 if __name__ == "__main__": 
  
@@ -68,7 +68,7 @@ if __name__ == "__main__":
    #df_t.loc[0,'bday'] = '8/1/1982'
    #df_t.loc[0,'bday'] = '31/5/1956'
    #df_t.loc[0,'bday'] = '19/1/1949'
-   #df_t.loc[0,'bday'] = '9/6/1954' # dk
+   df_t.loc[0,'bday'] = '9/6/1954' # dk
 
    df2_t = mineprep.astro_enrich(df_t)
 
