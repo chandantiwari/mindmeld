@@ -37,7 +37,10 @@ def train():
 
       fout = open("/tmp/celeb_feats.txt", "w")
       for i,col in enumerate(X.columns):
-         fout.write("%d\t%s\ti\n" % (i,col))
+         if col == 'diversity': 
+            fout.write("%d\t%s\tq\n" % (i,col))
+         else: 
+            fout.write("%d\t%s\ti\n" % (i,col))
       fout.close()
 
       Xs = sps.csr_matrix(X)

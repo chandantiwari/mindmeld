@@ -114,6 +114,15 @@ def astro_enrich(df_arg):
    df4 = one_hot_dataframe(df3,['spiller','chinese','M1','M2'])
    df4 = df4.replace(0.0,np.nan)
 
+   # diversity is the number of 1-hot encoded attributes that are '1',
+   # this is used to see how "crowded" a user's profile is. this could
+   # be a useful information, if a person has too many attributes (from
+   # too many lewi numbers) this could mean they are getting pulled into
+   # many directions all at once and that could mean something.
+   df5 = df4.drop(['mbti','name','occup','bday','bday2'],axis=1)
+   df5 = df5.fillna(0)
+   df4['diversity'] = df5.sum(axis=1)
+
    # the mapping below assigns a 'function' such as Ne, Ti a 1 value
    # if it is at the top two level of a person's MBTI make-up. So an
    # ISTJ would have Te and Si set to 1. We aimed simplifying and
