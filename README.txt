@@ -66,13 +66,13 @@ subfolder. This is a Java project, see its README for further info.
 
 Script celebpred.py demonstrate some machine learning techniques on
 the data. ML code attempts to predict a person's MBTI type given their
-base astrological information. A good resuls would prove that a
-pseudoscience - science connection exists, and that, pseudoscience
-might not be so pseudo after all. On ~400 records with 7% random test
-split we are able to get a total of 62% AUC on the test set (for
-regression trees), for predicting top two MBTI functions (NeTi,NiTe,
-etc). These results are promising. More data would definitely make a
-positive difference.
+base astrological information. Good resuls obtained here would prove
+that a pseudoscience - science connection exists, and that could mean
+pseudoscience might not be so pseudo after all. On ~400 records with
+7% random test split we are able to get a total of 52% AUC on the test
+set (for regression trees), for predicting top two MBTI functions
+(NeTi,NiTe, etc). More data would definitely make a positive
+difference.
 
 In the input data for each person, the top two functions are 1-hot
 encoded, INTP for example has both Ti and Ne as 1. Each of these
@@ -82,22 +82,22 @@ for each function.
 Previously we were trying to predict each letter of the MBTI type,
 such as the four letters of I,N,T,P for INTP. Using the new way we
 have 2 prediction tasks instead of 4, we predict only the top two
-functions. A reason for that shortcut is that in order to identify an
-MBTI type, top two functions are sufficient, for example NTP can be
-predicted if we know Ne and Ti are top two functions. The only
-remaining task is predicting introversion or extroversion which only
-_changes_ the order of the top two functions -- ENTP has NeTi whereas
-INTP TiNe. We did not put much emphasis on predicting I or E, even
-though it is predicted in the code, we dont use it for full blown MBTI
-determination.
+functions, and disregarding the order of those functions, so INTP and
+ENTP are the same. The reason for that shortcut is that in order to
+identify an MBTI type, top two functions are sufficient, for example
+NTP can be predicted if we know Ne and Ti are top two functions. The
+only remaining task is predicting introversion or extroversion which
+only _changes_ the order of the top two functions -- ENTP has NeTi
+whereas INTP TiNe. We did not put much emphasis on predicting I or E,
+even though it is one of the prediction tasks in the code, but we dont
+use it for full blown MBTI determination.
 
-This way prediction is easier task, and is much more in line with the
-logic of MBTI. Functions are at the core of the character make-up, not
-the individual letters.
+Predicting all combination of top two functions, effectively reduces
+the prediction task to 1. 
 
-Another recent addition has been predicting all combination of top two
-functions, which reduced the prediction task to 1. So we attempt to
-predict NeTi, SeFi, etc. See code comments for more details.
+This way prediction is an easier task, and is much more in line with
+the logic of MBTI. Functions are at the core of the character make-up,
+not the individual letters.
 
 All data files required for ML are under 'data' folder. If you want to
 recreate the main file used for training, simply rerun
@@ -115,7 +115,7 @@ the original file before training file is created by mineprep.
 
 File celebpred_tree.py uses Gradient Boosted Regression Trees. We used
 xgboost package on Github. In order to use this package, download the
-code under your $HOME/Downloads/xgboost and compile it following the
+code under your $HOME/Downloads/xgboost and compile it following its
 directions.
 
 ## MBTI Test
