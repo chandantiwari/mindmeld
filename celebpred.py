@@ -44,7 +44,7 @@ def train():
       X = X.drop(cols,axis=1)
       Xs = sps.csr_matrix(X)
       Xs = X
-      a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.08, random_state=42)
+      a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.10, random_state=42)
       clf.fit(a_train, y_train)
       y_pred = clf.predict_proba(a_test)[:,1]
       #y_pred = clf.score_samples(a_test)

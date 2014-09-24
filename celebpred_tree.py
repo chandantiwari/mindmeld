@@ -44,7 +44,7 @@ def train():
       fout.close()
 
       Xs = sps.csr_matrix(X)
-      a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.08,random_state=42)
+      a_train, a_test, y_train, y_test = train_test_split(Xs, y, test_size=0.10,random_state=42)
       dtrain = xgb.DMatrix( a_train )
       dtrain.set_label(y_train)
       dtest = xgb.DMatrix( a_test )

@@ -69,10 +69,9 @@ the data. ML code attempts to predict a person's MBTI type given their
 base astrological information. Good resuls obtained here would prove
 that a pseudoscience - science connection exists, and that could mean
 pseudoscience might not be so pseudo after all. On ~400 records with
-7% random test split we are able to get a total of 52% AUC on the test
-set (for regression trees), for predicting top two MBTI functions
-(NeTi,NiTe, etc). More data would definitely make a positive
-difference.
+10% random test split we are able to get a total of 54% AUC on the
+test set , for predicting top two MBTI functions (NeTi,NiTe,
+etc). More data would definitely make a positive difference.
 
 In the input data for each person, the top two functions are 1-hot
 encoded, INTP for example has both Ti and Ne as 1. Each of these
