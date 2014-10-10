@@ -76,37 +76,38 @@ difference.
 
 In the input data for each person, the top two functions are 1-hot
 encoded, INTP for example has both Ti and Ne as 1. Then we try to
-predict two outputs (using a multi-output regressor) using 300+
-columns as inputs. The benefit of using multi-output regressor is any
-relation between output variables will be learned. 
+predict a two-dimensional output (using a multi-output regressor)
+using 300+ columns as input. The benefit of using multi-output
+regressor is any relation between output variables is captured as well.
 
-Note: Previously we were trying to predict each letter of the MBTI
-type, such as the four letters of I,N,T,P for INTP. Using the new way
-a single (multi-output) prediction tasks instead of 4.
+Previously we were trying to predict each letter of the MBTI type,
+training one classifier for each, such as the four letters of I,N,T,P
+for INTP. Using the new way a single (multi-output) prediction task is
+used instead of 4. Since we predict the top two functions, we are
+disregarding the order of those functions -- INTP and ENTP become the
+same prediction. This generalized the problem hence increasing the
+amount of data for each type of output. The reason this works is that
+in order to identify an MBTI type, top two functions are sufficient,
+for example NTP can be predicted if we know Ne and Ti are top two
+functions. The only remaining task is predicting introversion or
+extroversion which only _changes_ the order of the top two functions
+-- ENTP has Ne and Ti whereas INTP is Ti and Ne. We did not put much
+emphasis on predicting introversion or extroversion.
 
-Since we predict the top two functions, we are also disregarding the
-order of those functions -- INTP and ENTP become the same
-prediction. The reason for that shortcut is that in order to identify
-an MBTI type, top two functions are sufficient, for example NTP can be
-predicted if we know Ne and Ti are top two functions. The only
-remaining task is predicting introversion or extroversion which only
-_changes_ the order of the top two functions -- ENTP has NeTi whereas
-INTP TiNe. We did not put much emphasis on predicting I or E, even
-though it is one of the prediction tasks in the code, but we dont use
-it for full blown MBTI determination. This way prediction is an easier
-task, and is much more in line with the logic of MBTI. Functions are
-at the core of the character make-up, not the individual letters.
+This way prediction becomes, and using functions, instead of letters
+is much more in line with the logic of MBTI. Functions are at the core
+of the character make-up, not the individual letters.
 
-Also, since we are making an MBTI prediction for a single day (which
-is a birthday), it's important to list options. Predicting a single
-MBTI result for one day would not make sense -- lots of babies are
-born each day, and on one single day, for example, each baby born must
-be NTP?  It's more likely that babies born in the same day would have
-different MBTI types, but also, it is likely there is a small list of
-types a person could be that day. For example some days could favor
-STP more, others STJs. On an STJ day, a baby nurtured appropiately,
-could maybe later become an NTJ. That's why pred_forest will show 4
-top functions, in order of importance.
+Another point: since we are making an MBTI prediction for a single day
+(which is a birthday), it's important to list options. Predicting only
+two functions would not make sense -- lots of babies are born each
+day, and on one single day, for example, each baby born must be NTP?
+It's more likely that babies born in the same day would have different
+MBTI types, but also, it is likely there is a small list of types a
+person could be that day. For example some days could favor STP more,
+others STJs. On an STJ day, a baby nurtured appropiately, could maybe
+later become an NTJ. That's why pred_forest.py will show 4 top
+functions, listed in the order of importance.
 
 The training / testing scheme: once the regressor is trained, four
 choices are made to predict top two functions. The number of matches
