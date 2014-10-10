@@ -94,9 +94,9 @@ extroversion which only _changes_ the order of the top two functions
 -- ENTP has Ne and Ti whereas INTP is Ti and Ne. We did not put much
 emphasis on predicting introversion or extroversion.
 
-This way prediction becomes, and using functions, instead of letters
-is much more in line with the logic of MBTI. Functions are at the core
-of the character make-up, not the individual letters.
+This way prediction of using functions, instead of letters is much
+more in line with the logic of MBTI. Functions are at the core of the
+character make-up, not the individual letters.
 
 Another point: since we are making an MBTI prediction for a single day
 (which is a birthday), it's important to list options. Predicting only
@@ -113,6 +113,9 @@ The training / testing scheme: once the regressor is trained, four
 choices are made to predict top two functions. The number of matches
 between prediction and reality, which we call "hits" are averaged over
 the test set and become the final score.
+
+Feel free to play with the hyperparameters, or code and do let us know
+of your results!
 
 ## Data
 
@@ -143,3 +146,5 @@ print mindmeld.calculate_mb(ans)
 ```
 
 would give the answer of the questionaire. 
+
+
