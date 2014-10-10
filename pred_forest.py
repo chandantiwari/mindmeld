@@ -11,6 +11,7 @@ def pred_mbti(x):
     df2_t = mineprep.astro_enrich(df_t)
     for col in df.columns:
         if col not in df2_t.columns: df2_t[col] = np.nan
+    df2_t = df2_t[df.columns]
     df2_t = df2_t.drop(celebpred_forest.junk_cols + celebpred_forest.letter_cols, axis=1)
     df2_t = df2_t.fillna(0)
     #print list(np.array(df2_t))
