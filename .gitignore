@@ -2,8 +2,8 @@
 *.pyc
 *.log
 *.out
-*/build*
+build/*
 *.jar
 run.py
-./data/dump_*raw.txt
+data/dump_*raw.txt
 data/forest.pkl
