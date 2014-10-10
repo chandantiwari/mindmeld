@@ -3,7 +3,7 @@ from sklearn.cross_validation import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 
 s = 0.05
-depth = 5
+depth = 6
 
 letter_cols = ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
 junk_cols = ['mbti','name','occup','bday','bday2']
