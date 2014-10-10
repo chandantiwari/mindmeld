@@ -2,8 +2,8 @@ import pandas as pd, numpy as np, pickle
 from sklearn.cross_validation import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 
-s = 0.02
-depth = 5
+s = 0.05
+depth = 6
 
 letter_cols = ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
 junk_cols = ['mbti','name','occup','bday','bday2','NeFi','NeTi','NiTe','NiFe','SiTe','SiFe','SeFi','SeTi']
@@ -22,13 +22,13 @@ def train():
 
    x_train, x_test, y_train, y_test = train_test_split(Xs, y, test_size=s, random_state=42)
    
-   clf = RandomForestRegressor(max_depth=depth,n_estimators=30,random_state=42)
+   clf = RandomForestRegressor(max_depth=depth,n_estimators=200,random_state=42)
    clf.fit(x_train,y_train)
    res = clf.predict(x_test)
    hit_arr = []
 
    for i in range(len(x_test)):
-      pred = pd.Series(res[i, :], index=letter_cols).order(ascending=False).head(3).index    
+      pred = pd.Series(res[i, :], index=letter_cols).order(ascending=False).head(4).index
       real = pd.Series(y_test[i, :], index=letter_cols).order(ascending=False).head(2).index    
       hits = len([x for x in real if x in pred]) / float(len(real))
       print list(pred), list(real), hits

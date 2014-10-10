@@ -74,29 +74,45 @@ test set , for predicting top two MBTI functions (NeTi,NiTe,
 etc). More data would definitely make a positive difference.
 
 In the input data for each person, the top two functions are 1-hot
-encoded, INTP for example has both Ti and Ne as 1. Each of these
-columns become labels during training. We train a different classifier
-for each function.
+encoded, INTP for example has both Ti and Ne as 1. Then we try to
+predict two outputs (using a multi-output regressor) using 300+
+columns as inputs. The benefit of using multi-output regressor is any
+relation between output variables will be learned. 
 
-Previously we were trying to predict each letter of the MBTI type,
-such as the four letters of I,N,T,P for INTP. Using the new way we
-have 2 prediction tasks instead of 4, we predict only the top two
-functions, and disregarding the order of those functions, so INTP and
-ENTP are the same. The reason for that shortcut is that in order to
-identify an MBTI type, top two functions are sufficient, for example
-NTP can be predicted if we know Ne and Ti are top two functions. The
-only remaining task is predicting introversion or extroversion which
-only _changes_ the order of the top two functions -- ENTP has NeTi
-whereas INTP TiNe. We did not put much emphasis on predicting I or E,
-even though it is one of the prediction tasks in the code, but we dont
-use it for full blown MBTI determination.
+Note: Previously we were trying to predict each letter of the MBTI
+type, such as the four letters of I,N,T,P for INTP. Using the new way
+a single (multi-output) prediction tasks instead of 4.
 
-Predicting all combination of top two functions, effectively reduces
-the prediction task to 1. 
+Since we predict the top two functions, we are also disregarding the
+order of those functions -- INTP and ENTP become the same
+prediction. The reason for that shortcut is that in order to identify
+an MBTI type, top two functions are sufficient, for example NTP can be
+predicted if we know Ne and Ti are top two functions. The only
+remaining task is predicting introversion or extroversion which only
+_changes_ the order of the top two functions -- ENTP has NeTi whereas
+INTP TiNe. We did not put much emphasis on predicting I or E, even
+though it is one of the prediction tasks in the code, but we dont use
+it for full blown MBTI determination. This way prediction is an easier
+task, and is much more in line with the logic of MBTI. Functions are
+at the core of the character make-up, not the individual letters.
 
-This way prediction is an easier task, and is much more in line with
-the logic of MBTI. Functions are at the core of the character make-up,
-not the individual letters.
+Also, since we are making an MBTI prediction for a single day (which
+is a birthday), it's important to list options. Predicting a single
+MBTI result for one day would not make sense -- lots of babies are
+born each day, and on one single day, for example, each baby born must
+be NTP?  It's more likely that babies born in the same day would have
+different MBTI types, but also, it is likely there is a small list of
+types a person could be that day. For example some days could favor
+STP more, others STJs. On an STJ day, a baby nurtured appropiately,
+could maybe later become an NTJ. That's why pred_forest will show 4
+top functions, in order of importance.
+
+The training / testing scheme is as follows: once the regressor is
+trained, 3 choices are made to predict top two functions. The number
+of matches between prediction and reality, which we call "hits" are
+averaged over the test set and become the final score. 
+
+## Data
 
 All data files required for ML are under 'data' folder. If you want to
 recreate the main file used for training, simply rerun
@@ -111,27 +127,6 @@ mineprep.py ran it creates the necessary file.
 Your manual additions to celebrity MBTIs can go under
 data/myer-briggs-app.txt - everything in this file will be appended to
 the original file before training file is created by mineprep.
-
-File celebpred_tree.py uses Gradient Boosted Regression Trees. We used
-xgboost package on Github. In order to use this package, download the
-code under your $HOME/Downloads/xgboost and compile it following its
-directions.
-
-## Code
-
-In the code we convert numeric predictions into mbti predictions. We
-predict the fact that an MBTIfunction is in top two or not, as well as
-combination of functions, in twos, are in the top two as well.
-
-Also, since we are making an MBTI prediction for a single day (which
-is a birthday), it's important to list options. Predicting a single
-MBTI result for one day would not make sense -- lots of babies are
-born each day, and on one single day, for example, each baby born must
-be NTP?  It's more likely that babies born in the same day would have
-different MBTI types, but also, it is likely there is a small list of
-types a person could be that day. For example some days could favor
-STP more, others STJs. On an STJ day, a baby nurtured appropiately,
-could maybe later become an NTJ.
 
 
 ## MBTI Test
