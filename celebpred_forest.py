@@ -2,8 +2,8 @@ import pandas as pd, numpy as np, pickle
 from sklearn.cross_validation import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 
-s = 0.30
-depth = 3
+s = 0.05
+depth = 6
 k = 4
 
 letter_cols = ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
