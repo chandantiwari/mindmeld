@@ -1,37 +1,41 @@
-'''
-Classifier that tries to predict celebrity MBTI letter from
-astrological parameters. Utilizes leave-one-out approach to test
-results. One data point is left out of training whose data is used for
-prediction, and verification.
-
-SVD->SVM approach is used to predict.
-'''
-import scipy.sparse as sps
-import pandas as pd
-import numpy as np
-import pandas as pd, mineprep
-from sklearn.metrics import roc_curve, auc
-from sklearn.metrics import roc_auc_score
+import pandas as pd, numpy as np, pickle
 from sklearn.cross_validation import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.svm import LinearSVC
-from sklearn.svm import SVC
-import statsmodels.api as sm
-from sklearn import cross_validation
-from sklearn.neural_network import BernoulliRBM
-import collections
+from sklearn.ensemble import RandomForestRegressor
 
-cols = ['mbti','name','occup','bday','bday2']
+s = 0.30
+depth = 3
+k = 4
 
-letter_cols = ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi','E','I',
-               'NeFi','NeTi','NiTe','NiFe','SiTe','SiFe','SeFi','SeTi']
-
-cols = cols + letter_cols
+letter_cols = ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
+junk_cols = ['mbti','name','occup','bday','bday2','NeFi','NeTi','NiTe','NiFe','SiTe','SiFe','SeFi','SeTi']
 
 def train():
-
    df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
+   df = df.drop(junk_cols,axis=1)
+   df = df.fillna(0)
+   print df.shape
+   y = df[letter_cols]
+   str_cols = ['mbti','name','occup','bday','bday2']
+   Xs = df.drop(letter_cols, axis=1)
+   Xs += 1e-7
+   Xs = np.array(Xs)
+   print Xs.shape
 
+   x_train, x_test, y_train, y_test = train_test_split(Xs, y, test_size=s, random_state=42)
+   clf = RandomForestRegressor(max_depth=depth)
+   clf.fit(x_train,y_train)
+   res = clf.predict(x_test)
+   hit_arr = []
+
+   for i in range(len(x_test)):
+      pred = pd.Series(res[i, :], index=letter_cols).order(ascending=False).head(k).index    
+      real = pd.Series(y_test[i, :], index=letter_cols).order(ascending=False).head(k).index    
+      hits = len([x for x in real if x in pred]) / float(len(real))
+      #print list(pred), list(real), hits
+      hit_arr.append(hits)
+   print 'pred',np.mean(np.array(hit_arr))
+
+   pickle.dump(clf, open( './data/forest.pkl', "wb" ) )
 
 if __name__ == "__main__": 
    train()
