@@ -22,7 +22,7 @@ def train():
    print Xs.shape
 
    x_train, x_test, y_train, y_test = train_test_split(Xs, y, test_size=s, random_state=42)
-   clf = RandomForestRegressor(max_depth=depth)
+   clf = RandomForestRegressor(max_depth=depth,n_estimators=10)
    clf.fit(x_train,y_train)
    res = clf.predict(x_test)
    hit_arr = []
@@ -31,7 +31,7 @@ def train():
       pred = pd.Series(res[i, :], index=letter_cols).order(ascending=False).head(k).index    
       real = pd.Series(y_test[i, :], index=letter_cols).order(ascending=False).head(k).index    
       hits = len([x for x in real if x in pred]) / float(len(real))
-      #print list(pred), list(real), hits
+      print list(pred), list(real), hits
       hit_arr.append(hits)
    print 'pred',np.mean(np.array(hit_arr))
 
