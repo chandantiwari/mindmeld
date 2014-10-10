@@ -6,4 +6,4 @@
 *.jar
 run.py
 ./data/dump_*raw.txt
-./data/*.pkl
+./data/forest.pkl
