@@ -69,16 +69,17 @@ the data. ML code attempts to predict a person's MBTI type given their
 base astrological information. Good resuls obtained here would prove
 that a pseudoscience - science connection exists, and that could mean
 pseudoscience might not be so pseudo after all. On ~400 records with
-%95/5% random test split we are able to get a total of 63% hit rate on
+%95/5% random test split we are able to get a total of 66% hit rate on
 the test set, for predicting top two MBTI functions. We are very happy
 with these results. More data would definitely make a positive
 difference.
 
 In the input data for each person, the top two functions are 1-hot
 encoded, INTP for example has both Ti and Ne as 1. Then we try to
-predict a two-dimensional output (using a multi-output regressor)
-using 300+ columns as input. The benefit of using multi-output
-regressor is any relation between output variables is captured as well.
+predict an 8 dimensional output (each dimension represents a function)
+using a multi-output regressor using 300+ columns as input. The
+benefit of using multi-output regressor is any relation between output
+variables is captured as well as the relation between input and output.
 
 Previously we were trying to predict each letter of the MBTI type,
 training one classifier for each, such as the four letters of I,N,T,P
