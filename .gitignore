@@ -2,7 +2,7 @@
 *.pyc
 *.log
 *.out
-build/*
+jlewi/build/*
 *.jar
 run.py
 data/dump_*raw.txt
