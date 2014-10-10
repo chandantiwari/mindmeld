@@ -2,7 +2,7 @@ import pandas as pd, numpy as np, pickle
 from sklearn.cross_validation import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 
-s = 0.05
+s = 0.02
 depth = 5
 k = 2
 
