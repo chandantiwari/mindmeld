@@ -127,19 +127,21 @@ mineprep.py.
 Script scrape.py will get celebrity mbti types from a known Web site,
 and write its output under /tmp. We already ran this once, copied its
 output under data so you dont have to run it. This is the main data we
-used to train the classifier. The file is data/myer-briggs.txt, when
+used to train the regressor. The file is data/myer-briggs.txt, when
 mineprep.py ran it creates the necessary file.
 
-Your manual additions to celebrity MBTIs can go under
-data/myer-briggs-app.txt - everything in this file will be appended to
-the original file before training file is created by mineprep.
+Your manual additions to celebrity MBTIs, if there is any, should go
+under data/myer-briggs-app.txt - everything in this file will be
+appended to the original file before training file is created by
+mineprep.
 
 
 ## MBTI Test
 
 You can take the MBTI test under doc/mbti_en.html and once answering
-all questions, hit Evaluate and the -1,0,+1 results will be
-displayed. These results can be copied to clipboard, and from there 
+all questions, hit Evaluate and the -1,0,+1 results will be displayed
+in a messagebox. Copy these results to clipboard, and from there paste
+it in code, as such
 
 ```ans = ":1:-1:-1:1:0:0:0:1:0:-1:0:0:-1:-1:1:-1:0:0:1:1:-1:1:1:1:0:0:0:-1:1:0:1:1:0:0:0:0:0:1:-1:-1:1:1:1:1:1:1:-1:1:1:1:0:-1:-1:-1:-1:1:0:0:0:0:-1:0:0:-1:0:-1:-1:-1:0:0"
 ans = ans.split(":")[1:]
