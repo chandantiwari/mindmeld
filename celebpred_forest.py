@@ -4,7 +4,6 @@ from sklearn.ensemble import RandomForestRegressor
 
 s = 0.02
 depth = 5
-k = 2
 
 letter_cols = ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
 junk_cols = ['mbti','name','occup','bday','bday2','NeFi','NeTi','NiTe','NiFe','SiTe','SiFe','SeFi','SeTi']
@@ -29,8 +28,8 @@ def train():
    hit_arr = []
 
    for i in range(len(x_test)):
-      pred = pd.Series(res[i, :], index=letter_cols).order(ascending=False).head(k).index    
-      real = pd.Series(y_test[i, :], index=letter_cols).order(ascending=False).head(k).index    
+      pred = pd.Series(res[i, :], index=letter_cols).order(ascending=False).head(3).index    
+      real = pd.Series(y_test[i, :], index=letter_cols).order(ascending=False).head(2).index    
       hits = len([x for x in real if x in pred]) / float(len(real))
       print list(pred), list(real), hits
       hit_arr.append(hits)
