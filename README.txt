@@ -69,7 +69,7 @@ the data. ML code attempts to predict a person's MBTI type given their
 base astrological information. Good resuls obtained here would prove
 that a pseudoscience - science connection exists, and that could mean
 pseudoscience might not be so pseudo after all. On ~400 records with
-%95/5% random test split we are able to get a total of 66% hit rate on
+%95/5% random test split we are able to get a total of 68% hit rate on
 the test set, for predicting top two MBTI functions. We are very happy
 with these results. More data would definitely make a positive
 difference.

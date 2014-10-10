@@ -6,7 +6,7 @@ s = 0.05
 depth = 4
 
 letter_cols = ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
-junk_cols = ['mbti','name','occup','bday','bday2','NeFi','NeTi','NiTe','NiFe','SiTe','SiFe','SeFi','SeTi']
+junk_cols = ['mbti','name','occup','bday','bday2']
 
 def train():
    df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
@@ -15,14 +15,14 @@ def train():
    print df.shape
    y = df[letter_cols]
    str_cols = ['mbti','name','occup','bday','bday2']
-   Xs = df.drop(letter_cols, axis=1)
-   Xs += 1e-7
-   Xs = np.array(Xs)
+   df2 = df.drop(letter_cols, axis=1)
+   df2 += 1e-7
+   Xs = np.array(df2)
    print Xs.shape
 
    x_train, x_test, y_train, y_test = train_test_split(Xs, y, test_size=s, random_state=42)
    
-   clf = RandomForestRegressor(max_depth=depth,n_estimators=200,random_state=42)
+   clf = RandomForestRegressor(max_depth=depth,n_estimators=500,random_state=42)
    clf.fit(x_train,y_train)
    res = clf.predict(x_test)
    hit_arr = []
@@ -35,6 +35,12 @@ def train():
       hit_arr.append(hits)
    print 'pred',np.mean(np.array(hit_arr))
 
+   # display most important features
+   imps = pd.Series(list(clf.feature_importances_),index=df2.columns)
+   imps = imps.order(ascending=False).head(15)
+   print 'important features'
+   print np.array(imps.index)
+   
    pickle.dump(clf, open( './data/forest.pkl', "wb" ) )
 
 if __name__ == "__main__": 
