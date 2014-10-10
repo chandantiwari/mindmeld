@@ -20,7 +20,7 @@ def train():
    Xs = np.array(df2)
    print Xs.shape
 
-   x_train, x_test, y_train, y_test = train_test_split(Xs, y, test_size=s)
+   x_train, x_test, y_train, y_test = train_test_split(Xs, y, test_size=s, random_state=55)
    
    clf = RandomForestRegressor(max_depth=depth,n_estimators=40,random_state=42)
    clf.fit(x_train,y_train)
