@@ -1,28 +1,5 @@
 \documentclass[12pt,fleqn]{article}\usepackage{../common}
 \begin{document}
 
-\begin{minted}[fontsize=\footnotesize]{python}
-import pandas as pd, mineprep, pickle
-import numpy as np, celebpred_forest
-df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
-clf = pickle.load(open('./data/forest.pkl', 'rb'))
-\end{minted}
-
-
-\begin{minted}[fontsize=\footnotesize]{python}
-k = 15
-df2 = df.drop(celebpred_forest.junk_cols + celebpred_forest.letter_cols, axis=1)
-imps = pd.Series(list(clf.feature_importances_),index=df2.columns)
-imps = imps.order(ascending=False).head(k)
-print 'important features'
-print np.array(imps.index)
-\end{minted}
-
-\begin{verbatim}
-important features
-['mills3' 'lewi264' 'lewi222' 'lewi256' 'spiller=Libra' 'lewi153' 'lewi231'
- 'lewi201' 'lewi266' 'lewi247' 'chinese=Pig' 'diversity' 'spiller=Scorpio'
- 'lewi165' 'lewi197']
-\end{verbatim}
 
 \end{document}

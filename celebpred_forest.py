@@ -3,7 +3,7 @@ from sklearn.cross_validation import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 
 s = 0.05
-depth = 4
+depth = 5
 
 letter_cols = ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
 junk_cols = ['mbti','name','occup','bday','bday2']
@@ -22,7 +22,7 @@ def train():
 
    x_train, x_test, y_train, y_test = train_test_split(Xs, y, test_size=s, random_state=42)
    
-   clf = RandomForestRegressor(max_depth=depth,n_estimators=500,random_state=42)
+   clf = RandomForestRegressor(max_depth=depth,n_estimators=200,random_state=42)
    clf.fit(x_train,y_train)
    res = clf.predict(x_test)
    hit_arr = []
