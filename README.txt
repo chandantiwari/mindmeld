@@ -117,6 +117,23 @@ xgboost package on Github. In order to use this package, download the
 code under your $HOME/Downloads/xgboost and compile it following its
 directions.
 
+## Code
+
+In the code we convert numeric predictions into mbti predictions. We
+predict the fact that an MBTIfunction is in top two or not, as well as
+combination of functions, in twos, are in the top two as well.
+
+Also, since we are making an MBTI prediction for a single day (which
+is a birthday), it's important to list options. Predicting a single
+MBTI result for one day would not make sense -- lots of babies are
+born each day, and on one single day, for example, each baby born must
+be NTP?  It's more likely that babies born in the same day would have
+different MBTI types, but also, it is likely there is a small list of
+types a person could be that day. For example some days could favor
+STP more, others STJs. On an STJ day, a baby nurtured appropiately,
+could maybe later become an NTJ.
+
+
 ## MBTI Test
 
 You can take the MBTI test under doc/mbti_en.html and once answering
