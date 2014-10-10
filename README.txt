@@ -69,9 +69,10 @@ the data. ML code attempts to predict a person's MBTI type given their
 base astrological information. Good resuls obtained here would prove
 that a pseudoscience - science connection exists, and that could mean
 pseudoscience might not be so pseudo after all. On ~400 records with
-10% random test split we are able to get a total of 54% AUC on the
-test set , for predicting top two MBTI functions (NeTi,NiTe,
-etc). More data would definitely make a positive difference.
+%95/5% random test split we are able to get a total of 63% hit rate on
+the test set, for predicting top two MBTI functions. We are very happy
+with these results. More data would definitely make a positive
+difference.
 
 In the input data for each person, the top two functions are 1-hot
 encoded, INTP for example has both Ti and Ne as 1. Then we try to
@@ -107,10 +108,10 @@ STP more, others STJs. On an STJ day, a baby nurtured appropiately,
 could maybe later become an NTJ. That's why pred_forest will show 4
 top functions, in order of importance.
 
-The training / testing scheme is as follows: once the regressor is
-trained, 3 choices are made to predict top two functions. The number
-of matches between prediction and reality, which we call "hits" are
-averaged over the test set and become the final score. 
+The training / testing scheme: once the regressor is trained, four
+choices are made to predict top two functions. The number of matches
+between prediction and reality, which we call "hits" are averaged over
+the test set and become the final score.
 
 ## Data
 
