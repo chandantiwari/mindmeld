@@ -121,7 +121,7 @@ of your results!
 
 All data files required for ML are under 'data' folder. If you want to
 recreate the main file used for training, simply rerun
-mineprep.py.
+`mineprep.py`.
 
 Script `scrape.py` will get celebrity mbti types from a known Web
 site, and write its output under /tmp. We already ran this once,
@@ -138,7 +138,7 @@ mineprep.
 
 ## MBTI Test
 
-You can take the MBTI test under doc/mbti_en.html and once answering
+You can take the MBTI test under `doc/mbti_en.html` and once answering
 all questions, hit Evaluate and the -1,0,+1 results will be displayed
 in a messagebox. Copy these results to clipboard, and from there paste
 it in code, as such
