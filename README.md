@@ -23,16 +23,15 @@ import mindmeld
 
 res =  mindmeld.calculate(mindmeld.conv("10/3/1968"))
 print mindmeld.describe(res)
-
 ```
 
 The result will look like:
 
-``
+```
 {'millman': [28, 10, 2, 8, 1, 0], 'chinese': 'Monkey', 'sun':
 11.0, 'moon': 3.0, 'lewi': [136, 161, 163, 183, 196, 199, 211, 214,
 216, 235, 243, 246, 272, 276], 'spiller': 'Aries', 'cycle': 2}
-``
+```
 
 The calculation of Lewi numbers is the most beneficial part of this
 package, doing the same calculation by hand was very time
@@ -51,11 +50,11 @@ only simple Javascript checks performed on the input.
 A list of URLs that point to details of each reading can also be
 generated, by using the describe function,
 
-``
+```
 import mindmeld
 res =  mindmeld.calculate(mindmeld.conv("10/3/1968"))
 print mindmeld.describe(res)
-``
+```
 
 ##Lewi Files
 
