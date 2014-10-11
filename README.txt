@@ -64,15 +64,15 @@ subfolder. This is a Java project, see its README for further info.
 
 ##Machine Learning
 
-Script celebpred.py demonstrate some machine learning techniques on
-the data. ML code attempts to predict a person's MBTI type given their
-base astrological information. Good resuls obtained here would prove
-that a pseudoscience - science connection exists, and that could mean
-pseudoscience might not be so pseudo after all. On ~400 records with
-%95/5% random test split we are able to get a total of 68% hit rate on
-the test set, for predicting top two MBTI functions. We are very happy
-with these results. More data would definitely make a positive
-difference.
+Script `train.py` and `pred.py` demonstrate some machine learning
+techniques on the data. ML code attempts to predict a person's MBTI
+type given their base astrological information. Good resuls obtained
+here would prove that a pseudoscience - science connection exists, and
+that could mean pseudoscience might not be so pseudo after all. On
+~400 records with %70/30% random test split we are able to get hit
+rates anywhere between 55%-60% on the test set, for predicting top two
+MBTI functions. We are happy with these results. More data would
+definitely make a positive difference as the data is high dimensional.
 
 In the input data for each person, the top two functions are 1-hot
 encoded, INTP for example has both Ti and Ne as 1. Then we try to
@@ -107,8 +107,8 @@ It's more likely that babies born in the same day would have different
 MBTI types, but also, it is likely there is a small list of types a
 person could be that day. For example some days could favor STP more,
 others STJs. On an STJ day, a baby nurtured appropiately, could maybe
-later become an NTJ. That's why pred_forest.py will show 4 top
-functions, listed in the order of importance.
+later become an NTJ. That's why pred.py will show 4 top functions,
+listed in the order of importance.
 
 The training / testing scheme: once the regressor is trained, four
 choices are made to predict top two functions. The number of matches
