@@ -28,11 +28,11 @@ print mindmeld.describe(res)
 
 The result will look like:
 
-```
+``
 {'millman': [28, 10, 2, 8, 1, 0], 'chinese': 'Monkey', 'sun':
 11.0, 'moon': 3.0, 'lewi': [136, 161, 163, 183, 196, 199, 211, 214,
 216, 235, 243, 246, 272, 276], 'spiller': 'Aries', 'cycle': 2}
-```
+``
 
 The calculation of Lewi numbers is the most beneficial part of this
 package, doing the same calculation by hand was very time
@@ -41,8 +41,8 @@ taken from SwissEph package. We wrapped this library with some Java
 code found under jlewi directory. 
 
 All details for sign, number explanations can be found under
-doc/details folder. For Spiller sign Taurus explanation for example
-see under doc/details/spiller/Taurus.html
+`doc/details` folder. For Spiller sign Taurus explanation for example
+see under `doc/details/spiller/Taurus.html`
 
 A 70 question Myers-Briggs Test can be found under doc folder. Its
 output is not interfaced with the evaluator Python code yet. There is
@@ -51,11 +51,11 @@ only simple Javascript checks performed on the input.
 A list of URLs that point to details of each reading can also be
 generated, by using the describe function,
 
-```
+``
 import mindmeld
 res =  mindmeld.calculate(mindmeld.conv("10/3/1968"))
 print mindmeld.describe(res)
-```
+``
 
 ##Lewi Files
 
@@ -124,14 +124,15 @@ All data files required for ML are under 'data' folder. If you want to
 recreate the main file used for training, simply rerun
 mineprep.py.
 
-Script scrape.py will get celebrity mbti types from a known Web site,
-and write its output under /tmp. We already ran this once, copied its
-output under data so you dont have to run it. This is the main data we
-used to train the regressor. The file is data/myer-briggs.txt, when
-mineprep.py ran it creates the necessary file.
+Script `scrape.py` will get celebrity mbti types from a known Web
+site, and write its output under /tmp. We already ran this once,
+copied its output under data so you dont have to run it. This is the
+main data we used to train the regressor. The file is
+`data/myer-briggs.txt`, when mineprep.py ran it creates the necessary
+file.
 
 Your manual additions to celebrity MBTIs, if there is any, should go
-under data/myer-briggs-app.txt - everything in this file will be
+under `data/myer-briggs-app.txt` - everything in this file will be
 appended to the original file before training file is created by
 mineprep.
 
@@ -143,10 +144,11 @@ all questions, hit Evaluate and the -1,0,+1 results will be displayed
 in a messagebox. Copy these results to clipboard, and from there paste
 it in code, as such
 
-```ans = ":1:-1:-1:1:0:0:0:1:0:-1:0:0:-1:-1:1:-1:0:0:1:1:-1:1:1:1:0:0:0:-1:1:0:1:1:0:0:0:0:0:1:-1:-1:1:1:1:1:1:1:-1:1:1:1:0:-1:-1:-1:-1:1:0:0:0:0:-1:0:0:-1:0:-1:-1:-1:0:0"
+``
+ans = ":1:-1:-1:1:0:0:0:1:0:-1:0:0:-1:-1:1:-1:0:0:1:1:-1:1:1:1:0:0:0:-1:1:0:1:1:0:0:0:0:0:1:-1:-1:1:1:1:1:1:1:-1:1:1:1:0:-1:-1:-1:-1:1:0:0:0:0:-1:0:0:-1:0:-1:-1:-1:0:0"
 ans = ans.split(":")[1:]
 print mindmeld.calculate_mb(ans)
-```
+``
 
 would give the answer of the questionaire. 
 
