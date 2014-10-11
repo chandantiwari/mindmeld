@@ -31,4 +31,29 @@ print len(left), len(right), len(threshold), len(features)
    0.50000012  -2.          -2.          42.5         -2.          -2.          -2.        ]
 25 25 25 25
 \end{verbatim}
+
+\begin{minted}[fontsize=\footnotesize]{python}
+import train
+top = df[train.letter_cols].sum().order(ascending=False).head(4).index
+top = list(top)
+print top
+\end{minted}
+
+\begin{verbatim}
+['Fi', 'Se', 'Ne', 'Ti']
+\end{verbatim}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}

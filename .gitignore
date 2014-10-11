@@ -5,5 +5,4 @@
 jlewi/build/*
 *.jar
 run.py
-data/dump_*raw.txt
 data/*.pkl
