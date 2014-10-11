@@ -144,11 +144,11 @@ all questions, hit Evaluate and the -1,0,+1 results will be displayed
 in a messagebox. Copy these results to clipboard, and from there paste
 it in code, as such
 
-``
+```
 ans = ":1:-1:-1:1:0:0:0:1:0:-1:0:0:-1:-1:1:-1:0:0:1:1:-1:1:1:1:0:0:0:-1:1:0:1:1:0:0:0:0:0:1:-1:-1:1:1:1:1:1:1:-1:1:1:1:0:-1:-1:-1:-1:1:0:0:0:0:-1:0:0:-1:0:-1:-1:-1:0:0"
 ans = ans.split(":")[1:]
 print mindmeld.calculate_mb(ans)
-``
+```
 
 would give the answer of the questionaire. 
 
