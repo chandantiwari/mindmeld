@@ -51,7 +51,7 @@ def train():
       import disp
       disp.get_lineage(clf, df2.columns)
       
-   pickle.dump(clf, open( './data/forest.pkl', "wb" ) )
+   pickle.dump(clf, open( './data/train.pkl', "wb" ) )
 
 if __name__ == "__main__": 
    train()

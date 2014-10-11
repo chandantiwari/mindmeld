@@ -2,7 +2,7 @@ import pandas as pd, mineprep, pickle
 import numpy as np, train
 
 df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
-clf = pickle.load(open('./data/forest.pkl', 'rb'))
+clf = pickle.load(open('./data/train.pkl', 'rb'))
 df_t = pd.DataFrame(index=[0], columns=['mbti', 'name', 'occup', 'bday'])
 
 def pred_mbti(x):
