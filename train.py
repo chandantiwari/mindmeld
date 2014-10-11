@@ -4,7 +4,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.linear_model import Lasso, LinearRegression
 
-s = 0.30
+s = 0.05
 depth = 4
 
 letter_cols = ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
@@ -42,12 +42,15 @@ def train():
    print 'pred',np.mean(np.array(hit_arr))
 
    # display most important features
-   if 'RandomForest' in str(type(clf)): 
+   if 'RandomForest' in str(type(clf)) or 'DecisionTree' in str(type(clf)): 
       imps = pd.Series(list(clf.feature_importances_),index=df2.columns)
       imps = imps.order(ascending=False).head(15)
       print 'important features'
       print np.array(imps.index)
-   
+   if 'DecisionTree' in str(type(clf)):
+      import disp
+      disp.get_lineage(clf, df2.columns)
+      
    pickle.dump(clf, open( './data/forest.pkl', "wb" ) )
 
 if __name__ == "__main__": 
