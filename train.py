@@ -1,10 +1,10 @@
 import pandas as pd, numpy as np, pickle
 from sklearn.cross_validation import train_test_split
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import RandomForestRegressor, ExtraTreesRegressor
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.linear_model import Lasso, Ridge, LinearRegression
 
-s = 0.20
+s = 0.05
 
 letter_cols = ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
 junk_cols = ['mbti','name','occup','bday','bday2']
@@ -27,7 +27,8 @@ def train():
    train_ys = pd.DataFrame(y_train, columns=letter_cols)
    top = train_ys.sum().order(ascending=False).head(4).index
       
-   #clf = RandomForestRegressor(max_depth=5,n_estimators=20)
+   #clf = RandomForestRegressor(max_depth=6,n_estimators=5)
+   #clf = ExtraTreesRegressor(max_depth=4,n_estimators=10)
    clf = DecisionTreeRegressor(max_depth=4)
    #clf = Lasso()
    #clf = Ridge()
@@ -61,4 +62,4 @@ def train():
    pickle.dump(clf, open( './data/train.pkl', "wb" ) )
 
 if __name__ == "__main__": 
-   train()
+   for i in range(10): train()
