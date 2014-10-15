@@ -4,7 +4,7 @@ from sklearn.ensemble import RandomForestRegressor, ExtraTreesRegressor
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.linear_model import Lasso, Ridge, LinearRegression
 
-s = 0.05
+s = 0.01
 
 letter_cols = ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
 junk_cols = ['mbti','name','occup','bday','bday2']
