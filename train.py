@@ -4,7 +4,7 @@ from sklearn.ensemble import RandomForestRegressor, ExtraTreesRegressor
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.linear_model import Lasso, Ridge, LinearRegression
 
-s = 0.01
+s = 0.02
 
 letter_cols = ['Si','Ti','Ne','Fe','Te','Ni','Se','Fi']
 junk_cols = ['mbti','name','occup','bday','bday2']
@@ -22,12 +22,12 @@ def train():
    print Xs.shape
 
    #x_train, x_test, y_train, y_test = train_test_split(Xs, y, test_size=s, random_state=55)
-   x_train, x_test, y_train, y_test = train_test_split(Xs, y, test_size=s)
+   x_train, x_test, y_train, y_test = train_test_split(Xs, y, test_size=s, random_state=22)
 
    train_ys = pd.DataFrame(y_train, columns=letter_cols)
    top = train_ys.sum().order(ascending=False).head(4).index
       
-   #clf = RandomForestRegressor(max_depth=6,n_estimators=5)
+   #clf = RandomForestRegressor(max_depth=4,n_estimators=3)
    #clf = ExtraTreesRegressor(max_depth=4,n_estimators=10)
    clf = DecisionTreeRegressor(max_depth=4)
    #clf = Lasso()
@@ -62,4 +62,4 @@ def train():
    pickle.dump(clf, open( './data/train.pkl', "wb" ) )
 
 if __name__ == "__main__": 
-   for i in range(10): train()
+   train()
