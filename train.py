@@ -21,15 +21,15 @@ def train():
    Xs = np.array(df2)
    print Xs.shape
 
-   #x_train, x_test, y_train, y_test = train_test_split(Xs, y, test_size=s, random_state=55)
-   x_train, x_test, y_train, y_test = train_test_split(Xs, y, test_size=s, random_state=22)
+   x_train, x_test, y_train, y_test = train_test_split(Xs, y, test_size=s)
+   #x_train, x_test, y_train, y_test = train_test_split(Xs, y, test_size=s, random_state=22)
 
    train_ys = pd.DataFrame(y_train, columns=letter_cols)
    top = train_ys.sum().order(ascending=False).head(4).index
       
-   #clf = RandomForestRegressor(max_depth=4,n_estimators=3)
+   clf = RandomForestRegressor(max_depth=4,n_estimators=10)
    #clf = ExtraTreesRegressor(max_depth=4,n_estimators=10)
-   clf = DecisionTreeRegressor(max_depth=4)
+   #clf = DecisionTreeRegressor(max_depth=4)
    #clf = Lasso()
    #clf = Ridge()
    

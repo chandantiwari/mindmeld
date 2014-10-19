@@ -18,9 +18,12 @@ def pred_mbti(x):
     res = clf.predict(df2_t)
     pred = pd.Series(np.ravel(res), index=train.letter_cols)
     pred = pred.order(ascending=False).head(4).index    
-    print df_t.loc[0,'bday']
-    print pred
+    print df_t.loc[0,'bday'], pred
 
+pred_mbti("13/10/1927")
+pred_mbti("1/11/1924")
+pred_mbti("26/2/1954")
+#exit()
 pred_mbti('24/04/1973')
 pred_mbti('5/10/1945')
 pred_mbti('22/2/1949')
