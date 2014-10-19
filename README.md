@@ -67,11 +67,10 @@ Script `train.py` and `pred.py` demonstrate some machine learning
 techniques on the data. ML code attempts to predict a person's MBTI
 type given their base astrological information. Good resuls obtained
 here would prove that a pseudoscience - science connection exists, and
-that could mean pseudoscience might not be so pseudo after all. On
-~400 records with %70/30% random test split we are able to get hit
-rates anywhere between 55%-60% on the test set, for predicting top two
-MBTI functions. We are happy with these results. More data would
-definitely make a positive difference as the data is high dimensional.
+that could mean pseudoscience might not be so pseudo after all. We see
+promising results on a test set with known MBTI values. More data
+would definitely make a positive difference as the data is high
+dimensional.
 
 In the input data for each person, the top two functions are 1-hot
 encoded, INTP for example has both Ti and Ne as 1. Then we try to

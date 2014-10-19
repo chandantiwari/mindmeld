@@ -20,13 +20,12 @@ def pred_mbti(x):
     pred = pred.order(ascending=False).head(4).index    
     print df_t.loc[0,'bday'], pred
 
-pred_mbti("13/10/1927")
-pred_mbti("1/11/1924")
-pred_mbti("26/2/1954")
-#exit()
 pred_mbti('24/04/1973')
 pred_mbti('5/10/1945')
 pred_mbti('22/2/1949')
 pred_mbti('8/1/1982')
 pred_mbti('31/5/1956')
 pred_mbti('19/1/1949')
+pred_mbti("13/10/1927")
+pred_mbti("1/11/1924")
+pred_mbti("26/2/1954")
