@@ -27,8 +27,8 @@ def train():
    train_ys = pd.DataFrame(y_train, columns=letter_cols)
    top = train_ys.sum().order(ascending=False).head(4).index
       
-   clf = RandomForestRegressor(max_depth=4,n_estimators=10)
-   #clf = ExtraTreesRegressor(max_depth=4,n_estimators=10)
+   #clf = RandomForestRegressor(max_depth=4,n_estimators=5)
+   clf = ExtraTreesRegressor(max_depth=4,n_estimators=10)
    #clf = DecisionTreeRegressor(max_depth=4)
    #clf = Lasso()
    #clf = Ridge()
@@ -62,4 +62,4 @@ def train():
    pickle.dump(clf, open( './data/train.pkl', "wb" ) )
 
 if __name__ == "__main__": 
-   train()
+   for i in range(10): train()
