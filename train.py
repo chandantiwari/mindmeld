@@ -28,7 +28,7 @@ def train():
    top = train_ys.sum().order(ascending=False).head(4).index
       
    #clf = RandomForestRegressor(max_depth=4,n_estimators=5)
-   clf = ExtraTreesRegressor(max_depth=4,n_estimators=5)
+   clf = ExtraTreesRegressor(max_depth=4,n_estimators=10)
    #clf = DecisionTreeRegressor(max_depth=4)
    #clf = Lasso()
    #clf = Ridge()
