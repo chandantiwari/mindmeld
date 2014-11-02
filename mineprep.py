@@ -14,85 +14,87 @@ def one_hot_dataframe(data, cols):
     data = data.join(vecData)
     return data
 
+A=1;B=0.8;C=0.1;D=0.1
+
 def Si(x):
-   if 'ISTJ' in x['mbti']: return 1
-   if 'ISFJ' in x['mbti']: return 1
-   if 'ESTJ' in x['mbti']: return 0.9
-   if 'ESFJ' in x['mbti']: return 0.9
-   if 'ENFP' in x['mbti']: return 0.1
-   if 'ENTP' in x['mbti']: return 0.1
-   if 'INFP' in x['mbti']: return 0.1
-   if 'INTP' in x['mbti']: return 0.1
+   if 'ISTJ' in x['mbti']: return A
+   if 'ISFJ' in x['mbti']: return A
+   if 'ESTJ' in x['mbti']: return B
+   if 'ESFJ' in x['mbti']: return B
+   if 'INFP' in x['mbti']: return C
+   if 'INTP' in x['mbti']: return C
+   if 'ENFP' in x['mbti']: return D
+   if 'ENTP' in x['mbti']: return D
 
 def Ti(x):
-   if 'ESTP' in x['mbti']: return 1
-   if 'ENTP' in x['mbti']: return 1
-   if 'ISTP' in x['mbti']: return 0.9
-   if 'INTP' in x['mbti']: return 0.9
-   if 'INFJ' in x['mbti']: return 0.1
-   if 'ISFJ' in x['mbti']: return 0.1
-   if 'ENFJ' in x['mbti']: return 0.1
-   if 'ESFJ' in x['mbti']: return 0.1
+   if 'ESTP' in x['mbti']: return A
+   if 'ENTP' in x['mbti']: return A
+   if 'ISTP' in x['mbti']: return B
+   if 'INTP' in x['mbti']: return B
+   if 'ENFJ' in x['mbti']: return C
+   if 'ESFJ' in x['mbti']: return C
+   if 'INFJ' in x['mbti']: return D
+   if 'ISFJ' in x['mbti']: return D
 
 def Ne(x):
-   if 'ENTP' in x['mbti']: return 1
-   if 'ENFP' in x['mbti']: return 1
-   if 'INTP' in x['mbti']: return 0.9
-   if 'INFP' in x['mbti']: return 0.9
-   if 'ISFJ' in x['mbti']: return 0.1
-   if 'ISTJ' in x['mbti']: return 0.1
-   if 'ESFJ' in x['mbti']: return 0.1
-   if 'ESTJ' in x['mbti']: return 0.1
+   if 'ENTP' in x['mbti']: return A
+   if 'ENFP' in x['mbti']: return A
+   if 'INTP' in x['mbti']: return B
+   if 'INFP' in x['mbti']: return B
+   if 'ISFJ' in x['mbti']: return C
+   if 'ISTJ' in x['mbti']: return C
+   if 'ESFJ' in x['mbti']: return D
+   if 'ESTJ' in x['mbti']: return D
    
 def Fe(x):
-   if 'ISFJ' in x['mbti']: return 0.9
-   if 'INFJ' in x['mbti']: return 0.9
-   if 'ESFJ' in x['mbti']: return 1
-   if 'ENFJ' in x['mbti']: return 1
-   if 'ENTP' in x['mbti']: return 0.1
-   if 'ESTP' in x['mbti']: return 0.1
-   if 'INTP' in x['mbti']: return 0.1
-   if 'ISTP' in x['mbti']: return 0.1
+   if 'ISFJ' in x['mbti']: return A
+   if 'INFJ' in x['mbti']: return A
+   if 'ESFJ' in x['mbti']: return B
+   if 'ENFJ' in x['mbti']: return B
+   if 'INTP' in x['mbti']: return C
+   if 'ISTP' in x['mbti']: return C
+   if 'ENTP' in x['mbti']: return D
+   if 'ESTP' in x['mbti']: return D
 
 def Te(x):
-   if 'ISTJ' in x['mbti']: return 0.9
-   if 'INTJ' in x['mbti']: return 0.9
-   if 'ESTJ' in x['mbti']: return 1
-   if 'ENTJ' in x['mbti']: return 1
-   if 'ENFP' in x['mbti']: return 0.1
-   if 'ESFP' in x['mbti']: return 0.1
-   if 'INFP' in x['mbti']: return 0.1
-   if 'ISFP' in x['mbti']: return 0.1
+   if 'ISTJ' in x['mbti']: return A
+   if 'INTJ' in x['mbti']: return A
+   if 'ESTJ' in x['mbti']: return B
+   if 'ENTJ' in x['mbti']: return B
+   if 'INFP' in x['mbti']: return C
+   if 'ISFP' in x['mbti']: return C
+   if 'ENFP' in x['mbti']: return D
+   if 'ESFP' in x['mbti']: return D
 
 def Ni(x):
-   if 'INTJ' in x['mbti']: return 1
-   if 'INFJ' in x['mbti']: return 1
-   if 'ENTJ' in x['mbti']: return 0.9
-   if 'ENFJ' in x['mbti']: return 0.9
-   if 'ESFP' in x['mbti']: return 0.1
-   if 'ESTP' in x['mbti']: return 0.1
-   if 'ISFP' in x['mbti']: return 0.1
-   if 'ISTP' in x['mbti']: return 0.1
+   if 'INTJ' in x['mbti']: return A
+   if 'INFJ' in x['mbti']: return A
+   if 'ENTJ' in x['mbti']: return B
+   if 'ENFJ' in x['mbti']: return B
+   if 'ISFP' in x['mbti']: return C
+   if 'ISTP' in x['mbti']: return C
+   if 'ESFP' in x['mbti']: return D
+   if 'ESTP' in x['mbti']: return D
 
 def Se(x):
-   if 'ESTP' in x['mbti']: return 1
-   if 'ESFP' in x['mbti']: return 1
-   if 'ISTP' in x['mbti']: return 0.9
-   if 'ISFP' in x['mbti']: return 0.9
-   if 'INFJ' in x['mbti']: return 0.1
-   if 'INTJ' in x['mbti']: return 0.1
-   if 'ENFJ' in x['mbti']: return 0.1
-   if 'ENTJ' in x['mbti']: return 0.1
+   if 'ESTP' in x['mbti']: return A
+   if 'ESFP' in x['mbti']: return A
+   if 'ISTP' in x['mbti']: return B
+   if 'ISFP' in x['mbti']: return B
+   if 'ENFJ' in x['mbti']: return C
+   if 'ENTJ' in x['mbti']: return C
+   if 'INFJ' in x['mbti']: return D
+   if 'INTJ' in x['mbti']: return D
 
 def Fi(x):
-   if 'ESFP' in x['mbti']: return 0.9
-   if 'ENFP' in x['mbti']: return 0.9
-   if 'ISFP' in x['mbti']: return 1
-   if 'INFP' in x['mbti']: return 1
-   if 'INTJ' in x['mbti']: return 0.1
-   if 'ISTJ' in x['mbti']: return 0.1
-   if 'ENTJ' in x['mbti']: return 0.1
-   if 'ESTJ' in x['mbti']: return 0.1
+   if 'ESFP' in x['mbti']: return A
+   if 'ENFP' in x['mbti']: return A
+   if 'ISFP' in x['mbti']: return B
+   if 'INFP' in x['mbti']: return B
+   if 'ENTJ' in x['mbti']: return C
+   if 'ESTJ' in x['mbti']: return C
+   if 'INTJ' in x['mbti']: return D
+   if 'ISTJ' in x['mbti']: return D
    
 
 '''

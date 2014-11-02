@@ -55,9 +55,6 @@ def train():
       imps = imps.order(ascending=False).head(15)
       print 'important features'
       print np.array(imps.index)
-   if 'DecisionTree' in str(type(clf)):
-      import disp
-      #disp.get_lineage(clf, df2.columns)
       
    pickle.dump(clf, open( './data/train.pkl', "wb" ) )
 

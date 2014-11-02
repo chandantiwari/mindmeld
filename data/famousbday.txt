@@ -39597,4 +39597,5 @@ Sevan Nisanyan:Journalist:21/12/1956
 Selahattin Demirtas:10/4/1973
 Hadi Uluengin:Journalist:20/6/1951
 Mete Tuncay:Academic:27/6/1936
+Ahmet Hakan:Journalist:11/8/1967
 Dan Millman:Life Coach:22/2/1946
