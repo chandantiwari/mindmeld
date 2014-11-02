@@ -34,9 +34,13 @@ def train():
    #clf = DecisionTreeRegressor(max_depth=4)
    #clf = Lasso()
    #clf = Ridge()
-   
+
+   # we flatten the output and prediction and set main function to 1
+   # and interpret the regression results as if they are probability
+   # assignments to that func being 1. We calculate AUC based on that.
    clf.fit(x_train,y_train)
-   tmp_test = y_test.copy(); tmp_test[tmp_test < 1.0] = 0.0
+   tmp_test = y_test.copy()
+   tmp_test[tmp_test < 1.0] = 0.0
    y_pred = clf.predict(x_test)
    fpr, tpr, thresholds = roc_curve(np.ravel(tmp_test), np.ravel(y_pred))
    roc_auc = auc(fpr, tpr)
