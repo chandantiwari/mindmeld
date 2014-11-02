@@ -68,9 +68,9 @@ techniques on the data. ML code attempts to predict a person's MBTI
 type given their base astrological information. Good resuls obtained
 here would prove that a pseudoscience - science connection exists, and
 that could mean pseudoscience might not be so pseudo after all. We see
-promising results on a test set with known MBTI values. More data
-would definitely make a positive difference as the data is high
-dimensional.
+promising results on a test set with known MBTI values, predicting the
+top function gives an AUC %70. More data would definitely make a
+positive difference as the data is high dimensional.
 
 In the input data for each person, the top two functions are 1-hot
 encoded, INTP for example has both Ti and Ne as 1. Then we try to
