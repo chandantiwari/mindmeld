@@ -1,3 +1,5 @@
+from sklearn.metrics import roc_curve, auc
+from sklearn.metrics import roc_auc_score
 import pandas as pd, numpy as np, pickle
 from sklearn.cross_validation import train_test_split
 from sklearn.ensemble import RandomForestRegressor, ExtraTreesRegressor
@@ -34,6 +36,12 @@ def train():
    #clf = Ridge()
    
    clf.fit(x_train,y_train)
+   tmp_test = y_test.copy(); tmp_test[tmp_test < 1.0] = 0.0
+   y_pred = clf.predict(x_test)
+   fpr, tpr, thresholds = roc_curve(np.ravel(tmp_test), np.ravel(y_pred))
+   roc_auc = auc(fpr, tpr)
+   print 'AUC', roc_auc
+   
    res = clf.predict(x_test)
    pred_arr = []
    top_arr = []
@@ -59,4 +67,4 @@ def train():
    pickle.dump(clf, open( './data/train.pkl', "wb" ) )
 
 if __name__ == "__main__": 
-   for i in range(10): train()
+   train()
