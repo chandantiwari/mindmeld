@@ -28,8 +28,8 @@ def train():
 
    train_ys = pd.DataFrame(y_train, columns=letter_cols)
    top = train_ys.sum().order(ascending=False).head(4).index
-      
-   #clf = RandomForestRegressor(max_depth=4,n_estimators=5)
+
+   #clf = RandomForestRegressor(max_depth=4,n_estimators=20)
    clf = ExtraTreesRegressor(max_depth=4,n_estimators=10)
    #clf = DecisionTreeRegressor(max_depth=4)
    #clf = Lasso()
@@ -40,11 +40,6 @@ def train():
    # are probability assignments to that func being 1. We calculate
    # AUC based on that.
    clf.fit(x_train,y_train)
-   tmp_test = y_test.copy(); tmp_test[tmp_test < 1.0] = 0.0
-   y_pred = clf.predict(x_test)
-   fpr, tpr, thresholds = roc_curve(np.ravel(tmp_test), np.ravel(y_pred))
-   roc_auc = auc(fpr, tpr)
-   print 'AUC', roc_auc
    
    res = clf.predict(x_test)
    pred_arr = []
@@ -67,8 +62,15 @@ def train():
       imps = imps.order(ascending=False).head(15)
       print 'important features'
       print np.array(imps.index)
+
+   tmp_test = y_test.copy(); tmp_test[tmp_test < 1.0] = 0.0
+   y_pred = clf.predict(x_test)
+   fpr, tpr, thresholds = roc_curve(np.ravel(tmp_test), np.ravel(y_pred))
+   roc_auc = auc(fpr, tpr)
+   print '\nAUC', roc_auc
       
    pickle.dump(clf, open( './data/train.pkl', "wb" ) )
 
+   
 if __name__ == "__main__": 
-   train()
+   for i in range(20): train()
