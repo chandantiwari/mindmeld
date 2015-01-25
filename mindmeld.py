@@ -181,6 +181,10 @@ def conv(s):
     return datetime.strptime(s, '%d/%m/%Y').date().strftime('%Y%m%d')
 
 def calculate_all_lewi():
+   '''
+   Calculates all lewi numbers for decans. Decans must have been calculated
+   first using jlewi
+   '''
    startd = '1/1/1900'
    endd = '1/1/1910'
    s = datetime.strptime(startd, '%d/%m/%Y')
