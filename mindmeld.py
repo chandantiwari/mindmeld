@@ -1,4 +1,5 @@
 from datetime import datetime
+from datetime import timedelta
 import pandas as pd
 import numpy as np
 import mapping, itertools
@@ -179,4 +180,16 @@ def describe(res):
 def conv(s):
     return datetime.strptime(s, '%d/%m/%Y').date().strftime('%Y%m%d')
 
+def calculate_all_lewi():
+   startd = '1/1/1900'
+   endd = '1/1/1910'
+   s = datetime.strptime(startd, '%d/%m/%Y')
+   e = datetime.strptime(endd, '%d/%m/%Y')
+   d = timedelta(days=1)
+   while (s+d != e):
+      date = s.strftime('%Y%m%d')
+      print calculate_lewi(date)
+      s = s + d
    
+if __name__ == "__main__": 
+   calculate_all_lewi()
