@@ -282,7 +282,6 @@ lng = 0;
         throw new SwissephException(tfstart, SwissephException.DATA_FILE_ERROR,
             SweConst.ERR, serr);
       }
-// ÃäÃ±Ã±Ã±h? fpd->npl = ...???
       npl = nplan;
       /* which ones?                       */
 //do_fread((void *) fdp->ipl, nbytes_ipl, (int) nplan, sizeof(int), fp,...

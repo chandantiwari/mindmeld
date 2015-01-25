@@ -706,13 +706,9 @@ public class SweConst {
   public static final int SE_SPLIT_DEG_ROUND_DEG =  4;
   public static final int SE_SPLIT_DEG_ZODIACAL  =  8;
   public static final int SE_SPLIT_DEG_KEEP_SIGN = 16;
-                                          /* don't round to next sign,
-                                           * e.g. 29.9999999 will be rounded
-                                           * to 29ø59'59" (or 29ø59' or 29ø) */
+
   public static final int SE_SPLIT_DEG_KEEP_DEG  = 32;
-                                          /* don't round to next degree
-                                           * e.g. 13.9999999 will be rounded
-                                           * to 13ø59'59" (or 13ø59' or 13ø) */
+
 
 
   /*

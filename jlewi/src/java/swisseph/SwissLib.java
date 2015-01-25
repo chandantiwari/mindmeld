@@ -573,8 +573,6 @@ if (Double.doubleToLongBits(coef[10]) == 0x3EF5D0AE131F86EEL) {
    *
    * Bretagnon, P. et al.: 2003, "Expressions for Precession Consistent with 
    * the IAU 2000A Model". A&A 400,785
-   *B03  	84381.4088  	-46.836051*t  	-1667×10-7*t2  	+199911×10-8*t3  	-523×10-9*t4  	-248×10-10*t5  	-3×10-11*t6
-   *C03   84381.406  	-46.836769*t  	-1831×10-7*t2  	+20034×10-7*t3  	-576×10-9*t4  	-434×10-10*t5
    *
    *  See precess and page B18 of the Astronomical Almanac.
    */
