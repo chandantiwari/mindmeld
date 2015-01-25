@@ -185,14 +185,14 @@ def calculate_all_lewi():
    Calculates all lewi numbers for decans. Decans must have been calculated
    first using jlewi
    '''
-   startd = '1/1/1900'
-   endd = '1/1/1910'
+   startd = '1/1/2020'
+   endd = '1/1/2100'
    s = datetime.strptime(startd, '%d/%m/%Y')
    e = datetime.strptime(endd, '%d/%m/%Y')
    d = timedelta(days=1)
    while (s+d != e):
       date = s.strftime('%Y%m%d')
-      print calculate_lewi(date)
+      print date, calculate_lewi(date)
       s = s + d
    
 if __name__ == "__main__": 
