@@ -34,10 +34,10 @@ The result will look like:
 ```
 
 The calculation of Lewi numbers is the most beneficial part of this
-package, doing the same calculation by hand was very time
-consuming. The decan information required for this calculation are
-taken from SwissEph package. We wrapped this library with some Java
-code found under jlewi directory. 
+package, doing the same calculation by hand was very time consuming
+(The decan information required for this calculation are calculated
+through SwissEph package which we wrapped with the Java code found
+under jlewi directory, whose output is already under `data` folder).
 
 All details for sign, number explanations can be found under
 `doc/details` folder. For Spiller sign Taurus explanation for example

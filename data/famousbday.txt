@@ -39600,3 +39600,5 @@ Hadi Uluengin:Journalist:20/6/1951
 Mete Tuncay:Academic:27/6/1936
 Ahmet Hakan:Journalist:11/8/1967
 Dan Millman:Life Coach:22/2/1946
+Geoffrey Hinton:AI Researcher:6/12/1947
+Paul Graham:Investor, Programmer:13/11/1964
