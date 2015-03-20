@@ -128,8 +128,6 @@ def astro_enrich(df_arg):
    # now populate all astrological values using results from mindmeld.calculate
    def f(x):
       res = mindmeld.calculate(x['bday2'])
-      x['sun'] = res['sun']
-      x['moon'] = res['moon']
       for lew in res['lewi']: x['lewi'+str(lew)] = 1
       if res['chinese']: x['chinese'] = res['chinese']
       if res['spiller']: x['spiller'] = res['spiller']

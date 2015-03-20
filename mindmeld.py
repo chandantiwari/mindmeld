@@ -165,7 +165,7 @@ def calculate(date):
    decans = get_decans(date)
    sun = np.ceil(float(decans[0])/3)-1
    moon = np.ceil(float(decans[1])/3)-1
-   return {'sun': sun, 'moon': moon, 'chinese':get_chinese(date),
+   return {'chinese':get_chinese(date),
            'spiller':get_spiller(date), 'millman':calculate_millman(date),
            'cycle': calculate_cycle(date), 'lewi':calculate_lewi(date)}
 
