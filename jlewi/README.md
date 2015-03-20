@@ -6,7 +6,7 @@ having to learn its details.
 
 Among the things we improved;
 
-o We provide a *precompiled* source base for SwissEph. The package, as
+* We provide a *precompiled* source base for SwissEph. The package, as
 it is found on the Web, makes it necessary to pass through a
 precompilation stage, similar to software written in C, C++ using
 `#define`, `#endif` constructs. However, this usage is very un-Java,
@@ -14,7 +14,7 @@ hence only one version of the source is included in this package. This
 saves the programmer from understanding unnecessary details of the
 package involved.
 
-o Calculating the decan (decanate) of planets needed for a certain
+* Calculating the decan (decanate) of planets needed for a certain
 date in question. This was very hard to access through the SwissEph
 regular functions, so we hacked through the command line interface
 making SwissEph believe we were using it through the command line, we
