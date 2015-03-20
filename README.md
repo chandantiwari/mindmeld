@@ -28,7 +28,8 @@ The result will look like:
 276], 'spiller': 'Aries', 'cycle': 2} ```
 
 Simply lookup these results under the `doc/details` folder. For
-Millman you would fine `2810.txt`, for Chinese `Monkey.html`, so on..
+Millman you would find `millman/2810.txt`, for Chinese
+`chinese/Monkey.html`, so on..
 
 Cycle is the Millman period your life is on; according to his method
 life proceeds in 9 year cycles, 1 is time to start something 9 to
