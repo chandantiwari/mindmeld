@@ -27,9 +27,8 @@ The result will look like:
 [136, 161, 163, 183, 196, 199, 211, 214, 216, 235, 243, 246, 272,
 276], 'spiller': 'Aries', 'cycle': 2} ```
 
-Simply lookup these results under the \verb!doc/details! folder. For
-Millman you would fine \verb!2810.txt!, for Chinese
-\verb!Monkey.html!, so on..
+Simply lookup these results under the `doc/details` folder. For
+Millman you would fine `2810.txt`, for Chinese `Monkey.html`, so on..
 
 Cycle is the Millman period your life is on; according to his method
 life proceeds in 9 year cycles, 1 is time to start something 9 to
@@ -69,8 +68,8 @@ would give the answer of the questionaire.
 ##Lewi Files
 
 There are some base files that mindmeld uses from the subproject
-\verb!jlewi!; Mindmeld already has a ustable Lewi file, so no
-regeneration is necessary. If one wants to regenerate this lewi file
-though, everything required is in this subfolder. This is a Java
-project, see its README for further info.
+`jlewi`; Mindmeld already has a ustable Lewi file, so no regeneration
+is necessary. If one wants to regenerate this lewi file though,
+everything required is in this subfolder. This is a Java project, see
+its README for further info.
 
