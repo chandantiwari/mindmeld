@@ -3,113 +3,36 @@ from datetime import datetime
 import pandas as pd
 import mindmeld, numpy as np
 
-def one_hot_dataframe(data, cols):
-    from sklearn.feature_extraction import DictVectorizer
-    vec = DictVectorizer()
-    mkdict = lambda row: dict((col, row[col]) for col in cols)
-    vecData = pd.DataFrame(vec.fit_transform(data[cols].to_dict(outtype='records')).toarray())
-    vecData.columns = vec.get_feature_names()
-    vecData.index = data.index
-    data = data.drop(cols, axis=1)
-    data = data.join(vecData)
-    return data
+def dates(s):
+   try: return mindmeld.conv(s)
+   except: return None
 
-A=1;B=0.8;C=0.1;D=0.1
+# now populate all astrological values using results from mindmeld.calculate
+def astro(x):
+   res = mindmeld.calculate(x['bday2'])
+   for lew in res['lewi']: x['lewi'+str(lew)] = 1
 
-def Si(x):
-   if 'ISTJ' in x['mbti']: return A
-   if 'ISFJ' in x['mbti']: return A
-   if 'ESTJ' in x['mbti']: return B
-   if 'ESFJ' in x['mbti']: return B
-   if 'INFP' in x['mbti']: return C
-   if 'INTP' in x['mbti']: return C
-   if 'ENFP' in x['mbti']: return D
-   if 'ENTP' in x['mbti']: return D
+   if res['chinese']: x['chinese'] = res['chinese']
+   if res['spiller']: x['spiller'] = res['spiller']
+   x['M1'] = str(res['millman'][0])
+   x['M2'] = str(res['millman'][1])
+   x['mills'+str(res['millman'][2])] = 1
+   x['mills'+str(res['millman'][3])] = 1
+   x['mills'+str(res['millman'][4])] = 1
+   return x
 
-def Ti(x):
-   if 'ESTP' in x['mbti']: return A
-   if 'ENTP' in x['mbti']: return A
-   if 'ISTP' in x['mbti']: return B
-   if 'INTP' in x['mbti']: return B
-   if 'ENFJ' in x['mbti']: return C
-   if 'ESFJ' in x['mbti']: return C
-   if 'INFJ' in x['mbti']: return D
-   if 'ISFJ' in x['mbti']: return D
+def mm(x):
+   if   'NTP' in x['mbti']: return pd.Series(['Ti','Ne'])
+   elif 'NTJ' in x['mbti']: return pd.Series(['Te','Ni'])
+   elif 'NFJ' in x['mbti']: return pd.Series(['Ni','Fe'])
+   elif 'NFP' in x['mbti']: return pd.Series(['Ne','Fi'])
+   elif 'STJ' in x['mbti']: return pd.Series(['Te','Si'])
+   elif 'SFJ' in x['mbti']: return pd.Series(['Si','Fe'])
+   elif 'STP' in x['mbti']: return pd.Series(['Ti','Se'])
+   elif 'SFP' in x['mbti']: return pd.Series(['Se','Fi'])
 
-def Ne(x):
-   if 'ENTP' in x['mbti']: return A
-   if 'ENFP' in x['mbti']: return A
-   if 'INTP' in x['mbti']: return B
-   if 'INFP' in x['mbti']: return B
-   if 'ISFJ' in x['mbti']: return C
-   if 'ISTJ' in x['mbti']: return C
-   if 'ESFJ' in x['mbti']: return D
-   if 'ESTJ' in x['mbti']: return D
-   
-def Fe(x):
-   if 'ISFJ' in x['mbti']: return A
-   if 'INFJ' in x['mbti']: return A
-   if 'ESFJ' in x['mbti']: return B
-   if 'ENFJ' in x['mbti']: return B
-   if 'INTP' in x['mbti']: return C
-   if 'ISTP' in x['mbti']: return C
-   if 'ENTP' in x['mbti']: return D
-   if 'ESTP' in x['mbti']: return D
-
-def Te(x):
-   if 'ISTJ' in x['mbti']: return A
-   if 'INTJ' in x['mbti']: return A
-   if 'ESTJ' in x['mbti']: return B
-   if 'ENTJ' in x['mbti']: return B
-   if 'INFP' in x['mbti']: return C
-   if 'ISFP' in x['mbti']: return C
-   if 'ENFP' in x['mbti']: return D
-   if 'ESFP' in x['mbti']: return D
-
-def Ni(x):
-   if 'INTJ' in x['mbti']: return A
-   if 'INFJ' in x['mbti']: return A
-   if 'ENTJ' in x['mbti']: return B
-   if 'ENFJ' in x['mbti']: return B
-   if 'ISFP' in x['mbti']: return C
-   if 'ISTP' in x['mbti']: return C
-   if 'ESFP' in x['mbti']: return D
-   if 'ESTP' in x['mbti']: return D
-
-def Se(x):
-   if 'ESTP' in x['mbti']: return A
-   if 'ESFP' in x['mbti']: return A
-   if 'ISTP' in x['mbti']: return B
-   if 'ISFP' in x['mbti']: return B
-   if 'ENFJ' in x['mbti']: return C
-   if 'ENTJ' in x['mbti']: return C
-   if 'INFJ' in x['mbti']: return D
-   if 'INTJ' in x['mbti']: return D
-
-def Fi(x):
-   if 'ESFP' in x['mbti']: return A
-   if 'ENFP' in x['mbti']: return A
-   if 'ISFP' in x['mbti']: return B
-   if 'INFP' in x['mbti']: return B
-   if 'ENTJ' in x['mbti']: return C
-   if 'ESTJ' in x['mbti']: return C
-   if 'INTJ' in x['mbti']: return D
-   if 'ISTJ' in x['mbti']: return D
-   
-
-'''
-Processes birthday field on each row of the dataframe, adding 
-astrological parameters, returns the result
-'''
-def astro_enrich(df_arg):
-   df = df_arg.copy()
-   # change format of the date
-   def f(s):
-      try:
-          return mindmeld.conv(s)
-      except:
-          return None
-   df['bday2'] = df['bday'].apply(f)
+def astro_enrich(df):
+   df['bday2'] = df['bday'].apply(dates)
 
    # create (empty) grant lewi fields
    cols = []
@@ -124,61 +47,18 @@ def astro_enrich(df_arg):
 
    # filter out null birthdays
    df2 = df[pd.isnull(df['bday2']) == False]
-
-   # now populate all astrological values using results from mindmeld.calculate
-   def f(x):
-      res = mindmeld.calculate(x['bday2'])
-      for lew in res['lewi']: x['lewi'+str(lew)] = 1
-      if res['chinese']: x['chinese'] = res['chinese']
-      if res['spiller']: x['spiller'] = res['spiller']
-      x['M1'] = str(res['millman'][0])
-      x['M2'] = str(res['millman'][1])
-      x['mills'+str(res['millman'][2])] = 1
-      x['mills'+str(res['millman'][3])] = 1
-      x['mills'+str(res['millman'][4])] = 1
-      return x
-   df3 = df2.apply(f, axis=1)
-
-   df4 = one_hot_dataframe(df3,['spiller','chinese','M1','M2'])
-   df4 = df4.replace(0.0,np.nan)
-
-   # diversity is the number of 1-hot encoded attributes that are '1',
-   # this is used to see how "crowded" a user's profile is. this could
-   # be a useful information, if a person has too many attributes (from
-   # too many lewi numbers) this could mean they are getting pulled into
-   # many directions all at once and that could mean something.
-   df5 = df4.drop(['mbti','name','occup','bday','bday2'],axis=1)
-   df5 = df5.fillna(0)
-   df4['diversity'] = df5.sum(axis=1)
-
-   # the mapping below assigns a 'function' such as Ne, Ti a 1 value
-   # if it is at the top two level of a person's MBTI make-up. So an
-   # ISTJ would have Te and Si set to 1. We aimed simplifying and
-   # training and prediction; because if you can guess top two
-   # functions of a person, you can determine their MBTI type.
-   df4['Si'] = np.nan;df4['Ti'] = np.nan;df4['Ne'] = np.nan;df4['Fe'] = np.nan
-   df4['Te'] = np.nan;df4['Ni'] = np.nan;df4['Se'] = np.nan;df4['Fi'] = np.nan   
-   df4['Si'] = df4.apply(Si, axis=1)
-   df4['Ti'] = df4.apply(Ti, axis=1)
-   df4['Ne'] = df4.apply(Ne, axis=1)
-   df4['Fe'] = df4.apply(Fe, axis=1)
-   df4['Te'] = df4.apply(Te, axis=1)
-   df4['Ni'] = df4.apply(Ni, axis=1)
-   df4['Se'] = df4.apply(Se, axis=1)
-   df4['Fi'] = df4.apply(Fi, axis=1)
    
-   return df4
+   df3 = df2.apply(astro, axis=1)
+   df3 = df3.drop(['name','occup','bday','bday2'],axis=1)
+
+   return df3
 
 if __name__ == "__main__": 
- 
-    celebs = pd.read_csv("./data/famousbday.txt", sep=':', header=None, 
-                         names=['name','occup','bday','spiller','chinese'])
-
-    os.system('cat ./data/myer-briggs.txt ./data/myer-briggs-app.txt > /tmp/myer-briggs.txt')
-    
-    celeb_mbti = pd.read_csv("/tmp/myer-briggs.txt",header=None,sep=':',
-                             names=['mbti','name'])
-
+      
+    celebs = pd.read_csv("./data/famousbday.txt", sep=':', header=None, names=['name','occup','bday','spiller','chinese'])
+    os.system('cat ./data/myer-briggs.txt ./data/myer-briggs-app.txt > /tmp/myer-briggs.txt')    
+    celeb_mbti = pd.read_csv("/tmp/myer-briggs.txt",header=None,sep=':',names=['mbti','name'])
     df = pd.merge(celeb_mbti,celebs)
-    df4 = astro_enrich(df)
-    df4.to_csv('./data/celeb_astro_mbti.csv',sep=';',index=None)
+    df2 = astro_enrich(df)
+    df2[['mbti1','mbti2']] = df2.apply(mm, axis=1)
+    df2.to_csv('./data/celeb_astro_mbti.csv',sep=';',index=None)

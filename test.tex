@@ -1,63 +1,6 @@
 \documentclass[12pt,fleqn]{article}\usepackage{../common}
 \begin{document}
 
-\begin{minted}[fontsize=\footnotesize]{python}
-import pandas as pd, mineprep, pickle
-from sklearn.tree import DecisionTreeRegressor
-df = pd.read_csv("./data/celeb_astro_mbti.csv",sep=';')
-clf = pickle.load(open('./data/train.pkl', 'rb'))
-\end{minted}
-
-
-\begin{minted}[fontsize=\footnotesize]{python}
-tree = clf
-left      = tree.tree_.children_left
-right     = tree.tree_.children_right
-threshold = tree.tree_.threshold
-features  = [df.columns[i] for i in tree.tree_.feature]
-print features
-print left
-print right
-print threshold
-print len(left), len(right), len(threshold), len(features)
-\end{minted}
-
-\begin{verbatim}
-['lewi276', 'lewi173', 'lewi159', 'lewi148', 'Se', 'Se', 'lewi4', 'Se', 'Se', 'lewi151', 'mills5', 'Se', 'Se', 'lewi207', 'Se', 'Se', 'lewi200', 'M2=4', 'lewi259', 'Se', 'Se', 'mills6', 'Se', 'Se', 'lewi236', 'lewi185', 'Se', 'Se', 'lewi170', 'Se', 'Se']
-[ 1  2  3  4 -1 -1  7 -1 -1 10 11 -1 -1 14 -1 -1 17 18 19 -1 -1 22 -1 -1 25
- 26 -1 -1 29 -1 -1]
-[16  9  6  5 -1 -1  8 -1 -1 13 12 -1 -1 15 -1 -1 24 21 20 -1 -1 23 -1 -1 28
- 27 -1 -1 30 -1 -1]
-[ 0.50000012  0.50000012  0.50000012  0.50000012 -2.         -2.
-  0.50000012 -2.         -2.          0.50000012  7.5        -2.         -2.
-  0.50000012 -2.         -2.          0.50000012  0.50000012  0.50000012
- -2.         -2.          6.5        -2.         -2.          0.50000012
-  0.50000012 -2.         -2.          0.50000012 -2.         -2.        ]
-31 31 31 31
-\end{verbatim}
-
-\begin{minted}[fontsize=\footnotesize]{python}
-sampletree = {'spl':'foo', 'go_r':{'cut':150} ,  'l':{'val':100}, 'r':{'val':200}}
-import json
-print json.dumps(sampletree,sort_keys=True, indent=4)
-\end{minted}
-
-\begin{verbatim}
-{
-    "go_r": {
-        "cut": 150
-    }, 
-    "l": {
-        "val": 100
-    }, 
-    "r": {
-        "val": 200
-    }, 
-    "spl": "foo"
-}
-\end{verbatim}
-
-
 
 
 
