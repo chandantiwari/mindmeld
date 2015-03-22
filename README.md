@@ -74,3 +74,23 @@ is necessary. If one wants to regenerate this lewi file though,
 everything required is in this subfolder. This is a Java project, see
 its README for further info.
 
+The calculation of Lewi numbers is the most beneficial part of this
+package, doing the same calculation by hand was very time consuming
+(The decan information required for this calculation are calculated
+through SwissEph package which we wrapped with the Java code found
+under jlewi directory, whose output is already under `data` folder).
+
+## Summary
+
+The features of this package are the calculation of:
+
+Grant Lewi Numbers (based on decans)
+
+Dan Millman Numerology
+
+Jan Spiller Moon North Node Astrology
+
+Chinese Astrology
+
+Myers-Briggs Test
+

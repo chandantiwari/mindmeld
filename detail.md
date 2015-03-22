@@ -1,72 +1,42 @@
+##Statistical Analysis
 
-Calculates,
+If there were enough information, maybe you could predict a person's
+MBTI type given their base astrological information. We could use
+celebrity birthdates and MBTI types (since both are known for some
+celebrities) to train the model, and then using simple birthdate, we
+would attempt to predict an MBTI output. Good resuls obtained here
+could prove that a pseudoscience - science connection exists, and that
+could mean pseudoscience might not be so pseudo after
+all.
 
-Grant Lewi Numbers (based on decans)
+Unfortunately we do not have enough data for this. If we had, we
+already have an idea how to go about modeling this data:
 
-Dan Millman Numerology
-
-Jan Spiller Moon North Node Astrology
-
-Chinese Astrology
-
-Myers-Briggs Test
-
-The calculation of Lewi numbers is the most beneficial part of this
-package, doing the same calculation by hand was very time consuming
-(The decan information required for this calculation are calculated
-through SwissEph package which we wrapped with the Java code found
-under jlewi directory, whose output is already under `data` folder).
-
-A 70 question Myers-Briggs Test can be found under doc folder. Its
-output is not interfaced with the evaluator Python code yet. There is
-only simple Javascript checks performed on the input.
-
-A list of URLs that point to details of each reading can also be
-generated, by using the describe function,
-
-##Machine Learning
-
-```
-sudo pip install sklearn
-```
-
-Script `train.py` and `pred.py` demonstrate some machine learning
-techniques on the data. ML code attempts to predict a person's MBTI
-type given their base astrological information. Good resuls obtained
-here would prove that a pseudoscience - science connection exists, and
-that could mean pseudoscience might not be so pseudo after all.
-
-In the input data for each person, the top two functions are 1-hot
-encoded, INTP for example has both Ti and Ne as 1. 
-
-Previously we were trying to predict each letter of the MBTI type,
-training one classifier for each, such as the four letters of I,N,T,P
-for INTP. Using the new way a single (multi-output) prediction task is
-used instead of 4. Since we predict the top two functions, we are
-disregarding the order of those functions -- INTP and ENTP become the
-same prediction. This generalized the problem hence increasing the
-amount of data for each type of output. The reason this works is that
-in order to identify an MBTI type, top two functions are sufficient,
-for example NTP can be predicted if we know Ne and Ti are top two
+In the input data for each person, the top two functions would be (and
+are) 1-hot encoded, INTP for example has both Ti and Ne as 1. In order
+to identify an MBTI type, top two functions are sufficient, for
+example NTP can be predicted if we know Ne and Ti are top two
 functions. The only remaining task is predicting introversion or
 extroversion which only _changes_ the order of the top two functions
 -- ENTP has Ne and Ti whereas INTP is Ti and Ne. We did not put much
-emphasis on predicting introversion or extroversion.
+emphasis on predicting introversion or extroversion. This way
+prediction of using functions, instead of letters is much more in line
+with the logic of MBTI. Functions are at the core of the character
+make-up, not the individual letters.
 
-This way prediction of using functions, instead of letters is much
-more in line with the logic of MBTI. Functions are at the core of the
-character make-up, not the individual letters.
+Note: since we are making an MBTI prediction for a single day (which
+is a birthday), it's important to list options. Predicting only two
+functions would not make sense -- lots of babies are born each day,
+and on one single day, for example, each baby born must be NTP?  It's
+more likely that babies born in the same day would have different MBTI
+types, but also, it is likely there is a small list of types a person
+could be that day. For example some days could favor STP more, others
+STJs. On an STJ day, a baby nurtured appropiately, could maybe later
+become an NTJ. 
 
-Another point: since we are making an MBTI prediction for a single day
-(which is a birthday), it's important to list options. Predicting only
-two functions would not make sense -- lots of babies are born each
-day, and on one single day, for example, each baby born must be NTP?
-It's more likely that babies born in the same day would have different
-MBTI types, but also, it is likely there is a small list of types a
-person could be that day. For example some days could favor STP more,
-others STJs. On an STJ day, a baby nurtured appropiately, could maybe
-later become an NTJ. That's why pred.py will show 4 top functions,
-listed in the order of importance.
+Anyway; we ran a simple logistic regression on Ti being 1/0 for
+example against spiller, chinese, and millman, almost all variables
+were insignificant.
 
 ## Data
 
