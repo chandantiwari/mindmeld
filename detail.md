@@ -34,17 +34,10 @@ Script `train.py` and `pred.py` demonstrate some machine learning
 techniques on the data. ML code attempts to predict a person's MBTI
 type given their base astrological information. Good resuls obtained
 here would prove that a pseudoscience - science connection exists, and
-that could mean pseudoscience might not be so pseudo after all. We see
-promising results on a test set with known MBTI values, predicting the
-top function gives an AUC around %60. More data would definitely make
-a positive difference as the data is high dimensional.
+that could mean pseudoscience might not be so pseudo after all.
 
 In the input data for each person, the top two functions are 1-hot
-encoded, INTP for example has both Ti and Ne as 1. Then we try to
-predict an 8 dimensional output (each dimension represents a function)
-using a multi-output regressor using 300+ columns as input. The
-benefit of using multi-output regressor is any relation between output
-variables is captured as well as the relation between input and output.
+encoded, INTP for example has both Ti and Ne as 1. 
 
 Previously we were trying to predict each letter of the MBTI type,
 training one classifier for each, such as the four letters of I,N,T,P
@@ -74,14 +67,6 @@ person could be that day. For example some days could favor STP more,
 others STJs. On an STJ day, a baby nurtured appropiately, could maybe
 later become an NTJ. That's why pred.py will show 4 top functions,
 listed in the order of importance.
-
-The training / testing scheme: once the regressor is trained, four
-choices are made to predict top two functions. The number of matches
-between prediction and reality, which we call "hits" are averaged over
-the test set and become the final score.
-
-Feel free to play with the hyperparameters, or code and do let us know
-of your results!
 
 ## Data
 
