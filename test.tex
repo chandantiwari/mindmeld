@@ -4,10 +4,8 @@
 \begin{minted}[fontsize=\footnotesize]{python}
 import pandas as pd
 import numpy as np
-lewi_cols = map(lambda x: 'lewi'+str(x),range(100))
-lewi = ' + '.join(lewi_cols)
 df = pd.read_csv('data/celeb_astro_mbti.csv',sep=';')
-df['label'] = (df['mbti1']=='Ti').astype(float)
+df['label'] = (df['mbti1']=='Te').astype(float)
 df = df.drop(['mbti','mbti1','mbti2'],axis=1)
 \end{minted}
 
@@ -16,64 +14,102 @@ df = df.drop(['mbti','mbti1','mbti2'],axis=1)
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 s = "label ~ C(spiller) + C(chinese) + C(M2) "
-#s += " + " + lewi
 mdlm = smf.logit(s, data=df)
 mdlmf = mdlm.fit()
 print(mdlmf.summary())
 \end{minted}
 
 \begin{verbatim}
-Optimization terminated successfully.
-         Current function value: 0.537016
-         Iterations 6
+Warning: Maximum number of iterations has been exceeded.
+         Current function value: 0.434079
+         Iterations: 35
                            Logit Regression Results                           
 ==============================================================================
 Dep. Variable:                  label   No. Observations:                  426
 Model:                          Logit   Df Residuals:                      393
 Method:                           MLE   Df Model:                           32
-Date:                Sun, 22 Mar 2015   Pseudo R-squ.:                 0.07549
-Time:                        20:56:31   Log-Likelihood:                -228.77
-converged:                       True   LL-Null:                       -247.45
-                                        LLR p-value:                    0.2364
+Date:                Sun, 22 Mar 2015   Pseudo R-squ.:                 0.08137
+Time:                        21:29:17   Log-Likelihood:                -184.92
+converged:                      False   LL-Null:                       -201.30
+                                        LLR p-value:                    0.4295
 =============================================================================================
                                 coef    std err          z      P>|z|      [95.0% Conf. Int.]
 ---------------------------------------------------------------------------------------------
-Intercept                    -2.7813      1.117     -2.490      0.013        -4.970    -0.592
-C(spiller)[T.Aries]          -0.0458      0.651     -0.070      0.944        -1.321     1.230
-C(spiller)[T.Cancer]         -0.3375      0.625     -0.540      0.589        -1.562     0.887
-C(spiller)[T.Capricorn]       0.1456      0.627      0.232      0.816        -1.084     1.375
-C(spiller)[T.Gemini]         -0.2089      0.653     -0.320      0.749        -1.488     1.070
-C(spiller)[T.Leo]            -0.4466      0.654     -0.683      0.495        -1.729     0.836
-C(spiller)[T.Libra]           0.8416      0.592      1.422      0.155        -0.318     2.001
-C(spiller)[T.Pisces]         -0.2818      0.652     -0.432      0.666        -1.559     0.996
-C(spiller)[T.Sagittarius]    -0.5878      0.631     -0.932      0.351        -1.824     0.648
-C(spiller)[T.Scorpio]         0.1779      0.653      0.272      0.785        -1.102     1.458
-C(spiller)[T.Taurus]         -0.3861      0.610     -0.633      0.527        -1.581     0.809
-C(spiller)[T.Virgo]          -0.4126      0.688     -0.600      0.549        -1.761     0.936
-C(chinese)[T.Dragon]          1.4536      0.629      2.312      0.021         0.221     2.686
-C(chinese)[T.Horse]           1.3312      0.672      1.981      0.048         0.014     2.648
-C(chinese)[T.Monkey]          1.3336      0.676      1.971      0.049         0.008     2.659
-C(chinese)[T.Ox]              1.5770      0.635      2.483      0.013         0.332     2.822
-C(chinese)[T.Pig]             1.9593      0.627      3.126      0.002         0.731     3.188
-C(chinese)[T.Rabbit]          0.7893      0.671      1.177      0.239        -0.525     2.104
-C(chinese)[T.Rat]             0.8421      0.749      1.125      0.261        -0.625     2.309
-C(chinese)[T.Rooster]         0.6867      0.724      0.949      0.343        -0.732     2.105
-C(chinese)[T.Sheep]           0.7016      0.690      1.017      0.309        -0.650     2.053
-C(chinese)[T.Snake]           0.7171      0.643      1.115      0.265        -0.543     1.977
-C(chinese)[T.Tiger]           1.6340      0.626      2.608      0.009         0.406     2.862
-C(M2)[T.3]                    0.1581      0.997      0.159      0.874        -1.797     2.113
-C(M2)[T.4]                    1.2530      0.933      1.343      0.179        -0.575     3.081
-C(M2)[T.5]                    0.7194      0.949      0.758      0.448        -1.140     2.579
-C(M2)[T.6]                    0.6787      0.955      0.711      0.477        -1.193     2.551
-C(M2)[T.7]                    0.6631      0.923      0.718      0.472        -1.146     2.472
-C(M2)[T.8]                    0.3646      0.964      0.378      0.705        -1.526     2.255
-C(M2)[T.9]                    1.5795      0.964      1.638      0.101        -0.310     3.469
-C(M2)[T.10]                   0.3969      0.940      0.422      0.673        -1.446     2.240
-C(M2)[T.11]                   0.9494      0.950      0.999      0.318        -0.913     2.811
-C(M2)[T.12]                   0.0939      1.521      0.062      0.951        -2.887     3.075
+Intercept                    -0.5260      1.053     -0.500      0.617        -2.590     1.538
+C(spiller)[T.Aries]           0.6805      0.780      0.873      0.383        -0.847     2.208
+C(spiller)[T.Cancer]          1.0084      0.716      1.408      0.159        -0.395     2.412
+C(spiller)[T.Capricorn]       0.3729      0.757      0.493      0.622        -1.110     1.856
+C(spiller)[T.Gemini]         -0.1845      0.787     -0.234      0.815        -1.727     1.358
+C(spiller)[T.Leo]             0.6786      0.757      0.897      0.370        -0.805     2.162
+C(spiller)[T.Libra]          -0.1452      0.758     -0.192      0.848        -1.631     1.341
+C(spiller)[T.Pisces]          0.8454      0.724      1.168      0.243        -0.573     2.264
+C(spiller)[T.Sagittarius]    -0.2020      0.798     -0.253      0.800        -1.766     1.362
+C(spiller)[T.Scorpio]         0.1553      0.810      0.192      0.848        -1.433     1.743
+C(spiller)[T.Taurus]         -0.6661      0.848     -0.785      0.432        -2.328     0.996
+C(spiller)[T.Virgo]           0.5421      0.774      0.701      0.484        -0.975     2.059
+C(chinese)[T.Dragon]         -1.0834      0.694     -1.561      0.118        -2.443     0.277
+C(chinese)[T.Horse]           0.1612      0.652      0.247      0.805        -1.116     1.439
+C(chinese)[T.Monkey]         -2.1420      0.890     -2.406      0.016        -3.887    -0.397
+C(chinese)[T.Ox]             -0.5375      0.645     -0.833      0.405        -1.803     0.728
+C(chinese)[T.Pig]            -0.4151      0.667     -0.622      0.534        -1.722     0.892
+C(chinese)[T.Rabbit]         -0.9462      0.677     -1.398      0.162        -2.272     0.380
+C(chinese)[T.Rat]            -1.0154      0.822     -1.235      0.217        -2.626     0.595
+C(chinese)[T.Rooster]        -0.5722      0.644     -0.888      0.374        -1.835     0.690
+C(chinese)[T.Sheep]          -0.3903      0.633     -0.617      0.537        -1.631     0.850
+C(chinese)[T.Snake]          -0.8595      0.707     -1.215      0.224        -2.246     0.527
+C(chinese)[T.Tiger]          -0.6180      0.611     -1.012      0.312        -1.815     0.579
+C(M2)[T.3]                   -1.0505      0.976     -1.077      0.282        -2.962     0.861
+C(M2)[T.4]                   -0.8369      0.887     -0.943      0.346        -2.576     0.902
+C(M2)[T.5]                   -0.3830      0.892     -0.429      0.668        -2.132     1.366
+C(M2)[T.6]                   -0.5545      0.901     -0.616      0.538        -2.320     1.211
+C(M2)[T.7]                   -0.3626      0.865     -0.419      0.675        -2.058     1.333
+C(M2)[T.8]                   -0.7939      0.914     -0.869      0.385        -2.585     0.997
+C(M2)[T.9]                   -1.4973      0.979     -1.530      0.126        -3.415     0.421
+C(M2)[T.10]                  -0.5959      0.884     -0.674      0.500        -2.328     1.136
+C(M2)[T.11]                  -1.0647      0.916     -1.163      0.245        -2.859     0.730
+C(M2)[T.12]                 -27.2406   7.32e+05  -3.72e-05      1.000     -1.44e+06  1.44e+06
 =============================================================================================
 \end{verbatim}
 
+\begin{minted}[fontsize=\footnotesize]{python}
+print df.groupby(['chinese','spiller']).size()
+\end{minted}
+
+\begin{verbatim}
+chinese  spiller 
+Dog      Aquarius    5
+         Cancer      5
+         Gemini      9
+         Libra       9
+         Pisces      6
+         Scorpio     6
+         Taurus      1
+         Virgo       1
+Dragon   Aquarius    4
+         Cancer      5
+         Gemini      2
+         Libra       9
+         Pisces      4
+         Scorpio     3
+         Taurus      6
+...
+Snake    Aquarius        5
+         Capricorn       2
+         Gemini          7
+         Libra          11
+         Taurus          5
+         Virgo           6
+Tiger    Aquarius        1
+         Aries           4
+         Cancer         10
+         Leo             5
+         Libra           2
+         Pisces          6
+         Sagittarius    13
+         Scorpio         2
+         Taurus          1
+Length: 90, dtype: int64
+\end{verbatim}
 
 
 \end{document}
