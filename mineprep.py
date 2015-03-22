@@ -11,7 +11,6 @@ def dates(s):
 def astro(x):
    res = mindmeld.calculate(x['bday2'])
    for lew in res['lewi']: x['lewi'+str(lew)] = 1
-
    if res['chinese']: x['chinese'] = res['chinese']
    if res['spiller']: x['spiller'] = res['spiller']
    x['M1'] = str(res['millman'][0])

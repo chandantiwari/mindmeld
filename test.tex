@@ -5,110 +5,146 @@
 import pandas as pd
 import numpy as np
 df = pd.read_csv('data/celeb_astro_mbti.csv',sep=';')
-df['label'] = (df['mbti1']=='Te').astype(float)
+df['label'] = (df['mbti1']=='Si').astype(float)
 df = df.drop(['mbti','mbti1','mbti2'],axis=1)
+lewi = map(lambda x: 'lewi'+str(x),range(278))
+df['diversity'] = df[lewi].sum(axis=1)
+df['total'] = 1
 \end{minted}
 
 
 \begin{minted}[fontsize=\footnotesize]{python}
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
-s = "label ~ C(spiller) + C(chinese) + C(M2) "
+s = "label ~ C(spiller) + C(chinese) + C(M2) + diversity "
 mdlm = smf.logit(s, data=df)
 mdlmf = mdlm.fit()
 print(mdlmf.summary())
 \end{minted}
 
 \begin{verbatim}
-Warning: Maximum number of iterations has been exceeded.
-         Current function value: 0.434079
-         Iterations: 35
+Optimization terminated successfully.
+         Current function value: 0.353134
+         Iterations 8
                            Logit Regression Results                           
 ==============================================================================
 Dep. Variable:                  label   No. Observations:                  426
-Model:                          Logit   Df Residuals:                      393
-Method:                           MLE   Df Model:                           32
-Date:                Sun, 22 Mar 2015   Pseudo R-squ.:                 0.08137
-Time:                        21:29:17   Log-Likelihood:                -184.92
-converged:                      False   LL-Null:                       -201.30
-                                        LLR p-value:                    0.4295
+Model:                          Logit   Df Residuals:                      392
+Method:                           MLE   Df Model:                           33
+Date:                Sun, 22 Mar 2015   Pseudo R-squ.:                  0.1125
+Time:                        21:54:36   Log-Likelihood:                -150.43
+converged:                       True   LL-Null:                       -169.51
+                                        LLR p-value:                    0.2467
 =============================================================================================
                                 coef    std err          z      P>|z|      [95.0% Conf. Int.]
 ---------------------------------------------------------------------------------------------
-Intercept                    -0.5260      1.053     -0.500      0.617        -2.590     1.538
-C(spiller)[T.Aries]           0.6805      0.780      0.873      0.383        -0.847     2.208
-C(spiller)[T.Cancer]          1.0084      0.716      1.408      0.159        -0.395     2.412
-C(spiller)[T.Capricorn]       0.3729      0.757      0.493      0.622        -1.110     1.856
-C(spiller)[T.Gemini]         -0.1845      0.787     -0.234      0.815        -1.727     1.358
-C(spiller)[T.Leo]             0.6786      0.757      0.897      0.370        -0.805     2.162
-C(spiller)[T.Libra]          -0.1452      0.758     -0.192      0.848        -1.631     1.341
-C(spiller)[T.Pisces]          0.8454      0.724      1.168      0.243        -0.573     2.264
-C(spiller)[T.Sagittarius]    -0.2020      0.798     -0.253      0.800        -1.766     1.362
-C(spiller)[T.Scorpio]         0.1553      0.810      0.192      0.848        -1.433     1.743
-C(spiller)[T.Taurus]         -0.6661      0.848     -0.785      0.432        -2.328     0.996
-C(spiller)[T.Virgo]           0.5421      0.774      0.701      0.484        -0.975     2.059
-C(chinese)[T.Dragon]         -1.0834      0.694     -1.561      0.118        -2.443     0.277
-C(chinese)[T.Horse]           0.1612      0.652      0.247      0.805        -1.116     1.439
-C(chinese)[T.Monkey]         -2.1420      0.890     -2.406      0.016        -3.887    -0.397
-C(chinese)[T.Ox]             -0.5375      0.645     -0.833      0.405        -1.803     0.728
-C(chinese)[T.Pig]            -0.4151      0.667     -0.622      0.534        -1.722     0.892
-C(chinese)[T.Rabbit]         -0.9462      0.677     -1.398      0.162        -2.272     0.380
-C(chinese)[T.Rat]            -1.0154      0.822     -1.235      0.217        -2.626     0.595
-C(chinese)[T.Rooster]        -0.5722      0.644     -0.888      0.374        -1.835     0.690
-C(chinese)[T.Sheep]          -0.3903      0.633     -0.617      0.537        -1.631     0.850
-C(chinese)[T.Snake]          -0.8595      0.707     -1.215      0.224        -2.246     0.527
-C(chinese)[T.Tiger]          -0.6180      0.611     -1.012      0.312        -1.815     0.579
-C(M2)[T.3]                   -1.0505      0.976     -1.077      0.282        -2.962     0.861
-C(M2)[T.4]                   -0.8369      0.887     -0.943      0.346        -2.576     0.902
-C(M2)[T.5]                   -0.3830      0.892     -0.429      0.668        -2.132     1.366
-C(M2)[T.6]                   -0.5545      0.901     -0.616      0.538        -2.320     1.211
-C(M2)[T.7]                   -0.3626      0.865     -0.419      0.675        -2.058     1.333
-C(M2)[T.8]                   -0.7939      0.914     -0.869      0.385        -2.585     0.997
-C(M2)[T.9]                   -1.4973      0.979     -1.530      0.126        -3.415     0.421
-C(M2)[T.10]                  -0.5959      0.884     -0.674      0.500        -2.328     1.136
-C(M2)[T.11]                  -1.0647      0.916     -1.163      0.245        -2.859     0.730
-C(M2)[T.12]                 -27.2406   7.32e+05  -3.72e-05      1.000     -1.44e+06  1.44e+06
+Intercept                    -1.8601      1.529     -1.217      0.224        -4.857     1.137
+C(spiller)[T.Aries]           0.4041      0.959      0.421      0.674        -1.476     2.284
+C(spiller)[T.Cancer]          1.1471      0.888      1.292      0.197        -0.594     2.888
+C(spiller)[T.Capricorn]      -0.0407      0.975     -0.042      0.967        -1.952     1.870
+C(spiller)[T.Gemini]          0.5194      0.837      0.621      0.535        -1.120     2.159
+C(spiller)[T.Leo]             1.6042      0.891      1.800      0.072        -0.143     3.351
+C(spiller)[T.Libra]          -1.6821      1.217     -1.382      0.167        -4.067     0.703
+C(spiller)[T.Pisces]          1.1445      0.901      1.270      0.204        -0.622     2.911
+C(spiller)[T.Sagittarius]     1.5646      0.862      1.816      0.069        -0.124     3.253
+C(spiller)[T.Scorpio]         0.6249      0.967      0.646      0.518        -1.271     2.521
+C(spiller)[T.Taurus]          0.5916      0.834      0.709      0.478        -1.044     2.227
+C(spiller)[T.Virgo]          -0.3577      1.026     -0.349      0.727        -2.368     1.653
+C(chinese)[T.Dragon]         -0.3486      0.820     -0.425      0.671        -1.957     1.259
+C(chinese)[T.Horse]          -0.4953      0.830     -0.597      0.550        -2.121     1.131
+C(chinese)[T.Monkey]         -0.4687      0.773     -0.607      0.544        -1.983     1.045
+C(chinese)[T.Ox]             -0.3724      0.734     -0.507      0.612        -1.812     1.067
+C(chinese)[T.Pig]            -0.2067      0.832     -0.248      0.804        -1.837     1.424
+C(chinese)[T.Rabbit]         -0.7104      0.774     -0.918      0.359        -2.227     0.807
+C(chinese)[T.Rat]             0.8815      0.773      1.141      0.254        -0.633     2.396
+C(chinese)[T.Rooster]        -1.5988      0.929     -1.720      0.085        -3.420     0.223
+C(chinese)[T.Sheep]          -0.5178      0.752     -0.689      0.491        -1.991     0.956
+C(chinese)[T.Snake]           0.6461      0.750      0.862      0.389        -0.824     2.116
+C(chinese)[T.Tiger]          -1.2148      0.796     -1.526      0.127        -2.775     0.346
+C(M2)[T.3]                   -1.7032      1.560     -1.092      0.275        -4.761     1.355
+C(M2)[T.4]                   -0.5448      1.265     -0.431      0.667        -3.025     1.935
+C(M2)[T.5]                   -0.6321      1.306     -0.484      0.628        -3.193     1.928
+C(M2)[T.6]                    0.3092      1.256      0.246      0.805        -2.152     2.770
+C(M2)[T.7]                   -0.1750      1.250     -0.140      0.889        -2.625     2.275
+C(M2)[T.8]                    0.2832      1.245      0.227      0.820        -2.157     2.723
+C(M2)[T.9]                   -0.0267      1.265     -0.021      0.983        -2.506     2.452
+C(M2)[T.10]                   0.0335      1.243      0.027      0.978        -2.402     2.469
+C(M2)[T.11]                   0.0199      1.247      0.016      0.987        -2.424     2.464
+C(M2)[T.12]                   1.4617      1.580      0.925      0.355        -1.635     4.558
+diversity                    -0.0224      0.056     -0.403      0.687        -0.131     0.086
 =============================================================================================
 \end{verbatim}
 
 \begin{minted}[fontsize=\footnotesize]{python}
-print df.groupby(['chinese','spiller']).size()
+print df.groupby(['chinese','spiller']).sum()[['label','total']]
 \end{minted}
 
 \begin{verbatim}
-chinese  spiller 
-Dog      Aquarius    5
-         Cancer      5
-         Gemini      9
-         Libra       9
-         Pisces      6
-         Scorpio     6
-         Taurus      1
-         Virgo       1
-Dragon   Aquarius    4
-         Cancer      5
-         Gemini      2
-         Libra       9
-         Pisces      4
-         Scorpio     3
-         Taurus      6
-...
-Snake    Aquarius        5
-         Capricorn       2
-         Gemini          7
-         Libra          11
-         Taurus          5
-         Virgo           6
-Tiger    Aquarius        1
-         Aries           4
-         Cancer         10
-         Leo             5
-         Libra           2
-         Pisces          6
-         Sagittarius    13
-         Scorpio         2
-         Taurus          1
-Length: 90, dtype: int64
+                     label  total
+chinese spiller                  
+Dog     Aquarius         0      5
+        Cancer           3      5
+        Gemini           0      9
+        Libra            0      9
+        Pisces           1      6
+        Scorpio          1      6
+        Taurus           1      1
+        Virgo            0      1
+Dragon  Aquarius         1      4
+        Cancer           1      5
+        Gemini           0      2
+        Libra            0      9
+        Pisces           1      4
+        Scorpio          0      3
+        Taurus           0      6
+Horse   Aquarius         0      1
+        Aries            0      3
+        Capricorn        0      9
+        Leo              0      2
+        Libra            0      1
+        Sagittarius      2      5
+        Taurus           1      6
+        Virgo            1      7
+Monkey  Aries            2     13
+        Cancer           0      3
+        Leo              1      5
+        Pisces           0      5
+        Sagittarius      2      6
+        Scorpio          0      3
+Ox      Aries            1      6
+...                    ...    ...
+Rooster Cancer           0      4
+        Gemini           0      1
+        Leo              1      5
+        Pisces           0     10
+        Sagittarius      0      2
+        Scorpio          0      5
+Sheep   Aries            0      3
+        Cancer           0      2
+        Capricorn        1      4
+        Leo              3     14
+        Pisces           2      3
+        Sagittarius      0      4
+        Scorpio          0      2
+        Taurus           1      6
+        Virgo            0      4
+Snake   Aquarius         0      5
+        Capricorn        0      2
+        Gemini           3      7
+        Libra            1     11
+        Taurus           1      5
+        Virgo            1      6
+Tiger   Aquarius         0      1
+        Aries            0      4
+        Cancer           0     10
+        Leo              0      5
+        Libra            0      2
+        Pisces           0      6
+        Sagittarius      3     13
+        Scorpio          0      2
+        Taurus           1      1
+
+[90 rows x 2 columns]
 \end{verbatim}
 
 
