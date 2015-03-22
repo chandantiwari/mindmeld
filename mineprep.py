@@ -16,9 +16,6 @@ def astro(x):
    if res['spiller']: x['spiller'] = res['spiller']
    x['M1'] = str(res['millman'][0])
    x['M2'] = str(res['millman'][1])
-   x['mills'+str(res['millman'][2])] = 1
-   x['mills'+str(res['millman'][3])] = 1
-   x['mills'+str(res['millman'][4])] = 1
    return x
 
 def mm(x):
@@ -36,13 +33,11 @@ def astro_enrich(df):
 
    # create (empty) grant lewi fields
    cols = []
-   lewi = range(278)
-   lewi = map(lambda x: 'lewi'+str(x),lewi)
+   lewi = map(lambda x: 'lewi'+str(x),range(278))
    cols += lewi
    for x in cols: df[x] = np.nan
       
    # millman fields
-   for i in range(10): df['mills'+str(i)] = np.nan
    df['M1'] = np.nan; df['M2'] = np.nan
 
    # filter out null birthdays
