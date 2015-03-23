@@ -39602,3 +39602,4 @@ Ahmet Hakan:Journalist:11/8/1967
 Dan Millman:Life Coach:22/2/1946
 Geoffrey Hinton:AI Researcher:6/12/1947
 Paul Graham:Investor, Programmer:13/11/1964
+Wes McKinney:Pandas Creator,Programmer:20/3/1985
