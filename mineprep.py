@@ -43,7 +43,7 @@ def astro_enrich(df):
    df2 = df[pd.isnull(df['bday2']) == False]
    
    df3 = df2.apply(astro, axis=1)
-   df3 = df3.drop(['name','occup','bday','bday2'],axis=1)
+   df3 = df3.drop(['occup','bday','bday2'],axis=1)
 
    return df3
 
