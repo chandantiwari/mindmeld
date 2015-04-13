@@ -28,34 +28,37 @@ The result will look like:
 276], 'spiller': 'Aries', 'cycle': 2} ```
 
 Simply lookup these results under the `doc/details` folder. For
-Millman you would find `millman/2810.txt`, for Chinese
+Millman you would find `millman/2810.txt` for example, or for Chinese
 `chinese/Monkey.html`, so on..
 
-Cycle is the Millman period your life is on; according to his method
-life proceeds in 9 year cycles, 1 is time to start something 9 to
-enjoy its fruits (and not start something new). Here is an interesting
-exercise; starting from the cycle you are at go back in time, per
-year, If cycle says 4 for example, and the current year is 2015,
+Cycle is the period your life path is on; according to his method life
+proceeds in 9 year cycles, 1 is time to start something 9 to enjoy its
+fruits (and not start something new).
+
+Here is a related interesting exercise; starting from the cycle you
+are at today, go back in time, year by year; i.e. if current cycle
+point says 4, and the current year is 2015,
 
 ```
-2015 4
-2014 3
-2013 2
-2012 1
-2011 9
 2010 8
+2011 9
+2012 1
+2013 2
+2014 3
+2015 4
 ...
 ```
 
 and try to remember the state of your life at those moments in
-time. The results should be revealing. 
+time. The results will be revealing.
 
 ## MBTI Test
 
-You can also take the MBTI test under `doc/mbti_en.html` and once
-answering all questions, hit Evaluate and the -1,0,+1 results will be
-displayed in a messagebox. Copy these results to clipboard, and from
-there paste it in code, as such
+You can also take the MBTI test under `doc/mbti_en.html` and once you
+answer all questions, you can hit the evaluate button and the
+radiobutton input (represented as -1,0,+1 values) will be displayed in
+a messagebox. Copy these results to clipboard, and from there paste it
+in Python code like this,
 
 ```
 ans = ":1:-1:-1:1:0:0:0:1:0:-1:0:0:-1:-1:1:-1:0:0:1:1:-1:1:1:1:0:0:0:-1:1:0:1:1:0:0:0:0:0:1:-1:-1:1:1:1:1:1:1:-1:1:1:1:0:-1:-1:-1:-1:1:0:0:0:0:-1:0:0:-1:0:-1:-1:-1:0:0"
@@ -63,34 +66,37 @@ ans = ans.split(":")[1:]
 print mindmeld.calculate_mb(ans)
 ```
 
-would give the answer of the questionaire. 
+Run this code and you will get the MBTI result of the questionaire.
 
 
 ##Lewi Files
 
-There are some base files that mindmeld uses from the subproject
-`jlewi`; Mindmeld already has a ustable Lewi file, so no regeneration
-is necessary. If one wants to regenerate this lewi file though,
-everything required is in this subfolder. This is a Java project, see
-its README for further info.
+Not some implementation details.
 
-The calculation of Lewi numbers is the most beneficial part of this
-package, doing the same calculation by hand was very time consuming
-(The decan information required for this calculation are calculated
-through SwissEph package which we wrapped with the Java code found
-under jlewi directory, whose output is already under `data` folder).
+There are some reference files `mindmeld` uses from the subproject
+`jlewi`; No need to copy anything back and forth, bcz `mindmeld`
+already has a recently updated / working Lewi file copied from this
+subproject , so no copying is necessary. If you want to *regenerate*
+the lewi file though, everything required is in the `jlewi`
+subfolder. This is a Java project, see its README for further
+info. The calculation of Lewi numbers and "decans" data is the most
+beneficial part of this package, doing the same calculation by hand
+was extremely time consuming (the decan information required for the
+calculation is through the `SwissEph` package which we wrapped with
+the Java code found under `jlewi` directory, whose output is already
+under `data` folder).
 
 ## Summary
 
-The features of this package are the calculation of:
+In sum, `mindmeld` calculates the following:
 
-Grant Lewi Numbers (based on decans)
+* Grant Lewi Numbers (based on decans)
 
-Dan Millman Numerology
+* Dan Millman Numerology
 
-Jan Spiller Moon North Node Astrology
+* Jan Spiller Moon North Node Astrology
 
-Chinese Astrology
+* Chinese Astrology
 
-Myers-Briggs Test
+* Myers-Briggs Test
 
