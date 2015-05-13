@@ -83,7 +83,6 @@ ESFP:Chloe Grace Moretz
 ESFP:Danielle de Niese
 ESTJ:Bernard Montgomery
 ESTJ:Henry Ford
-ESTJ:Hillary Clinton
 ESTJ:Condoleezza Rice
 ESTJ:Dr. Phil
 ESTJ:Amy Chua
@@ -451,6 +450,7 @@ ISFJ:Kate Middleton
 ISFJ:Princess Mary
 ISFJ:Tiger Woods
 ISFJ:Lance Reddick
+INTJ:Hillary Clinton
 INTJ:Isaac Newton
 INTJ:Karl Marx
 INTJ:Ayn Rand

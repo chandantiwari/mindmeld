@@ -26,10 +26,21 @@ The result will look like:
 ``` {'millman': [28, 10, 2, 8, 1, 0], 'chinese': 'Monkey', 'lewi':
 [136, 161, 163, 183, 196, 199, 211, 214, 216, 235, 243, 246, 272,
 276], 'spiller': 'Aries', 'cycle': 2} ```
+<<<<<<< HEAD
 
 One can simply look up these results under the `doc/details`
 folder. For Millman we'd find `millman/2810.txt` for example, or for
 Chinese `chinese/Monkey.html`, so on..
+
+Cycle is the period your life path is on; according to his method life
+proceeds in 9 year cycles, 1 is time to start something 9 to enjoy its
+fruits (and not start something new).
+
+=======
+
+Simply lookup these results under the `doc/details` folder. For
+Millman you would find `millman/2810.txt` for example, or for Chinese
+`chinese/Monkey.html`, so on..
 
 Cycle is the period your life path is on; according to his method life
 proceeds in 9 year cycles, 1 is time to start something 9 to enjoy its
