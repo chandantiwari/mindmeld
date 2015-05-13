@@ -1,4 +1,5 @@
 from datetime import datetime
+from datetime import timedelta
 import pandas as pd
 import numpy as np
 import mapping, itertools
@@ -164,7 +165,7 @@ def calculate(date):
    decans = get_decans(date)
    sun = np.ceil(float(decans[0])/3)-1
    moon = np.ceil(float(decans[1])/3)-1
-   return {'sun': sun, 'moon': moon, 'chinese':get_chinese(date),
+   return {'chinese':get_chinese(date),
            'spiller':get_spiller(date), 'millman':calculate_millman(date),
            'cycle': calculate_cycle(date), 'lewi':calculate_lewi(date)}
 
@@ -179,4 +180,20 @@ def describe(res):
 def conv(s):
     return datetime.strptime(s, '%d/%m/%Y').date().strftime('%Y%m%d')
 
+def calculate_all_lewi():
+   '''
+   Calculates all lewi numbers for decans. Decans must have been calculated
+   first using jlewi
+   '''
+   startd = '1/1/2020'
+   endd = '1/1/2100'
+   s = datetime.strptime(startd, '%d/%m/%Y')
+   e = datetime.strptime(endd, '%d/%m/%Y')
+   d = timedelta(days=1)
+   while (s+d != e):
+      date = s.strftime('%Y%m%d')
+      print date, calculate_lewi(date)
+      s = s + d
    
+if __name__ == "__main__": 
+   calculate_all_lewi()

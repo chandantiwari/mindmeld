@@ -22551,7 +22551,7 @@ Luis Aloma:Cuban baseball player:23/7/1923
 Cyril M. Kornbluth:American writer:23/7/1923
 Amalia Mendoza:Mexican singer:23/7/1923
 Calvert DeForest:American actor:23/7/1921
-Bueno de Mesquita Dutch comedian and actor:(d. 2005):23/7/1918
+Bueno de Mesquita:Dutch comedian and actor:23/7/1918
 Pee Wee Reese:American baseball player:23/7/1918
 Michael Foot:English politician:23/7/1913
 Michael Wilding:English actor:23/7/1912
@@ -37598,7 +37598,7 @@ Jean-Marie Messier:French businessman:13/12/1957
 Dale Berra:American baseball player:13/12/1956
 John Anderson:American country musician:13/12/1954
 Tamora Pierce:author:13/12/1954
-Ben Bernanke:American economist and current United States Chairman of the Federal Reserve:13/12/1953
+Ben Bernanke:Economist and FED Chief:13/12/1953
 Bill Castro:Dominican baseball player:13/12/1953
 Bob Gainey:Canadian ice hockey player:13/12/1953
 Sylvester Ritter:American professional wrestler better known as "Junkyard Dog":13/12/1952
@@ -39483,6 +39483,7 @@ Joseph S. Cullinan:American oil industrialist:31/12/1860
 Isma'il Pasha:Governor of Egypt:31/12/1830
 George G. Meade:American Civil War general:31/12/1815
 Pierre-Charles Villeneuve:French admiral:31/12/1763
+Holly Heart:Porn Star:24/12/1981
 Charles Cornwallis, 1st Marquess Cornwallis, British general:(d. 1805):31/12/1738
 Charles Edward Stuart:pretender to the British throne:31/12/1720
 Herman Boerhaave:Dutch humanist and physician:31/12/1668
@@ -39595,7 +39596,20 @@ Elif Safak:Author:25/10/1971
 Hincal Uluc:Columnist:1/10/1939
 Sevan Nisanyan:Journalist:21/12/1956
 Selahattin Demirtas:10/4/1973
+Yildiray Ogur:Journalist:17/3/1978
 Hadi Uluengin:Journalist:20/6/1951
 Mete Tuncay:Academic:27/6/1936
+Ahmet Hakan:Journalist:11/8/1967
+Dan Millman:Life Coach:22/2/1946
+Geoffrey Hinton:AI Researcher:6/12/1947
+Paul Graham:Investor, Programmer:13/11/1964
+Wes McKinney:Pandas Creator,Programmer:20/3/1985
+Bruce Bueno de Mesquita:Political Scientist:24/11/1946
+Clay Shirky:Professor on Media:?/?/1964
+Pieter Hintjens:Programmer:3/12/1962
+Hasmet Babaoglu:Kose Yazari:8/5/1955
+Ernest Gellner:Thinker:9/12/1925
+Daron Acemoglu:Economist:3/9/1967
+Elon Musk:Technology Investor:28/6/1971
 
 

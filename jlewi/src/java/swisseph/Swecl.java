@@ -478,7 +478,6 @@ class Swecl {
       dcore[1] *= SweConst.AUNIT / 1000.0;
       if ((retc & SweConst.SE_ECL_PARTIAL)==0 && !no_eclipse) {
         if (dcore[0] > 0) {
-          /*printf("ringf÷rmig\n");*/
           retc |= SweConst.SE_ECL_ANNULAR;
         } else {
           /*printf("total\n");*/
