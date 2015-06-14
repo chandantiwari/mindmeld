@@ -39607,12 +39607,7 @@ Wes McKinney:Pandas Creator,Programmer:20/3/1985
 Bruce Bueno de Mesquita:Political Scientist:24/11/1946
 Clay Shirky:Professor on Media:?/?/1964
 Pieter Hintjens:Programmer:3/12/1962
-<<<<<<< HEAD
 Hasmet Babaoglu:Kose Yazari:8/5/1955
 Ernest Gellner:Thinker:9/12/1925
 Daron Acemoglu:Economist:3/9/1967
-Elon Musk:Technology Investor:28/6/1971
-
-
-=======
->>>>>>> bc52783459a6b02b10dd2fc6311cf7837652d91a
+Elon Musk:CEO:28/6/1971

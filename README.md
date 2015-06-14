@@ -4,10 +4,11 @@ Mindmeld aims to combine all working parts of numerology, psychology
 and astrology (yes!). The methods we utilize here are mostly unknown
 to the general public; most people know about sun signs (Capricorn,
 Taurus, blah) which has 1 out of 12 possibilities. One method here
-uses (G. Lewi's) uses all sun and moon combinations which has 12x12 =
+uses (G. Lewi's) all sun and moon combinations which has 12x12 =
 144 character possibilities. Lewi method also looks at other planet
-combinations that can supply additional character information. Jan
-Spiller method looks at moon readings differently; the result is
+combinations that can supply additional information. 
+
+Jan Spiller method looks at moon readings differently; the result is
 another in-depth character reading. The accuracy of this reading can
 be quite shocking. Lastly Millman numerology, another extremely
 detailed method to analyze people, is shared here.
@@ -26,20 +27,9 @@ The result will look like:
 ``` {'millman': [28, 10, 2, 8, 1, 0], 'chinese': 'Monkey', 'lewi':
 [136, 161, 163, 183, 196, 199, 211, 214, 216, 235, 243, 246, 272,
 276], 'spiller': 'Aries', 'cycle': 2} ```
-<<<<<<< HEAD
 
-One can simply look up these results under the `doc/details`
-folder. For Millman we'd find `millman/2810.txt` for example, or for
-Chinese `chinese/Monkey.html`, so on..
-
-Cycle is the period your life path is on; according to his method life
-proceeds in 9 year cycles, 1 is time to start something 9 to enjoy its
-fruits (and not start something new).
-
-=======
-
-Simply lookup these results under the `doc/details` folder. For
-Millman you would find `millman/2810.txt` for example, or for Chinese
+The details of the reading results can be found under the `doc/details` folder. 
+For Millman it is at `millman/2810.txt` for example, or for Chinese
 `chinese/Monkey.html`, so on..
 
 Cycle is the period your life path is on; according to his method life
@@ -61,7 +51,7 @@ point says 4, and the current year is 2015,
 ```
 
 and try to remember the state of your life at those moments in
-time. The results can be revealing.
+time, especially at year 1. The results can be revealing.
 
 ## MBTI Test
 
