@@ -39614,3 +39614,4 @@ Elon Musk:CEO:28/6/1971
 Nassim Taleb:Writer:10/1/1960
 Malcolm Gladwell:Writer:3/9/1963
 Philip Ball:Science Writer:30/10/1962
+Edward Frenkel:Mathematician:2/5/1968
