@@ -12740,7 +12740,7 @@ Joan Miró:Spanish Catalan painter:20/4/1893
 Caresse Crosby:American poet:20/4/1891
 Maurice Duplessis:premier of Québec, known as "Le Chef":20/4/1890
 Albert Jean Amateau:Turkish-born businessman and social activist:20/4/1889
-Adolf Hitler:Austrian-born First World War veteran and leader of Nazi Germany from 1933 until his death:20/4/1889
+Adolf Hitler:Nazi Leader:20/4/1889
 Holland Smith:U.S. General:20/4/1882
 Paul Poiret:French couturier:20/4/1879
 Maulvi Abdul Haq:Father of Urdu, Pakistani scholar:20/4/1870
@@ -39615,3 +39615,5 @@ Nassim Taleb:Writer:10/1/1960
 Malcolm Gladwell:Writer:3/9/1963
 Philip Ball:Science Writer:30/10/1962
 Edward Frenkel:Mathematician:2/5/1968
+Jeremy Rifkin:Futurist:26/1/1946
+Clotaire Rapaille:Psychologist:5/8/1941
