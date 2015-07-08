@@ -26226,7 +26226,7 @@ Martha Raye:American actress:27/8/1916
 Norman F. Ramsey:Nobel Prize laureate:27/8/1915
 Nina Schenk von Stauffenberg:wife of Claus Schenk von Stauffenberg:27/8/1913
 Kay Walsh:British actress:27/8/1911
-Mother Teresa:human rights activist, Nobel Peace Prize:27/8/1910
+Mother Teresa:human rights activist, Nobel Peace Prize:26/8/1910
 Lester Young:American musician:27/8/1909
 Sylvère Maes:Belgian cyclist:27/8/1909
 Don Bradman:Australian cricketer:27/8/1908
@@ -32575,7 +32575,7 @@ Andrew Motion:English poet and Poet Laureate:26/10/1952
 Bootsy Collins:American musician (P Funk):26/10/1951
 Steve Rogers:Major League Baseball pitcher:26/10/1949
 Toby Harrah:American Major League Baseball player:26/10/1948
-Hillary Clinton:First Lady of the United States and United States Senator:26/10/1947
+Hillary Clinton:Senator:26/10/1947
 Holly Woodlawn:Puerto Rican actress:26/10/1947
 Ian Ashley:British racing driver:26/10/1947
 Pat Sajak:American game show host:26/10/1946
