@@ -165,9 +165,12 @@ def calculate(date):
    decans = get_decans(date)
    sun = np.ceil(float(decans[0])/3)-1
    moon = np.ceil(float(decans[1])/3)-1
-   return {'chinese':get_chinese(date),
-           'spiller':get_spiller(date), 'millman':calculate_millman(date),
-           'cycle': calculate_cycle(date), 'lewi':calculate_lewi(date)}
+   diff = (datetime.now() - datetime.strptime(str(date), '%Y%m%d')).days
+   return {
+      'age': diff / 365,
+      'chinese':get_chinese(date),
+      'spiller':get_spiller(date), 'millman':calculate_millman(date),
+      'cycle': calculate_cycle(date), 'lewi':calculate_lewi(date)}
 
 def describe(res):
    print res
