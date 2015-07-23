@@ -39621,3 +39621,4 @@ Eric Schmidt:CEO:27/4/1955
 François Hollande:French President:12/8/1954
 Wolfgang Schäuble:German Finance Minister:18/9/1942
 John Oliver:Comedian:23/4/1977
+David Brooks:Columnist:11/8/1961
