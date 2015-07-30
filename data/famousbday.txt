@@ -1,4 +1,4 @@
-Mary Gibbs:American actress:1/1/1996
+fMary Gibbs:American actress:1/1/1996
 Gilbert Brule:Canadian hockey player:1/1/1987
 Meryl Davis:American ice dancer:1/1/1987
 Alexa Ray Joel:American musician:1/1/1986
@@ -39622,3 +39622,5 @@ François Hollande:French President:12/8/1954
 Wolfgang Schäuble:German Finance Minister:18/9/1942
 John Oliver:Comedian:23/4/1977
 David Brooks:Columnist:11/8/1961
+Ergun Babahan:Columnist:31/7/1960
+Yalcin Akdogan:Politician:22/9/1969
