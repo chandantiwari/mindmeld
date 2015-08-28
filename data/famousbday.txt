@@ -39570,7 +39570,7 @@ Louis C.K.:Comedian:12/9/1967
 Orhan Pamuk:Author:7/6/1952
 Abdullah Gul:President:29/10/1950
 Ahmet Davutoglu:Strategist:26/2/1959
-Tayyip Erdogan:President:26/2/1954
+Tayyip Erdogan:Politician:26/2/1954
 Acun Ilicali:TV Personality:12/3/1969
 Cetin Altan:Journalist:22/6/1927
 Mumtazer Turkone:Journalist:1/1/1956
@@ -39638,3 +39638,4 @@ David Brooks:Columnist:11/8/1961
 Ergun Babahan:Columnist:31/7/1960
 Yalcin Akdogan:Politician:22/9/1969
 Mehmet Baransu:Gazeteci:7/3/1977
+Gulay Gokturk:Gazeteci:?/?/1949
