@@ -39639,3 +39639,7 @@ Ergun Babahan:Columnist:31/7/1960
 Yalcin Akdogan:Politician:22/9/1969
 Mehmet Baransu:Gazeteci:7/3/1977
 Gulay Gokturk:Gazeteci:?/?/1949
+Edward Snowden:Whistleblower:21/6/1983
+Vehbi Koc:Businessman:20/7/1901
+Rahmi Koc:Businessman:9/10/1930
+Mustafa Koc:Businessman:29/10/1960
