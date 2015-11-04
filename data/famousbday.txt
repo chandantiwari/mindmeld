@@ -39643,3 +39643,5 @@ Edward Snowden:Whistleblower:21/6/1983
 Vehbi Koc:Businessman:20/7/1901
 Rahmi Koc:Businessman:9/10/1930
 Mustafa Koc:Businessman:29/10/1960
+Steven Strogatz:Mathematician:13/8/1959
+Aziz Sancar:Scientist:8/9/1946
