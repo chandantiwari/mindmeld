@@ -39645,3 +39645,6 @@ Rahmi Koc:Businessman:9/10/1930
 Mustafa Koc:Businessman:29/10/1960
 Steven Strogatz:Mathematician:13/8/1959
 Aziz Sancar:Scientist:8/9/1946
+Stephen Wolfram:Egocentric Scientist:29/8/1959
+Tom Cavanagh:Actor (Dr. Wells):26/10/1963
+Selin Sayek Boke:Politican:1/1/1972
