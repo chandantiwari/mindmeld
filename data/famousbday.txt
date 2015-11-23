@@ -39648,3 +39648,4 @@ Aziz Sancar:Scientist:8/9/1946
 Stephen Wolfram:Egocentric Scientist:29/8/1959
 Tom Cavanagh:Actor (Dr. Wells):26/10/1963
 Selin Sayek Boke:Politican:1/1/1972
+Kemal Kilicdaroglu:Politician:17/12/1948

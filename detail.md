@@ -9,8 +9,8 @@ output. Good resuls obtained here could prove that a pseudoscience -
 science connection exists, and that could mean pseudoscience might not
 be so pseudo after all.
 
-Unfortunately we do not have enough data for this. If we had, we
-already have an idea how to go about modeling this data:
+Unfortunately we do not have enough data for this. We do have an idea
+how to go about modeling this data however:
 
 In the input data for each person, the top two functions would be (and
 are, see `mineprep.py`) 1-hot encoded, INTP for example has both Ti
