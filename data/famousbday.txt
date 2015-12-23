@@ -28073,7 +28073,7 @@ Craig Montoya:American musician (Everclear):14/9/1970
 Francesco Casagrande:Italian cyclist:14/9/1970
 Konstantinos Koukodimos:Greek long jumper:14/9/1969
 Mike Cooley:American guitarist:14/9/1966
-Dmitry Medvedev:First Deputy Prime Minister of Russia:14/9/1965
+Dmitry Medvedev:Prime Minister of Russia:14/9/1965
 Michelle Stafford:American actress:14/9/1965
 Faith Ford:American actress:14/9/1964
 Callum Keith Rennie:Canadian actor:14/9/1960
@@ -38822,7 +38822,7 @@ Chris Harris:American professional wrestler:25/12/1973
 Alexandre Trudeau:Canadian journalist:25/12/1973
 Josh Freese:American drummer:25/12/1972
 Dido:English singer:25/12/1971
-Justin Trudeau:Canadian media personality:25/12/1971
+Justin Trudeau:Canadian Prime Minister:25/12/1971
 Noel Hogan:Irish musician:25/12/1971
 Helena Christensen:Danish model:25/12/1968
 Jim Down:American ice hockey player:25/12/1968
@@ -39595,7 +39595,7 @@ Taha Akyol:Journalist:1/8/1946
 Cengiz Candar:Journalist:21/9/1948
 Halil Berktay:Historian:27/8/1947
 Ilber Ortayli:Nationalist Historian:21/5/1947
-Murat Belge:Academic:16/3/19942
+Murat Belge:Academic:16/3/1942
 Mehmet Barlas:Journalist:15/2/1942
 Etyen Mahcupyan:Journalist:30/12/1950
 Rahmi Koc:Businessman:20/7/1930
@@ -39639,6 +39639,7 @@ Ergun Babahan:Columnist:31/7/1960
 Yalcin Akdogan:Politician:22/9/1969
 Mehmet Baransu:Gazeteci:7/3/1977
 Gulay Gokturk:Gazeteci:?/?/1949
+Hasan Bulent Kahraman:Gazeteci:1/9/1957
 Edward Snowden:Whistleblower:21/6/1983
 Vehbi Koc:Businessman:20/7/1901
 Rahmi Koc:Businessman:9/10/1930
@@ -39649,3 +39650,7 @@ Stephen Wolfram:Egocentric Scientist:29/8/1959
 Tom Cavanagh:Actor (Dr. Wells):26/10/1963
 Selin Sayek Boke:Politican:1/1/1972
 Kemal Kilicdaroglu:Politician:17/12/1948
+John W. Campbell:Asimov's Editor:8/6/1910
+Petro Poroshenko:President of Ukraine:26/9/1965
+Marine Le Pen:Nationalist Leader:5/8/1968
+Paul Krugman:Economist:28/2/1953
