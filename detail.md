@@ -12,39 +12,34 @@ be so pseudo after all.
 Unfortunately we do not have enough data for this. We do have an idea
 how to go about modeling this data however:
 
-In the input data for each person, the top two functions would be (and
-are, see `mineprep.py`) 1-hot encoded, INTP for example has both Ti
-and Ne as 1. In order to identify an MBTI type, top two functions are
-sufficient, for example NTP can be predicted if we know Ne and Ti are
-top two functions. The only remaining task is predicting introversion
-or extroversion which only _changes_ the order of the top two
-functions -- ENTP has Ne and Ti whereas INTP is Ti and Ne. We did not
-put much emphasis on predicting introversion or extroversion. This way
-prediction of using functions, instead of letters is much more in line
-with the logic of MBTI. Functions are at the core of the character
-make-up, not the individual letters.
+In order to identify an MBTI type, top two functions are sufficient,
+for example NTP can be predicted if we know Ne and Ti are top two
+functions. A simple binary classifier could be trained for both of
+these either / or functions. The only remaining task then would be
+predicting introversion or extroversion which only _changes_ the order
+of the top two functions -- ENTP has Ne and Ti whereas INTP is Ti and
+Ne. That could be another binary classifier perhaps. But even without
+it, the top two function identification would be useful.
 
-Anyway; we did run a simple logistic regression on Ti being 1/0 for
-example against spiller, chinese, and millman, almost all variables
-were insignificant. Adjusted R^2 was around 10%, but we were not
-satisfied with this.
+I ran a simple logistic regression on Ti being 1/0 for example against
+spiller, chinese, and millman, almost all variables were
+insignificant. Adjusted R^2 was around 10%, but we were not satisfied
+with this.
 
 ## Data
 
-All data files required for ML are under 'data' folder. If you want to
-recreate the main file used for training on celebrities, simply rerun
-`mineprep.py`.
+All data files required for ML are under 'data' folder. If one wants
+to recreate the main file for training on celebrities, rerunning
+`mineprep.py` is enough.
 
-Script `scrape.py` will get celebrity mbti types from a known Web
-site, and write its output under /tmp. We already ran this once,
-copied its output under data so you dont have to run it. This is the
-main data we used to train the regressor. The file is
-`data/myer-briggs.txt`, when mineprep.py ran it creates the necessary
-file.
+Script `scrape.py` will take celebrity mbti types from a known Web
+site, and write its output under /tmp. I already ran this once, copied
+its output under data. This is the main data I used to train the
+regressor. The file is `data/myer-briggs.txt`, then once mineprep.py
+ran it creates the necessary file.
 
-Your manual additions to celebrity MBTIs, if there is any, should go
-under `data/myer-briggs-app.txt` - everything in this file will be
-appended to the original file before training file is created by
-mineprep.
+Any manual additions to the celebrity MBTI data should go in
+`data/myer-briggs-app.txt` - everything in this file will be appended
+to the original file before training file is created by `mineprep.py`.
 
 
