@@ -39654,3 +39654,6 @@ John W. Campbell:Asimov's Editor:8/6/1910
 Petro Poroshenko:President of Ukraine:26/9/1965
 Marine Le Pen:Nationalist Leader:5/8/1968
 Paul Krugman:Economist:28/2/1953
+Mohammad Bin Salman Al Saud:Deputy Crown Prince of Saudi Arabia:31/8/1985
+Xi Jinping:President of China:15/6/1953
+
