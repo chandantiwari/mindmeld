@@ -39656,4 +39656,6 @@ Marine Le Pen:Nationalist Leader:5/8/1968
 Paul Krugman:Economist:28/2/1953
 Mohammad Bin Salman Al Saud:Deputy Crown Prince of Saudi Arabia:31/8/1985
 Xi Jinping:President of China:15/6/1953
-
+Kim Jong-un:North Korean Dictator:8/1/1983
+John de Lancie:Q on Star Trek:20/3/1948
+Ted Cruz:Senator:22/12/1970
