@@ -39660,3 +39660,5 @@ Kim Jong-un:North Korean Dictator:8/1/1983
 John de Lancie:Q on Star Trek:20/3/1948
 Ted Cruz:Senator:22/12/1970
 Marco Rubio:Senator:28/5/1971
+Joe Flanigan:Actor:5/1/1967
+Larry Summers:Economist:30/11/1954
