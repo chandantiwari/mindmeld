@@ -115,6 +115,14 @@ df2['M2'] = df2.M2.astype(str)
 X = one_hot_dataframe(df2,['M1','M2','spiller','chinese'])
 y = X[['mbti1','mbti2']]
 X = X.drop(['mbti1','mbti2'],axis=1)
+
+import random
+random.seed(0)
+idx = list(X.index)
+random.shuffle(idx)
+X = X.ix[idx]
+y = y.ix[idx]
+
 X2 = np.array(X.fillna(0))
 y2 = np.array(y.mbti1=='Ni')
 print list(y.columns)
@@ -128,39 +136,19 @@ print y2.shape, X2.shape
 (431,) (431, 341)
 \end{verbatim}
 
-\begin{minted}[fontsize=\footnotesize]{python}
-from sklearn.linear_model import LogisticRegression
-from sklearn.cross_validation import KFold
-import rbm
-np.random.seed(0)
-
-scores = []
-cv = KFold(n=len(X),n_folds=3)
-for train, test in cv:
-    X_train, Y_train = X2[train], y2[train]
-    X_test, Y_test = X2[test], y2[test]
-    r = rbm.RBM(num_hidden=40, learning_rate=0.3,max_epochs=500, num_visible=341)
-    r.fit(X_train)
-    clf = LogisticRegression(C=1000)
-    clf.fit(r.run_visible(X_train), Y_train)
-    res3 = clf.predict(r.run_visible(X_test))
-    scores.append(np.sum(res3==Y_test) / float(len(Y_test)))        
-    
-print np.mean(scores)
-\end{minted}
-
-\begin{verbatim}
-0.835324397824
-\end{verbatim}
 
 
-\begin{minted}[fontsize=\footnotesize]{python}
-print y2.sum(), len(y2)
-\end{minted}
 
-\begin{verbatim}
-43 431
-\end{verbatim}
+
+
+
+
+
+
+
+
+
+
 
 
 
