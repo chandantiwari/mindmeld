@@ -420,6 +420,7 @@ ISTJ:Rivers Cuomo
 ISTJ:Jamie Hyneman
 ISTJ:Nick Offerman
 ISTJ:Danica McKellar
+ISTJ:Hillary Clinton
 ISFJ:David Petraeus
 ISFJ:George Marshall
 ISFJ:Robert E. Lee
@@ -450,7 +451,6 @@ ISFJ:Kate Middleton
 ISFJ:Princess Mary
 ISFJ:Tiger Woods
 ISFJ:Lance Reddick
-INTJ:Hillary Clinton
 INTJ:Isaac Newton
 INTJ:Karl Marx
 INTJ:Ayn Rand
