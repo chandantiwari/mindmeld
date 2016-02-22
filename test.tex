@@ -98,6 +98,8 @@ spiller[T.Virgo]          -0.2589      0.722     -0.359      0.720        -1.674
 
 \begin{minted}[fontsize=\footnotesize]{python}
 from sklearn.feature_extraction import DictVectorizer
+import random
+
 def one_hot_dataframe(data, cols):
     vec = DictVectorizer()
     mkdict = lambda row: dict((col, row[col]) for col in cols)
@@ -116,13 +118,6 @@ X = one_hot_dataframe(df2,['M1','M2','spiller','chinese'])
 y = X[['mbti1','mbti2']]
 X = X.drop(['mbti1','mbti2'],axis=1)
 
-import random
-random.seed(0)
-idx = list(X.index)
-random.shuffle(idx)
-X = X.ix[idx]
-y = y.ix[idx]
-
 X2 = np.array(X.fillna(0))
 y2 = np.array(y.mbti1=='Ni')
 print list(y.columns)
@@ -136,20 +131,94 @@ print y2.shape, X2.shape
 (431,) (431, 341)
 \end{verbatim}
 
+\begin{minted}[fontsize=\footnotesize]{python}
+\end{minted}
 
+\begin{verbatim}
+(129, 341)
+\end{verbatim}
 
+\begin{minted}[fontsize=\footnotesize]{python}
+import statsmodels.api as sm
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import roc_curve, auc
+from sklearn.metrics import roc_auc_score
+from sklearn.cross_validation import train_test_split
 
+X_train,X_test,y_train,y_test = train_test_split(X2,y2,test_size=0.6,random_state=0)
 
+print X_train.shape
+acc=0.00000001
+L1_ALPHA = 16.0
+alpha=L1_ALPHA
+clf = sm.Logit(y_train, X_train).fit_regularized(maxiter=1024, alpha=alpha, acc=acc, disp=False)
+pred = clf.predict(X_test)
+\end{minted}
 
+\begin{verbatim}
+(172, 341)
+\end{verbatim}
 
+\begin{minted}[fontsize=\footnotesize]{python}
+fpr, tpr, thresholds = roc_curve(y_test, pred)
+roc_auc = auc(fpr, tpr)
+print 'AUC', roc_auc
+\end{minted}
 
+\begin{verbatim}
+AUC 0.56445035461
+\end{verbatim}
 
+\begin{minted}[fontsize=\footnotesize]{python}
+print pred
+\end{minted}
 
-
-
-
-
-
+\begin{verbatim}
+[ 0.26532895  0.26532895  0.5         0.5         0.5         0.26532895
+  0.5         0.5         0.5         0.5         0.5         0.26532895
+  0.26532895  0.26532895  0.5         0.26532895  0.26532895  0.26532895
+  0.5         0.26532895  0.5         0.5         0.5         0.26532895
+  0.5         0.5         0.5         0.26532895  0.26532895  0.26532895
+  0.26532895  0.26532895  0.26532895  0.26532895  0.26532895  0.5         0.5
+  0.26532895  0.26532895  0.5         0.26532895  0.26532895  0.26532895
+  0.26532895  0.26532895  0.5         0.26532895  0.26532895  0.5
+  0.26532895  0.26532895  0.26532895  0.5         0.26532895  0.5
+  0.26532895  0.5         0.26532895  0.26532895  0.5         0.5         0.5
+  0.26532895  0.5         0.5         0.26532895  0.5         0.26532895
+  0.26532895  0.5         0.5         0.5         0.5         0.26532895
+  0.26532895  0.5         0.26532895  0.26532895  0.26532895  0.5         0.5
+  0.26532895  0.26532895  0.5         0.5         0.5         0.26532895
+  0.26532895  0.5         0.5         0.5         0.26532895  0.26532895
+  0.26532895  0.5         0.26532895  0.26532895  0.5         0.26532895
+  0.26532895  0.5         0.26532895  0.26532895  0.5         0.5
+  0.26532895  0.26532895  0.26532895  0.5         0.26532895  0.26532895
+  0.5         0.5         0.5         0.5         0.26532895  0.26532895
+  0.26532895  0.26532895  0.26532895  0.5         0.5         0.26532895
+  0.5         0.26532895  0.5         0.26532895  0.5         0.26532895
+  0.26532895  0.26532895  0.26532895  0.26532895  0.5         0.26532895
+  0.26532895  0.5         0.26532895  0.5         0.5         0.5
+  0.26532895  0.26532895  0.5         0.26532895  0.26532895  0.5
+  0.26532895  0.26532895  0.5         0.26532895  0.26532895  0.5
+  0.26532895  0.26532895  0.26532895  0.5         0.26532895  0.26532895
+  0.5         0.5         0.5         0.5         0.5         0.5
+  0.26532895  0.5         0.5         0.5         0.26532895  0.26532895
+  0.5         0.26532895  0.26532895  0.5         0.5         0.5
+  0.26532895  0.26532895  0.5         0.5         0.5         0.26532895
+  0.5         0.26532895  0.5         0.26532895  0.5         0.26532895
+  0.26532895  0.26532895  0.26532895  0.26532895  0.5         0.5
+  0.26532895  0.5         0.26532895  0.26532895  0.5         0.5         0.5
+  0.26532895  0.26532895  0.5         0.5         0.26532895  0.26532895
+  0.5         0.26532895  0.5         0.26532895  0.26532895  0.26532895
+  0.26532895  0.26532895  0.5         0.26532895  0.5         0.26532895
+  0.26532895  0.26532895  0.26532895  0.26532895  0.26532895  0.26532895
+  0.26532895  0.26532895  0.26532895  0.26532895  0.26532895  0.5         0.5
+  0.5         0.26532895  0.26532895  0.5         0.26532895  0.5
+  0.26532895  0.5         0.26532895  0.5         0.26532895  0.5
+  0.26532895  0.26532895  0.26532895  0.5         0.5         0.26532895
+  0.5         0.26532895  0.26532895  0.26532895  0.26532895  0.26532895
+  0.26532895  0.26532895]
+\end{verbatim}
 
 
 
